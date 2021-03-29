@@ -402,9 +402,10 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'SendChangeRequest',
 	'',
-	'',
+	'
+',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	0,
 	0);
@@ -427,69 +428,16 @@ INSERT INTO S_SPARM
 	"e8b60fb9-680f-45a2-a41d-292b0e6ba879",
 	'');
 INSERT INTO S_SPARM
-	VALUES ("ca77ab27-9a44-4457-9211-5fab15fb1b42",
-	"74961dd8-fd9d-43de-935e-77bf38ba26f3",
-	'ProjectCode',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"91dcb4b0-83b7-4925-8645-2c5025949d3b",
-	'');
-INSERT INTO S_SPARM
 	VALUES ("8f520308-9912-40ce-a931-cde3f9078647",
 	"74961dd8-fd9d-43de-935e-77bf38ba26f3",
 	'CreationDate',
 	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
-	"ca77ab27-9a44-4457-9211-5fab15fb1b42",
-	'');
-INSERT INTO S_SPARM
-	VALUES ("4bce5c09-983a-4bb5-90cb-a6bf9051e598",
-	"74961dd8-fd9d-43de-935e-77bf38ba26f3",
-	'ImpactCategory',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"8f520308-9912-40ce-a931-cde3f9078647",
-	'');
-INSERT INTO S_SPARM
-	VALUES ("5bbee7d6-4aeb-477f-884d-42a9cdb4f272",
-	"74961dd8-fd9d-43de-935e-77bf38ba26f3",
-	'ImpactDetails',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"4bce5c09-983a-4bb5-90cb-a6bf9051e598",
+	"91dcb4b0-83b7-4925-8645-2c5025949d3b",
 	'');
 INSERT INTO PE_PE
 	VALUES ("74961dd8-fd9d-43de-935e-77bf38ba26f3",
-	1,
-	"9f3f7773-dfb8-44f3-a8df-8c7c9c133ae7",
-	"00000000-0000-0000-0000-000000000000",
-	1);
-INSERT INTO S_SYNC
-	VALUES ("45f7e022-3c35-4d2e-9cd9-1b0a7f65e401",
-	"00000000-0000-0000-0000-000000000000",
-	'ReplyChangeRequestInitiation',
-	'',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	1,
-	'',
-	0,
-	0);
-INSERT INTO S_SPARM
-	VALUES ("7b571220-cd93-4483-84ca-4a159d1dcc44",
-	"45f7e022-3c35-4d2e-9cd9-1b0a7f65e401",
-	'ChangeRequestCreationDate',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO PE_PE
-	VALUES ("45f7e022-3c35-4d2e-9cd9-1b0a7f65e401",
 	1,
 	"9f3f7773-dfb8-44f3-a8df-8c7c9c133ae7",
 	"00000000-0000-0000-0000-000000000000",
@@ -543,9 +491,10 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'AssignManger',
 	'',
-	'',
+	'
+',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	0,
 	1);

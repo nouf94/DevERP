@@ -830,18 +830,76 @@ INSERT INTO C_PP
 	'',
 	"bf1eacbf-0567-4a61-9dbd-27e445d95e96");
 INSERT INTO C_EP
-	VALUES ("00053e29-0318-4de9-b625-8bc71d10ede1",
+	VALUES ("7c8673b1-6edb-4b6f-851f-5d1f24587182",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'InitiateChangeRequest',
+	'AssignManger',
 	'',
-	0);
+	1);
 INSERT INTO C_AS
-	VALUES ("00053e29-0318-4de9-b625-8bc71d10ede1",
-	'InitiateChangeRequest',
+	VALUES ("7c8673b1-6edb-4b6f-851f-5d1f24587182",
+	'AssignManger',
+	'',
+	0,
+	"aadb0141-b089-41fb-9f0c-02b0146fa52e");
+INSERT INTO C_PP
+	VALUES ("ed737e02-247d-46f6-9a1f-e395cf7e0b3d",
+	"7c8673b1-6edb-4b6f-851f-5d1f24587182",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'AccountName',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("47060375-4bdd-4f52-9445-b80c66a6bbed",
+	"7c8673b1-6edb-4b6f-851f-5d1f24587182",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"ed737e02-247d-46f6-9a1f-e395cf7e0b3d");
+INSERT INTO C_EP
+	VALUES ("56824f1e-e6b9-42c5-9278-48a7f426784c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendChangeRequest',
+	'',
+	2);
+INSERT INTO C_AS
+	VALUES ("56824f1e-e6b9-42c5-9278-48a7f426784c",
+	'SendChangeRequest',
 	'',
 	1,
-	"aadb0141-b089-41fb-9f0c-02b0146fa52e");
+	"7c8673b1-6edb-4b6f-851f-5d1f24587182");
+INSERT INTO C_PP
+	VALUES ("0ab175ba-87bc-4304-bb20-bd22d6cf7f09",
+	"56824f1e-e6b9-42c5-9278-48a7f426784c",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'CreationDate',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("d18f302d-0730-45c7-af6d-3e022a0aa23f",
+	"56824f1e-e6b9-42c5-9278-48a7f426784c",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Description',
+	'',
+	0,
+	'',
+	"0ab175ba-87bc-4304-bb20-bd22d6cf7f09");
+INSERT INTO C_PP
+	VALUES ("2a29544e-8723-4c00-950a-98521c8c23fd",
+	"56824f1e-e6b9-42c5-9278-48a7f426784c",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Justification',
+	'',
+	0,
+	'',
+	"d18f302d-0730-45c7-af6d-3e022a0aa23f");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,

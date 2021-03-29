@@ -1,22 +1,22 @@
 -- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
 
 INSERT INTO O_OBJ
-	VALUES ("adb9cff2-4634-43f0-a556-d51e8a9c9684",
+	VALUES ("81c5dacc-e401-4923-80ed-452623f40e9d",
 	'Strategy',
-	2,
+	1,
 	'Strategy',
 	'A statement of an organization goal.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_NBATTR
-	VALUES ("e6cac4db-045a-47fc-bf95-eb36e67ae131",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684");
+	VALUES ("8ed24256-0ff4-4753-89a5-93dbc3100ad1",
+	"81c5dacc-e401-4923-80ed-452623f40e9d");
 INSERT INTO O_BATTR
-	VALUES ("e6cac4db-045a-47fc-bf95-eb36e67ae131",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684");
+	VALUES ("8ed24256-0ff4-4753-89a5-93dbc3100ad1",
+	"81c5dacc-e401-4923-80ed-452623f40e9d");
 INSERT INTO O_ATTR
-	VALUES ("e6cac4db-045a-47fc-bf95-eb36e67ae131",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684",
-	"44aedd60-90c1-480b-a608-fee071308498",
+	VALUES ("8ed24256-0ff4-4753-89a5-93dbc3100ad1",
+	"81c5dacc-e401-4923-80ed-452623f40e9d",
+	"ae5b0ffc-b53a-452b-b93b-ce04603d30a9",
 	'Name',
 	'',
 	'',
@@ -26,15 +26,15 @@ INSERT INTO O_ATTR
 	'',
 	'');
 INSERT INTO O_NBATTR
-	VALUES ("edc043ec-f37d-4908-94ae-e72ed1c23dcf",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684");
+	VALUES ("01aaf0f7-eeea-4ff6-9001-7b8c343a8ed5",
+	"81c5dacc-e401-4923-80ed-452623f40e9d");
 INSERT INTO O_BATTR
-	VALUES ("edc043ec-f37d-4908-94ae-e72ed1c23dcf",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684");
+	VALUES ("01aaf0f7-eeea-4ff6-9001-7b8c343a8ed5",
+	"81c5dacc-e401-4923-80ed-452623f40e9d");
 INSERT INTO O_ATTR
-	VALUES ("edc043ec-f37d-4908-94ae-e72ed1c23dcf",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684",
-	"e6cac4db-045a-47fc-bf95-eb36e67ae131",
+	VALUES ("01aaf0f7-eeea-4ff6-9001-7b8c343a8ed5",
+	"81c5dacc-e401-4923-80ed-452623f40e9d",
+	"8ed24256-0ff4-4753-89a5-93dbc3100ad1",
 	'Description',
 	'',
 	'',
@@ -44,14 +44,14 @@ INSERT INTO O_ATTR
 	'',
 	'');
 INSERT INTO O_NBATTR
-	VALUES ("44aedd60-90c1-480b-a608-fee071308498",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684");
+	VALUES ("ae5b0ffc-b53a-452b-b93b-ce04603d30a9",
+	"81c5dacc-e401-4923-80ed-452623f40e9d");
 INSERT INTO O_BATTR
-	VALUES ("44aedd60-90c1-480b-a608-fee071308498",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684");
+	VALUES ("ae5b0ffc-b53a-452b-b93b-ce04603d30a9",
+	"81c5dacc-e401-4923-80ed-452623f40e9d");
 INSERT INTO O_ATTR
-	VALUES ("44aedd60-90c1-480b-a608-fee071308498",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684",
+	VALUES ("ae5b0ffc-b53a-452b-b93b-ce04603d30a9",
+	"81c5dacc-e401-4923-80ed-452623f40e9d",
 	"00000000-0000-0000-0000-000000000000",
 	'Number',
 	'',
@@ -63,25 +63,25 @@ INSERT INTO O_ATTR
 	'');
 INSERT INTO O_ID
 	VALUES (0,
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684");
+	"81c5dacc-e401-4923-80ed-452623f40e9d");
 INSERT INTO O_OIDA
-	VALUES ("e6cac4db-045a-47fc-bf95-eb36e67ae131",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684",
+	VALUES ("8ed24256-0ff4-4753-89a5-93dbc3100ad1",
+	"81c5dacc-e401-4923-80ed-452623f40e9d",
 	0,
 	'Name');
 INSERT INTO O_ID
 	VALUES (1,
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684");
+	"81c5dacc-e401-4923-80ed-452623f40e9d");
 INSERT INTO O_OIDA
-	VALUES ("44aedd60-90c1-480b-a608-fee071308498",
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684",
+	VALUES ("ae5b0ffc-b53a-452b-b93b-ce04603d30a9",
+	"81c5dacc-e401-4923-80ed-452623f40e9d",
 	1,
 	'Number');
 INSERT INTO O_ID
 	VALUES (2,
-	"adb9cff2-4634-43f0-a556-d51e8a9c9684");
+	"81c5dacc-e401-4923-80ed-452623f40e9d");
 INSERT INTO PE_PE
-	VALUES ("adb9cff2-4634-43f0-a556-d51e8a9c9684",
+	VALUES ("81c5dacc-e401-4923-80ed-452623f40e9d",
 	1,
 	"6177f291-1d29-415e-bed8-570d8e84b959",
 	"00000000-0000-0000-0000-000000000000",

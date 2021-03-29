@@ -9,6 +9,7 @@ INSERT INTO C_C
 	0,
 	"00000000-0000-0000-0000-000000000000",
 	0,
+	'',
 	'');
 INSERT INTO GD_MD
 	VALUES ("ba6eda40-6088-4d1a-8024-265a01809b1b",
@@ -696,7 +697,8 @@ INSERT INTO C_PO
 	"f859e576-0e98-4f6e-9102-2f3ef0483432",
 	'AppOps',
 	0,
-	0);
+	0,
+	'');
 INSERT INTO C_IR
 	VALUES ("0ee45f97-7d5f-43a3-b13a-70cdff3037a8",
 	"5c6691f2-7090-42e2-a731-ec2157c73db8",
@@ -718,6 +720,7 @@ INSERT INTO SPR_RS
 	'An employee requests to have a leave of absence of a specific type. ',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("b39132b4-2259-4b62-a9f3-6437a0d18916",
@@ -725,6 +728,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'RequestEmployeeLeave',
 	'An employee requests to have a leave of absence of a specific type. ',
+	0,
 	'../../Shared/Ops/Ops.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("44342cb0-982f-4c34-ade9-d225873160c1",
@@ -736,6 +740,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("70a38333-8004-469c-92f7-2882ec9995e4",
@@ -743,6 +748,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReturnFromLeave',
 	'',
+	0,
 	'../../Shared/Ops/Ops.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("a38cbfbe-d4e2-4a32-8521-3c5db60afb72",
@@ -754,6 +760,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("7a8b2a52-93db-4e92-962c-904439127495",
@@ -761,6 +768,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AssignJobToEmployee',
 	'',
+	0,
 	'../../Shared/Ops/Ops.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("568aadb1-742e-424f-8666-21d463b43654",
@@ -772,6 +780,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("91ad9e90-38b4-4680-8c47-49049aaf3fbe",
@@ -779,6 +788,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AssignBonusToEmployee',
 	'',
+	0,
 	'../../Shared/Ops/Ops.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("956e15f7-30c2-400c-81c7-d58c3e78d719",
@@ -790,6 +800,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("71d23c22-d473-42f5-b0c0-b02ad3c5e158",
@@ -797,6 +808,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CommenceEmployee',
 	'',
+	0,
 	'../../Shared/Ops/Ops.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("4c1acdbc-bd34-4b37-af62-713cbf368e89",
@@ -808,6 +820,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("efa24004-2976-4948-bdf6-f0bf405f08fe",
@@ -815,6 +828,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'GenerateEmployeePayslip',
 	'',
+	0,
 	'../../Shared/Ops/Ops.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("c746b09d-d6bd-4e5b-a84e-ba8933cd9f7d",
@@ -826,6 +840,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("17ffcb19-fa91-46b2-b867-ee86de86db68",
@@ -833,6 +848,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Return_Employee_Payment',
 	'',
+	0,
 	'../../Shared/Ops/Ops.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("124a28f3-46b8-4170-9e54-82d5bdd0a7e0",
@@ -844,6 +860,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("d94c13b0-32b8-4236-942e-57f41ea108fa",
@@ -851,6 +868,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ApproveEmployeeLeave',
 	'',
+	0,
 	'../../Shared/Ops/Ops.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("4f92699b-477c-46c2-96f0-93e7b6093dfa",
@@ -862,6 +880,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("68395ea3-c159-43f2-8c29-b680f2eebfef",
@@ -869,6 +888,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'RejectEmployeeLeave',
 	'',
+	0,
 	'../../Shared/Ops/Ops.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("5c6691f2-7090-42e2-a731-ec2157c73db8",
@@ -881,7 +901,8 @@ INSERT INTO C_PO
 	"f859e576-0e98-4f6e-9102-2f3ef0483432",
 	'App',
 	0,
-	0);
+	0,
+	'');
 INSERT INTO C_IR
 	VALUES ("1c31e86d-2a1a-448e-afc5-190d46069bd6",
 	"e4418dca-a348-4559-93d1-2765b2e75800",
@@ -903,6 +924,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendEmployee( EmployeeID:param.EmployeeID, NationalID:param.NationalID, FirstName:param.FirstName, MiddleName:param.MiddleName, LastName:param.LastName, Email:param.Email, OfficePhone:param.OfficePhone, DateOfBirth:param.DateOfBirth, Degree:param.Degree,Gender:param.Gender, StartDate:param.StartDate, LeaveBalance:param.LeaveBalance, SickLeaveBalance:param.SickLeaveBalance, Salary:param.Salary); ',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("ef336545-2505-4c4c-966f-e73bd04cebbc",
@@ -910,6 +932,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendEmployee',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("bfeb9480-f3c1-4e26-b78e-1481c6059081",
@@ -921,6 +944,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("3c8dd825-949a-424e-bf6c-9b9a9fa3f74e",
@@ -928,6 +952,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateLeaveSpecification',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("293e0d59-3945-4548-bf1d-6647777b2abb",
@@ -939,6 +964,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("c32f4f5c-4c54-4ec7-b6f8-9af0f0e4f799",
@@ -946,6 +972,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'DeleteLeaveSpecification',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("301524e7-5433-448c-b1fa-b0a142fdecb2",
@@ -957,6 +984,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("d3b55439-1e69-4e4a-b581-e40430d5017f",
@@ -964,6 +992,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadLeaveSpecification',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("c56c468e-8acb-4b34-9826-43d2bd6690a8",
@@ -975,6 +1004,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendLeaveSpecification( Name:param.Name, MaximumDays:param.MaximumDays, MinimumDays:param.MinimumDays, Size:param.Size );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("595e353d-727f-414e-9d55-756babc4ae04",
@@ -982,6 +1012,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendLeaveSpecification',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("208211ac-95db-48e9-9fcc-bd4450efb8de",
@@ -993,6 +1024,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("2c504ade-8ec5-4e67-8105-589d8a205c18",
@@ -1000,6 +1032,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateEmployee',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("79a774bd-80d2-4905-aae9-0874bd63e196",
@@ -1011,6 +1044,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("5a45e7fa-046b-44f4-9bf7-6603e95bbe83",
@@ -1018,6 +1052,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadEmployeeList',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("e45e3eee-021f-4bfa-960d-4e58bbc665f5",
@@ -1029,6 +1064,7 @@ INSERT INTO SPR_RS
 	'',
 	'::Reply( msg:param.msg, state:param.state );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("f833a052-90f9-4e64-9d55-99c5ddf5e403",
@@ -1036,6 +1072,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Reply',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("84938013-cf4e-4b12-8e37-93e9b6cd3159",
@@ -1047,6 +1084,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("28c1324f-fa4b-4d57-8093-089ef52816b3",
@@ -1054,6 +1092,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReplyNewEmployee',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("28d089a7-7b62-4186-a23e-c3805a35060f",
@@ -1065,6 +1104,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("c394831f-741a-4da7-9a06-59aab6fe9a65",
@@ -1072,6 +1112,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Initialize',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("fb2a5dd3-7174-411d-b379-6084657d2ce4",
@@ -1083,6 +1124,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("4faa150b-b378-4b6d-a581-fc2bda46bcfa",
@@ -1090,6 +1132,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadEmployeeMessage',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("37c88089-7de1-4f94-a969-2d77b6065fd9",
@@ -1101,6 +1144,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendEmployeeMessages( LeaveRequesterID:param.LeaveRequesterID, Starting:param.Starting, Ending:param.Ending, Content:param.Content );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("3d328faa-80d8-4b87-8f4e-bceeff720379",
@@ -1108,6 +1152,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendEmployeeMessages',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("179a3757-96d7-4dd0-82d7-77977bfa14b9",
@@ -1119,6 +1164,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("1c973eb8-41f0-4af1-a445-cd95097185cd",
@@ -1126,6 +1172,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AssignEmployeeBonus',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("75cc66f0-b518-400c-be9a-1c9a0665dda5",
@@ -1137,6 +1184,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("aadcd44b-2f47-4775-83c0-303d622cb3d4",
@@ -1144,6 +1192,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'StopEmployeeBonus',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("89d014e3-3837-4be8-8fa1-888506600507",
@@ -1155,6 +1204,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("125ff518-1430-490c-9f5e-10dee396d19e",
@@ -1162,6 +1212,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadEmployeeBonuses',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("7b4d7d8b-ac7a-426e-8da4-769a7fca179f",
@@ -1173,6 +1224,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendEmployeeBonuses( BonusName:param.BonusName, Starting:param.Starting, Ending:param.Ending, Percent:param.Percent, Amount:param.Amount);',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("2a7c483e-1365-4e6a-b621-b6d08edd5af1",
@@ -1180,6 +1232,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendEmployeeBonuses',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("95a94093-604f-46a2-aca5-52f7f8973f79",
@@ -1191,6 +1244,7 @@ INSERT INTO SPR_RS
 	'Request for all registered jobs in the system',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("2c6a9de5-1cba-40bc-b112-f992ee3d0a61",
@@ -1198,6 +1252,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadJobList',
 	'Request for all registered jobs in the system',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("36b8f6fa-3833-4de2-bab0-ad6f5b5f01a0",
@@ -1209,6 +1264,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendJobList( JobID:param.JobID, Title:param.Title, Salary:param.Salary, EmployeeName:param.EmployeeName, EmployeeID:param.EmployeeID );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("4e0f81e2-08a0-4b7a-aa0c-4ec2a0472748",
@@ -1216,6 +1272,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendJobList',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("83442af7-0751-4521-bd9d-5b812242935e",
@@ -1227,6 +1284,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendBonusList( Name:param.Name, Percent:param.Percent );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("6a7f8346-cbc4-4c69-8736-c456dea71c22",
@@ -1234,6 +1292,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendBonusList',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("c56c53ac-9349-467c-8300-891ef7bbdfc3",
@@ -1245,6 +1304,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("ace2c172-7284-4b90-a4e9-bbc94f9829d3",
@@ -1252,6 +1312,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadBonusList',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("19d3bbe9-b9c2-47e7-878e-be95fe6aab13",
@@ -1263,6 +1324,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("5b8ccfea-06d3-43e7-a5fa-c3b88dd10267",
@@ -1270,6 +1332,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadDepartmentList',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("30416ec2-a2b0-4dcd-9bcc-e89d4981518f",
@@ -1281,6 +1344,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendDepartmentList( Name:param.Name, Mission:param.Mission, Description:param.Description, Manager:param.Manager, ManagingDepartment:param.ManagingDepartment );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("3e5a9f1d-ee7a-4423-82bb-a520ace5e526",
@@ -1288,6 +1352,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendDepartmentList',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("f5f21c21-bc43-4d12-afbf-7336635abfdb",
@@ -1299,6 +1364,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("4e967c81-8dfe-43f5-a436-08c840c2f00d",
@@ -1306,6 +1372,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadScales',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("687bf183-4335-407f-94cd-2d0e4a9b26a7",
@@ -1317,6 +1384,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendScales( Name:param.Name, Description:param.Description );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("14de2da3-2734-41fc-9374-c068a4d03b6d",
@@ -1324,6 +1392,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendScales',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("da87a94f-2dd5-4d90-bd04-c74e64a0f4bb",
@@ -1335,6 +1404,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("35309483-e61a-4c1a-9be4-8878cc390932",
@@ -1342,6 +1412,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadGrades',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("89b38efc-f01b-49fe-9402-73416cfe6d61",
@@ -1353,6 +1424,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendGrades( Name:param.Name, BaseSalary:param.BaseSalary, Allowance:param.Allowance, NumberOfSteps:param.NumberOfSteps, Above:param.Above, Below:param.Below);',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("28a21f28-8aa3-461d-84d4-c81bf6b15b9d",
@@ -1360,6 +1432,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendGrades',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("fc013416-d8e0-46ed-8dd3-f9f55ffd8e51",
@@ -1371,6 +1444,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("b1ddf6bb-6a7d-44a3-a156-1f7e355f6e8f",
@@ -1378,6 +1452,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'GetSalaryStructure',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("82597f5c-9791-43cd-a3c2-677f293a7851",
@@ -1389,6 +1464,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendSalaryStructure( EmployeeSalary:param.EmployeeSalary, BonusName:param.BonusName, BonusAmount:param.BonusAmount);',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("6c3406ec-0d2e-428c-b8b2-04bca4ad28c1",
@@ -1396,6 +1472,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendSalaryStructure',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("cb8fb3b5-8bce-4ce8-85df-7253573d23a8",
@@ -1407,6 +1484,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("55a9f3b2-80bb-4f18-849a-63ec5716bb21",
@@ -1414,6 +1492,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'GetEmployee',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("35a48b49-77cf-4530-a6af-83f223481839",
@@ -1425,6 +1504,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("6fc3ff28-f4a0-45e3-8cdd-c38c1a097b83",
@@ -1432,6 +1512,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SelectAnyEmployee',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("29e17241-a84b-488d-8303-270f2f2cc391",
@@ -1443,6 +1524,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("33b8e220-d4ff-4add-9e14-3c408f991d0f",
@@ -1450,6 +1532,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SelectAnyBonus',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("752a7667-62be-4466-b046-a13e82ea6d7a",
@@ -1461,6 +1544,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("b14ac457-f14f-4ed9-89e1-401e0a5a4b58",
@@ -1468,6 +1552,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'GeneratePayslips',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("e37196ce-a58d-4310-a21d-f85e821efc4d",
@@ -1479,6 +1564,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("90157033-ea84-4297-8ec6-2489009427d9",
@@ -1486,6 +1572,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadLastPaymentSlip',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("00fc5bed-2add-461e-8d8d-26e0041cea11",
@@ -1497,6 +1584,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("cffefcb9-ce5b-4cfa-8b51-d73e822f2f05",
@@ -1504,6 +1592,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'HoldPayment',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("17fc49b4-e95a-4af2-ba18-5b7a98b5d14e",
@@ -1515,6 +1604,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("91155baf-161c-4e0e-a180-3247516947b6",
@@ -1522,6 +1612,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ApprovePayment',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("a8711d47-b15b-4722-b032-50d5e703fa3a",
@@ -1533,6 +1624,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendPayItem( EmployeeID: param.EmployeeID, Name:param.Name, Date:param.Date, Type:param.Type, Amount:param.Amount, Status:param.Status );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("5263e581-733b-40ff-983f-ed9f08b53635",
@@ -1540,6 +1632,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendPayItem',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("653108c9-896a-4e67-9b94-246accec31b3",
@@ -1551,6 +1644,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("c7a20020-6a45-4436-b12e-9c46128bf89d",
@@ -1558,6 +1652,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadPayItems',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("d4e5bfe9-3d3a-4241-b250-ea2d755cdd64",
@@ -1569,6 +1664,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("2bad8a42-18b7-4bc0-835b-098dface2ad8",
@@ -1576,6 +1672,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadAnyPayItem',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("ec6f204e-5793-4888-bb87-3195f3437ce2",
@@ -1587,6 +1684,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("82c1845d-90b7-4251-845f-6535427dad9e",
@@ -1594,6 +1692,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'MakePayment',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("d6d84b0a-43b9-49fb-94fb-faad9ec6d363",
@@ -1605,6 +1704,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("2bb5bd3d-5b24-4c3e-9e61-d6fab1aca9f5",
@@ -1612,6 +1712,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'InitializeComplete',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("0556e4c5-8b8c-4b0e-9eb0-4c85006e19cd",
@@ -1623,6 +1724,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("b6fb72f5-0be5-4c68-958d-9e4bb19ce139",
@@ -1630,6 +1732,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ApprovePayitems',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("08fd6c74-0271-432b-9b3c-80797e10258d",
@@ -1641,6 +1744,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("c74839d7-3928-47a9-80c0-5bcf172fa193",
@@ -1648,6 +1752,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'HoldPayitems',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("0c51f9f0-baf9-48fe-a65c-7afd208c9ccc",
@@ -1659,6 +1764,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("514c75a6-caad-4830-9823-67f34472d3b6",
@@ -1666,6 +1772,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ProcessPayments',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("fe15e4f5-d8e7-418b-9381-87030887344f",
@@ -1677,6 +1784,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("a6b1d002-eafd-45fb-b2ff-eb3f5cdb0ec7",
@@ -1684,6 +1792,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ProcessAllPayments',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("4d8abc46-51d3-4195-a04e-4a51d7395428",
@@ -1695,6 +1804,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("a28b505e-7b17-44b0-922f-33c66c441fb6",
@@ -1702,6 +1812,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'HoldAllPayments',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("76e1e383-b558-4da4-a805-c5f444c108ae",
@@ -1713,6 +1824,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("0408efa5-ca8c-4d6b-bfa4-77c6a753bb5e",
@@ -1720,6 +1832,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SuspendPayment',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("d4e66e87-ef26-426c-98ce-a95a8ef488ea",
@@ -1730,7 +1843,8 @@ INSERT INTO SPR_RS
 	'CreateJob',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("dc97b35f-e6b3-4ebb-bfd5-75ff93a4619c",
@@ -1738,6 +1852,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateJob',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("4ec8476d-5fc0-4c60-b444-def66e4f6bc9",
@@ -1748,7 +1863,8 @@ INSERT INTO SPR_RS
 	'CreateBonus',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("dc92126a-5bc2-40e4-a13b-6009747d86cf",
@@ -1756,6 +1872,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateBonus',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("8e7f8141-e468-4e10-bc29-466c8bdd5d08",
@@ -1766,7 +1883,8 @@ INSERT INTO SPR_RS
 	'EditEmployee',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("da90ce68-5e1a-462f-b3bf-af9eb17e7185",
@@ -1774,6 +1892,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'EditEmployee',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("626f65b8-9218-4423-a6da-139b9aed4cc9",
@@ -1784,7 +1903,8 @@ INSERT INTO SPR_RS
 	'CreateDepartment',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("5ecfcadd-83ce-49f9-96ef-99a6d8648024",
@@ -1792,6 +1912,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateDepartment',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("45428060-6097-4c51-b496-d2d3ea3a23a5",
@@ -1802,7 +1923,8 @@ INSERT INTO SPR_RS
 	'DeleteEmployee',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("f5453211-15b8-41a8-9d59-fedb2102012c",
@@ -1810,6 +1932,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'DeleteEmployee',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("0e4b9138-2e8f-4531-8067-dc2256924443",
@@ -1820,7 +1943,8 @@ INSERT INTO SPR_RS
 	'UnassignBonus',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("b33a91da-1d71-48af-8823-a3a19f5aaa63",
@@ -1828,6 +1952,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'UnassignBonus',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("ce19264f-59e1-43c1-b893-90a1fb1147b3",
@@ -1838,7 +1963,8 @@ INSERT INTO SPR_RS
 	'ReadApprovedPayItems',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("aa09d611-f31a-4432-8338-0ab25d7d2e03",
@@ -1846,6 +1972,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadApprovedPayItems',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("cfc01303-f53e-4b0e-b648-61daeeeb9fd9",
@@ -1856,7 +1983,8 @@ INSERT INTO SPR_RS
 	'PostFinanceMessage',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("ae51d4cc-f120-4099-b0f3-4cc2121d679a",
@@ -1864,6 +1992,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'PostFinanceMessage',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("1ae9a089-ca01-492b-a697-8ef9de21fbd5",
@@ -1875,6 +2004,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendFinanceMessage( Sender:param.Sender, Content:param.Content, Type:param.Type, Amount:param.Amount, Date:param.Date, Account:param.Account, Description:param.Description );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("a3e3defe-d28f-49de-96bc-638b128fe8cb",
@@ -1882,6 +2012,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendFinanceMessage',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("768653bc-1736-43bf-81ee-e4847546d9f4",
@@ -1892,7 +2023,8 @@ INSERT INTO SPR_RS
 	'ReadAllPayItems',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("fc6a9cff-c426-41d3-bd1a-d59848a2711c",
@@ -1900,6 +2032,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadAllPayItems',
 	'',
+	0,
 	'../../../../../hrSystem/models/hrSystem/Interfaces/Data/Data.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("e4418dca-a348-4559-93d1-2765b2e75800",
@@ -1912,7 +2045,8 @@ INSERT INTO C_PO
 	"f859e576-0e98-4f6e-9102-2f3ef0483432",
 	'Authenticate',
 	0,
-	0);
+	0,
+	'');
 INSERT INTO C_IR
 	VALUES ("d7e2a0b2-e2be-43a8-a059-cf8dfab9068b",
 	"eacac566-0bb4-4486-8d8d-9ede960d5e50",
@@ -1934,6 +2068,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("745c8944-f1fd-43e1-b9fd-3ab7b4ebabe4",
@@ -1941,6 +2076,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateNewAccount',
 	'',
+	0,
 	'../../../../../Authenticate/models/Authenticate/Interfaces/Authentication/Authentication.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("9e0c3d0c-68b4-4971-9c2c-8f317a7dfbb9",
@@ -1952,6 +2088,7 @@ INSERT INTO SPR_RS
 	'',
 	'::ReplyUsernamePassword(EmployeeID:param.EmployeeID, Username:param.Username, msg:param.msg, state:param.state);',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("33c71ef4-d154-40bf-bfc7-33de5096bb4b",
@@ -1959,6 +2096,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Reply',
 	'',
+	0,
 	'../../../../../Authenticate/models/Authenticate/Interfaces/Authentication/Authentication.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("8e0e32cc-852c-4cfc-bf1f-e038d47cd20a",
@@ -1970,6 +2108,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("0a248ffe-e10f-4d82-8d59-33b993f89f71",
@@ -1977,6 +2116,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ChangePassword',
 	'',
+	0,
 	'../../../../../Authenticate/models/Authenticate/Interfaces/Authentication/Authentication.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("bd75b447-a01d-4292-b1c2-00ea893b88a5",
@@ -1988,6 +2128,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("37841549-bc78-49d8-83fe-4f80dc5b9f45",
@@ -1995,6 +2136,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Initialize',
 	'',
+	0,
 	'../../../../../Authenticate/models/Authenticate/Interfaces/Authentication/Authentication.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("63e84200-beb1-4ade-bcc0-9fdbd6849a07",
@@ -2006,6 +2148,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("9ab42de4-652f-4783-bb1c-50674e391f4f",
@@ -2013,6 +2156,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AddToGroup',
 	'',
+	0,
 	'../../../../../Authenticate/models/Authenticate/Interfaces/Authentication/Authentication.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("94cffb6f-df36-4d3c-b305-1f191669539c",
@@ -2024,6 +2168,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("a2b9a551-5d4f-4bdb-9776-e71898ae21e8",
@@ -2031,6 +2176,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CheckUsernamePassword',
 	'',
+	0,
 	'../../../../../Authenticate/models/Authenticate/Interfaces/Authentication/Authentication.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("d3c28d33-2ddf-48f0-853d-06e932b78baf",
@@ -2042,6 +2188,7 @@ INSERT INTO SPR_RS
 	'It returns a group permission through sendEmployeePermissions',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("4d5be10d-2c2f-4a8b-b4b4-45a20225a476",
@@ -2049,6 +2196,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadEmployeePermissions',
 	'It returns a group permission through sendEmployeePermissions',
+	0,
 	'../../../../../Authenticate/models/Authenticate/Interfaces/Authentication/Authentication.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("e88df1f0-604b-4e24-93da-d75fc26e6c9e",
@@ -2060,6 +2208,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendEmployeePermissions( GroupName:param.GroupName, Description:param.Description);',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("c33771ee-f17e-4255-b8a2-f8e2e5b49479",
@@ -2067,6 +2216,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendEmployeePermissions',
 	'',
+	0,
 	'../../../../../Authenticate/models/Authenticate/Interfaces/Authentication/Authentication.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("eacac566-0bb4-4486-8d8d-9ede960d5e50",
@@ -2079,7 +2229,8 @@ INSERT INTO C_PO
 	"f859e576-0e98-4f6e-9102-2f3ef0483432",
 	'Projects',
 	0,
-	0);
+	0,
+	'');
 INSERT INTO C_IR
 	VALUES ("172ad968-3c5c-47a8-b686-fa95025756b2",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -2101,6 +2252,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("f611d3fb-9d80-4a08-af29-b6b81f33b91e",
@@ -2108,6 +2260,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadStrategies',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("74d439c0-415c-4673-a711-2801f6368377",
@@ -2119,6 +2272,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendStrategies( Number:param.Number, Name:param.Name, Description:param.Description);',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("e995f3cf-f39a-49fb-b19a-f7fca5a6575f",
@@ -2126,6 +2280,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendStrategies',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("556a3610-dade-4e1c-ad34-369962e765e9",
@@ -2137,6 +2292,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("6062fcf7-0864-4e03-a22a-bea39834ef9d",
@@ -2144,6 +2300,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Reply',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("89e8573e-83b5-4ae0-8ca9-19286a0d395e",
@@ -2155,6 +2312,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("e0b36002-56f9-4df1-9356-a98484736a3a",
@@ -2162,6 +2320,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Initialize',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("a241f6e2-e279-47ae-8a48-b99ac2f1cc54",
@@ -2175,6 +2334,7 @@ an initiative. One parameter is enough
 to identify the initiative.',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("0fb486de-51ef-4059-86fb-07272aa62973",
@@ -2184,6 +2344,7 @@ INSERT INTO C_EP_PROXY
 	'Get a list of milestones related to
 an initiative. One parameter is enough
 to identify the initiative.',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("2bf39f28-8cdb-483c-b0c0-134e4416fc07",
@@ -2195,6 +2356,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendMilestones( Name:param.Name, FullCode:param.FullCode, Code:param.Code, Type:param.Type, SuccessCriteria:param.SuccessCriteria, CompletePlanned:param.CompletePlanned, CompleteActual:param.CompleteActual, Complete:param.Complete, Weight:param.Weight, Percentage:param.Percentage, sdState:param.sdState, sdDescription:param.sdDescription, Notes:param.Notes, IncompleteReasons:param.Notes);',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("164afa80-0634-483c-873c-74974775a70c",
@@ -2202,6 +2364,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendMilestones',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("77684253-b450-45ed-a9a8-1ac90b3efc75",
@@ -2212,7 +2375,8 @@ INSERT INTO SPR_RS
 	'CreateInitiative',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("4d8c9fe4-1360-4d30-90fd-12402e63d2a3",
@@ -2220,6 +2384,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateInitiative',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("9f7bb568-df33-454a-91ea-a8a4d3fd8c5d",
@@ -2230,7 +2395,8 @@ INSERT INTO SPR_RS
 	'CreateStrategy',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("a46a1746-64f0-4558-ae36-f10f118eaa24",
@@ -2238,6 +2404,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateStrategy',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("93f71b81-811e-4404-a8e7-756c472dc715",
@@ -2248,7 +2415,8 @@ INSERT INTO SPR_RS
 	'CreateProject',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("b68f3204-5e86-499d-88df-db00b93866ef",
@@ -2256,6 +2424,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateProject',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("ea45a2c3-77c7-47fd-9a40-e00e516c9547",
@@ -2266,7 +2435,8 @@ INSERT INTO SPR_RS
 	'ReadInitiatives',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("1afcea8f-1baf-4bd0-999f-9363af4ca62d",
@@ -2274,6 +2444,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadInitiatives',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("bdcc8e6a-a9c5-49da-8732-99c24d2ba4e0",
@@ -2285,6 +2456,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendInitiatives( Name:param.Name, ShortNumber:param.ShortNumber, LongNumber:param.LongNumber, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("1d5ac5a5-3c6f-45dc-ba1a-b7dd16ef624e",
@@ -2292,6 +2464,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendInitiatives',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("29fa9173-7c14-4346-8ea9-e73197a8ad66",
@@ -2302,7 +2475,8 @@ INSERT INTO SPR_RS
 	'ReadProjects',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("bc328c2e-2892-4f5f-869a-c51fcb125847",
@@ -2310,6 +2484,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadProjects',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("50b93fe4-4ca2-4d45-9fa8-c7b6aed64fdd",
@@ -2321,6 +2496,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendProjects( Code:param.Code, Name:param.Name, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, Budget:param.Budget );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("8dc4a734-be3b-4ab9-a837-6a24b94e3215",
@@ -2328,6 +2504,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendProjects',
 	'',
+	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("83ac6178-5c7c-4782-b8b9-ffe368545a35",
@@ -2338,7 +2515,8 @@ INSERT INTO SPR_RS
 	'AddMilestone',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("823d6250-b774-4665-8272-9dc2cc28eadd",
@@ -2346,6 +2524,88 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AddMilestone',
 	'',
+	0,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("7de28a4d-a400-4b6b-8092-ae54fc13fd54",
+	"b9687437-2df6-41c0-bb96-f4dfbe905d8e",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("7de28a4d-a400-4b6b-8092-ae54fc13fd54",
+	'CreateChangeRequest',
+	'',
+	'//::SendChangeRequest( Description:param.Description, Justification:param.Justification, ProjectCode:param.ProjectCode, CreationDate:param.CreationDate, ImpactCategory:param.ImpactCategory, ImpactDetails:param.ImpactDetails );
+',
+	1,
+	0,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("b9687437-2df6-41c0-bb96-f4dfbe905d8e",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'CreateChangeRequest',
+	'',
+	0,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("a7c2b0b7-c4c1-4628-b7a3-450e474e2116",
+	"aadb0141-b089-41fb-9f0c-02b0146fa52e",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("a7c2b0b7-c4c1-4628-b7a3-450e474e2116",
+	'CreateChangeRequestImpact',
+	'',
+	'::SendChangeRequestImpact( Category:param.Category, Details:param.Details, ChangeRequestCreationDate:param.ChangeRequestCreationDate );',
+	1,
+	0,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("aadb0141-b089-41fb-9f0c-02b0146fa52e",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'CreateChangeRequestImpact',
+	'',
+	0,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("507962f4-ca8a-4407-a1c0-a36a0d6da107",
+	"7c8673b1-6edb-4b6f-851f-5d1f24587182",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("507962f4-ca8a-4407-a1c0-a36a0d6da107",
+	'AssignManger',
+	'',
+	'::AssignManger( AccountName:param.AccountName, ProjectCode:param.ProjectCode );',
+	1,
+	0,
+	1);
+INSERT INTO C_EP_PROXY
+	VALUES ("7c8673b1-6edb-4b6f-851f-5d1f24587182",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AssignManger',
+	'',
+	1,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("0c8f8faa-a799-440f-b904-c4186bc85e9f",
+	"56824f1e-e6b9-42c5-9278-48a7f426784c",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("0c8f8faa-a799-440f-b904-c4186bc85e9f",
+	'SendChangeRequest',
+	'',
+	'::SendChangeRequest( Description:param.Description, Justification:param.Justification, CreationDate: param.CreationDate);',
+	1,
+	0,
+	2);
+INSERT INTO C_EP_PROXY
+	VALUES ("56824f1e-e6b9-42c5-9278-48a7f426784c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendChangeRequest',
+	'',
+	2,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -2358,7 +2618,8 @@ INSERT INTO C_PO
 	"f859e576-0e98-4f6e-9102-2f3ef0483432",
 	'Finance',
 	0,
-	0);
+	0,
+	'');
 INSERT INTO C_IR
 	VALUES ("8d04e32c-c0e0-4a8b-a383-19d5284b5624",
 	"4050d50b-4358-41d0-aaf7-7da0e117e17c",
@@ -2380,6 +2641,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("6859b7aa-16e9-436c-88b1-66c0bf7f2cbf",
@@ -2387,6 +2649,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Initialize',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("e4a2696a-7435-4310-b52e-6977f7160371",
@@ -2398,6 +2661,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("65121dc7-3592-49f6-9f96-1cf25a688cf6",
@@ -2405,6 +2669,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadBudgets',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("c81a5e3a-8512-4e45-865f-529573e9041f",
@@ -2417,6 +2682,7 @@ INSERT INTO SPR_RS
 	'::SendBudgets( Year:param.Year, Ceiling:param.Ceiling, Requested:param.Requested, CeilingRevenue:param.CeilingRevenue, RequestedRevenue:param.RequestedRevenue ); 
 LOG::LogInfo( message:"Send Expend" ); LOG::LogInteger( message:param.Ceiling );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("981b3bfb-f8e5-468d-87ef-6341359c2931",
@@ -2424,6 +2690,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendBudgets',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("3feeeb14-a88c-447e-a9fb-6b49f3bff4b9",
@@ -2435,6 +2702,7 @@ INSERT INTO SPR_RS
 	'',
 	'::ReplyFinance( msg:param.msg, state:param.state );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("02b58a71-1200-4020-bdc9-809f601deab1",
@@ -2442,6 +2710,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Reply',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("ff8e2aa3-5425-4cf6-8a35-efa36f422dc2",
@@ -2453,6 +2722,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendSections( Code:param.Code, Name:param.Name, Fund:param.RequestedFund, Revenue:param.RequestedRevenue );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("b6724746-1a25-4086-8a5f-53fae643a17f",
@@ -2460,6 +2730,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendRequested',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("eef4a957-33c3-4f58-a9cf-5954c8d682f2",
@@ -2474,6 +2745,7 @@ sent represents the account, it sends the contents of the accounts and
 all of its sub-accounts.',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("dd6db19b-bdef-4d21-b22a-6b03d86bfa5a",
@@ -2484,6 +2756,7 @@ INSERT INTO C_EP_PROXY
 represents a sub-account it will returen the sub-account only, if the code
 sent represents the account, it sends the contents of the accounts and
 all of its sub-accounts.',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("1b5624a3-eab4-47ca-937a-f07e2f63728c",
@@ -2495,6 +2768,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendSections( Code:param.Code, Name:param.Name, Fund:param.Fund, Revenue:param.Revenue );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("1f6a3814-0c98-4dd6-bac0-080a5a7a0c35",
@@ -2502,6 +2776,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendCeiling',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("a3eda8b8-fffd-4935-8b3e-2b93dec57b4b",
@@ -2513,6 +2788,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("c5d4f896-7924-4716-a86c-318e3273e594",
@@ -2520,6 +2796,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AcceptRequested',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("9e15bd02-f7ad-44a3-8574-3cf945383ec0",
@@ -2531,6 +2808,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("3d2a89e7-d63d-4e66-ba68-1a0a834594d5",
@@ -2538,6 +2816,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AcceptCeiling',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("2d532c82-5da2-4a68-8d84-0b6f6a2c4d31",
@@ -2549,6 +2828,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("4af6aae3-9881-4881-b6df-74baed99177c",
@@ -2556,6 +2836,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateCashJournal',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("6880fe2b-dabc-4f2c-9d2c-4a60201e4b38",
@@ -2567,6 +2848,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("71e6c481-f6b0-4dc2-abd7-cc835dc3dbfd",
@@ -2574,6 +2856,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'OperationalizeBudget',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("08e1ffe0-0eda-4fec-86c4-cabe2d6e010b",
@@ -2585,6 +2868,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("0029c564-7df3-4dc3-b1d4-213ee84017e0",
@@ -2592,6 +2876,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateExpensesJournal',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("fbf8407a-4195-4e84-8d42-07294bd80f13",
@@ -2603,6 +2888,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("cad988db-7e9b-4e52-9100-0b43eaedb0a7",
@@ -2610,6 +2896,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'RecordSalaryEntry',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("3f3784e7-993b-4770-94a3-b4f93ce23b9d",
@@ -2621,6 +2908,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("83844281-52e7-47ba-963e-bcf6b9a2f440",
@@ -2628,6 +2916,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'OperationalizeAccount',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("f5920e9d-75d8-437b-9a93-79a5b14a7c78",
@@ -2639,6 +2928,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("66540b4a-f006-4f50-bbee-e5c4357da8aa",
@@ -2646,6 +2936,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SingleColumnEntry',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("04632675-9c3e-45b8-8404-f6bc313b5419",
@@ -2657,6 +2948,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("1a5bf26d-531a-4a0b-88c4-c813ed57ca06",
@@ -2664,6 +2956,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateJournal',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("178aa535-b71b-4d74-8812-ecc9685dea6d",
@@ -2675,6 +2968,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("1436beee-420c-431f-b5b2-c7da633acd31",
@@ -2682,6 +2976,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AddJournalColumn',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("165610cb-bece-4c3e-b51d-e259030ca718",
@@ -2693,6 +2988,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("6a03da54-e74f-4e6e-af7f-e9c0bac1fa3c",
@@ -2700,6 +2996,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadRequested',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("5e1cb251-b01c-4dd8-b7bf-d71c35cb5025",
@@ -2711,6 +3008,7 @@ INSERT INTO SPR_RS
 	'',
 	'',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("91d79d8a-bc07-4781-9771-bf41b16882d8",
@@ -2718,6 +3016,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadBudget',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("fa60b72c-5a17-4297-8f70-74cf10b76417",
@@ -2729,6 +3028,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendAccountFunds( Code:param.Code, Name:param.Name, New:param.New, Ceiling:param.Ceiling, Requested:param.Requested, CeilingRevenue:param.CeilingRevenue, RequestedRevenue:param.RequestedRevenue );',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("5dab3256-d9fc-42e8-9b6b-bda3055328e3",
@@ -2736,6 +3036,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendAccountFunds',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("48e5eaa0-0c81-442e-ad12-e5ac0b1a24d9",
@@ -2746,7 +3047,8 @@ INSERT INTO SPR_RS
 	'ReadAccepted',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("f4c86c50-3cbb-4efe-8ae7-d2336046cde3",
@@ -2754,6 +3056,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadAccepted',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("4a3aa019-51de-463c-865c-069db3f10f5c",
@@ -2764,7 +3067,8 @@ INSERT INTO SPR_RS
 	'ReadRejected',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("67fe4628-f24e-4262-b8dd-ba67c1070cf8",
@@ -2772,6 +3076,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadRejected',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("f51fa4ff-5cbc-4def-a7ed-605735e20127",
@@ -2783,6 +3088,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendAccount( Code:param.Code, Name:param.Name, OpeningBalance:param.Fund, Revenue:param.Revenue); ',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("74267771-8f23-4b1d-a0ec-7edad8977687",
@@ -2790,6 +3096,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendAccount',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("a4158e63-d2c7-4022-914a-708ed5cd378f",
@@ -2800,7 +3107,8 @@ INSERT INTO SPR_RS
 	'ReadAccounts',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("7c0b0b8e-8aed-4f78-8fba-f2671976d884",
@@ -2808,6 +3116,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadAccounts',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("1df2208c-32f6-478d-965b-67000c0bc33e",
@@ -2818,7 +3127,8 @@ INSERT INTO SPR_RS
 	'AcceptAllRequested',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("9035e841-f394-4cac-949b-3dbd8846ee1b",
@@ -2826,6 +3136,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AcceptAllRequested',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("64557934-dcd2-49a1-b0da-46a04043c3f7",
@@ -2836,7 +3147,8 @@ INSERT INTO SPR_RS
 	'AcceptAllCeiling',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("2066a758-e796-4d69-9ac9-ed03819719e5",
@@ -2844,6 +3156,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AcceptAllCeiling',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("f5222972-2359-4b77-991b-8c18c4f388b4",
@@ -2854,7 +3167,8 @@ INSERT INTO SPR_RS
 	'CreateAccount',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("06fde7aa-a08d-478c-bcaa-ea497aac3e67",
@@ -2862,6 +3176,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateAccount',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("65dfeb0c-8706-4838-a1f6-96ecda5fcab0",
@@ -2872,7 +3187,8 @@ INSERT INTO SPR_RS
 	'CreateProgram',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("d257ef17-118c-46f2-baee-50fc1bea26d2",
@@ -2880,6 +3196,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateProgram',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("137c2b6c-8039-4e28-b16e-081509e0bd24",
@@ -2890,7 +3207,8 @@ INSERT INTO SPR_RS
 	'ReadPrograms',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("02e23735-c427-4a5e-9847-9a45a7aec390",
@@ -2898,6 +3216,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadPrograms',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("c4eab160-ef69-4bb8-8d8d-c64b2f84e293",
@@ -2908,7 +3227,8 @@ INSERT INTO SPR_RS
 	'ReadTAccount',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("b889a567-01cd-4c5f-8256-fb6cfebed0e1",
@@ -2916,6 +3236,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadTAccount',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("32292507-55b5-4202-868d-68716f50a0c0",
@@ -2927,6 +3248,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendTAccounts( Code:param.Code, Amount:param.Amount, Date:param.Date, Description:param.Description, Type:param.Type); ',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("964e4528-df32-45e2-b28e-47ebf5c4701f",
@@ -2934,6 +3256,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendTAccount',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("0b54dd55-2280-4613-9ed7-b69371258078",
@@ -2944,7 +3267,8 @@ INSERT INTO SPR_RS
 	'ReadChartAccounts',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("6303db2a-0872-4a00-9303-e7f5c19f327a",
@@ -2952,6 +3276,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadChartAccounts',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("308a43aa-04ed-403b-b877-189c22ee9231",
@@ -2965,6 +3290,7 @@ INSERT INTO SPR_RS
 LOG::LogInfo(message:"Chart Accounts: Sent! "+ param.Code);
 ',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("44c696b3-09fa-4f86-b339-b216e98d59a1",
@@ -2972,6 +3298,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendChartAccounts',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("62ba5c6f-7f9f-469b-bc51-abc553703b87",
@@ -2982,7 +3309,8 @@ INSERT INTO SPR_RS
 	'ReadChartAccount',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("23c49591-ddb9-472c-a127-aac9bf81fd5b",
@@ -2990,6 +3318,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadChartAccount',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("9399d968-4578-433c-9ee6-c50d74fb9d18",
@@ -3000,7 +3329,8 @@ INSERT INTO SPR_RS
 	'CreateSalaryJournal',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("826bbbc5-69a0-4741-a185-2c93ffe2a1b1",
@@ -3008,6 +3338,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateSalaryJournal',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("a22904c7-23c3-4305-9510-951d42910da1",
@@ -3018,7 +3349,8 @@ INSERT INTO SPR_RS
 	'AccountTransfers',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("65e6efde-caed-4815-8465-bbc6fa133eba",
@@ -3026,6 +3358,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AccountTransfers',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("c4afd281-f75c-492d-b8ae-b62bc7b08c0c",
@@ -3036,7 +3369,8 @@ INSERT INTO SPR_RS
 	'CreateTransfersJournal',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("fc97608a-1b57-458d-992c-b6c2c2a5b88f",
@@ -3044,6 +3378,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateTransfersJournal',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("eff2a6f5-2bf6-43e3-9ed3-4e40899a1f47",
@@ -3054,7 +3389,8 @@ INSERT INTO SPR_RS
 	'AddTransferColumn',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("4b5177fb-2cac-4c7f-92b2-229c367f53b8",
@@ -3062,6 +3398,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AddTransferColumn',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("ca7ceb09-b5de-499b-8f00-d4674c8ac3d1",
@@ -3072,7 +3409,8 @@ INSERT INTO SPR_RS
 	'SettleTransfer',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("bb4e4d77-3f37-4c9c-94eb-e3f31dcbb010",
@@ -3080,6 +3418,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SettleTransfer',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("d74d3a68-2ce0-4d0d-bfa6-30df4962406f",
@@ -3090,7 +3429,8 @@ INSERT INTO SPR_RS
 	'ReadTransferColumns',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("1cf70f9f-c612-4f14-b4f6-3f2946648b55",
@@ -3098,6 +3438,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadTransferColumns',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("6962c8dc-91dd-475f-a174-72e6c5353b58",
@@ -3109,6 +3450,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendTransferColumns( Column:param.Column, Description:param.Description);',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("074d4a34-3a95-4d59-a677-628ffda62c64",
@@ -3116,6 +3458,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendTransferColumns',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("d997ff47-3fbd-4fed-8bf5-5e3ede1c51f2",
@@ -3126,7 +3469,8 @@ INSERT INTO SPR_RS
 	'AddFunds',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("7c8d21ee-c826-4e65-8c5c-0da79421b849",
@@ -3134,6 +3478,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'AddFunds',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("256ee2ee-f3b9-44d0-a82b-e9c83271df32",
@@ -3144,7 +3489,8 @@ INSERT INTO SPR_RS
 	'ReduceFunds',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("58243d7f-7da7-4a71-b4f5-d861f0c33aa0",
@@ -3152,6 +3498,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReduceFunds',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("68b75082-47f3-4d52-9ed9-3c3942afff18",
@@ -3163,6 +3510,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendPorgrams( Code:param.Code, Name:param.Name, Description:param.Description, StartDate:param.StartDate, Duration:param.Duration, AccountCode:param.AccountCode, AccountName:param.AccountName, DedicatedFunds:param.DedicatedFunds, TransferDebit:param.TransferDebit, TransferCredit:param.TransferCredit, FundsAfterTransfers:param.FundsAfterTransfers, PastYearsSpending:param.PastYearsSpending, CurrentYearBudget:param.CurrentYearBudget, Commitments:param.Commitments, RemainingFunds:param.RemainingFunds, Percentage:param.Percentage);',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("2bdb8122-8b74-4ec9-ab0a-65179955ad54",
@@ -3170,6 +3518,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendPrograms',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("3915ba3b-ec94-459f-b372-2b6c5a3e8295",
@@ -3180,7 +3529,8 @@ INSERT INTO SPR_RS
 	'ReadProgram',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("983c1373-b2e3-4a25-9aa6-dd61c1d1c5a6",
@@ -3188,6 +3538,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadProgram',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("3c060d66-9d29-458b-941a-4a211d06362c",
@@ -3198,7 +3549,8 @@ INSERT INTO SPR_RS
 	'ReadAllBudgetAccounts',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("d03ec770-4b23-4379-a807-acf97011ad3d",
@@ -3206,6 +3558,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadAllBudgetAccounts',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("fdd8f6e2-5bc2-4e78-a285-85ccc2daac11",
@@ -3217,6 +3570,7 @@ INSERT INTO SPR_RS
 	'',
 	'::SendJournals( Name:param.Name, Description:param.Description, ColumnTitle:param.ColumnTitle, ColumnDescription:param.ColumnDescription, EntryDate:param.EntryDate, EntryDescription:param.EntryDescription, EntryAmount:param.EntryAmount);',
 	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("25f94d89-02d2-4b1a-9dcb-08ae03a39f46",
@@ -3224,6 +3578,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'SendJournal',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("eec5ef44-c3fb-47ac-896b-43f4620e67b2",
@@ -3234,7 +3589,8 @@ INSERT INTO SPR_RS
 	'ReadSalaryJournal',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("e140b130-5703-40b6-948f-73122844e333",
@@ -3242,6 +3598,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadSalaryJournal',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("a54bd21c-d3cd-421e-ac44-12fed832bc8a",
@@ -3252,7 +3609,8 @@ INSERT INTO SPR_RS
 	'ReadTransferJournal',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("c453de33-2cb1-4f48-ae7e-2c8e6e957c7a",
@@ -3260,6 +3618,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadTransferJournal',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("fa0d6b0a-e19a-4a92-8cce-8f6d21f0f060",
@@ -3270,7 +3629,8 @@ INSERT INTO SPR_RS
 	'CreateSubAccount',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("f8471943-f524-4541-840b-382b436abdb1",
@@ -3278,6 +3638,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateSubAccount',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("4ae3f38a-36a7-4a0c-8bd4-7a05fdaa4daf",
@@ -3288,7 +3649,8 @@ INSERT INTO SPR_RS
 	'ReadBudgetAccounts',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("020d8e36-a283-4deb-b691-699a8f5e87cb",
@@ -3296,6 +3658,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadBudgetAccounts',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("601a325b-4fdd-456e-8a2f-051fb7e100ed",
@@ -3306,7 +3669,8 @@ INSERT INTO SPR_RS
 	'ReadBudgetPrograms',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("7017f587-96d1-4ef0-a888-ae64cf3a63be",
@@ -3314,6 +3678,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadBudgetPrograms',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("97db94ad-1bd8-4db4-ab9f-053c01be0397",
@@ -3324,7 +3689,8 @@ INSERT INTO SPR_RS
 	'ModifyCeiling',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("cffbc631-c5c2-4077-9375-218b0527dee5",
@@ -3332,6 +3698,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ModifyCeiling',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("2b65e5d4-1ace-4822-8d98-76fdd4dabcda",
@@ -3342,7 +3709,8 @@ INSERT INTO SPR_RS
 	'ModifyRequested',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("ff71f4ae-3892-42b1-9cf0-8c111dc2cb5b",
@@ -3350,6 +3718,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ModifyRequested',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("6e45ece1-8e4a-44f1-b3bc-e5fe7a885f22",
@@ -3360,7 +3729,8 @@ INSERT INTO SPR_RS
 	'CreateBudget',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("879d3639-0c10-48ed-99a6-0945d15c4708",
@@ -3368,6 +3738,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'CreateBudget',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("f104e3a1-cae1-4b72-a09e-80dba9987d80",
@@ -3378,7 +3749,8 @@ INSERT INTO SPR_RS
 	'Operationalize',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("b54dad13-94d0-4401-a0df-ea4c05e12c85",
@@ -3386,6 +3758,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'Operationalize',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("26ed265f-6cba-4251-94f0-00fe56747ac2",
@@ -3396,7 +3769,8 @@ INSERT INTO SPR_RS
 	'DisregardBudget',
 	'Deleting a newly created budget which has not been operationalized ',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("7494c7e6-90ba-46fb-9a3b-f79244ca26a6",
@@ -3404,6 +3778,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'DisregardBudget',
 	'Deleting a newly created budget which has not been operationalized ',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("dd08ba54-56d0-4649-9508-ae4169088185",
@@ -3414,7 +3789,8 @@ INSERT INTO SPR_RS
 	'ReadNewPrograms',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("c11a0355-c209-48be-86a2-ab205a9c805a",
@@ -3422,6 +3798,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadNewPrograms',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("c31428ec-ee29-4df6-88ac-fe92438a5ab3",
@@ -3432,7 +3809,8 @@ INSERT INTO SPR_RS
 	'RelateProgram',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("3230f25e-00f9-42a1-a8b5-7fdd156e6f21",
@@ -3440,6 +3818,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'RelateProgram',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("54947374-bcdf-425a-8d04-5f5987c87174",
@@ -3450,7 +3829,8 @@ INSERT INTO SPR_RS
 	'UnrelateProgram',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("7492ca92-a79c-4976-99cc-43df760f4934",
@@ -3458,6 +3838,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'UnrelateProgram',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("94bcda99-98b7-40c7-a30b-b8f51426f0cb",
@@ -3468,7 +3849,8 @@ INSERT INTO SPR_RS
 	'ReadEarmarkedPrograms',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("667e9bbf-70b1-49ba-b025-5739c424bdca",
@@ -3476,6 +3858,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadEarmarkedPrograms',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("ada21b56-eabb-41a5-86f3-b360419ea746",
@@ -3486,7 +3869,8 @@ INSERT INTO SPR_RS
 	'ReadAllTransactions',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("beca86fe-b8bd-420a-bdcc-ffe5bde34313",
@@ -3494,6 +3878,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'ReadAllTransactions',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("2abb0930-7a25-4487-ab86-b9f8f137b4a5",
@@ -3504,7 +3889,8 @@ INSERT INTO SPR_RS
 	'PayAmount',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("2fb303f1-2fc6-4e57-809a-d781521877bb",
@@ -3512,6 +3898,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'PayAmount',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("b8834c2e-cc03-4e2e-bd3c-7a9feff07fb9",
@@ -3522,7 +3909,8 @@ INSERT INTO SPR_RS
 	'PaySalary',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("94c5c798-cd59-4954-8dfc-deb2b48db517",
@@ -3530,6 +3918,7 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'PaySalary',
 	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO SPR_REP
 	VALUES ("60f7bb83-8ab4-4ce5-a42f-d8a2f4d3e5f0",
@@ -3540,7 +3929,8 @@ INSERT INTO SPR_RS
 	'PendingPay',
 	'',
 	'',
-	3,
+	1,
+	0,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("80df410d-49f8-4e17-8c92-5c85b93bff92",
@@ -3548,6 +3938,47 @@ INSERT INTO C_EP_PROXY
 	-1,
 	'PendingPay',
 	'',
+	0,
+	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("beac8252-85c0-48fa-8d25-99f57500c583",
+	"67b89449-cdac-4c8d-9204-005216c0c726",
+	"8d04e32c-c0e0-4a8b-a383-19d5284b5624");
+INSERT INTO SPR_RS
+	VALUES ("beac8252-85c0-48fa-8d25-99f57500c583",
+	'ApproveTransfer',
+	'',
+	'',
+	1,
+	0,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("67b89449-cdac-4c8d-9204-005216c0c726",
+	"4050d50b-4358-41d0-aaf7-7da0e117e17c",
+	-1,
+	'ApproveTransfer',
+	'',
+	0,
+	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("ffb64317-5da4-440d-8fc3-6387f6ca28ba",
+	"b76b55d1-346e-4f6f-aaa6-1e3c06fe8237",
+	"8d04e32c-c0e0-4a8b-a383-19d5284b5624");
+INSERT INTO SPR_RS
+	VALUES ("ffb64317-5da4-440d-8fc3-6387f6ca28ba",
+	'PendingTransfers',
+	'',
+	'',
+	1,
+	0,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("b76b55d1-346e-4f6f-aaa6-1e3c06fe8237",
+	"4050d50b-4358-41d0-aaf7-7da0e117e17c",
+	-1,
+	'PendingTransfers',
+	'',
+	0,
 	'../../../../../Finance/models/Finance/Interfaces/Finance/Finance.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("4050d50b-4358-41d0-aaf7-7da0e117e17c",

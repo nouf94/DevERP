@@ -100,42 +100,6 @@ INSERT INTO O_TPARM
 	'',
 	"f68f652f-97bf-4ab8-b1cb-b3b66d4d78d7",
 	'');
-INSERT INTO O_TFR
-	VALUES ("d12263df-30f0-415d-97c1-e922ccba7641",
-	"afe3a14f-1d58-4fa7-8295-6973472caf68",
-	'InitiateChangeRequest',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	1,
-	'create object instance CR of ChangeRequest;
-CR.CreationDate = 0;
-
-// create 7 ipmacts 
-
-	//create object instance impact of Impact;
-	//impact.Create( Category:ImpactCategory[0], Details: " ");
-	//relate CR to impact across R71;
-	
-	
-	//create object instance impact of Impact;
-	//impact.Create( Category:ImpactCategory[1], Details: " ");
-	//relate CR to impact across R71;
-	
-	
-	//create object instance impact of Impact;
-	//impact.Create( Category:ImpactCategory[2], Details: " ");
-	//relate CR to impact across R71;
-	
-	
-	//create object instance impact of Impact;
-	//impact.Create( Category:ImpactCategory[3], Details: " ");
-	//relate CR to impact across R71;
-',
-	1,
-	'',
-	"f1ebb4ca-d629-469a-be68-f52787eb5a94",
-	0,
-	0);
 INSERT INTO O_NBATTR
 	VALUES ("11161441-4785-4705-afd9-8f3ea91fb842",
 	"afe3a14f-1d58-4fa7-8295-6973472caf68");

@@ -1,22 +1,111 @@
 -- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
 
 INSERT INTO O_OBJ
-	VALUES ("459e4ea3-148e-4a3c-b65b-f4d081c491f0",
+	VALUES ("d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
 	'Milestone',
-	3,
+	13,
 	'Milestone',
 	'A marker that signify a development stage of an intiative 
 or a project.',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("33b196b9-4d01-4d7e-9707-7dc798810c79",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
+	'UpdateProgress',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.CompletePercentage = param.percent;
+if (param.percent == 100)
+	//self.CompleteActualDate = TIM::current_clock();
+	
+else
+	// self.completeActualDate = null
+		
+end if;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("c51fc3a7-1c15-4ca1-a28f-6e659efd8e20",
+	"33b196b9-4d01-4d7e-9707-7dc798810c79",
+	'percent',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TFR
+	VALUES ("e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
+	'CreateMilestone',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'/*
+create object instance mile of Milestone;
+mile.Name = param.Name;
+mile.Weight = param.Weight;
+mile.CompletePlannedDate = param.CompletePlannedDate;
+	
+// select the project that this milestone belongs to
+select any project from instances of Project where selected.Code==param.ProjectCode;
+if (not_empty project)
+		relate mile to project across R63.''completed'';
+end if;
+
+
+*/',
+	1,
+	'',
+	"33b196b9-4d01-4d7e-9707-7dc798810c79",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("99e1ccb8-8e63-4495-b0ae-f08876dd89c3",
+	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
+	'Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("b17fbcc0-1b65-4390-be40-bf7d90877d37",
+	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
+	'CompletePlannedDate',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"99e1ccb8-8e63-4495-b0ae-f08876dd89c3",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("03a6f096-ab3e-44f9-bc33-24172e3c2a38",
+	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
+	'Weight',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"b17fbcc0-1b65-4390-be40-bf7d90877d37",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("262f8ca4-dfb1-486d-9edb-e039f522b9c7",
+	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
+	'ProjectCode',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"03a6f096-ab3e-44f9-bc33-24172e3c2a38",
+	'');
 INSERT INTO O_NBATTR
-	VALUES ("6c37ef3f-ab87-4651-8b8d-fd010ddd5dcb",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+	VALUES ("b30e7b51-248e-4478-b02d-9295c431bdad",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_BATTR
-	VALUES ("6c37ef3f-ab87-4651-8b8d-fd010ddd5dcb",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+	VALUES ("b30e7b51-248e-4478-b02d-9295c431bdad",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_ATTR
-	VALUES ("6c37ef3f-ab87-4651-8b8d-fd010ddd5dcb",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
+	VALUES ("b30e7b51-248e-4478-b02d-9295c431bdad",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
 	"00000000-0000-0000-0000-000000000000",
 	'Name',
 	'',
@@ -27,141 +116,54 @@ INSERT INTO O_ATTR
 	'',
 	'');
 INSERT INTO O_NBATTR
-	VALUES ("e4b997af-b99b-4766-9f99-75e24ad1a08b",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+	VALUES ("c2fbc256-c98c-437b-b35e-0cf80f3478a8",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_BATTR
-	VALUES ("e4b997af-b99b-4766-9f99-75e24ad1a08b",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+	VALUES ("c2fbc256-c98c-437b-b35e-0cf80f3478a8",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_ATTR
-	VALUES ("e4b997af-b99b-4766-9f99-75e24ad1a08b",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"6c37ef3f-ab87-4651-8b8d-fd010ddd5dcb",
-	'FullCode',
+	VALUES ("c2fbc256-c98c-437b-b35e-0cf80f3478a8",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
+	"b30e7b51-248e-4478-b02d-9295c431bdad",
+	'CompletePlannedDate',
 	'',
 	'',
-	'FullCode',
+	'CompletePlannedDate',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000004",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
-INSERT INTO O_NBATTR
-	VALUES ("5bde2ba9-43b7-4146-b64c-0d794e647923",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+INSERT INTO O_DBATTR
+	VALUES ("c2db789b-2644-40ae-85f9-e87cac4a37f4",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
+	'self.CompleteActualDate = 0;',
+	1,
+	0);
 INSERT INTO O_BATTR
-	VALUES ("5bde2ba9-43b7-4146-b64c-0d794e647923",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+	VALUES ("c2db789b-2644-40ae-85f9-e87cac4a37f4",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_ATTR
-	VALUES ("5bde2ba9-43b7-4146-b64c-0d794e647923",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"e4b997af-b99b-4766-9f99-75e24ad1a08b",
-	'Code',
+	VALUES ("c2db789b-2644-40ae-85f9-e87cac4a37f4",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
+	"c2fbc256-c98c-437b-b35e-0cf80f3478a8",
+	'CompleteActualDate',
 	'',
 	'',
-	'Code',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("a95dce42-4816-4b41-b839-3e43e42ea84a",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_BATTR
-	VALUES ("a95dce42-4816-4b41-b839-3e43e42ea84a",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_ATTR
-	VALUES ("a95dce42-4816-4b41-b839-3e43e42ea84a",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"5bde2ba9-43b7-4146-b64c-0d794e647923",
-	'Type',
-	'',
-	'',
-	'Type',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("06a85363-a931-4c6a-99b2-70b2f0f55a71",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_BATTR
-	VALUES ("06a85363-a931-4c6a-99b2-70b2f0f55a71",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_ATTR
-	VALUES ("06a85363-a931-4c6a-99b2-70b2f0f55a71",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"a95dce42-4816-4b41-b839-3e43e42ea84a",
-	'SuccessCriteria',
-	'',
-	'',
-	'SuccessCriteria',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("0a553527-2e79-4e82-b1ce-c06e69c96968",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_BATTR
-	VALUES ("0a553527-2e79-4e82-b1ce-c06e69c96968",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_ATTR
-	VALUES ("0a553527-2e79-4e82-b1ce-c06e69c96968",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"06a85363-a931-4c6a-99b2-70b2f0f55a71",
-	'CompletePlanned',
-	'',
-	'',
-	'CompletePlanned',
+	'CompleteActualDate',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
 INSERT INTO O_NBATTR
-	VALUES ("c5ca59c3-0d1a-461d-aaf1-36d3e1e470c9",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+	VALUES ("0ce3f929-424e-4942-bcfb-29e072de36a6",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_BATTR
-	VALUES ("c5ca59c3-0d1a-461d-aaf1-36d3e1e470c9",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+	VALUES ("0ce3f929-424e-4942-bcfb-29e072de36a6",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_ATTR
-	VALUES ("c5ca59c3-0d1a-461d-aaf1-36d3e1e470c9",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"0a553527-2e79-4e82-b1ce-c06e69c96968",
-	'CompleteActual',
-	'',
-	'',
-	'CompleteActual',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("18edd468-db47-46b8-bcca-b239cebbd0b6",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_BATTR
-	VALUES ("18edd468-db47-46b8-bcca-b239cebbd0b6",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_ATTR
-	VALUES ("18edd468-db47-46b8-bcca-b239cebbd0b6",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"c5ca59c3-0d1a-461d-aaf1-36d3e1e470c9",
-	'Complete',
-	'',
-	'',
-	'Complete',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000001",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("b38942b2-acd0-4672-ae07-6553ffaacf4c",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_BATTR
-	VALUES ("b38942b2-acd0-4672-ae07-6553ffaacf4c",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_ATTR
-	VALUES ("b38942b2-acd0-4672-ae07-6553ffaacf4c",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"18edd468-db47-46b8-bcca-b239cebbd0b6",
+	VALUES ("0ce3f929-424e-4942-bcfb-29e072de36a6",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
+	"c2db789b-2644-40ae-85f9-e87cac4a37f4",
 	'Weight',
 	'',
 	'',
@@ -171,117 +173,34 @@ INSERT INTO O_ATTR
 	'',
 	'');
 INSERT INTO O_NBATTR
-	VALUES ("48a123eb-99f8-4d9f-b587-d5a1ad546fec",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+	VALUES ("7527ff75-b0cb-4462-a849-b5041da13abb",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_BATTR
-	VALUES ("48a123eb-99f8-4d9f-b587-d5a1ad546fec",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+	VALUES ("7527ff75-b0cb-4462-a849-b5041da13abb",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_ATTR
-	VALUES ("48a123eb-99f8-4d9f-b587-d5a1ad546fec",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"b38942b2-acd0-4672-ae07-6553ffaacf4c",
-	'Percentage',
+	VALUES ("7527ff75-b0cb-4462-a849-b5041da13abb",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
+	"0ce3f929-424e-4942-bcfb-29e072de36a6",
+	'CompletePercentage',
 	'',
 	'',
-	'Percentage',
+	'CompletePercentage',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000003",
 	'',
 	'');
-INSERT INTO O_NBATTR
-	VALUES ("07f45d38-2342-434b-81ec-139eb9060e45",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_BATTR
-	VALUES ("07f45d38-2342-434b-81ec-139eb9060e45",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_ATTR
-	VALUES ("07f45d38-2342-434b-81ec-139eb9060e45",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"48a123eb-99f8-4d9f-b587-d5a1ad546fec",
-	'sdState',
-	'Supporting document overall state (see class SupportingDocuments)
-',
-	'',
-	'sdState',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("d0373f40-bdc8-4f15-9d88-080525706b17",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_BATTR
-	VALUES ("d0373f40-bdc8-4f15-9d88-080525706b17",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_ATTR
-	VALUES ("d0373f40-bdc8-4f15-9d88-080525706b17",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"07f45d38-2342-434b-81ec-139eb9060e45",
-	'sdDescription',
-	'Describe what supporting documents are required.',
-	'',
-	'sdDescription',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("23b7c4e6-830d-4592-accd-9c657ab847b4",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_BATTR
-	VALUES ("23b7c4e6-830d-4592-accd-9c657ab847b4",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_ATTR
-	VALUES ("23b7c4e6-830d-4592-accd-9c657ab847b4",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"d0373f40-bdc8-4f15-9d88-080525706b17",
-	'Notes',
-	'',
-	'',
-	'Notes',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("2d6a1a2d-69a0-42ef-bf9f-9adc668c593a",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_BATTR
-	VALUES ("2d6a1a2d-69a0-42ef-bf9f-9adc668c593a",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_ATTR
-	VALUES ("2d6a1a2d-69a0-42ef-bf9f-9adc668c593a",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	"23b7c4e6-830d-4592-accd-9c657ab847b4",
-	'IncompleteReasons',
-	'',
-	'',
-	'IncompleteReasons',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'',
-	'');
 INSERT INTO O_ID
 	VALUES (0,
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_OIDA
-	VALUES ("e4b997af-b99b-4766-9f99-75e24ad1a08b",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	0,
-	'FullCode');
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_ID
 	VALUES (1,
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
-INSERT INTO O_OIDA
-	VALUES ("5bde2ba9-43b7-4146-b64c-0d794e647923",
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0",
-	1,
-	'Code');
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO O_ID
 	VALUES (2,
-	"459e4ea3-148e-4a3c-b65b-f4d081c491f0");
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
 INSERT INTO PE_PE
-	VALUES ("459e4ea3-148e-4a3c-b65b-f4d081c491f0",
+	VALUES ("d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
 	1,
 	"6177f291-1d29-415e-bed8-570d8e84b959",
 	"00000000-0000-0000-0000-000000000000",

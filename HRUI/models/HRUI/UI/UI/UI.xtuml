@@ -2534,7 +2534,7 @@ INSERT INTO SPR_RS
 	VALUES ("7de28a4d-a400-4b6b-8092-ae54fc13fd54",
 	'CreateChangeRequest',
 	'',
-	'::SendChangeRequest( Description:param.Description, Justification:param.Justification, ProjectCode:param.ProjectCode, CreationDate:param.CreationDate, ImpactCategory:param.ImpactCategory, ImpactDetails:param.ImpactDetails );
+	'//::SendChangeRequest( Description:param.Description, Justification:param.Justification, ProjectCode:param.ProjectCode, CreationDate:param.CreationDate, ImpactCategory:param.ImpactCategory, ImpactDetails:param.ImpactDetails );
 ',
 	1,
 	0,
@@ -2568,26 +2568,6 @@ INSERT INTO C_EP_PROXY
 	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
-	VALUES ("3a234c4f-6692-48cd-938a-83ca93ca4344",
-	"00053e29-0318-4de9-b625-8bc71d10ede1",
-	"172ad968-3c5c-47a8-b686-fa95025756b2");
-INSERT INTO SPR_RS
-	VALUES ("3a234c4f-6692-48cd-938a-83ca93ca4344",
-	'InitiateChangeRequest',
-	'',
-	'::ReplyChangeRequestInitiation( ChangeRequestCreationDate:0 );',
-	1,
-	0,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("00053e29-0318-4de9-b625-8bc71d10ede1",
-	"b9747524-a416-4a89-a9ef-0062b1f78a12",
-	-1,
-	'InitiateChangeRequest',
-	'',
-	0,
-	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
-INSERT INTO SPR_REP
 	VALUES ("507962f4-ca8a-4407-a1c0-a36a0d6da107",
 	"7c8673b1-6edb-4b6f-851f-5d1f24587182",
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
@@ -2606,6 +2586,26 @@ INSERT INTO C_EP_PROXY
 	'AssignManger',
 	'',
 	1,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("0c8f8faa-a799-440f-b904-c4186bc85e9f",
+	"56824f1e-e6b9-42c5-9278-48a7f426784c",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("0c8f8faa-a799-440f-b904-c4186bc85e9f",
+	'SendChangeRequest',
+	'',
+	'::SendChangeRequest( Description:param.Description, Justification:param.Justification, CreationDate: param.CreationDate);',
+	1,
+	0,
+	2);
+INSERT INTO C_EP_PROXY
+	VALUES ("56824f1e-e6b9-42c5-9278-48a7f426784c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendChangeRequest',
+	'',
+	2,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
