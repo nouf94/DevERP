@@ -793,12 +793,12 @@ INSERT INTO C_EP
 	VALUES ("aadb0141-b089-41fb-9f0c-02b0146fa52e",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'CreateChangeRequestImpact',
+	'AddChangeRequestImpact',
 	'',
 	0);
 INSERT INTO C_AS
 	VALUES ("aadb0141-b089-41fb-9f0c-02b0146fa52e",
-	'CreateChangeRequestImpact',
+	'AddChangeRequestImpact',
 	'',
 	0,
 	"b9687437-2df6-41c0-bb96-f4dfbe905d8e");
