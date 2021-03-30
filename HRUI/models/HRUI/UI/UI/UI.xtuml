@@ -2595,7 +2595,7 @@ INSERT INTO SPR_RS
 	VALUES ("0c8f8faa-a799-440f-b904-c4186bc85e9f",
 	'SendChangeRequest',
 	'',
-	'::SendChangeRequest( Description:param.Description, Justification:param.Justification, CreationDate: param.CreationDate);',
+	'::SendChangeRequest( CreationDate:param.CreationDate, Description:param.Description, Justification:param.Justification );',
 	1,
 	0,
 	2);
