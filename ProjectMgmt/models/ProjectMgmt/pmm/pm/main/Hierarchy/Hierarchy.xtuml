@@ -17,7 +17,7 @@ INSERT INTO O_TFR
 	'self.MemberName = param.MemberName;
 self.Role = param.Role;
 	
-// select the project that this milestone belongs to
+// select the project that this Hierarchy belongs to
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
 		relate self to project across R71.''organize'';

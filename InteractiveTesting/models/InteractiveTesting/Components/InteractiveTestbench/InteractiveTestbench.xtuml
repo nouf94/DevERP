@@ -3903,6 +3903,26 @@ INSERT INTO C_EP_PROXY
 	'',
 	4,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("c10df94a-a865-4195-9223-e3418b436784",
+	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"41287efb-8074-47e1-b27d-0fff1ac1b588");
+INSERT INTO SPR_RS
+	VALUES ("c10df94a-a865-4195-9223-e3418b436784",
+	'AddGoal',
+	'',
+	'',
+	3,
+	0,
+	5);
+INSERT INTO C_EP_PROXY
+	VALUES ("3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddGoal',
+	'',
+	5,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	"00000000-0000-0000-0000-000000000000",
