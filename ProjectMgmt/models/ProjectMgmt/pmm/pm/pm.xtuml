@@ -643,10 +643,12 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("a61349f2-c7c0-450e-9ccb-6dc058e99026",
-	'CreateChangeRequestImpact',
+	'AddChangeRequestImpact',
 	'',
 	'
-',
+create object instance impact of Impact;
+
+impact.AddImpact( Category:param.Category, Details:param.Details, ChangeRequestCreationDate:param.ChangeRequestCreationDate );',
 	1,
 	0,
 	0);
@@ -654,7 +656,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("aadb0141-b089-41fb-9f0c-02b0146fa52e",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'CreateChangeRequestImpact',
+	'AddChangeRequestImpact',
 	'',
 	0,
 	'../../Interfaces/Projects/Projects.xtuml');
