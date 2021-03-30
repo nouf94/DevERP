@@ -793,12 +793,12 @@ INSERT INTO C_EP
 	VALUES ("aadb0141-b089-41fb-9f0c-02b0146fa52e",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'CreateChangeRequestImpact',
+	'AddChangeRequestImpact',
 	'',
 	0);
 INSERT INTO C_AS
 	VALUES ("aadb0141-b089-41fb-9f0c-02b0146fa52e",
-	'CreateChangeRequestImpact',
+	'AddChangeRequestImpact',
 	'',
 	0,
 	"b9687437-2df6-41c0-bb96-f4dfbe905d8e");
@@ -833,12 +833,12 @@ INSERT INTO C_EP
 	VALUES ("7c8673b1-6edb-4b6f-851f-5d1f24587182",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AssignManger',
+	'AssignProjectManager',
 	'',
 	1);
 INSERT INTO C_AS
 	VALUES ("7c8673b1-6edb-4b6f-851f-5d1f24587182",
-	'AssignManger',
+	'AssignProjectManager',
 	'',
 	0,
 	"aadb0141-b089-41fb-9f0c-02b0146fa52e");
@@ -900,6 +900,68 @@ INSERT INTO C_PP
 	0,
 	'',
 	"d18f302d-0730-45c7-af6d-3e022a0aa23f");
+INSERT INTO C_EP
+	VALUES ("945f99a2-2aa4-40e9-9802-b3f2d7914cdb",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'CreateCharter',
+	'',
+	3);
+INSERT INTO C_AS
+	VALUES ("945f99a2-2aa4-40e9-9802-b3f2d7914cdb",
+	'CreateCharter',
+	'',
+	0,
+	"56824f1e-e6b9-42c5-9278-48a7f426784c");
+INSERT INTO C_PP
+	VALUES ("8193b4be-b99f-4aea-8ace-19eea8553e82",
+	"945f99a2-2aa4-40e9-9802-b3f2d7914cdb",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddHierarchyMember',
+	'',
+	4);
+INSERT INTO C_AS
+	VALUES ("8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
+	'AddHierarchyMember',
+	'',
+	0,
+	"945f99a2-2aa4-40e9-9802-b3f2d7914cdb");
+INSERT INTO C_PP
+	VALUES ("011261dc-94a4-43c1-9669-cd5f173b4837",
+	"8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'MemberName',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("fbefd301-7827-4665-ab28-a9252c8b8525",
+	"8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Role',
+	'',
+	0,
+	'',
+	"011261dc-94a4-43c1-9669-cd5f173b4837");
+INSERT INTO C_PP
+	VALUES ("8029ff07-71d8-495a-8ba8-cb67f39e369f",
+	"8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"fbefd301-7827-4665-ab28-a9252c8b8525");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,

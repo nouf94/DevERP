@@ -8,55 +8,6 @@ INSERT INTO O_OBJ
 	'A group of activities set to achieve an 
 outcome with a defined beginning and end ',
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO O_TFR
-	VALUES ("07bf9638-ef89-4dd3-8508-af4b1d5f954c",
-	"5bf7a393-7efb-4cdf-8223-efe001e05df8",
-	'AssignManger',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	1,
-	'// will use the below code once we include Employee class to the current package. 
-/*
-
-select any emp from instances of Employee where selected.EmployeeID == param.EmployeeID;
-select one manager related by self->Employee[R23.''is managed by'']; 
-
-if (not empty manager)
-	unrelate self from manager across R23;
-end if;
-
-relate self to emp across R23.''is managed by'';
-
-*/
-select any project from instances of Project where selected.Code==param.ProjectCode;
-if (not_empty project)
-	
-		project.Manager = param.AccountName;
-end if;
-
-',
-	1,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	0);
-INSERT INTO O_TPARM
-	VALUES ("13be6bfa-27d3-4372-8970-34a87b9cc21a",
-	"07bf9638-ef89-4dd3-8508-af4b1d5f954c",
-	'AccountName',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO O_TPARM
-	VALUES ("7f7b3b32-050c-41df-9d34-76e04078725c",
-	"07bf9638-ef89-4dd3-8508-af4b1d5f954c",
-	'ProjectCode',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"13be6bfa-27d3-4372-8970-34a87b9cc21a",
-	'');
 INSERT INTO O_NBATTR
 	VALUES ("cf6eb72f-54f1-4738-bff6-c0f8866387ff",
 	"5bf7a393-7efb-4cdf-8223-efe001e05df8");

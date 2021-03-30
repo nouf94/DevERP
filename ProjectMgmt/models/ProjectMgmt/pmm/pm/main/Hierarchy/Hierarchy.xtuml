@@ -7,6 +7,53 @@ INSERT INTO O_OBJ
 	'Hierarchy',
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("f32d6e77-370b-4086-b206-c2af10e41d23",
+	"54dcb614-3471-4414-a811-8b5945fd0c57",
+	'AddHierarchyMember',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.MemberName = param.MemberName;
+self.Role = param.Role;
+	
+// select the project that this milestone belongs to
+select any project from instances of Project where selected.Code==param.ProjectCode;
+if (not_empty project)
+		relate self to project across R71.''organize'';
+end if;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("44beb599-87d3-4815-9efc-6b92fa466027",
+	"f32d6e77-370b-4086-b206-c2af10e41d23",
+	'MemberName',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("1782d092-5afd-4907-bc7c-f8969d1f6e9f",
+	"f32d6e77-370b-4086-b206-c2af10e41d23",
+	'Role',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"44beb599-87d3-4815-9efc-6b92fa466027",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("509dea68-3fba-4218-828e-d2c844e6f324",
+	"f32d6e77-370b-4086-b206-c2af10e41d23",
+	'ProjectCode',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"1782d092-5afd-4907-bc7c-f8969d1f6e9f",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("3db3c872-94f4-4797-b19b-109e70d0cd54",
 	"54dcb614-3471-4414-a811-8b5945fd0c57");
@@ -17,12 +64,12 @@ INSERT INTO O_ATTR
 	VALUES ("3db3c872-94f4-4797-b19b-109e70d0cd54",
 	"54dcb614-3471-4414-a811-8b5945fd0c57",
 	"00000000-0000-0000-0000-000000000000",
-	'Narme',
+	'MemberName',
 	'',
 	'',
-	'Narme',
+	'MemberName',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
+	"ba5eda7a-def5-0000-0000-000000000004",
 	'',
 	'');
 INSERT INTO O_NBATTR
@@ -40,7 +87,7 @@ INSERT INTO O_ATTR
 	'',
 	'Role',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
+	"ba5eda7a-def5-0000-0000-000000000004",
 	'',
 	'');
 INSERT INTO O_ID
