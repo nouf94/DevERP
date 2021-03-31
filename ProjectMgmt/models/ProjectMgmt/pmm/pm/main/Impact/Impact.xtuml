@@ -10,22 +10,32 @@ INSERT INTO O_OBJ
 INSERT INTO O_TFR
 	VALUES ("6b9e78e3-9111-4971-9bb7-6cc549d9e476",
 	"cd842042-7f24-4cc5-87bf-2201be9697c7",
-	'Create',
+	'AddImpact',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'
 //create object instance impact of Impact;
-//impact.Category= param.Category;
-//impact.Details = param.Details;
-self.Category= param.Category;
-self.Details = param.Details;
-	
+
+
+isExistedFlag = false; 
 // select the project that this milestone belongs to
 select any CR from instances of ChangeRequest where selected.CreationDate == param.ChangeRequestCreationDate;
 if (not_empty CR)
+	select many impacts related by CR->Impact[R73.''Includes''];
+	for each impact in impacts
+		if (impact.Category == param.Category)
+			impact.Details = param.Details;
+			isExistedFlag = true;
+		end if;
+	end for;
+	// create new one if not existed
+	if (not isExistedFlag)
+		self.Details = param.Details;
 		relate self to CR across R73.''Belongs to'';
-end if;
+	end if;
+end if; 
+	
 
 ',
 	1,
@@ -59,28 +69,6 @@ INSERT INTO O_TPARM
 	0,
 	'',
 	"ad8f7b53-6056-4898-b3e0-2f78bffe14f1",
-	'');
-INSERT INTO O_TFR
-	VALUES ("fc2ab305-389b-425e-81ba-ecf302bb8704",
-	"cd842042-7f24-4cc5-87bf-2201be9697c7",
-	'UpdateImpact',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	1,
-	'self.Details = param.Details; ',
-	1,
-	'',
-	"6b9e78e3-9111-4971-9bb7-6cc549d9e476",
-	0,
-	0);
-INSERT INTO O_TPARM
-	VALUES ("93952747-17ea-49bc-a8a6-a07b4aa960ad",
-	"fc2ab305-389b-425e-81ba-ecf302bb8704",
-	'Details',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO O_NBATTR
 	VALUES ("c1d04a9a-4df2-4acd-90ea-3c241d339412",

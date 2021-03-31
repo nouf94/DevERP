@@ -33,14 +33,9 @@ if (not_empty project)
 end if;
 
 // impact 
-select any impact related by CR->Impact[R73.''Includes''] where CR.CreationDate == param.CreationDate and selected.Category == param.ImpactCategory;
-if (not_empty impact)
-	impact.UpdateImpact( Details:param.ImpactDetails );
-else 
-   // create one impact
-	create object instance impact of Impact;
-	impact.Create( Category:param.ImpactCategory, Details:param.ImpactDetails, ChangeRequestCreationDate:param.CreationDate);
-end if;',
+create object instance impact of Impact;
+impact.AddImpact( Category:param.ImpactCategory, Details:param.ImpactDetails, ChangeRequestCreationDate:param.CreationDate);
+',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",

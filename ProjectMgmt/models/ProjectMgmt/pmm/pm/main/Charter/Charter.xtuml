@@ -10,20 +10,25 @@ INSERT INTO O_OBJ
 INSERT INTO O_TFR
 	VALUES ("c80c3a9b-ef01-478c-aadd-35fd123e2056",
 	"be81dfa0-9e83-4104-936e-c6074f307b81",
-	'Create',
+	'CreateCharter',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'/*
+	'
+
+self.CreationDate=0;
+
 select any project from instances of Project where selected.Code== param.ProjectCode;
 
 if (not_empty project)
-		relate self to project across R67.''Belongs to'';
-end if;
-*/',
+	
+		relate self to project across R69.''Belongs to'';
+		
+end if;',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
+	0,
 	0);
 INSERT INTO O_TPARM
 	VALUES ("eb949064-5f91-4b89-8876-bcdfc9c2b81c",
@@ -33,7 +38,8 @@ INSERT INTO O_TPARM
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
-	'');
+	'
+');
 INSERT INTO O_NBATTR
 	VALUES ("8d46f74b-42d7-4aee-9a02-66db273ab950",
 	"be81dfa0-9e83-4104-936e-c6074f307b81");
@@ -67,7 +73,7 @@ INSERT INTO O_ATTR
 	'',
 	'Version',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
+	"ba5eda7a-def5-0000-0000-000000000003",
 	'',
 	'');
 INSERT INTO O_NBATTR

@@ -643,10 +643,12 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("a61349f2-c7c0-450e-9ccb-6dc058e99026",
-	'CreateChangeRequestImpact',
+	'AddChangeRequestImpact',
 	'',
 	'
-',
+create object instance impact of Impact;
+
+impact.AddImpact( Category:param.Category, Details:param.Details, ChangeRequestCreationDate:param.ChangeRequestCreationDate );',
 	1,
 	0,
 	0);
@@ -654,7 +656,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("aadb0141-b089-41fb-9f0c-02b0146fa52e",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'CreateChangeRequestImpact',
+	'AddChangeRequestImpact',
 	'',
 	0,
 	'../../Interfaces/Projects/Projects.xtuml');
@@ -664,9 +666,14 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("8fcdbf53-9ca6-4ff4-b99d-293c73c1a0a8",
-	'AssignManger',
+	'AssignProjectManager',
 	'',
-	'',
+	'select any project from instances of Project where selected.Code==param.ProjectCode;
+if (not_empty project)
+	
+		project.Manager = param.AccountName;
+end if;
+',
 	1,
 	0,
 	1);
@@ -674,7 +681,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("7c8673b1-6edb-4b6f-851f-5d1f24587182",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AssignManger',
+	'AssignProjectManager',
 	'',
 	1,
 	'../../Interfaces/Projects/Projects.xtuml');
@@ -697,6 +704,78 @@ INSERT INTO C_EP_PROXY
 	'SendChangeRequest',
 	'',
 	2,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("4595fb6f-2bd5-4eb6-8e11-34743f4ba431",
+	"945f99a2-2aa4-40e9-9802-b3f2d7914cdb",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("4595fb6f-2bd5-4eb6-8e11-34743f4ba431",
+	'CreateCharter',
+	'',
+	'
+create object instance charter of Charter;
+
+charter.CreateCharter( ProjectCode:param.ProjectCode );
+',
+	1,
+	0,
+	3);
+INSERT INTO C_EP_PROXY
+	VALUES ("945f99a2-2aa4-40e9-9802-b3f2d7914cdb",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'CreateCharter',
+	'',
+	3,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("46899947-e14d-4203-87eb-75f56227b05f",
+	"8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("46899947-e14d-4203-87eb-75f56227b05f",
+	'AddHierarchyMember',
+	'',
+	'
+create object instance HM of Hierarchy;
+
+HM.AddHierarchyMember( MemberName:param.MemberName, Role:param.Role, ProjectCode:param.ProjectCode );',
+	1,
+	0,
+	4);
+INSERT INTO C_EP_PROXY
+	VALUES ("8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddHierarchyMember',
+	'',
+	4,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("7096ab85-cec1-4124-8863-5b28741ec615",
+	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("7096ab85-cec1-4124-8863-5b28741ec615",
+	'AddGoal',
+	'',
+	'create object instance goal of Goal;
+
+
+
+goal.CreateGoal( Description:param.Description, KPI:param.KPI, ProjectCode:param.ProjectCode );
+',
+	1,
+	0,
+	5);
+INSERT INTO C_EP_PROXY
+	VALUES ("3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddGoal',
+	'',
+	5,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
