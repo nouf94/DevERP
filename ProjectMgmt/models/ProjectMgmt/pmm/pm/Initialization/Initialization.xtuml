@@ -189,17 +189,17 @@ goal3.KPI = "KPI for Third Goal";
 relate goal3 to project1 across R75.''Acheived by'';
 //-----------------------------------------------
 
-create object instance hierarchy1 of Hierarchy; 
+create object instance member1 of Member; 
 
-hierarchy1.MemberName="nouf alamer";
-hierarchy1.Role="dev";
-relate hierarchy1 to project1 across R71.''organize'';
+member1.MemberName="nouf alamer";
+member1.Role="dev";
+relate member1 to project1 across R71.''organize'';
 
-create object instance hierarchy2 of Hierarchy; 
+create object instance member2 of Member; 
 
-hierarchy2.MemberName="nouf alamer";
-hierarchy2.Role="dev";
-relate hierarchy2 to project1 across R71.''organize'';
+member2.MemberName="Ghalia alrajban";
+member2.Role="manager";
+relate member2 to project1 across R71.''organize'';
 
 //------------------------------------------------------
 
