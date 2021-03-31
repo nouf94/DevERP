@@ -679,7 +679,7 @@ INSERT INTO GD_GE
 	"54dcb614-3471-4414-a811-8b5945fd0c57",
 	21,
 	0,
-	'ProjectMgmt::pmm::pm::main::Hierarchy');
+	'ProjectMgmt::pmm::pm::main::Member');
 INSERT INTO GD_SHP
 	VALUES ("c0fcb8e2-441c-4f0c-a93e-efaa18ed040d");
 INSERT INTO GD_NCS
@@ -1927,7 +1927,7 @@ INSERT INTO R_PART
 	VALUES ("54dcb614-3471-4414-a811-8b5945fd0c57",
 	"f1b5ec95-c086-4d78-9ce1-1b5ff0ffe892",
 	"6310ddff-b93c-40cf-8882-d87f9d402734",
-	0,
+	1,
 	0,
 	'Organized by');
 INSERT INTO R_RTO
@@ -1942,12 +1942,12 @@ INSERT INTO R_OIR
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_OBJ_PROXY
 	VALUES ("54dcb614-3471-4414-a811-8b5945fd0c57",
-	'Hierarchy',
+	'Member',
 	8,
-	'Hierarchy',
+	'Member',
 	'',
 	"00000000-0000-0000-0000-000000000000",
-	'./Hierarchy/Hierarchy.xtuml');
+	'./Member/Member.xtuml');
 INSERT INTO R_PART
 	VALUES ("5bf7a393-7efb-4cdf-8223-efe001e05df8",
 	"f1b5ec95-c086-4d78-9ce1-1b5ff0ffe892",

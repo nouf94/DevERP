@@ -641,12 +641,12 @@ INSERT INTO C_EP
 	VALUES ("823d6250-b774-4665-8272-9dc2cc28eadd",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddMilestone',
+	'AddProjectMilestone',
 	'',
 	0);
 INSERT INTO C_AS
 	VALUES ("823d6250-b774-4665-8272-9dc2cc28eadd",
-	'AddMilestone',
+	'AddProjectMilestone',
 	'',
 	0,
 	"8dc4a734-be3b-4ab9-a837-6a24b94e3215");
@@ -660,32 +660,14 @@ INSERT INTO C_PP
 	'',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PP
-	VALUES ("27f792b4-7545-4802-be0d-09b4f25a74ac",
+	VALUES ("f05b07b1-e800-425f-a825-4fb1677dc069",
 	"823d6250-b774-4665-8272-9dc2cc28eadd",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'FullCode',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'CompletePlannedDate',
 	'',
 	0,
 	'',
 	"89423106-8c2c-4043-9aed-d44137d54653");
-INSERT INTO C_PP
-	VALUES ("0b72790a-bfac-4113-802f-809924f707b0",
-	"823d6250-b774-4665-8272-9dc2cc28eadd",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'SucessCriteria',
-	'',
-	0,
-	'',
-	"27f792b4-7545-4802-be0d-09b4f25a74ac");
-INSERT INTO C_PP
-	VALUES ("f05b07b1-e800-425f-a825-4fb1677dc069",
-	"823d6250-b774-4665-8272-9dc2cc28eadd",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'CompletePlanned',
-	'',
-	0,
-	'',
-	"0b72790a-bfac-4113-802f-809924f707b0");
 INSERT INTO C_PP
 	VALUES ("2c0d45c3-22b5-4ae2-9ddc-5b7999bd75e7",
 	"823d6250-b774-4665-8272-9dc2cc28eadd",
@@ -696,32 +678,14 @@ INSERT INTO C_PP
 	'',
 	"f05b07b1-e800-425f-a825-4fb1677dc069");
 INSERT INTO C_PP
-	VALUES ("14782224-7c45-4ddd-8be9-d11b56f0270d",
+	VALUES ("4a3318a1-5f23-4802-9c65-33d8ea58db38",
 	"823d6250-b774-4665-8272-9dc2cc28eadd",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'Percentage',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
 	'',
 	0,
 	'',
 	"2c0d45c3-22b5-4ae2-9ddc-5b7999bd75e7");
-INSERT INTO C_PP
-	VALUES ("3cb9bdea-fd2b-4364-abfa-05625bdd0258",
-	"823d6250-b774-4665-8272-9dc2cc28eadd",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Notes',
-	'',
-	0,
-	'',
-	"14782224-7c45-4ddd-8be9-d11b56f0270d");
-INSERT INTO C_PP
-	VALUES ("4a3318a1-5f23-4802-9c65-33d8ea58db38",
-	"823d6250-b774-4665-8272-9dc2cc28eadd",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Initiative',
-	'',
-	0,
-	'',
-	"3cb9bdea-fd2b-4364-abfa-05625bdd0258");
 INSERT INTO C_EP
 	VALUES ("b9687437-2df6-41c0-bb96-f4dfbe905d8e",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -962,6 +926,234 @@ INSERT INTO C_PP
 	0,
 	'',
 	"fbefd301-7827-4665-ab28-a9252c8b8525");
+INSERT INTO C_EP
+	VALUES ("3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddGoal',
+	'',
+	5);
+INSERT INTO C_AS
+	VALUES ("3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	'AddGoal',
+	'',
+	0,
+	"8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2");
+INSERT INTO C_PP
+	VALUES ("de79227f-4cc0-464f-a331-c0bc471413b5",
+	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Description',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("7783dd57-2d38-48dc-9819-1e1a2c8fa2e0",
+	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'KPI',
+	'',
+	0,
+	'',
+	"de79227f-4cc0-464f-a331-c0bc471413b5");
+INSERT INTO C_PP
+	VALUES ("0963ce07-535f-4bed-ae6f-7937f490265f",
+	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"7783dd57-2d38-48dc-9819-1e1a2c8fa2e0");
+INSERT INTO C_EP
+	VALUES ("7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectMilestone',
+	'',
+	6);
+INSERT INTO C_AS
+	VALUES ("7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	'SendProjectMilestone',
+	'',
+	1,
+	"3336af53-16d3-40e8-adfb-b9a3c7435d2c");
+INSERT INTO C_PP
+	VALUES ("f1b061ea-874b-496a-9e37-5e9ce0adfc7d",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Name',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("f29986c9-f06c-4adc-b4a7-0da08f6068a3",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'CompletedPlannedDate',
+	'',
+	0,
+	'',
+	"f1b061ea-874b-496a-9e37-5e9ce0adfc7d");
+INSERT INTO C_PP
+	VALUES ("e0f6522b-da1e-460d-84ea-cb0887fbea1f",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'CompletedActualDate',
+	'',
+	0,
+	'',
+	"f29986c9-f06c-4adc-b4a7-0da08f6068a3");
+INSERT INTO C_PP
+	VALUES ("1113606c-5a39-4a44-9ec3-c15917c67696",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Weight',
+	'',
+	0,
+	'',
+	"e0f6522b-da1e-460d-84ea-cb0887fbea1f");
+INSERT INTO C_PP
+	VALUES ("20b9042b-4ee9-4d56-90fa-022ec146c55c",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'CompletePercentage',
+	'',
+	0,
+	'',
+	"1113606c-5a39-4a44-9ec3-c15917c67696");
+INSERT INTO C_EP
+	VALUES ("b7f9abc9-dead-40d5-be1d-11099eee8dad",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectMilestone',
+	'',
+	7);
+INSERT INTO C_AS
+	VALUES ("b7f9abc9-dead-40d5-be1d-11099eee8dad",
+	'ReadProjectMilestone',
+	'',
+	0,
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed");
+INSERT INTO C_PP
+	VALUES ("c7c60648-1b72-417e-803b-696242f18a0e",
+	"b7f9abc9-dead-40d5-be1d-11099eee8dad",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("7665a17d-e43c-44e2-954d-50da116280a0",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectGoals',
+	'
+',
+	8);
+INSERT INTO C_AS
+	VALUES ("7665a17d-e43c-44e2-954d-50da116280a0",
+	'ReadProjectGoals',
+	'
+',
+	0,
+	"b7f9abc9-dead-40d5-be1d-11099eee8dad");
+INSERT INTO C_PP
+	VALUES ("4a44a7cb-d630-44aa-a5d0-403779a844e8",
+	"7665a17d-e43c-44e2-954d-50da116280a0",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectGoal',
+	'',
+	9);
+INSERT INTO C_AS
+	VALUES ("71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	'SendProjectGoal',
+	'',
+	1,
+	"7665a17d-e43c-44e2-954d-50da116280a0");
+INSERT INTO C_PP
+	VALUES ("d83331f0-86a6-4825-a4eb-51f16d86e0a5",
+	"71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Description',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("b584b6cb-2d4a-42c4-843e-071e6f0f0ab9",
+	"71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'KPI',
+	'',
+	0,
+	'',
+	"d83331f0-86a6-4825-a4eb-51f16d86e0a5");
+INSERT INTO C_EP
+	VALUES ("110cb04e-2be2-46b0-a7c0-b10934562c75",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectMember',
+	'',
+	10);
+INSERT INTO C_AS
+	VALUES ("110cb04e-2be2-46b0-a7c0-b10934562c75",
+	'ReadProjectMember',
+	'',
+	0,
+	"71484db2-4fb6-4beb-8e30-57fb56fee5f3");
+INSERT INTO C_PP
+	VALUES ("347e9a8a-f78a-4dac-b528-5c1d5e0d66d6",
+	"110cb04e-2be2-46b0-a7c0-b10934562c75",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("27e01210-4229-479a-a05b-1cda59afb794",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'sendProjectMember',
+	'',
+	11);
+INSERT INTO C_AS
+	VALUES ("27e01210-4229-479a-a05b-1cda59afb794",
+	'sendProjectMember',
+	'',
+	1,
+	"110cb04e-2be2-46b0-a7c0-b10934562c75");
+INSERT INTO C_PP
+	VALUES ("dcbb71e5-d3d7-4b1d-af82-52f795c813ef",
+	"27e01210-4229-479a-a05b-1cda59afb794",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'MemberName',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("46782679-7315-4dbd-a92d-0805c78c0ba1",
+	"27e01210-4229-479a-a05b-1cda59afb794",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Role',
+	'',
+	0,
+	'',
+	"dcbb71e5-d3d7-4b1d-af82-52f795c813ef");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,

@@ -2,15 +2,15 @@
 
 INSERT INTO O_OBJ
 	VALUES ("54dcb614-3471-4414-a811-8b5945fd0c57",
-	'Hierarchy',
+	'Member',
 	8,
-	'Hierarchy',
+	'Member',
 	'',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_TFR
 	VALUES ("f32d6e77-370b-4086-b206-c2af10e41d23",
 	"54dcb614-3471-4414-a811-8b5945fd0c57",
-	'AddHierarchyMember',
+	'AddMember',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,

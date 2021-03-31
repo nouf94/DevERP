@@ -2332,7 +2332,8 @@ INSERT INTO SPR_RS
 	'Get a list of milestones related to
 an initiative. One parameter is enough
 to identify the initiative.',
-	'',
+	'
+',
 	1,
 	0,
 	0);
@@ -2707,6 +2708,87 @@ INSERT INTO C_EP_PROXY
 	'ReadProjectMilestone',
 	'',
 	7,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("ce92a48c-d6a1-4266-af4c-a11b51f9395e",
+	"7665a17d-e43c-44e2-954d-50da116280a0",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("ce92a48c-d6a1-4266-af4c-a11b51f9395e",
+	'ReadProjectGoals',
+	'',
+	'',
+	1,
+	0,
+	8);
+INSERT INTO C_EP_PROXY
+	VALUES ("7665a17d-e43c-44e2-954d-50da116280a0",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectGoals',
+	'',
+	8,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("83b56669-50ba-4826-a242-bec26b381c2a",
+	"71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("83b56669-50ba-4826-a242-bec26b381c2a",
+	'SendProjectGoal',
+	'',
+	'::SendProjectGoal( Description:param.Description, KPI: param.KPI);',
+	1,
+	0,
+	9);
+INSERT INTO C_EP_PROXY
+	VALUES ("71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectGoal',
+	'',
+	9,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("1cfe357e-42a0-4d61-ad35-f3049d423123",
+	"110cb04e-2be2-46b0-a7c0-b10934562c75",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("1cfe357e-42a0-4d61-ad35-f3049d423123",
+	'ReadProjectMember',
+	'',
+	'',
+	3,
+	0,
+	10);
+INSERT INTO C_EP_PROXY
+	VALUES ("110cb04e-2be2-46b0-a7c0-b10934562c75",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectMember',
+	'',
+	10,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("e0ec17ec-bd7f-44c3-ae7b-3aff8bd3607f",
+	"27e01210-4229-479a-a05b-1cda59afb794",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("e0ec17ec-bd7f-44c3-ae7b-3aff8bd3607f",
+	'sendProjectMember',
+	'',
+	'::sendMember( MemberName:param.MemberName, Role:Param.Role );
+',
+	1,
+	0,
+	11);
+INSERT INTO C_EP_PROXY
+	VALUES ("27e01210-4229-479a-a05b-1cda59afb794",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'sendProjectMember',
+	'',
+	11,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",

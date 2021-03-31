@@ -1046,6 +1046,114 @@ INSERT INTO C_PP
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("7665a17d-e43c-44e2-954d-50da116280a0",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectGoals',
+	'
+',
+	8);
+INSERT INTO C_AS
+	VALUES ("7665a17d-e43c-44e2-954d-50da116280a0",
+	'ReadProjectGoals',
+	'
+',
+	0,
+	"b7f9abc9-dead-40d5-be1d-11099eee8dad");
+INSERT INTO C_PP
+	VALUES ("4a44a7cb-d630-44aa-a5d0-403779a844e8",
+	"7665a17d-e43c-44e2-954d-50da116280a0",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectGoal',
+	'',
+	9);
+INSERT INTO C_AS
+	VALUES ("71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	'SendProjectGoal',
+	'',
+	1,
+	"7665a17d-e43c-44e2-954d-50da116280a0");
+INSERT INTO C_PP
+	VALUES ("d83331f0-86a6-4825-a4eb-51f16d86e0a5",
+	"71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Description',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("b584b6cb-2d4a-42c4-843e-071e6f0f0ab9",
+	"71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'KPI',
+	'',
+	0,
+	'',
+	"d83331f0-86a6-4825-a4eb-51f16d86e0a5");
+INSERT INTO C_EP
+	VALUES ("110cb04e-2be2-46b0-a7c0-b10934562c75",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectMember',
+	'',
+	10);
+INSERT INTO C_AS
+	VALUES ("110cb04e-2be2-46b0-a7c0-b10934562c75",
+	'ReadProjectMember',
+	'',
+	0,
+	"71484db2-4fb6-4beb-8e30-57fb56fee5f3");
+INSERT INTO C_PP
+	VALUES ("347e9a8a-f78a-4dac-b528-5c1d5e0d66d6",
+	"110cb04e-2be2-46b0-a7c0-b10934562c75",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("27e01210-4229-479a-a05b-1cda59afb794",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'sendProjectMember',
+	'',
+	11);
+INSERT INTO C_AS
+	VALUES ("27e01210-4229-479a-a05b-1cda59afb794",
+	'sendProjectMember',
+	'',
+	1,
+	"110cb04e-2be2-46b0-a7c0-b10934562c75");
+INSERT INTO C_PP
+	VALUES ("dcbb71e5-d3d7-4b1d-af82-52f795c813ef",
+	"27e01210-4229-479a-a05b-1cda59afb794",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'MemberName',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("46782679-7315-4dbd-a92d-0805c78c0ba1",
+	"27e01210-4229-479a-a05b-1cda59afb794",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Role',
+	'',
+	0,
+	'',
+	"dcbb71e5-d3d7-4b1d-af82-52f795c813ef");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,

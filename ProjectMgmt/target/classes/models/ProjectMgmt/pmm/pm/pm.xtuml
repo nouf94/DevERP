@@ -582,9 +582,12 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("4bfccb35-e103-4711-907a-6f7a84e00079",
-	'AddMilestone',
+	'AddProjectMilestone',
 	'',
-	'/*
+	'create object instance mile of Milestone;
+mile.AddProjectMilestone( Name:param.Name, CompletePlannedDate: param.CompletePlannedDate, Weight:param.Weight, ProjectCode: param.ProjectCode);
+
+/*
 select any init from instances of Initiative where selected.Name==param.Initiative;
 if (not empty init) 
 	create object instance mile of Milestone;
@@ -606,7 +609,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("823d6250-b774-4665-8272-9dc2cc28eadd",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddMilestone',
+	'AddProjectMilestone',
 	'',
 	0,
 	'../../Interfaces/Projects/Projects.xtuml');
@@ -738,9 +741,9 @@ INSERT INTO SPR_PS
 	'AddHierarchyMember',
 	'',
 	'
-create object instance HM of Hierarchy;
+create object instance member of Member;
 
-HM.AddHierarchyMember( MemberName:param.MemberName, Role:param.Role, ProjectCode:param.ProjectCode );',
+member.AddMember( MemberName:param.MemberName, Role:param.Role, ProjectCode:param.ProjectCode );',
 	1,
 	0,
 	4);
@@ -751,6 +754,178 @@ INSERT INTO C_EP_PROXY
 	'AddHierarchyMember',
 	'',
 	4,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("7096ab85-cec1-4124-8863-5b28741ec615",
+	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("7096ab85-cec1-4124-8863-5b28741ec615",
+	'AddGoal',
+	'',
+	'create object instance goal of Goal;
+
+
+
+goal.CreateGoal( Description:param.Description, KPI:param.KPI, ProjectCode:param.ProjectCode );
+',
+	1,
+	0,
+	5);
+INSERT INTO C_EP_PROXY
+	VALUES ("3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddGoal',
+	'',
+	5,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("ff6ea114-ed93-4277-8864-69351e0b4707",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("ff6ea114-ed93-4277-8864-69351e0b4707",
+	'SendProjectMilestone',
+	'',
+	'',
+	1,
+	0,
+	6);
+INSERT INTO C_EP_PROXY
+	VALUES ("7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectMilestone',
+	'',
+	6,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("96c7310b-5941-4def-9938-e825babfb03e",
+	"b7f9abc9-dead-40d5-be1d-11099eee8dad",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("96c7310b-5941-4def-9938-e825babfb03e",
+	'ReadProjectMilestone',
+	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many milestones related by project->Milestone[R67.''completes''];
+	for each mile in milestones 
+		UI::SendProjectMilestone( Name:mile.Name, CompletedPlannedDate:mile.CompletePlannedDate, CompletedActualDate:mile.CompleteActualDate, Weight:mile.Weight, CompletePercentage: mile.CompletePercentage);
+	end for;
+end if;
+
+',
+	1,
+	0,
+	7);
+INSERT INTO C_EP_PROXY
+	VALUES ("b7f9abc9-dead-40d5-be1d-11099eee8dad",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectMilestone',
+	'',
+	7,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("c75a44d4-1027-4f4f-b064-3a542dc601a2",
+	"7665a17d-e43c-44e2-954d-50da116280a0",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("c75a44d4-1027-4f4f-b064-3a542dc601a2",
+	'ReadProjectGoals',
+	'
+',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many goals related by project->Goal[R75.''Fulfill''];
+	for each goal in goals
+		UI::SendProjectGoal( Description:goal.Description, KPI: goal.KPI);
+	end for;
+end if;',
+	1,
+	0,
+	8);
+INSERT INTO C_EP_PROXY
+	VALUES ("7665a17d-e43c-44e2-954d-50da116280a0",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectGoals',
+	'
+',
+	8,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("5021e862-8ed7-47dd-b976-6b03daedb5a8",
+	"71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("5021e862-8ed7-47dd-b976-6b03daedb5a8",
+	'SendProjectGoal',
+	'',
+	'',
+	1,
+	0,
+	9);
+INSERT INTO C_EP_PROXY
+	VALUES ("71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectGoal',
+	'',
+	9,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("129848e7-c245-4117-89c3-599174751720",
+	"110cb04e-2be2-46b0-a7c0-b10934562c75",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("129848e7-c245-4117-89c3-599174751720",
+	'ReadProjectMember',
+	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many members related by project->Member[R71.''Organized by''];
+	
+	for each member in members
+		UI::sendProjectMember( MemberName:member.MemberName, Role:member.Role );
+	end for;
+end if;
+',
+	1,
+	0,
+	10);
+INSERT INTO C_EP_PROXY
+	VALUES ("110cb04e-2be2-46b0-a7c0-b10934562c75",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectMember',
+	'',
+	10,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("39ecddec-7cb6-4c41-88c5-80ba7071d8b1",
+	"27e01210-4229-479a-a05b-1cda59afb794",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("39ecddec-7cb6-4c41-88c5-80ba7071d8b1",
+	'sendProjectMember',
+	'',
+	'',
+	1,
+	0,
+	11);
+INSERT INTO C_EP_PROXY
+	VALUES ("27e01210-4229-479a-a05b-1cda59afb794",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'sendProjectMember',
+	'',
+	11,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
