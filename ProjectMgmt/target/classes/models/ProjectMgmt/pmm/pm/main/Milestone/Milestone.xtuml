@@ -26,6 +26,7 @@ end if;',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
+	0,
 	0);
 INSERT INTO O_TPARM
 	VALUES ("c51fc3a7-1c15-4ca1-a28f-6e659efd8e20",
@@ -39,27 +40,27 @@ INSERT INTO O_TPARM
 INSERT INTO O_TFR
 	VALUES ("e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
 	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
-	'CreateMilestone',
+	'AddProjectMilestone',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'/*
-create object instance mile of Milestone;
-mile.Name = param.Name;
-mile.Weight = param.Weight;
-mile.CompletePlannedDate = param.CompletePlannedDate;
-	
+	'
+//create object instance mile of Milestone;
+self.Name = param.Name;
+self.Weight = param.Weight;
+self.CompletePlannedDate = param.CompletePlannedDate;
+self.CompletePercentage = 0;	
 // select the project that this milestone belongs to
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
-		relate mile to project across R63.''completed'';
+		relate self to project across R67.''completed'';
 end if;
 
-
-*/',
+',
 	1,
 	'',
 	"33b196b9-4d01-4d7e-9707-7dc798810c79",
+	0,
 	0);
 INSERT INTO O_TPARM
 	VALUES ("99e1ccb8-8e63-4495-b0ae-f08876dd89c3",
