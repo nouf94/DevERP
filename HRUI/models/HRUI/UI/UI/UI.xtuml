@@ -2512,7 +2512,7 @@ INSERT INTO SPR_REP
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
 	VALUES ("83ac6178-5c7c-4782-b8b9-ffe368545a35",
-	'AddMilestone',
+	'AddProjectMilestone',
 	'',
 	'',
 	1,
@@ -2522,7 +2522,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("823d6250-b774-4665-8272-9dc2cc28eadd",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddMilestone',
+	'AddProjectMilestone',
 	'',
 	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
@@ -2575,7 +2575,8 @@ INSERT INTO SPR_RS
 	VALUES ("507962f4-ca8a-4407-a1c0-a36a0d6da107",
 	'AssignProjectManager',
 	'',
-	'::AssignManger( AccountName:param.AccountName, ProjectCode:param.ProjectCode );',
+	'//::AssignManger( AccountName:param.AccountName, ProjectCode:param.ProjectCode );
+',
 	1,
 	0,
 	1);
@@ -2666,6 +2667,46 @@ INSERT INTO C_EP_PROXY
 	'AddGoal',
 	'',
 	5,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("a7fc5710-3fd4-4654-8e08-b28b6665dc79",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("a7fc5710-3fd4-4654-8e08-b28b6665dc79",
+	'SendProjectMilestone',
+	'',
+	'::SendProjectMilestone( Name:param.Name, CompletedPlannedDate:param.CompletedPlannedDate, CompletedActualDate:param.CompletedActualDate, Weight:param.Weight, CompletePercentage:param.CompletePercentage );',
+	1,
+	0,
+	6);
+INSERT INTO C_EP_PROXY
+	VALUES ("7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectMilestone',
+	'',
+	6,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("7aca387d-7ec2-4d4b-a0b5-c692ce130a02",
+	"b7f9abc9-dead-40d5-be1d-11099eee8dad",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("7aca387d-7ec2-4d4b-a0b5-c692ce130a02",
+	'ReadProjectMilestone',
+	'',
+	'',
+	3,
+	0,
+	7);
+INSERT INTO C_EP_PROXY
+	VALUES ("b7f9abc9-dead-40d5-be1d-11099eee8dad",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectMilestone',
+	'',
+	7,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",

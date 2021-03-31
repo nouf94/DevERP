@@ -486,6 +486,68 @@ INSERT INTO PE_PE
 	"9f3f7773-dfb8-44f3-a8df-8c7c9c133ae7",
 	"00000000-0000-0000-0000-000000000000",
 	1);
+INSERT INTO S_SYNC
+	VALUES ("6a18a06c-0742-4cca-b90a-2771ec59ed46",
+	"00000000-0000-0000-0000-000000000000",
+	'SendProjectMilestone',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	0,
+	1);
+INSERT INTO S_SPARM
+	VALUES ("9dded853-935f-4319-a5fd-b168f8039478",
+	"6a18a06c-0742-4cca-b90a-2771ec59ed46",
+	'Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("8aeae471-b759-4c31-8663-658256065af0",
+	"6a18a06c-0742-4cca-b90a-2771ec59ed46",
+	'CompletedPlannedDate',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"9dded853-935f-4319-a5fd-b168f8039478",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("94b5cd5a-362e-4fbf-b078-4c00dcda52dc",
+	"6a18a06c-0742-4cca-b90a-2771ec59ed46",
+	'CompletedActualDate',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"8aeae471-b759-4c31-8663-658256065af0",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("20391287-ae2d-4575-a831-fe100a7b4509",
+	"6a18a06c-0742-4cca-b90a-2771ec59ed46",
+	'Weight',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"94b5cd5a-362e-4fbf-b078-4c00dcda52dc",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("637f991a-d51d-488d-a570-81a1f1d1d9f1",
+	"6a18a06c-0742-4cca-b90a-2771ec59ed46",
+	'CompletePercentage',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"20391287-ae2d-4575-a831-fe100a7b4509",
+	'');
+INSERT INTO PE_PE
+	VALUES ("6a18a06c-0742-4cca-b90a-2771ec59ed46",
+	1,
+	"9f3f7773-dfb8-44f3-a8df-8c7c9c133ae7",
+	"00000000-0000-0000-0000-000000000000",
+	1);
 INSERT INTO PE_PE
 	VALUES ("9f3f7773-dfb8-44f3-a8df-8c7c9c133ae7",
 	1,
