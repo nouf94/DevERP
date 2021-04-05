@@ -2716,7 +2716,8 @@ INSERT INTO SPR_REP
 INSERT INTO SPR_RS
 	VALUES ("ce92a48c-d6a1-4266-af4c-a11b51f9395e",
 	'ReadProjectGoals',
-	'',
+	'
+',
 	'',
 	1,
 	0,
@@ -2726,7 +2727,8 @@ INSERT INTO C_EP_PROXY
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
 	'ReadProjectGoals',
-	'',
+	'
+',
 	8,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
@@ -2789,6 +2791,26 @@ INSERT INTO C_EP_PROXY
 	'sendProjectMember',
 	'',
 	11,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("d6dcb04c-fc74-4772-9eaf-68e879113b70",
+	"e628a073-327a-493a-8771-c713430d5248",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("d6dcb04c-fc74-4772-9eaf-68e879113b70",
+	'ReadChangeRequest',
+	'',
+	'',
+	3,
+	0,
+	12);
+INSERT INTO C_EP_PROXY
+	VALUES ("e628a073-327a-493a-8771-c713430d5248",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadChangeRequest',
+	'',
+	12,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",

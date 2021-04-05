@@ -727,15 +727,6 @@ INSERT INTO C_PP
 	'',
 	"41eef2af-b7bc-4b1e-b950-7d0d2d2a2d66");
 INSERT INTO C_PP
-	VALUES ("28e9d534-6c9b-4fa7-b424-d84daf0b5964",
-	"b9687437-2df6-41c0-bb96-f4dfbe905d8e",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'CreationDate',
-	'',
-	0,
-	'',
-	"21da3590-10ae-4b45-a79e-9583fd5dc49b");
-INSERT INTO C_PP
 	VALUES ("48a87389-ec8b-4c3b-a489-50d52372efba",
 	"b9687437-2df6-41c0-bb96-f4dfbe905d8e",
 	"ba5eda7a-def5-0000-0000-000000000004",
@@ -743,7 +734,7 @@ INSERT INTO C_PP
 	'',
 	0,
 	'',
-	"28e9d534-6c9b-4fa7-b424-d84daf0b5964");
+	"21da3590-10ae-4b45-a79e-9583fd5dc49b");
 INSERT INTO C_PP
 	VALUES ("65184735-a78f-4e4a-9c76-1f98f44ebf03",
 	"b9687437-2df6-41c0-bb96-f4dfbe905d8e",
