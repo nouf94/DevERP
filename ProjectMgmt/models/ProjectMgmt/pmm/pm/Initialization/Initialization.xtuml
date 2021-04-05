@@ -42,6 +42,7 @@ INSERT INTO S_SYNC
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
+	0,
 	0);
 INSERT INTO PE_PE
 	VALUES ("d66f1f4b-8c4d-44bd-a8d5-087a94766bbf",
@@ -147,10 +148,76 @@ project1.Name = "Project1Name";
 create object instance project2 of Project;
 project1.Code = "Project2Code";
 project1.Name = "Project2Name";
+
+
+// MILESTONE
+create object instance mile1 of Milestone;
+mile1.Name = "First Milestone for Project1Name"; 
+mile1.CompletePlannedDate = 0;
+mile1.Weight = 40;
+relate mile1 to project1 across R67.''completed'';
+
+create object instance mile2 of Milestone;
+mile2.Name = "Second Milestone for Project1Name"; 
+mile2.CompletePlannedDate = 0;
+mile2.Weight = 60;
+relate mile2 to project1 across R67.''completed'';
+
+create object instance mile3 of Milestone;
+mile3.Name = "First Milestone for Project2Name"; 
+mile3.CompletePlannedDate = 0;
+mile3.Weight = 100;
+relate mile3 to project2 across R67.''completed'';
+//-----------------------------------------------
+
+//==============================================
+// GOALS
+//==============================================
+create object instance goal1 of Goal;
+goal1.Description = "First goal for Project1Name";
+goal1.KPI = "KPI for First Goal";
+relate goal1 to project1 across R75.''Acheived by'';
+
+create object instance goal2 of Goal;
+goal2.Description = "Second goal for Project1Name";
+goal2.KPI = "KPI for Second Goal";
+relate goal2 to project1 across R75.''Acheived by'';
+
+create object instance goal3 of Goal;
+goal3.Description = "Third goal for Project1Name";
+goal3.KPI = "KPI for Third Goal";
+relate goal3 to project1 across R75.''Acheived by'';
+//-----------------------------------------------
+
+create object instance member1 of Member; 
+
+member1.MemberName="nouf alamer";
+member1.Role="dev";
+relate member1 to project1 across R71.''organize'';
+
+create object instance member2 of Member; 
+
+member2.MemberName="Ghalia alrajban";
+member2.Role="manager";
+relate member2 to project1 across R71.''organize'';
+
+//------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
+	0,
 	0);
 INSERT INTO PE_PE
 	VALUES ("b294353c-348a-4d3d-940c-92a711a36b27",
@@ -173,6 +240,7 @@ INSERT INTO C_C_PROXY
 	0,
 	"00000000-0000-0000-0000-000000000000",
 	0,
+	'',
 	'',
 	'../pm.xtuml');
 INSERT INTO S_SYS_PROXY

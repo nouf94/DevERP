@@ -2332,7 +2332,8 @@ INSERT INTO SPR_RS
 	'Get a list of milestones related to
 an initiative. One parameter is enough
 to identify the initiative.',
-	'',
+	'
+',
 	1,
 	0,
 	0);
@@ -2512,7 +2513,7 @@ INSERT INTO SPR_REP
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
 	VALUES ("83ac6178-5c7c-4782-b8b9-ffe368545a35",
-	'AddMilestone',
+	'AddProjectMilestone',
 	'',
 	'',
 	1,
@@ -2522,7 +2523,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("823d6250-b774-4665-8272-9dc2cc28eadd",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddMilestone',
+	'AddProjectMilestone',
 	'',
 	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
@@ -2575,7 +2576,8 @@ INSERT INTO SPR_RS
 	VALUES ("507962f4-ca8a-4407-a1c0-a36a0d6da107",
 	'AssignProjectManager',
 	'',
-	'::AssignManger( AccountName:param.AccountName, ProjectCode:param.ProjectCode );',
+	'//::AssignManger( AccountName:param.AccountName, ProjectCode:param.ProjectCode );
+',
 	1,
 	0,
 	1);
@@ -2646,6 +2648,169 @@ INSERT INTO C_EP_PROXY
 	'AddHierarchyMember',
 	'',
 	4,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("a7763b85-8e99-4c38-b134-1b33c71a6948",
+	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("a7763b85-8e99-4c38-b134-1b33c71a6948",
+	'AddGoal',
+	'',
+	'',
+	3,
+	0,
+	5);
+INSERT INTO C_EP_PROXY
+	VALUES ("3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddGoal',
+	'',
+	5,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("a7fc5710-3fd4-4654-8e08-b28b6665dc79",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("a7fc5710-3fd4-4654-8e08-b28b6665dc79",
+	'SendProjectMilestone',
+	'',
+	'::SendProjectMilestone( Name:param.Name, CompletedPlannedDate:param.CompletedPlannedDate, CompletedActualDate:param.CompletedActualDate, Weight:param.Weight, CompletePercentage:param.CompletePercentage );',
+	1,
+	0,
+	6);
+INSERT INTO C_EP_PROXY
+	VALUES ("7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectMilestone',
+	'',
+	6,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("7aca387d-7ec2-4d4b-a0b5-c692ce130a02",
+	"b7f9abc9-dead-40d5-be1d-11099eee8dad",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("7aca387d-7ec2-4d4b-a0b5-c692ce130a02",
+	'ReadProjectMilestone',
+	'',
+	'',
+	3,
+	0,
+	7);
+INSERT INTO C_EP_PROXY
+	VALUES ("b7f9abc9-dead-40d5-be1d-11099eee8dad",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectMilestone',
+	'',
+	7,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("ce92a48c-d6a1-4266-af4c-a11b51f9395e",
+	"7665a17d-e43c-44e2-954d-50da116280a0",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("ce92a48c-d6a1-4266-af4c-a11b51f9395e",
+	'ReadProjectGoals',
+	'
+',
+	'',
+	1,
+	0,
+	8);
+INSERT INTO C_EP_PROXY
+	VALUES ("7665a17d-e43c-44e2-954d-50da116280a0",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectGoals',
+	'
+',
+	8,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("83b56669-50ba-4826-a242-bec26b381c2a",
+	"71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("83b56669-50ba-4826-a242-bec26b381c2a",
+	'SendProjectGoal',
+	'',
+	'::SendProjectGoal( Description:param.Description, KPI: param.KPI);',
+	1,
+	0,
+	9);
+INSERT INTO C_EP_PROXY
+	VALUES ("71484db2-4fb6-4beb-8e30-57fb56fee5f3",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectGoal',
+	'',
+	9,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("1cfe357e-42a0-4d61-ad35-f3049d423123",
+	"110cb04e-2be2-46b0-a7c0-b10934562c75",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("1cfe357e-42a0-4d61-ad35-f3049d423123",
+	'ReadProjectMember',
+	'',
+	'',
+	3,
+	0,
+	10);
+INSERT INTO C_EP_PROXY
+	VALUES ("110cb04e-2be2-46b0-a7c0-b10934562c75",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectMember',
+	'',
+	10,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("e0ec17ec-bd7f-44c3-ae7b-3aff8bd3607f",
+	"27e01210-4229-479a-a05b-1cda59afb794",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("e0ec17ec-bd7f-44c3-ae7b-3aff8bd3607f",
+	'sendProjectMember',
+	'',
+	'::sendMember( MemberName:param.MemberName, Role:Param.Role );
+',
+	1,
+	0,
+	11);
+INSERT INTO C_EP_PROXY
+	VALUES ("27e01210-4229-479a-a05b-1cda59afb794",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'sendProjectMember',
+	'',
+	11,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("d6dcb04c-fc74-4772-9eaf-68e879113b70",
+	"e628a073-327a-493a-8771-c713430d5248",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("d6dcb04c-fc74-4772-9eaf-68e879113b70",
+	'ReadChangeRequest',
+	'',
+	'',
+	3,
+	0,
+	12);
+INSERT INTO C_EP_PROXY
+	VALUES ("e628a073-327a-493a-8771-c713430d5248",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadChangeRequest',
+	'',
+	12,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
