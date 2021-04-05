@@ -2348,26 +2348,6 @@ to identify the initiative.',
 	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
-	VALUES ("2bf39f28-8cdb-483c-b0c0-134e4416fc07",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"172ad968-3c5c-47a8-b686-fa95025756b2");
-INSERT INTO SPR_RS
-	VALUES ("2bf39f28-8cdb-483c-b0c0-134e4416fc07",
-	'SendMilestones',
-	'',
-	'::SendMilestones( Name:param.Name, FullCode:param.FullCode, Code:param.Code, Type:param.Type, SuccessCriteria:param.SuccessCriteria, CompletePlanned:param.CompletePlanned, CompleteActual:param.CompleteActual, Complete:param.Complete, Weight:param.Weight, Percentage:param.Percentage, sdState:param.sdState, sdDescription:param.sdDescription, Notes:param.Notes, IncompleteReasons:param.Notes);',
-	1,
-	0,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("164afa80-0634-483c-873c-74974775a70c",
-	"b9747524-a416-4a89-a9ef-0062b1f78a12",
-	-1,
-	'SendMilestones',
-	'',
-	0,
-	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
-INSERT INTO SPR_REP
 	VALUES ("77684253-b450-45ed-a9a8-1ac90b3efc75",
 	"4d8c9fe4-1360-4d30-90fd-12402e63d2a3",
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
@@ -2635,7 +2615,7 @@ INSERT INTO SPR_REP
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
 	VALUES ("6cc40bb0-015b-4fa3-ba95-b309bfa59b98",
-	'AddHierarchyMember',
+	'AddProjectMember',
 	'',
 	'',
 	3,
@@ -2645,7 +2625,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddHierarchyMember',
+	'AddProjectMember',
 	'',
 	4,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
@@ -2798,7 +2778,7 @@ INSERT INTO SPR_REP
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
 	VALUES ("d6dcb04c-fc74-4772-9eaf-68e879113b70",
-	'ReadChangeRequest',
+	'ReadAllChangeRequest',
 	'',
 	'',
 	3,
@@ -2808,7 +2788,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("e628a073-327a-493a-8771-c713430d5248",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'ReadChangeRequest',
+	'ReadAllChangeRequest',
 	'',
 	12,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
