@@ -1932,6 +1932,7 @@ private static HRGuiController singleton;
 	*/
 
 	/* Methods for port Projects */
+/*
 	@PostMapping(path="/addMilestone", consumes="application/json")
 	public void AddMilestone(String p_Name, String p_FullCode, String p_SucessCriteria, int p_CompletePlanned, int p_Weight, int p_Percentage, String p_Notes, String p_Initiative) {
 		// TODO Auto-generated method stub
@@ -1941,7 +1942,7 @@ private static HRGuiController singleton;
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	@PostMapping(path="/createInitiative", consumes="appliaction/json")
 	public void CreateInitiative(String p_Name, String p_ShortNumber, String p_LongNumber, String p_Description, int p_StartDate, int p_EndDate, double p_Budget, String p_Strategy) {
@@ -1976,15 +1977,39 @@ private static HRGuiController singleton;
 		}
 	}
 	@PostMapping(path="/CreateChangeRequest", consumes="application/json")
-	public void CreateChangeRequest(String p_Description, String p_Justification, String p_ProjectCode, int p_CreationDate,  String p_ImpactCategory, String p_ImpactDetails ) {
+	public void CreateChangeRequest(String p_Description, String p_Justification, String p_ProjectCode,  String p_ImpactCategory, String p_ImpactDetails ) {
 		// TODO Auto-generated method stub
 		try {
-			UI.Singleton().Projects().CreateChangeRequest(p_Description, p_Justification, p_ProjectCode, p_CreationDate, p_ImpactCategory, p_ImpactDetails);
+			UI.Singleton().Projects().CreateChangeRequest(p_Description, p_Justification, p_ProjectCode,  p_ImpactCategory, p_ImpactDetails);
 		} catch (XtumlException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	public void sendMember (  String p_MemberName,   String p_Role ) {
+          
+          try {
+            UI.Singleton().Projects().sendMember( p_MemberName, p_Role);
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+		 public void SendProjectGoal( String p_Description,  String p_KPI ){
+          
+          try {
+            UI.Singleton().Projects().SendProjectGoal( p_Description, p_KPI );
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+		 public void SendProjectMilestone(  String p_Name,   int p_CompletedPlannedDate,   int p_CompletedActualDate,   int p_Weight,   int p_CompletePercentage ){
+          
+          try {
+            UI.Singleton().Projects().SendProjectMilestone( p_Name, p_CompletedPlannedDate, p_CompletedActualDate, p_Weight, p_CompletePercentage );
+         }catch(Exception e) {
+      	   
+         } 
+         } 
 	@GetMapping(path="/readInitiatives", produces="appliaction/json")
 	public List<deployment.SendInitiatives> ReadInitiatives() {
 		// TODO Auto-generated method stub
@@ -2055,7 +2080,6 @@ private static HRGuiController singleton;
 	 
 	public void SendChangeRequest( final int p_CreationDate,  final String p_Description,  final String p_Justification ) {
 
-
 		try{
 			UI.Singleton().Projects().SendChangeRequest(p_CreationDate, p_Description , p_Justification );
 
@@ -2075,7 +2099,7 @@ private static HRGuiController singleton;
 
 		}
 	}
-	
+	/*
 	public void AssignManger( final String p_AccountName,  final String p_ProjectCode ) {
 
 
@@ -2086,7 +2110,7 @@ private static HRGuiController singleton;
 
 
 		}
-	}
+	}*/
 
 	List<SendInitiatives> initiativesList = new ArrayList<SendInitiatives>();
 	public void SendInitiatives(String p_Name, String p_ShortNumber, String p_LongNumber, String p_Description, int p_StartDate, int p_EndDate ) {
