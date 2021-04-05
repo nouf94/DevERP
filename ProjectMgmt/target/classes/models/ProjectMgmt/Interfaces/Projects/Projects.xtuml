@@ -147,157 +147,18 @@ INSERT INTO C_PP
 	'',
 	"dc3aab40-e80b-45cc-9738-2a032b16969d");
 INSERT INTO C_EP
-	VALUES ("164afa80-0634-483c-873c-74974775a70c",
+	VALUES ("4d8c9fe4-1360-4d30-90fd-12402e63d2a3",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'SendMilestones',
+	'CreateInitiative',
 	'',
 	0);
 INSERT INTO C_AS
-	VALUES ("164afa80-0634-483c-873c-74974775a70c",
-	'SendMilestones',
+	VALUES ("4d8c9fe4-1360-4d30-90fd-12402e63d2a3",
+	'CreateInitiative',
 	'',
-	1,
+	0,
 	"0fb486de-51ef-4059-86fb-07272aa62973");
-INSERT INTO C_PP
-	VALUES ("954c0e84-f116-4f7a-99f1-8b60a59a2ede",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Name',
-	'',
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO C_PP
-	VALUES ("b35900ce-01b9-4144-aa80-a70c340349a4",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'FullCode',
-	'',
-	0,
-	'',
-	"954c0e84-f116-4f7a-99f1-8b60a59a2ede");
-INSERT INTO C_PP
-	VALUES ("7ae660c5-cab3-4139-9eaa-003acd597df9",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Code',
-	'',
-	0,
-	'',
-	"b35900ce-01b9-4144-aa80-a70c340349a4");
-INSERT INTO C_PP
-	VALUES ("6f1358d8-5fda-42b3-b127-9d359b4e8f6d",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Type',
-	'',
-	0,
-	'',
-	"7ae660c5-cab3-4139-9eaa-003acd597df9");
-INSERT INTO C_PP
-	VALUES ("bd80fbf0-567e-4103-b77b-daef529dab8e",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'SuccessCriteria',
-	'',
-	0,
-	'',
-	"6f1358d8-5fda-42b3-b127-9d359b4e8f6d");
-INSERT INTO C_PP
-	VALUES ("ec999f37-a490-410b-800d-2bd1ee967cb4",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'CompletePlanned',
-	'',
-	0,
-	'',
-	"bd80fbf0-567e-4103-b77b-daef529dab8e");
-INSERT INTO C_PP
-	VALUES ("336977a4-9093-4f82-9617-4b6a7bb833d3",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'CompleteActual',
-	'',
-	0,
-	'',
-	"ec999f37-a490-410b-800d-2bd1ee967cb4");
-INSERT INTO C_PP
-	VALUES ("ae469da1-2075-4bb9-9a2b-4166831ca773",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000001",
-	'Complete',
-	'',
-	0,
-	'',
-	"336977a4-9093-4f82-9617-4b6a7bb833d3");
-INSERT INTO C_PP
-	VALUES ("9816f3b0-791f-4773-8dcd-b36f8f092d05",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'Weight',
-	'',
-	0,
-	'',
-	"ae469da1-2075-4bb9-9a2b-4166831ca773");
-INSERT INTO C_PP
-	VALUES ("5a392c63-b612-4188-b22c-f622f25a09c3",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'Percentage',
-	'',
-	0,
-	'',
-	"9816f3b0-791f-4773-8dcd-b36f8f092d05");
-INSERT INTO C_PP
-	VALUES ("b6e66ddd-dfd8-4b99-9bae-c13431f88938",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'sdState',
-	'',
-	0,
-	'',
-	"5a392c63-b612-4188-b22c-f622f25a09c3");
-INSERT INTO C_PP
-	VALUES ("a42edd51-a719-4516-b4ca-ac5147945aad",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'sdDescription',
-	'',
-	0,
-	'',
-	"b6e66ddd-dfd8-4b99-9bae-c13431f88938");
-INSERT INTO C_PP
-	VALUES ("56a71c7d-f321-487b-bdb2-4add77c65068",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'Notes',
-	'',
-	0,
-	'',
-	"a42edd51-a719-4516-b4ca-ac5147945aad");
-INSERT INTO C_PP
-	VALUES ("93920766-d2a2-472d-9023-eb376ed77f71",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'IncompleteReasons',
-	'',
-	0,
-	'',
-	"56a71c7d-f321-487b-bdb2-4add77c65068");
-INSERT INTO C_EP
-	VALUES ("4d8c9fe4-1360-4d30-90fd-12402e63d2a3",
-	"b9747524-a416-4a89-a9ef-0062b1f78a12",
-	-1,
-	'CreateInitiative',
-	'',
-	0);
-INSERT INTO C_AS
-	VALUES ("4d8c9fe4-1360-4d30-90fd-12402e63d2a3",
-	'CreateInitiative',
-	'',
-	0,
-	"164afa80-0634-483c-873c-74974775a70c");
 INSERT INTO C_PP
 	VALUES ("44d466b4-5f54-4de6-8676-d334b857067b",
 	"4d8c9fe4-1360-4d30-90fd-12402e63d2a3",
@@ -727,15 +588,6 @@ INSERT INTO C_PP
 	'',
 	"41eef2af-b7bc-4b1e-b950-7d0d2d2a2d66");
 INSERT INTO C_PP
-	VALUES ("28e9d534-6c9b-4fa7-b424-d84daf0b5964",
-	"b9687437-2df6-41c0-bb96-f4dfbe905d8e",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'CreationDate',
-	'',
-	0,
-	'',
-	"21da3590-10ae-4b45-a79e-9583fd5dc49b");
-INSERT INTO C_PP
 	VALUES ("48a87389-ec8b-4c3b-a489-50d52372efba",
 	"b9687437-2df6-41c0-bb96-f4dfbe905d8e",
 	"ba5eda7a-def5-0000-0000-000000000004",
@@ -743,7 +595,7 @@ INSERT INTO C_PP
 	'',
 	0,
 	'',
-	"28e9d534-6c9b-4fa7-b424-d84daf0b5964");
+	"21da3590-10ae-4b45-a79e-9583fd5dc49b");
 INSERT INTO C_PP
 	VALUES ("65184735-a78f-4e4a-9c76-1f98f44ebf03",
 	"b9687437-2df6-41c0-bb96-f4dfbe905d8e",
@@ -890,12 +742,12 @@ INSERT INTO C_EP
 	VALUES ("8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddHierarchyMember',
+	'AddProjectMember',
 	'',
 	4);
 INSERT INTO C_AS
 	VALUES ("8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
-	'AddHierarchyMember',
+	'AddProjectMember',
 	'',
 	0,
 	"945f99a2-2aa4-40e9-9802-b3f2d7914cdb");
