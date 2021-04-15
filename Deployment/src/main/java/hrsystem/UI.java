@@ -402,10 +402,10 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
       	   
          } 
          }
-         public void sendMember ( final String p_MemberName,  final String p_Role ) throws XtumlException {
+         public void sendProjectMember ( final String p_MemberName,  final String p_Role ) throws XtumlException {
           
           try {
-            HRGuiController.Singleton().sendMember( p_MemberName, p_Role);
+            HRGuiController.Singleton().sendProjectMember( p_MemberName, p_Role);
          }catch(Exception e) {
       	   
          } 

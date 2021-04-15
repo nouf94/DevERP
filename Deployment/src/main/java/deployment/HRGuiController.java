@@ -1977,19 +1977,55 @@ private static HRGuiController singleton;
 		}
 	}
 	@PostMapping(path="/CreateChangeRequest", consumes="application/json")
-	public void CreateChangeRequest(String p_Description, String p_Justification, String p_ProjectCode,  String p_ImpactCategory, String p_ImpactDetails ) {
+	public void CreateChangeRequest(@RequestBody ChangeRequest chreq ) {
 		// TODO Auto-generated method stub
 		try {
-			UI.Singleton().Projects().CreateChangeRequest(p_Description, p_Justification, p_ProjectCode,  p_ImpactCategory, p_ImpactDetails);
+			UI.Singleton().Projects().CreateChangeRequest(chreq.getP_Description(), chreq.getP_Justification(), chreq.getP_ProjectCode(),  chreq.getP_ImpactCategory(), chreq.getP_ImpactDetails());
 		} catch (XtumlException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	public void sendMember (  String p_MemberName,   String p_Role ) {
+	/**@GetMapping(path="/readBonusList", produces="application/json")
+	public List<SendBonusList> ReadBonusList() {
+		
+		try {
+			bonusList.clear();
+			UI.Singleton().App().ReadBonusList();
+			Thread.sleep(700);
+			return bonusList;
+		} catch (XtumlException e) {
+			
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+ */
+ 	List<ChangeRequest> changes = new ArrayList<ChangeRequest>();
+	@GetMapping(path="/ReadAllChangeRequest", produces="application/json")
+	public List<ChangeRequest> ReadAllChangeRequest() {
+		// TODO Auto-generated method stub
+		try {
+			changes.clear();
+			UI.Singleton().Projects().ReadAllChangeRequest();
+			Thread.sleep(700);
+			return changes;
+		} catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public void sendProjectMember (  String p_MemberName,   String p_Role ) {
           
           try {
-            UI.Singleton().Projects().sendMember( p_MemberName, p_Role);
+            UI.Singleton().Projects().sendProjectMember( p_MemberName, p_Role);
          }catch(Exception e) {
       	   
          } 
@@ -2081,7 +2117,7 @@ private static HRGuiController singleton;
 	public void SendChangeRequest( final int p_CreationDate,  final String p_Description,  final String p_Justification ) {
 
 		try{
-			UI.Singleton().Projects().SendChangeRequest(p_CreationDate, p_Description , p_Justification );
+			changes.add(new ChangeRequest(p_CreationDate,p_Description,p_Justification));
 
 		}catch(Exception e){
 

@@ -1,4 +1,3 @@
-
 Vue.component('mynavbar', {
   template:' <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">'+
   '<div class="container">'+
@@ -10,8 +9,12 @@ Vue.component('mynavbar', {
       '<ul class="navbar-nav ml-auto">'+
                     '<li class="nav-item">'+
 
+          
 
-          '<a class="nav-link" href="/Deployment/home/ar/">'+
+             
+
+
+          '<a class="nav-link" href="/home.html">'+
 
            ' الرئيسية'+
             '<span class="sr-only">(current)</span>'+
@@ -34,6 +37,7 @@ Vue.component('mynavbar', {
     '</div>'+
  '</div>'+
 '</nav>' });
+
 Vue.component('myfooter', {
   template:' <div> '+
 '<div class="container-fluid padding" style="background-color:#0b2047"> '+
@@ -64,20 +68,33 @@ Vue.component('myfooter', {
   '</div> '+
 '</div>'});
 
+     //grab the things we need
+    /*const chnageForm = document.getElementById('pchange-form');
+
+    //listen for the submit event
+    chnageForm.addEventListener('submit', processForm);
+     function processForm(e) {
+     e.preventDefault();
+
+    }
+*/
 var app = new Vue({
-    el: '#body',
+    el: '#Change',
     data:{
       p_Description: '',
       p_Justification: '',
       p_ProjectCode: '0',
-      CreationDate: '0',
+      p_CreationDate: '0',
       p_ImpactCategory: 'time',
       p_ImpactDetails: '',
+     Requests:'',
+      errors: {
+        name: false,
+        email: false
+      }
     },
-    
     methods: {
-      submitValues: function () {
-        console.log({ nid: parseInt(this.nid) }) 
+      submitValues: function (event) {
           axios.post('/rest/CreateChangeRequest', {
             p_Description: this.p_Description,
             p_Justification: this.p_Justification,
@@ -86,13 +103,20 @@ var app = new Vue({
             p_ImpactCategory: this.p_ImpactCategory,
             p_ImpactDetails: this.p_ImpactDetails
             }).then(response => {
-             
-              console.log(response);
+              alert('Connection sent');
                 window.location.href = '/project/createprojectplan.html';
             }).catch(error => {
                 console.log(error.response)
             });
-        }
+        }//End SubmitValues Method
+        
+      },//End  Methods
+      mounted () {
+        axios.get('/rest/ReadAllChangeRequest')
+        .then(response => (this.Requests = response.data,
+            console.log(this.Requests)
+            ))
       }
+  
     
-})
+});//End Vue Temp
