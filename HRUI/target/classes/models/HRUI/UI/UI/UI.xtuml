@@ -2759,7 +2759,7 @@ INSERT INTO SPR_RS
 	VALUES ("e0ec17ec-bd7f-44c3-ae7b-3aff8bd3607f",
 	'sendProjectMember',
 	'',
-	'::sendMember( MemberName:param.MemberName, Role:Param.Role );
+	'::sendProjectMember( MemberName:param.MemberName, Role:Param.Role );
 ',
 	1,
 	0,
