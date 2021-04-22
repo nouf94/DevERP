@@ -605,9 +605,9 @@ INSERT INTO SPR_PS
 CR.CreationDate =TIM::current_seconds();
 
 
-CR.CreateChangeRequest ( Description:param.Description, Justification:param.Justification, ProjectCode:param.ProjectCode, CreationDate:CR.CreationDate, ImpactCategory:param.ImpactCategory, ImpactDetails: param.ImpactDetails);
+CR.CreateChangeRequest ( Title:param.Title, Description:param.Description, Justification:param.Justification, ProjectCode:param.ProjectCode, CreationDate:CR.CreationDate, ImpactCategory:param.ImpactCategory, ImpactDetails: param.ImpactDetails);
 
-UI::SendChangeRequest( CreationDate:CR.CreationDate, Description:param.Description, Justification:param.Justification );
+UI::SendChangeRequest( CreationDate:CR.CreationDate, Title:param.Title, Description:param.Description, Justification:param.Justification );
 ',
 	1,
 	0,
@@ -920,7 +920,7 @@ INSERT INTO SPR_PS
 if (not_empty changerequests)
 	
 	for each CH in changerequests
-		UI::SendChangeRequest( CreationDate:CH.CreationDate, Description:CH.Description, Justification: CH.Justification);
+		UI::SendChangeRequest( CreationDate:CH.CreationDate, Title:CH.Title, Description:CH.Description, Justification: CH.Justification);
 	end for;
 end if;
 
