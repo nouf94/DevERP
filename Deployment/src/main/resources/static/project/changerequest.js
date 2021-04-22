@@ -68,23 +68,13 @@ Vue.component('myfooter', {
   '</div> '+
 '</div>'});
 
-     //grab the things we need
-    /*const chnageForm = document.getElementById('pchange-form');
-
-    //listen for the submit event
-    chnageForm.addEventListener('submit', processForm);
-     function processForm(e) {
-     e.preventDefault();
-
-    }
-*/
+    
 var app = new Vue({
-    el: '#Change',
+    el: '#nav-requests',
     data:{
       p_Description: '',
       p_Justification: '',
       p_ProjectCode: '0',
-      p_CreationDate: '0',
       p_ImpactCategory: 'time',
       p_ImpactDetails: '',
      Requests:'',
@@ -99,24 +89,44 @@ var app = new Vue({
             p_Description: this.p_Description,
             p_Justification: this.p_Justification,
             p_ProjectCode: this.p_ProjectCode,
-            CreationDate: this.CreationDate,
             p_ImpactCategory: this.p_ImpactCategory,
             p_ImpactDetails: this.p_ImpactDetails
             }).then(response => {
-              alert('Connection sent');
-                window.location.href = '/project/createprojectplan.html';
+              readChnages()
             }).catch(error => {
                 console.log(error.response)
             });
-        }//End SubmitValues Method
-        
+        }//End SubmitValues Method  
       },//End  Methods
-      mounted () {
+      mounted: function readChnages(){
         axios.get('/rest/ReadAllChangeRequest')
-        .then(response => (this.Requests = response.data,
-            console.log(this.Requests)
-            ))
+        .then(response2 => (this.Requests = response2.data,
+          ProcessRequest(this.Requests)
+            )).catch(error => {
+              console.log(error.response)
+          })
+
       }
   
     
 });//End Vue Temp
+
+
+
+
+function ProcessRequest(Requests){
+  //Show Table of request if there is available Requests
+  //Hide Message
+  //Convert date from Seconds to Date Format
+  curdate = new Date(null);
+  for(i=0;i<Requests.length;i++){
+    document.getElementById('NoReqts').style.display="none";
+    document.getElementById('RequestsTable').style.display="block";
+    curdate.setTime(Requests[i].p_CreationDate*1000);
+    Requests[i].p_CreationDate=curdate.toLocaleString();
+}
+this.$refs.Requests.refresh();
+
+return;
+}
+
