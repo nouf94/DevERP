@@ -2130,7 +2130,7 @@ private static HRGuiController singleton;
 
 ChangeRequest chreq;
 		try{
-			for(int j;j<Impacts.getP_ImpactInfo().length;j++){
+			for(int j=0;j<Impacts.getP_ImpactInfo().length;j++){
 			chreq=new ChangeRequest(Impacts.getP_ImpactInfo()[j], Details.getP_ImpactInfo()[j], p_ChangeRequestCreationDate );
 			UI.Singleton().Projects().AddChangeRequestImpact(chreq.getP_ImpactCategory(),chreq.getP_ImpactDetails(),chreq.getP_CreationDate());
 			}
