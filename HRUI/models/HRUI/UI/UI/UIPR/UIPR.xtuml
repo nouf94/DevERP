@@ -337,15 +337,6 @@ INSERT INTO S_SPARM
 	'',
 	"cdd8f6cb-c48a-4b15-bf3e-9dd15e575396",
 	'');
-INSERT INTO S_SPARM
-	VALUES ("4d52a6ad-030e-42f5-bdcc-37b1934b5ea4",
-	"dd2a966d-6a5a-481c-9001-c5772ed3f7cc",
-	'ChangeRequestCreationDate',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"ab399bd3-a142-488b-88d6-3df64646fa1c",
-	'');
 INSERT INTO PE_PE
 	VALUES ("dd2a966d-6a5a-481c-9001-c5772ed3f7cc",
 	1,
