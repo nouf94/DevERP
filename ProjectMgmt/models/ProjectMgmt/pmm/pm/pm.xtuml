@@ -936,6 +936,82 @@ INSERT INTO C_EP_PROXY
 	'',
 	12,
 	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("98a2fa58-0555-4555-b36b-03e33fd7ba6e",
+	"e286eec1-fb31-4403-ad26-d3150bd9cf4a",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("98a2fa58-0555-4555-b36b-03e33fd7ba6e",
+	'AddDocument',
+	'',
+	'
+
+create object instance Doc of Document;
+
+Doc.CreateDocument(ProjectCode:param.ProjectCode, Title:param.Title, Path:param.Path, State:param.State, Notes:param.Notes, AttachedTo:param.AttachedTo );',
+	1,
+	0,
+	13);
+INSERT INTO C_EP_PROXY
+	VALUES ("e286eec1-fb31-4403-ad26-d3150bd9cf4a",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddDocument',
+	'',
+	13,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("d55e47f6-b7eb-452f-bc91-daf8b00dd792",
+	"5af6a99b-3102-4883-9be3-d3887888fabf",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("d55e47f6-b7eb-452f-bc91-daf8b00dd792",
+	'ReadDocument',
+	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode; 
+
+   
+if (not_empty project)
+	select many documents related by project->Document[R74.''Inlcudes''];
+	for each Doc in documents
+	
+		UI::SendDocument( Title:Doc.Title,Path:Doc.Path,State:Doc.State,Notes:Doc.Notes,AttachedTo:Doc.AttachedTo);
+	end for;
+end if;
+',
+	1,
+	0,
+	14);
+INSERT INTO C_EP_PROXY
+	VALUES ("5af6a99b-3102-4883-9be3-d3887888fabf",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadDocument',
+	'',
+	14,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("2d8aca92-1e69-4e95-b548-88d17716a509",
+	"c2d5625a-a3b3-4c33-b00b-58393ed6d470",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("2d8aca92-1e69-4e95-b548-88d17716a509",
+	'SendDocument',
+	'',
+	'',
+	1,
+	0,
+	15);
+INSERT INTO C_EP_PROXY
+	VALUES ("c2d5625a-a3b3-4c33-b00b-58393ed6d470",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendDocument',
+	'',
+	15,
+	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	"00000000-0000-0000-0000-000000000000",

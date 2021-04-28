@@ -2536,7 +2536,7 @@ INSERT INTO SPR_RS
 	VALUES ("a7c2b0b7-c4c1-4628-b7a3-450e474e2116",
 	'AddChangeRequestImpact',
 	'',
-	'::SendChangeRequestImpact( Category:param.Category, Details:param.Details, ChangeRequestCreationDate:param.ChangeRequestCreationDate );',
+	'//::SendChangeRequestImpact( Category:param.Category, Details:param.Details, ChangeRequestCreationDate:param.ChangeRequestCreationDate );',
 	1,
 	0,
 	0);
@@ -2840,8 +2840,9 @@ INSERT INTO SPR_RS
 	VALUES ("ccd27531-e01a-49e1-8f9f-53211ef89dfa",
 	'SendDocument',
 	'',
-	'',
-	3,
+	'::SendDocument( Title:param.Title, Path:param.Path, State:param.State, Notes:param.Notes, AttachedTo:param.AttachedTo );
+',
+	1,
 	0,
 	15);
 INSERT INTO C_EP_PROXY
