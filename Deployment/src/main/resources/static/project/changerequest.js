@@ -69,7 +69,8 @@ Vue.component('myfooter', {
 '</div>'});
 
 Impacts=[];
-Details=[];    
+Details=[]; 
+CreationDate="";   
 var app = new Vue({
     el: '#nav-requests',
     data:{
@@ -97,23 +98,24 @@ var app = new Vue({
       submitValues: function (event) {
         GetImpact();
           axios.post('/rest/CreateChangeRequest', {
+            p_Title: this.p_Title,
             p_Description: this.p_Description,
             p_Justification: this.p_Justification,
             p_ProjectCode: this.p_ProjectCode,
             p_ImpactCategory: this.p_ImpactCategory,
             p_ImpactDetails: this.p_ImpactDetails
             }).then(response => {
+              submitImpact();
               readChnages()
             }).catch(error => {
                 console.log(error)
             });
         },//End SubmitValues Method  
         submitImpact: function (event) {
-          GetImpact();
             axios.post('/rest/SendChangeRequestImpact', {
-              p_ImpactCategory: this.p_ImpactCategory,
-              p_ImpactDetails: this.p_ImpactDetails,
-              p_ChangeRequestCreationDate:this.p_ChangeRequestCreationDate
+              Impacts: Impacts,
+              Details: Details,
+              p_ChangeRequestCreationDate:CreationDate
 
               }).then(response => {
                 console.log(response)

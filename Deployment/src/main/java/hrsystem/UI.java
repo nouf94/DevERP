@@ -388,9 +388,9 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
     }
 
 
-   public void SendChangeRequest( final int p_CreationDate,  final String p_Description,  final String p_Justification) throws XtumlException {
+   public void SendChangeRequest( final int p_CreationDate,final String p_Title, final String p_Description,  final String p_Justification) throws XtumlException {
          try {
-            HRGuiController.Singleton().SendChangeRequest( p_CreationDate,p_Description, p_Justification);
+            HRGuiController.Singleton().SendChangeRequest( p_CreationDate, p_Title,p_Description, p_Justification);
          }catch(Exception e) {
       	   
          } 
