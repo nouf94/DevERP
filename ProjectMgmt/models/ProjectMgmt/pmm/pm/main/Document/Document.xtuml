@@ -7,6 +7,87 @@ INSERT INTO O_OBJ
 	'Document',
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("1f7ddbce-0a25-43e4-841a-a88042b63782",
+	"18f212d3-3304-4b22-91c5-d85170ca6e25",
+	'CreateDocument',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.Title=param.Title;
+self.Path=param.Path;
+self.State=param.State;
+self.Notes=param.Notes;
+self.AttachedTo=param.AttachedTo;
+
+	
+// select the project that this Goal belongs to
+
+select any project from instances of Project where selected.Code==param.ProjectCode;
+if (not_empty project)
+		relate self to project across R74.''Bleongs to'';
+end if;
+
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("4d362d40-82a2-4d96-91d6-19256869bbf8",
+	"1f7ddbce-0a25-43e4-841a-a88042b63782",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"4000f557-ac45-46ea-97aa-43518eace19c",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("b75eb294-95f5-41dd-814b-59c0c51267ff",
+	"1f7ddbce-0a25-43e4-841a-a88042b63782",
+	'Path',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"4d362d40-82a2-4d96-91d6-19256869bbf8",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("a852935c-2b02-4858-bfca-c45be3f04d9d",
+	"1f7ddbce-0a25-43e4-841a-a88042b63782",
+	'State',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"b75eb294-95f5-41dd-814b-59c0c51267ff",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("2cd195b4-1e9f-4def-9be5-7e42475968d6",
+	"1f7ddbce-0a25-43e4-841a-a88042b63782",
+	'Notes',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"a852935c-2b02-4858-bfca-c45be3f04d9d",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("ba64b547-f953-471f-a683-c31941b9af15",
+	"1f7ddbce-0a25-43e4-841a-a88042b63782",
+	'AttachedTo',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"2cd195b4-1e9f-4def-9be5-7e42475968d6",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("4000f557-ac45-46ea-97aa-43518eace19c",
+	"1f7ddbce-0a25-43e4-841a-a88042b63782",
+	'ProjectCode',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("a8b82517-014b-477b-a971-5a170d69f794",
 	"18f212d3-3304-4b22-91c5-d85170ca6e25");

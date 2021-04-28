@@ -1037,6 +1037,153 @@ INSERT INTO C_AS
 	'',
 	0,
 	"27e01210-4229-479a-a05b-1cda59afb794");
+INSERT INTO C_EP
+	VALUES ("e286eec1-fb31-4403-ad26-d3150bd9cf4a",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddDocument',
+	'',
+	13);
+INSERT INTO C_AS
+	VALUES ("e286eec1-fb31-4403-ad26-d3150bd9cf4a",
+	'AddDocument',
+	'',
+	0,
+	"e628a073-327a-493a-8771-c713430d5248");
+INSERT INTO C_PP
+	VALUES ("4e9c546a-6de5-4382-ba8c-303a08fb55e1",
+	"e286eec1-fb31-4403-ad26-d3150bd9cf4a",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("fc35cf28-3070-4659-bc83-1c0904a2fae8",
+	"e286eec1-fb31-4403-ad26-d3150bd9cf4a",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Title',
+	'',
+	0,
+	'',
+	"4e9c546a-6de5-4382-ba8c-303a08fb55e1");
+INSERT INTO C_PP
+	VALUES ("68146829-74f8-43a3-8917-2c3d888d0c3f",
+	"e286eec1-fb31-4403-ad26-d3150bd9cf4a",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Path',
+	'',
+	0,
+	'',
+	"fc35cf28-3070-4659-bc83-1c0904a2fae8");
+INSERT INTO C_PP
+	VALUES ("07769a4e-2fcb-4df7-98da-e33f5ca5eb81",
+	"e286eec1-fb31-4403-ad26-d3150bd9cf4a",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'State',
+	'',
+	0,
+	'',
+	"68146829-74f8-43a3-8917-2c3d888d0c3f");
+INSERT INTO C_PP
+	VALUES ("3ef7b616-a69a-4015-a559-35bb82de4416",
+	"e286eec1-fb31-4403-ad26-d3150bd9cf4a",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Notes',
+	'',
+	0,
+	'',
+	"07769a4e-2fcb-4df7-98da-e33f5ca5eb81");
+INSERT INTO C_PP
+	VALUES ("0de84f84-ddfa-45e4-a3ce-00e08bf04e0a",
+	"e286eec1-fb31-4403-ad26-d3150bd9cf4a",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'AttachedTo',
+	'',
+	0,
+	'',
+	"3ef7b616-a69a-4015-a559-35bb82de4416");
+INSERT INTO C_EP
+	VALUES ("5af6a99b-3102-4883-9be3-d3887888fabf",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadDocument',
+	'',
+	14);
+INSERT INTO C_AS
+	VALUES ("5af6a99b-3102-4883-9be3-d3887888fabf",
+	'ReadDocument',
+	'',
+	0,
+	"e286eec1-fb31-4403-ad26-d3150bd9cf4a");
+INSERT INTO C_PP
+	VALUES ("068d3552-7851-47d0-881d-a2c7643fba1f",
+	"5af6a99b-3102-4883-9be3-d3887888fabf",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("c2d5625a-a3b3-4c33-b00b-58393ed6d470",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendDocument',
+	'',
+	15);
+INSERT INTO C_AS
+	VALUES ("c2d5625a-a3b3-4c33-b00b-58393ed6d470",
+	'SendDocument',
+	'',
+	0,
+	"5af6a99b-3102-4883-9be3-d3887888fabf");
+INSERT INTO C_PP
+	VALUES ("85fc9197-1b4d-420f-922f-dc1056080e98",
+	"c2d5625a-a3b3-4c33-b00b-58393ed6d470",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Title',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("7a119f61-810f-41be-bbec-70429bbdc225",
+	"c2d5625a-a3b3-4c33-b00b-58393ed6d470",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Path',
+	'',
+	0,
+	'',
+	"85fc9197-1b4d-420f-922f-dc1056080e98");
+INSERT INTO C_PP
+	VALUES ("0b900baf-3c2b-445d-9180-2bf9047bde99",
+	"c2d5625a-a3b3-4c33-b00b-58393ed6d470",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'State',
+	'',
+	0,
+	'',
+	"7a119f61-810f-41be-bbec-70429bbdc225");
+INSERT INTO C_PP
+	VALUES ("dac8d0c3-d0c3-44aa-8ad0-9b0b9668c484",
+	"c2d5625a-a3b3-4c33-b00b-58393ed6d470",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Notes',
+	'',
+	0,
+	'',
+	"0b900baf-3c2b-445d-9180-2bf9047bde99");
+INSERT INTO C_PP
+	VALUES ("e7e3d980-e1dc-4bea-9cd9-aed07f9da452",
+	"c2d5625a-a3b3-4c33-b00b-58393ed6d470",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'AttachedTo',
+	'',
+	0,
+	'',
+	"dac8d0c3-d0c3-44aa-8ad0-9b0b9668c484");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,
