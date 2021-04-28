@@ -1063,12 +1063,12 @@ INSERT INTO C_EP
 	VALUES ("834fa672-a665-49b3-96a4-48bf4a6c714a",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'sendChangeRequestImpact',
+	'SendChangeRequestImpact',
 	'',
 	14);
 INSERT INTO C_AS
 	VALUES ("834fa672-a665-49b3-96a4-48bf4a6c714a",
-	'sendChangeRequestImpact',
+	'SendChangeRequestImpact',
 	'',
 	1,
 	"54d07859-7f11-4e8e-a0e3-c5cbc4226c09");

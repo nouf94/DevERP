@@ -949,7 +949,7 @@ INSERT INTO SPR_PS
 if (not_empty change )
 	select many impacts related by change ->Impact[R73.''Includes''];
 	for each impact in impacts
-		UI::sendChangeRequestImpact( Category:impact.Category, Details:impact.Details );
+		UI::SendChangeRequestImpact( Category:impact.Category, Details:impact.Details );
 	end for;
 end if;',
 	1,
@@ -969,17 +969,17 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("7d9fb79d-4c2d-4eb0-ba7e-853b0ac98f61",
-	'sendChangeRequestImpact',
+	'SendChangeRequestImpact',
 	'',
 	'',
-	3,
+	1,
 	0,
 	14);
 INSERT INTO C_EP_PROXY
 	VALUES ("834fa672-a665-49b3-96a4-48bf4a6c714a",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'sendChangeRequestImpact',
+	'SendChangeRequestImpact',
 	'',
 	14,
 	'../../Interfaces/Projects/Projects.xtuml');
