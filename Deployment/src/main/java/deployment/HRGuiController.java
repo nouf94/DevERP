@@ -1980,7 +1980,7 @@ private static HRGuiController singleton;
 	public void CreateChangeRequest(@RequestBody ChangeRequest chreq ) {
 		// TODO Auto-generated method stub
 		try {
-			UI.Singleton().Projects().CreateChangeRequest(chreq.getP_Description(), chreq.getP_Justification(), chreq.getP_ProjectCode(),  chreq.getP_ImpactCategory(), chreq.getP_ImpactDetails());
+			UI.Singleton().Projects().CreateChangeRequest(chreq.getP_Title(),chreq.getP_Description(), chreq.getP_Justification(), chreq.getP_ProjectCode(),  chreq.getP_ImpactCategory(), chreq.getP_ImpactDetails());
 		} catch (XtumlException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -2114,22 +2114,26 @@ private static HRGuiController singleton;
 		}
 	}
 	 
-	public void SendChangeRequest( final int p_CreationDate,  final String p_Description,  final String p_Justification ) {
+	public void SendChangeRequest( final int p_CreationDate, final String p_Title, final String p_Description,  final String p_Justification ) {
 
 		try{
-			changes.add(new ChangeRequest(p_CreationDate,p_Description,p_Justification));
+			changes.add(new ChangeRequest(p_CreationDate,p_Title,p_Description,p_Justification));
 
 		}catch(Exception e){
 
 
 		}
 	}
-	public void SendChangeRequestImpact(final String p_Category,  final String p_Details,  final int p_ChangeRequestCreationDate) {
+	List<ChangeRequest> ChangeRequestList = new ArrayList<ChangeRequest>();
+	@PostMapping(path="/SendChangeRequestImpact", consumes="application/json")
+	public void SendChangeRequestImpact(@RequestBody ArrayString Impacts, ArrayString Details,  int p_ChangeRequestCreationDate) {
 
-
+ChangeRequest chreq;
 		try{
-			UI.Singleton().Projects().AddChangeRequestImpact(p_Category, p_Details, p_ChangeRequestCreationDate );
-
+			for(int j=0;j<Impacts.getP_ImpactInfo().length;j++){
+			chreq=new ChangeRequest(Impacts.getP_ImpactInfo()[j], Details.getP_ImpactInfo()[j], p_ChangeRequestCreationDate );
+			UI.Singleton().Projects().AddChangeRequestImpact(chreq.getP_ImpactCategory(),chreq.getP_ImpactDetails(),chreq.getP_CreationDate());
+			}
 		}catch(Exception e){
 
 

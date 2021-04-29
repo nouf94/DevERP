@@ -388,20 +388,14 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
     }
 
 
-   public void SendChangeRequest( final int p_CreationDate,  final String p_Description,  final String p_Justification) throws XtumlException {
+   public void SendChangeRequest( final int p_CreationDate,final String p_Title, final String p_Description,  final String p_Justification) throws XtumlException {
          try {
-            HRGuiController.Singleton().SendChangeRequest( p_CreationDate,p_Description, p_Justification);
+            HRGuiController.Singleton().SendChangeRequest( p_CreationDate, p_Title,p_Description, p_Justification);
          }catch(Exception e) {
       	   
          } 
          } 
-        public void SendChangeRequestImpact(  final String p_Category,  final String p_Details,  final int p_ChangeRequestCreationDate) throws XtumlException {
-         try {
-            HRGuiController.Singleton().SendChangeRequestImpact( p_Category, p_Details, p_ChangeRequestCreationDate );
-         }catch(Exception e) {
-      	   
-         } 
-         }
+   
          public void sendProjectMember ( final String p_MemberName,  final String p_Role ) throws XtumlException {
           
           try {
