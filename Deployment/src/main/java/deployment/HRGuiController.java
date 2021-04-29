@@ -1976,15 +1976,24 @@ private static HRGuiController singleton;
 			e.printStackTrace();
 		}
 	}
-	@PostMapping(path="/CreateChangeRequest", consumes="application/json")
-	public void CreateChangeRequest(@RequestBody ChangeRequest chreq ) {
+	@PutMapping(path="/CreateChangeRequest", consumes="application/json", produces="application/json")	
+	public List<ChangeRequest> CreateChangeRequest(@RequestBody ChangeRequest chreq ) {
 		// TODO Auto-generated method stub
 		try {
+			changes.clear();
 			UI.Singleton().Projects().CreateChangeRequest(chreq.getP_Title(),chreq.getP_Description(), chreq.getP_Justification(), chreq.getP_ProjectCode(),  chreq.getP_ImpactCategory(), chreq.getP_ImpactDetails());
+			Thread.sleep(700);
+			return changes;
+		
 		} catch (XtumlException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
+		return null;
 	}
 	/**@GetMapping(path="/readBonusList", produces="application/json")
 	public List<SendBonusList> ReadBonusList() {
@@ -2022,6 +2031,7 @@ private static HRGuiController singleton;
 		}
 		return null;
 	}
+	
 	public void sendProjectMember (  String p_MemberName,   String p_Role ) {
           
           try {
@@ -2113,32 +2123,57 @@ private static HRGuiController singleton;
 			e.printStackTrace();
 		}
 	}
-	 
+		/*@PutMapping(path="/readEarmarkedPrograms", consumes="application/json", produces="application/json")
+	public List<SendPrograms> ReadEarmarkedPrograms(@RequestBody Chapter chapter) {
+		try {
+			programList.clear();
+			UI.Singleton().Finance().ReadEarmarkedPrograms(chapter.getP_Code());
+			Thread.sleep(500);
+			if(!programList.isEmpty()) {
+			System.out.println("Programs: " + programList.get(0).getP_Code() + " Account: " + programList.get(0).getP_AccountCode());
+			}
+			return programList;
+		} catch (XtumlException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Error in ReadEarmarkedPrograms");
+		return null;
+	}*/ 
+	//@GetMapping(path="/readChangeRequest", produces="application/json")
 	public void SendChangeRequest( final int p_CreationDate, final String p_Title, final String p_Description,  final String p_Justification ) {
-
+        ChangeRequest chread=null;
 		try{
-			changes.add(new ChangeRequest(p_CreationDate,p_Title,p_Description,p_Justification));
+			chread=new ChangeRequest(p_CreationDate,p_Title,p_Description,p_Justification);
+			changes.add(chread);
 
 		}catch(Exception e){
-
-
+			e.printStackTrace();
 		}
 	}
+
 	List<ChangeRequest> ChangeRequestList = new ArrayList<ChangeRequest>();
-	@PostMapping(path="/SendChangeRequestImpact", consumes="application/json")
-	public void SendChangeRequestImpact(@RequestBody ArrayString Impacts, ArrayString Details,  int p_ChangeRequestCreationDate) {
+	@PostMapping(path="/AddChangeRequestImpact", consumes="application/json")
+	public void AddChangeRequestImpact(@RequestBody ArrayString Impacts, ArrayString Details, int p_ChangeRequestCreationDate) {
 
 ChangeRequest chreq;
 		try{
 			for(int j=0;j<Impacts.getP_ImpactInfo().length;j++){
-			chreq=new ChangeRequest(Impacts.getP_ImpactInfo()[j], Details.getP_ImpactInfo()[j], p_ChangeRequestCreationDate );
-			UI.Singleton().Projects().AddChangeRequestImpact(chreq.getP_ImpactCategory(),chreq.getP_ImpactDetails(),chreq.getP_CreationDate());
+				System.out.print("I ammmmmmmmmmmm");
+			//chreq=new ChangeRequest(Impacts.getP_ImpactInfo()[j], Details.getP_ImpactInfo()[j], p_ChangeRequestCreationDate );
+			//UI.Singleton().Projects().AddChangeRequestImpact(chreq.getP_ImpactCategory(),chreq.getP_ImpactDetails(),chreq.getP_CreationDate());
 			}
 		}catch(Exception e){
-
-
+			e.printStackTrace();
 		}
 	}
+	   public void SendChangeRequestImpact( final String p_Category,  final String p_Details)  {
+         try {
+            UI.Singleton().Projects().SendChangeRequestImpact( p_Category,p_Details);
+         }catch(Exception e) {
+      	   
+         } 
+         } 
 	/*
 	public void AssignManger( final String p_AccountName,  final String p_ProjectCode ) {
 

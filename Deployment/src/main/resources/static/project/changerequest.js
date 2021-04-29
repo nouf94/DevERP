@@ -68,17 +68,17 @@ Vue.component('myfooter', {
   '</div> '+
 '</div>'});
 
-Impacts=[];
-Details=[]; 
-CreationDate="";   
+Impacts=['Cost','Time'];
+Details=['700','1/1/2222']; 
 var app = new Vue({
     el: '#nav-requests',
     data:{
+      p_Title:'',
       p_Description: '',
       p_Justification: '',
       p_ProjectCode: '0',
-      p_ImpactCategory: Impacts[0],
-      p_ImpactDetails: Details[0],
+      p_ImpactCategory: 'Time',
+      p_ImpactDetails: 'Card',
      Requests:'',
       errors: {
         name: false,
@@ -97,7 +97,7 @@ var app = new Vue({
     methods: {
       submitValues: function (event) {
         GetImpact();
-          axios.post('/rest/CreateChangeRequest', {
+          axios.put('/rest/CreateChangeRequest', {
             p_Title: this.p_Title,
             p_Description: this.p_Description,
             p_Justification: this.p_Justification,
@@ -105,24 +105,34 @@ var app = new Vue({
             p_ImpactCategory: this.p_ImpactCategory,
             p_ImpactDetails: this.p_ImpactDetails
             }).then(response => {
-              submitImpact();
-              readChnages()
+              //submitImpact();
+
+              this.submitImpact(response.data[0]['p_CreationDate'])
+              //this.GetCreationDate();
+              //this.readChnages()
             }).catch(error => {
                 console.log(error)
             });
         },//End SubmitValues Method  
-        submitImpact: function (event) {
-            axios.post('/rest/SendChangeRequestImpact', {
+        submitImpact: function (creationDate) {
+            axios.post('/rest/AddChangeRequestImpact', {
               Impacts: Impacts,
               Details: Details,
-              p_ChangeRequestCreationDate:CreationDate
-
+              p_ChangeRequestCreationDate:creationDate
               }).then(response => {
                 console.log(response)
               }).catch(error => {
                   console.log(error)
               });
-          }//End SubmitValues Method  
+          },//End SubmitValues Method  
+          GetCreationDate: function (event) {
+            axios.get('/rest/readChangeRequest', {
+              }).then(response => {
+                console.log(response)
+              }).catch(error => {
+                  console.log(error)
+              });
+          }//End read CreationDate Method  
       }//End  Methods
     
 });//End Vue Temp

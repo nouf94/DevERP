@@ -395,7 +395,13 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
       	   
          } 
          } 
-   
+     public void SendChangeRequestImpact( final String p_Category,  final String p_Details) throws XtumlException {
+         try {
+            HRGuiController.Singleton().SendChangeRequestImpact( p_Category,p_Details);
+         }catch(Exception e) {
+      	   
+         } 
+         } 
          public void sendProjectMember ( final String p_MemberName,  final String p_Role ) throws XtumlException {
           
           try {
