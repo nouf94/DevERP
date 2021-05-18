@@ -23,6 +23,7 @@ CR.ID=param.ID;
 */
 
 select any CR from instances of ChangeRequest where selected.CreationDate == param.CreationDate;
+CR.Title=param.Title;
 CR.Description = param.Description;
 CR.Justification = param.Justification;
 	
@@ -48,7 +49,7 @@ INSERT INTO O_TPARM
 	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
 	'',
-	"00000000-0000-0000-0000-000000000000",
+	"c609bd35-af10-4b6f-83a8-e52fa8448601",
 	'');
 INSERT INTO O_TPARM
 	VALUES ("e149076f-be56-4481-a474-aaabcdc34b04",
@@ -95,6 +96,15 @@ INSERT INTO O_TPARM
 	'',
 	"f68f652f-97bf-4ab8-b1cb-b3b66d4d78d7",
 	'');
+INSERT INTO O_TPARM
+	VALUES ("c609bd35-af10-4b6f-83a8-e52fa8448601",
+	"f1ebb4ca-d629-469a-be68-f52787eb5a94",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("11161441-4785-4705-afd9-8f3ea91fb842",
 	"afe3a14f-1d58-4fa7-8295-6973472caf68");
@@ -104,7 +114,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("11161441-4785-4705-afd9-8f3ea91fb842",
 	"afe3a14f-1d58-4fa7-8295-6973472caf68",
-	"00000000-0000-0000-0000-000000000000",
+	"ceb9ef63-1a28-4e1f-86fb-78c8fa8a4d0c",
 	'Description',
 	'',
 	'',
@@ -147,6 +157,24 @@ INSERT INTO O_ATTR
 	'CreationDate',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("ceb9ef63-1a28-4e1f-86fb-78c8fa8a4d0c",
+	"afe3a14f-1d58-4fa7-8295-6973472caf68");
+INSERT INTO O_BATTR
+	VALUES ("ceb9ef63-1a28-4e1f-86fb-78c8fa8a4d0c",
+	"afe3a14f-1d58-4fa7-8295-6973472caf68");
+INSERT INTO O_ATTR
+	VALUES ("ceb9ef63-1a28-4e1f-86fb-78c8fa8a4d0c",
+	"afe3a14f-1d58-4fa7-8295-6973472caf68",
+	"00000000-0000-0000-0000-000000000000",
+	'Title',
+	'',
+	'',
+	'Title',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
 	'',
 	'');
 INSERT INTO O_ID

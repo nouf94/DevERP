@@ -203,6 +203,9 @@ relate member2 to project1 across R71.''organize'';
 
 //------------------------------------------------------
 
+create object instance CR of ChangeRequest; 
+CR.CreateChangeRequest( Title:"CR11", Description:"DDd", Justification:"jjjjj", ProjectCode:"Project1Code", CreationDate:0, ImpactCategory:"iii", ImpactDetails:"IIMM" );
+
 
 
 

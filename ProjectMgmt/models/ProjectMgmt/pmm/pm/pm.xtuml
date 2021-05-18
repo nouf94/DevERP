@@ -367,26 +367,6 @@ to identify the initiative.',
 	0,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("c7680951-5c72-4ed3-b1fd-13863bf8da3c",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"1ba050a2-d419-4423-b771-96be8886d0a0");
-INSERT INTO SPR_PS
-	VALUES ("c7680951-5c72-4ed3-b1fd-13863bf8da3c",
-	'SendMilestones',
-	'',
-	'',
-	1,
-	0,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("164afa80-0634-483c-873c-74974775a70c",
-	"b9747524-a416-4a89-a9ef-0062b1f78a12",
-	-1,
-	'SendMilestones',
-	'',
-	0,
-	'../../Interfaces/Projects/Projects.xtuml');
-INSERT INTO SPR_PEP
 	VALUES ("74480299-c78b-48d9-86f9-59530cbae277",
 	"4d8c9fe4-1360-4d30-90fd-12402e63d2a3",
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
@@ -622,12 +602,12 @@ INSERT INTO SPR_PS
 	'CreateChangeRequest',
 	'',
 	'create object instance CR of ChangeRequest;
-CR.CreationDate = 0;
+CR.CreationDate =TIM::current_seconds();
 
 
-CR.CreateChangeRequest ( Description:param.Description, Justification:param.Justification, ProjectCode:param.ProjectCode, CreationDate:CR.CreationDate, ImpactCategory:param.ImpactCategory, ImpactDetails: param.ImpactDetails);
+CR.CreateChangeRequest ( Title:param.Title, Description:param.Description, Justification:param.Justification, ProjectCode:param.ProjectCode, CreationDate:CR.CreationDate, ImpactCategory:param.ImpactCategory, ImpactDetails: param.ImpactDetails);
 
-UI::SendChangeRequest( CreationDate:CR.CreationDate, Description:param.Description, Justification:param.Justification );
+UI::SendChangeRequest( CreationDate:CR.CreationDate, Title:param.Title, Description:param.Description, Justification:param.Justification );
 ',
 	1,
 	0,
@@ -738,7 +718,7 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("46899947-e14d-4203-87eb-75f56227b05f",
-	'AddHierarchyMember',
+	'AddProjectMember',
 	'',
 	'
 create object instance member of Member;
@@ -751,7 +731,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddHierarchyMember',
+	'AddProjectMember',
 	'',
 	4,
 	'../../Interfaces/Projects/Projects.xtuml');
@@ -933,14 +913,14 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("ed2e3108-6387-4968-9dd3-b8ba60ffcbbb",
-	'ReadChangeRequest',
+	'ReadAllChangeRequest',
 	'',
 	'select many changerequests from ChangeRequest;
 
 if (not_empty changerequests)
 	
 	for each CH in changerequests
-		UI::SendChangeRequest( CreationDate:CH.CreationDate, Description:CH.Description, Justification: CH.Justification);
+		UI::SendChangeRequest( CreationDate:CH.CreationDate, Title:CH.Title, Description:CH.Description, Justification: CH.Justification);
 	end for;
 end if;
 
@@ -952,9 +932,56 @@ INSERT INTO C_EP_PROXY
 	VALUES ("e628a073-327a-493a-8771-c713430d5248",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'ReadChangeRequest',
+	'ReadAllChangeRequest',
 	'',
 	12,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("51ab1409-3cd5-415f-a059-509ea5a80a5b",
+	"54d07859-7f11-4e8e-a0e3-c5cbc4226c09",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("51ab1409-3cd5-415f-a059-509ea5a80a5b",
+	'ReadChangeRequestImpact',
+	'',
+	'select any change from instances of ChangeRequest where selected.CreationDate == param.CreationDate ; 
+   
+if (not_empty change )
+	select many impacts related by change ->Impact[R73.''Includes''];
+	for each impact in impacts
+		UI::SendChangeRequestImpact( Category:impact.Category, Details:impact.Details );
+	end for;
+end if;',
+	1,
+	0,
+	13);
+INSERT INTO C_EP_PROXY
+	VALUES ("54d07859-7f11-4e8e-a0e3-c5cbc4226c09",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadChangeRequestImpact',
+	'',
+	13,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("7d9fb79d-4c2d-4eb0-ba7e-853b0ac98f61",
+	"834fa672-a665-49b3-96a4-48bf4a6c714a",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("7d9fb79d-4c2d-4eb0-ba7e-853b0ac98f61",
+	'SendChangeRequestImpact',
+	'',
+	'',
+	1,
+	0,
+	14);
+INSERT INTO C_EP_PROXY
+	VALUES ("834fa672-a665-49b3-96a4-48bf4a6c714a",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendChangeRequestImpact',
+	'',
+	14,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",

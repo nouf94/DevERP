@@ -367,26 +367,6 @@ to identify the initiative.',
 	0,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("c7680951-5c72-4ed3-b1fd-13863bf8da3c",
-	"164afa80-0634-483c-873c-74974775a70c",
-	"1ba050a2-d419-4423-b771-96be8886d0a0");
-INSERT INTO SPR_PS
-	VALUES ("c7680951-5c72-4ed3-b1fd-13863bf8da3c",
-	'SendMilestones',
-	'',
-	'',
-	1,
-	0,
-	0);
-INSERT INTO C_EP_PROXY
-	VALUES ("164afa80-0634-483c-873c-74974775a70c",
-	"b9747524-a416-4a89-a9ef-0062b1f78a12",
-	-1,
-	'SendMilestones',
-	'',
-	0,
-	'../../Interfaces/Projects/Projects.xtuml');
-INSERT INTO SPR_PEP
 	VALUES ("74480299-c78b-48d9-86f9-59530cbae277",
 	"4d8c9fe4-1360-4d30-90fd-12402e63d2a3",
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
@@ -622,7 +602,7 @@ INSERT INTO SPR_PS
 	'CreateChangeRequest',
 	'',
 	'create object instance CR of ChangeRequest;
-CR.CreationDate = 0;
+CR.CreationDate =TIM::current_seconds();
 
 
 CR.CreateChangeRequest ( Description:param.Description, Justification:param.Justification, ProjectCode:param.ProjectCode, CreationDate:CR.CreationDate, ImpactCategory:param.ImpactCategory, ImpactDetails: param.ImpactDetails);
@@ -738,7 +718,7 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("46899947-e14d-4203-87eb-75f56227b05f",
-	'AddHierarchyMember',
+	'AddProjectMember',
 	'',
 	'
 create object instance member of Member;
@@ -751,7 +731,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("8bd27cbe-1187-4e2e-9eb1-e01c6216e1d2",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddHierarchyMember',
+	'AddProjectMember',
 	'',
 	4,
 	'../../Interfaces/Projects/Projects.xtuml');
@@ -933,7 +913,7 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("ed2e3108-6387-4968-9dd3-b8ba60ffcbbb",
-	'ReadChangeRequest',
+	'ReadAllChangeRequest',
 	'',
 	'select many changerequests from ChangeRequest;
 
@@ -952,7 +932,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("e628a073-327a-493a-8771-c713430d5248",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'ReadChangeRequest',
+	'ReadAllChangeRequest',
 	'',
 	12,
 	'../../Interfaces/Projects/Projects.xtuml');
