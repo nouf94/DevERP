@@ -1995,24 +1995,25 @@ private static HRGuiController singleton;
 
 		return null;
 	}
-	/**@GetMapping(path="/readBonusList", produces="application/json")
-	public List<SendBonusList> ReadBonusList() {
-		
+
+	@GetMapping(path="/ReadChangeRequestImpact", produces="application/json")
+	public Impact ReadChangeRequestImpact(int p_CreationDate) {
+		// TODO Auto-generated method stub
 		try {
-			bonusList.clear();
-			UI.Singleton().App().ReadBonusList();
+			Impact imp = new Impact();
+
+			UI.Singleton().Projects().ReadChangeRequestImpact(p_CreationDate);
 			Thread.sleep(700);
-			return bonusList;
+			return imp;
 		} catch (XtumlException e) {
-			
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (InterruptedException e) {
+		}catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
- */
  	List<ChangeRequest> changes = new ArrayList<ChangeRequest>();
 	@GetMapping(path="/ReadAllChangeRequest", produces="application/json")
 	public List<ChangeRequest> ReadAllChangeRequest() {
@@ -2040,22 +2041,120 @@ private static HRGuiController singleton;
       	   
          } 
          } 
-		 public void SendProjectGoal( String p_Description,  String p_KPI ){
+	
+	     List<Project> projects=new ArrayList<Project>();
+		 public void SendProjects( final String p_Code,  final String p_Name,  final String p_Description,  final int p_StartDate,  final int p_EndDate,  final int p_Budget ){
+        Project proj=null;
+          try {
+			proj=new Project(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget);
+			System.out.println(proj.toString());
+			projects.add(proj);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+
+	@GetMapping(path="/ReadProjects", produces="appliaction/json")
+	public List<Project> ReadProjects() {
+		// TODO Auto-generated method stub
+		try {
+			projects.clear();
+			UI.Singleton().Projects().ReadProjects();
+			Thread.sleep(300);
+			return projects;
+		} catch (XtumlException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+		List<Goal> goals=new ArrayList<Goal>();
+		 public void SendProjectGoal( final String p_Description,  final String p_KPI ){
+        Goal goal=null;
+          try {
+			goal=new Goal(p_Description,p_KPI);
+			System.out.println("Desc: "+p_Description+ "KPI: "+p_KPI);
+			goals.add(goal);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+
+		@PostMapping(path="/AddGoal", consumes="application/json")
+		public void AddGoal(@RequestBody Goal goal ){
           
           try {
-            UI.Singleton().Projects().SendProjectGoal( p_Description, p_KPI );
+            UI.Singleton().Projects().AddGoal( goal.getP_Description(), goal.getP_KPI(), goal.getP_ProjectCode());
          }catch(Exception e) {
       	   
          } 
          } 
-		 public void SendProjectMilestone(  String p_Name,   int p_CompletedPlannedDate,   int p_CompletedActualDate,   int p_Weight,   int p_CompletePercentage ){
+
+		@PutMapping(path="/ReadProjectGoals", consumes="application/json", produces="application/json")	
+		public List<Goal> ReadProjectGoals(@RequestBody Goal goal ){
           
           try {
-            UI.Singleton().Projects().SendProjectMilestone( p_Name, p_CompletedPlannedDate, p_CompletedActualDate, p_Weight, p_CompletePercentage );
+			goals.clear();
+            UI.Singleton().Projects().ReadProjectGoals(goal.getP_ProjectCode());
+			System.out.println(goal.getP_ProjectCode());
+			Thread.sleep(700);
+			return goals;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+        } 
+
+		@PostMapping(path="/AddProjectMilestone", consumes="application/json")
+		public void AddProjectMilestone(@RequestBody Milestone ms ){
+          
+          try {
+            UI.Singleton().Projects().AddProjectMilestone( ms.getP_Name(), ms.getP_CompletePlannedDate(), ms.getP_Weight() ,ms.getP_ProjectCode());
          }catch(Exception e) {
       	   
          } 
          } 
+        List<Milestone> mss=new ArrayList<Milestone>();
+		 public void SendProjectMilestone(  String p_Name,  int p_CompletedPlannedDate,   int p_CompletedActualDate,   int p_Weight,   int p_CompletePercentage ){
+
+        Milestone ms=null;
+          try {
+			ms=new Milestone(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompletePercentage);
+			mss.add(ms);
+            //UI.Singleton().Projects().SendProjectMilestone( p_Name, p_CompletedPlannedDate, p_CompletedActualDate, p_Weight, p_CompletePercentage );
+         }catch(Exception e) {
+      	   
+         } 
+         }  
+		 
+		@PutMapping(path="/ReadProjectMilestone", consumes="application/json", produces="application/json")	
+		public List<Milestone> ReadProjectMilestone(@RequestBody Milestone ms ){
+          
+          try {
+			mss.clear();
+            UI.Singleton().Projects().ReadProjectMilestone(ms.getP_ProjectCode());
+			Thread.sleep(700);
+			return mss;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+        } 
+		 
+		
 	@GetMapping(path="/readInitiatives", produces="appliaction/json")
 	public List<deployment.SendInitiatives> ReadInitiatives() {
 		// TODO Auto-generated method stub
@@ -2086,7 +2185,7 @@ private static HRGuiController singleton;
 		return null;
 	}
 	
-	@GetMapping(path="/readProjects", produces="application/json")
+/*	@GetMapping(path="/readProjects", produces="application/json")
 	public void ReadProjects() {
 		// TODO Auto-generated method stub
 		try {
@@ -2095,10 +2194,8 @@ private static HRGuiController singleton;
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
-	
-	
+	}*/
+		
 	@GetMapping(path="/readStrategies", produces="application/json")
 	public List<SendStrategies> ReadStrategies() {
 		// TODO Auto-generated method stub
@@ -2123,24 +2220,7 @@ private static HRGuiController singleton;
 			e.printStackTrace();
 		}
 	}
-		/*@PutMapping(path="/readEarmarkedPrograms", consumes="application/json", produces="application/json")
-	public List<SendPrograms> ReadEarmarkedPrograms(@RequestBody Chapter chapter) {
-		try {
-			programList.clear();
-			UI.Singleton().Finance().ReadEarmarkedPrograms(chapter.getP_Code());
-			Thread.sleep(500);
-			if(!programList.isEmpty()) {
-			System.out.println("Programs: " + programList.get(0).getP_Code() + " Account: " + programList.get(0).getP_AccountCode());
-			}
-			return programList;
-		} catch (XtumlException | InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("Error in ReadEarmarkedPrograms");
-		return null;
-	}*/ 
-	//@GetMapping(path="/readChangeRequest", produces="application/json")
+	
 	public void SendChangeRequest( final int p_CreationDate, final String p_Title, final String p_Description,  final String p_Justification ) {
         ChangeRequest chread=null;
 		try{
@@ -2151,17 +2231,23 @@ private static HRGuiController singleton;
 			e.printStackTrace();
 		}
 	}
+	@PostMapping(path="/SendStrategies", consumes="application/json")
+	public void SendStrategies(@RequestBody Stratgey stratgey) {
+		try{
+			UI.Singleton().Projects().SendStrategies(stratgey.getP_Number(),stratgey.getP_Name(),stratgey.getP_Description());
+			}catch(Exception e){
+			e.printStackTrace();
+		}
 
-	List<ChangeRequest> ChangeRequestList = new ArrayList<ChangeRequest>();
+
+	}
 	@PostMapping(path="/AddChangeRequestImpact", consumes="application/json")
-	public void AddChangeRequestImpact(@RequestBody ArrayString Impacts, ArrayString Details, int p_ChangeRequestCreationDate) {
-
+	public void AddChangeRequestImpact(@RequestBody Impact Impacts) {
 ChangeRequest chreq;
 		try{
-			for(int j=0;j<Impacts.getP_ImpactInfo().length;j++){
-				System.out.print("I ammmmmmmmmmmm");
-			//chreq=new ChangeRequest(Impacts.getP_ImpactInfo()[j], Details.getP_ImpactInfo()[j], p_ChangeRequestCreationDate );
-			//UI.Singleton().Projects().AddChangeRequestImpact(chreq.getP_ImpactCategory(),chreq.getP_ImpactDetails(),chreq.getP_CreationDate());
+			for(int i = 0; i < Impacts.getP_Impacts().length; i++) {
+			chreq=new ChangeRequest(Impacts.getP_Impacts()[i], Impacts.getP_Details()[i], Impacts.getP_CreationDate() );
+			UI.Singleton().Projects().AddChangeRequestImpact(chreq.getP_ImpactCategory(),chreq.getP_ImpactDetails(),chreq.getP_CreationDate());
 			}
 		}catch(Exception e){
 			e.printStackTrace();
@@ -2210,7 +2296,7 @@ ChangeRequest chreq;
 			e.printStackTrace();
 		}
 	}
-	
+	/*
 	public void SendProjects(String p_Code, String p_Name, String p_Description, int p_StartDate, int p_EndDate, int p_Budget ) {
 		// TODO Auto-generated method stub
 		try {
@@ -2220,7 +2306,7 @@ ChangeRequest chreq;
 			e.printStackTrace();
 		}
 	}
-	
+	*/
 	List<SendStrategies> strategeList = new ArrayList<SendStrategies>();
 	public void SendStrategies(String p_Number, String p_Name, String p_Description) {
 		

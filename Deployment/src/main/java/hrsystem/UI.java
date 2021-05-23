@@ -387,7 +387,6 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
         
     }
 
-
    public void SendChangeRequest( final int p_CreationDate,final String p_Title, final String p_Description,  final String p_Justification) throws XtumlException {
          try {
             HRGuiController.Singleton().SendChangeRequest( p_CreationDate, p_Title,p_Description, p_Justification);
@@ -395,9 +394,18 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
       	   
          } 
          } 
+         
      public void SendChangeRequestImpact( final String p_Category,  final String p_Details) throws XtumlException {
          try {
             HRGuiController.Singleton().SendChangeRequestImpact( p_Category,p_Details);
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+        public void ReadChangeRequestImpact( final int p_CreationDate ) throws XtumlException {
+            
+            try {
+            HRGuiController.Singleton().ReadChangeRequestImpact( p_CreationDate);
          }catch(Exception e) {
       	   
          } 

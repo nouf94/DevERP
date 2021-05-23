@@ -1,18 +1,18 @@
 package deployment;
 
 public class ArrayString {
-	private String[] ImpactInfo;
+	private String[] p_checked;
 	public ArrayString() {
 		
 	}
-	public ArrayString(String[] ImpactInfo) {
-		this.ImpactInfo = ImpactInfo;
+	public ArrayString(String[] p_checked) {
+		this.p_checked = p_checked;
 	}
-	public String[] getP_ImpactInfo() {
-		return ImpactInfo;
+	public String[] getP_checked() {
+		return p_checked;
 	}
-	public void setP_ImpactInfo(String[] ImpactInfo) {
-		this.ImpactInfo = ImpactInfo;
+	public void setP_checked(String[] p_checked) {
+		this.p_checked = p_checked;
 	}
 	
 
