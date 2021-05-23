@@ -9,35 +9,6 @@ INSERT INTO O_OBJ
 or a project.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_TFR
-	VALUES ("33b196b9-4d01-4d7e-9707-7dc798810c79",
-	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
-	'UpdateProgress',
-	'',
-	"ba5eda7a-def5-0000-0000-000000000000",
-	1,
-	'self.CompletePercentage = param.percent;
-if (param.percent == 100)
-	//self.CompleteActualDate = TIM::current_clock();
-	
-else
-	// self.completeActualDate = null
-		
-end if;',
-	1,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	0,
-	0);
-INSERT INTO O_TPARM
-	VALUES ("c51fc3a7-1c15-4ca1-a28f-6e659efd8e20",
-	"33b196b9-4d01-4d7e-9707-7dc798810c79",
-	'percent',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO O_TFR
 	VALUES ("e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
 	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
 	'AddProjectMilestone',
@@ -49,7 +20,7 @@ INSERT INTO O_TFR
 self.Name = param.Name;
 self.Weight = param.Weight;
 self.CompletePlannedDate = param.CompletePlannedDate;
-self.CompletePercentage = 0;	
+self.CompleteStatus = false;	
 // select the project that this milestone belongs to
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
@@ -59,7 +30,7 @@ end if;
 ',
 	1,
 	'',
-	"33b196b9-4d01-4d7e-9707-7dc798810c79",
+	"00000000-0000-0000-0000-000000000000",
 	0,
 	0);
 INSERT INTO O_TPARM
@@ -183,12 +154,30 @@ INSERT INTO O_ATTR
 	VALUES ("7527ff75-b0cb-4462-a849-b5041da13abb",
 	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
 	"0ce3f929-424e-4942-bcfb-29e072de36a6",
-	'CompletePercentage',
+	'CompleteStatus',
 	'',
 	'',
-	'CompletePercentage',
+	'CompleteStatus',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000003",
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("b8338c89-e86c-4c0c-80e7-b26b2892bd33",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
+INSERT INTO O_BATTR
+	VALUES ("b8338c89-e86c-4c0c-80e7-b26b2892bd33",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3");
+INSERT INTO O_ATTR
+	VALUES ("b8338c89-e86c-4c0c-80e7-b26b2892bd33",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
+	"7527ff75-b0cb-4462-a849-b5041da13abb",
+	'CommulativeWeight',
+	'',
+	'',
+	'CommulativeWeight',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
 INSERT INTO O_ID

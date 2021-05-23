@@ -15,7 +15,7 @@ INSERT INTO O_TFR
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'self.Description=param.Description;
-self.KPI=param.KPI;
+self.Impact = param.Impact;
 
 
 	
@@ -45,7 +45,7 @@ INSERT INTO O_TPARM
 INSERT INTO O_TPARM
 	VALUES ("a9fc29e2-610a-4564-8297-ad96e87fb898",
 	"e1c63bce-79d5-4dec-8d0f-13788a7f29a5",
-	'KPI',
+	'Impact',
 	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
 	'',
@@ -79,19 +79,19 @@ INSERT INTO O_ATTR
 	'',
 	'');
 INSERT INTO O_NBATTR
-	VALUES ("e85c761e-05d2-4144-bfc8-21ccfe5d41df",
+	VALUES ("65c4faac-d9db-4055-b7ce-30aa7c98dc57",
 	"5034c157-17f9-4a09-9208-7521810cdb26");
 INSERT INTO O_BATTR
-	VALUES ("e85c761e-05d2-4144-bfc8-21ccfe5d41df",
+	VALUES ("65c4faac-d9db-4055-b7ce-30aa7c98dc57",
 	"5034c157-17f9-4a09-9208-7521810cdb26");
 INSERT INTO O_ATTR
-	VALUES ("e85c761e-05d2-4144-bfc8-21ccfe5d41df",
+	VALUES ("65c4faac-d9db-4055-b7ce-30aa7c98dc57",
 	"5034c157-17f9-4a09-9208-7521810cdb26",
 	"5bc905ce-ea62-4ef4-ae08-d42dc6bf7740",
-	'KPI',
+	'Impact',
 	'',
 	'',
-	'KPI',
+	'Impact',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000004",
 	'',

@@ -2657,7 +2657,8 @@ INSERT INTO SPR_RS
 	VALUES ("a7fc5710-3fd4-4654-8e08-b28b6665dc79",
 	'SendProjectMilestone',
 	'',
-	'::SendProjectMilestone( Name:param.Name, CompletedPlannedDate:param.CompletedPlannedDate, CompletedActualDate:param.CompletedActualDate, Weight:param.Weight, CompletePercentage:param.CompletePercentage );',
+	'::SendProjectMilestone( Name:param.Name, CompletedPlannedDate:param.CompletedPlannedDate, CompletedActualDate:param.CompletedActualDate, Weight:param.Weight, CompleteStatus:param.CompleteStatus);
+',
 	1,
 	0,
 	6);
@@ -2719,7 +2720,7 @@ INSERT INTO SPR_RS
 	VALUES ("83b56669-50ba-4826-a242-bec26b381c2a",
 	'SendProjectGoal',
 	'',
-	'::SendProjectGoal( Description:param.Description, KPI: param.KPI);',
+	'',
 	1,
 	0,
 	9);
@@ -2818,7 +2819,7 @@ INSERT INTO SPR_REP
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
 	VALUES ("08a1b88a-f0c8-407c-b01d-125427585d58",
-	'sendChangeRequestImpact',
+	'SendChangeRequestImpact',
 	'',
 	'::SendChangeRequestImpact( Category:param.Category, Details:param.Details);
 ',
@@ -2829,7 +2830,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("834fa672-a665-49b3-96a4-48bf4a6c714a",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'sendChangeRequestImpact',
+	'SendChangeRequestImpact',
 	'',
 	14,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');

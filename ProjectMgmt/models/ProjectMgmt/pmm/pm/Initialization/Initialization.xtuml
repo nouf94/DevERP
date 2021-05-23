@@ -146,8 +146,8 @@ project1.Code = "Project1Code";
 project1.Name = "Project1Name";
 
 create object instance project2 of Project;
-project1.Code = "Project2Code";
-project1.Name = "Project2Name";
+project2.Code = "Project2Code";
+project2.Name = "Project2Name";
 
 
 // MILESTONE
@@ -155,18 +155,24 @@ create object instance mile1 of Milestone;
 mile1.Name = "First Milestone for Project1Name"; 
 mile1.CompletePlannedDate = 0;
 mile1.Weight = 40;
+mile1.CommulativeWeight = 10;
+mile1.CompleteStatus = false;
 relate mile1 to project1 across R67.''completed'';
 
 create object instance mile2 of Milestone;
 mile2.Name = "Second Milestone for Project1Name"; 
 mile2.CompletePlannedDate = 0;
 mile2.Weight = 60;
+mile2.CommulativeWeight = 50;
+mile2.CompleteStatus = false;
 relate mile2 to project1 across R67.''completed'';
 
 create object instance mile3 of Milestone;
 mile3.Name = "First Milestone for Project2Name"; 
 mile3.CompletePlannedDate = 0;
 mile3.Weight = 100;
+mile3.CommulativeWeight = 70;
+mile3.CompleteStatus = true;
 relate mile3 to project2 across R67.''completed'';
 //-----------------------------------------------
 
@@ -175,18 +181,24 @@ relate mile3 to project2 across R67.''completed'';
 //==============================================
 create object instance goal1 of Goal;
 goal1.Description = "First goal for Project1Name";
-goal1.KPI = "KPI for First Goal";
+goal1.Impact = "High";
 relate goal1 to project1 across R75.''Acheived by'';
 
 create object instance goal2 of Goal;
 goal2.Description = "Second goal for Project1Name";
-goal2.KPI = "KPI for Second Goal";
+goal2.Impact = "Medium";
 relate goal2 to project1 across R75.''Acheived by'';
 
 create object instance goal3 of Goal;
 goal3.Description = "Third goal for Project1Name";
-goal3.KPI = "KPI for Third Goal";
+goal3.Impact = "High";
 relate goal3 to project1 across R75.''Acheived by'';
+
+create object instance goal4 of Goal;
+goal4.Description = "first goal for Project2Name";
+goal4.Impact = "Low";
+relate goal4 to project2 across R75.''Acheived by'';
+
 //-----------------------------------------------
 
 create object instance member1 of Member; 
@@ -202,6 +214,29 @@ member2.Role="manager";
 relate member2 to project1 across R71.''organize'';
 
 //------------------------------------------------------
+
+create object instance risk1 of Risks; 
+risk1.ID = 1;
+risk1.Description = "Risk1 Description";
+risk1.Probability = "Probability";
+risk1.Severity = "Hieh";
+risk1.Title = "Risk1 Title";
+
+relate risk1 to project1 across R68.''threaten'';
+
+
+create object instance risk2 of Risks; 
+risk2.ID = 2;
+risk2.Description = "Risk2 Description";
+risk2.Probability = "Probability";
+risk2.Severity = "Hieh";
+risk2.Title = "Risk2 Title";
+
+relate risk2 to project2 across R68.''threaten'';
+
+// ---------------------------------
+
+
 
 create object instance CR of ChangeRequest; 
 CR.CreateChangeRequest( Title:"CR11", Description:"DDd", Justification:"jjjjj", ProjectCode:"Project1Code", CreationDate:0, ImpactCategory:"iii", ImpactDetails:"IIMM" );
