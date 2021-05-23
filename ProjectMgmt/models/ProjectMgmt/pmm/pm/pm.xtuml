@@ -745,10 +745,7 @@ INSERT INTO SPR_PS
 	'',
 	'create object instance goal of Goal;
 
-
-
-goal.CreateGoal( Description:param.Description, KPI:param.KPI, ProjectCode:param.ProjectCode );
-',
+goal.CreateGoal( Description:param.Description, Impact:param.Impact, ProjectCode:param.ProjectCode );',
 	1,
 	0,
 	5);
@@ -793,7 +790,7 @@ INSERT INTO SPR_PS
 if (not_empty project)
 	select many milestones related by project->Milestone[R67.''completes''];
 	for each mile in milestones 
-		UI::SendProjectMilestone( Name:mile.Name, CompletedPlannedDate:mile.CompletePlannedDate, CompletedActualDate:mile.CompleteActualDate, Weight:mile.Weight, CompletePercentage: mile.CompletePercentage);
+		UI::SendProjectMilestone( Name:mile.Name, CompletedPlannedDate:mile.CompletePlannedDate, CompletedActualDate:mile.CompleteActualDate, Weight:mile.Weight, CompleteStatus:mile.CompleteStatus);
 	end for;
 end if;
 
@@ -823,14 +820,14 @@ INSERT INTO SPR_PS
 if (not_empty project)
 	select many goals related by project->Goal[R75.''Fulfill''];
 	for each goal in goals
-		UI::SendProjectGoal( Description:goal.Description, KPI: goal.KPI);
+		UI::SendProjectGoal( Description:goal.Description, Impact:goal.Impact);
 	end for;
 end if;
 
 select any project2 from instances of Project where selected.Code == "Project2Code" ;
 select many goals related by project2->Goal[R75.''Fulfill''];
  for each goal in goals
-		UI::SendProjectGoal( Description:goal.Description, KPI: goal.KPI);
+		UI::SendProjectGoal( Description:goal.Description, Impact:goal.Impact);
 	end for;',
 	1,
 	0,
