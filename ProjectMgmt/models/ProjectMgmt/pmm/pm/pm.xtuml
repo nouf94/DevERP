@@ -791,7 +791,7 @@ if (not_empty project)
 	select many milestones related by project->Milestone[R67.''completes''];
 	for each mile in milestones 
 		UI::SendProjectMilestone( Name:mile.Name, CompletedPlannedDate:mile.CompletePlannedDate, CompletedActualDate:mile.CompleteActualDate, Weight:mile.Weight, CompleteStatus:mile.CompleteStatus);
-	end for;
+	end for; 
 end if;
 
 ',
