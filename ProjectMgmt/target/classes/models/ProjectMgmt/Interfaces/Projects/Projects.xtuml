@@ -568,7 +568,7 @@ INSERT INTO C_PP
 	'',
 	0,
 	'',
-	"00000000-0000-0000-0000-000000000000");
+	"24228c8d-a483-4747-84fb-c11f35ad8100");
 INSERT INTO C_PP
 	VALUES ("41eef2af-b7bc-4b1e-b950-7d0d2d2a2d66",
 	"b9687437-2df6-41c0-bb96-f4dfbe905d8e",
@@ -605,6 +605,15 @@ INSERT INTO C_PP
 	0,
 	'',
 	"48a87389-ec8b-4c3b-a489-50d52372efba");
+INSERT INTO C_PP
+	VALUES ("24228c8d-a483-4747-84fb-c11f35ad8100",
+	"b9687437-2df6-41c0-bb96-f4dfbe905d8e",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Title',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_EP
 	VALUES ("aadb0141-b089-41fb-9f0c-02b0146fa52e",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -706,7 +715,7 @@ INSERT INTO C_PP
 	'',
 	0,
 	'',
-	"0ab175ba-87bc-4304-bb20-bd22d6cf7f09");
+	"a7d13c89-cc33-49e0-8c43-9371af265f24");
 INSERT INTO C_PP
 	VALUES ("2a29544e-8723-4c00-950a-98521c8c23fd",
 	"56824f1e-e6b9-42c5-9278-48a7f426784c",
@@ -716,6 +725,15 @@ INSERT INTO C_PP
 	0,
 	'',
 	"d18f302d-0730-45c7-af6d-3e022a0aa23f");
+INSERT INTO C_PP
+	VALUES ("a7d13c89-cc33-49e0-8c43-9371af265f24",
+	"56824f1e-e6b9-42c5-9278-48a7f426784c",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Title',
+	'',
+	0,
+	'',
+	"0ab175ba-87bc-4304-bb20-bd22d6cf7f09");
 INSERT INTO C_EP
 	VALUES ("945f99a2-2aa4-40e9-9802-b3f2d7914cdb",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -804,7 +822,7 @@ INSERT INTO C_PP
 	VALUES ("7783dd57-2d38-48dc-9819-1e1a2c8fa2e0",
 	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
 	"ba5eda7a-def5-0000-0000-000000000004",
-	'KPI',
+	'Impact',
 	'',
 	0,
 	'',
@@ -870,8 +888,8 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("20b9042b-4ee9-4d56-90fa-022ec146c55c",
 	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'CompletePercentage',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'CompleteStatus',
 	'',
 	0,
 	'',
@@ -948,7 +966,7 @@ INSERT INTO C_PP
 	VALUES ("b584b6cb-2d4a-42c4-843e-071e6f0f0ab9",
 	"71484db2-4fb6-4beb-8e30-57fb56fee5f3",
 	"ba5eda7a-def5-0000-0000-000000000004",
-	'KPI',
+	'Impact',
 	'',
 	0,
 	'',
@@ -1019,6 +1037,59 @@ INSERT INTO C_AS
 	'',
 	0,
 	"27e01210-4229-479a-a05b-1cda59afb794");
+INSERT INTO C_EP
+	VALUES ("54d07859-7f11-4e8e-a0e3-c5cbc4226c09",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadChangeRequestImpact',
+	'',
+	13);
+INSERT INTO C_AS
+	VALUES ("54d07859-7f11-4e8e-a0e3-c5cbc4226c09",
+	'ReadChangeRequestImpact',
+	'',
+	0,
+	"e628a073-327a-493a-8771-c713430d5248");
+INSERT INTO C_PP
+	VALUES ("fdf6f416-44a6-4995-a909-454e99ae3c11",
+	"54d07859-7f11-4e8e-a0e3-c5cbc4226c09",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'CreationDate',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("834fa672-a665-49b3-96a4-48bf4a6c714a",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendChangeRequestImpact',
+	'',
+	14);
+INSERT INTO C_AS
+	VALUES ("834fa672-a665-49b3-96a4-48bf4a6c714a",
+	'SendChangeRequestImpact',
+	'',
+	1,
+	"54d07859-7f11-4e8e-a0e3-c5cbc4226c09");
+INSERT INTO C_PP
+	VALUES ("c873a982-e459-4e75-b8bf-11b9c42232e1",
+	"834fa672-a665-49b3-96a4-48bf4a6c714a",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Category',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("47aec1f1-8a99-47bc-bef5-250578d30547",
+	"834fa672-a665-49b3-96a4-48bf4a6c714a",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Details',
+	'',
+	0,
+	'',
+	"c873a982-e459-4e75-b8bf-11b9c42232e1");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,

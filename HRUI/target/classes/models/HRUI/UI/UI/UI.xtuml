@@ -2536,7 +2536,7 @@ INSERT INTO SPR_RS
 	VALUES ("a7c2b0b7-c4c1-4628-b7a3-450e474e2116",
 	'AddChangeRequestImpact',
 	'',
-	'::SendChangeRequestImpact( Category:param.Category, Details:param.Details, ChangeRequestCreationDate:param.ChangeRequestCreationDate );',
+	'//::SendChangeRequestImpact( Category:param.Category, Details:param.Details, ChangeRequestCreationDate:param.ChangeRequestCreationDate );',
 	1,
 	0,
 	0);
@@ -2577,7 +2577,7 @@ INSERT INTO SPR_RS
 	VALUES ("0c8f8faa-a799-440f-b904-c4186bc85e9f",
 	'SendChangeRequest',
 	'',
-	'::SendChangeRequest( CreationDate:param.CreationDate, Description:param.Description, Justification:param.Justification );',
+	'::SendChangeRequest( CreationDate:param.CreationDate, Title:param.Title,Description:param.Description, Justification:param.Justification );',
 	1,
 	0,
 	2);
@@ -2657,7 +2657,8 @@ INSERT INTO SPR_RS
 	VALUES ("a7fc5710-3fd4-4654-8e08-b28b6665dc79",
 	'SendProjectMilestone',
 	'',
-	'::SendProjectMilestone( Name:param.Name, CompletedPlannedDate:param.CompletedPlannedDate, CompletedActualDate:param.CompletedActualDate, Weight:param.Weight, CompletePercentage:param.CompletePercentage );',
+	'::SendProjectMilestone( Name:param.Name, CompletedPlannedDate:param.CompletedPlannedDate, CompletedActualDate:param.CompletedActualDate, Weight:param.Weight, CompleteStatus:param.CompleteStatus);
+',
 	1,
 	0,
 	6);
@@ -2719,7 +2720,7 @@ INSERT INTO SPR_RS
 	VALUES ("83b56669-50ba-4826-a242-bec26b381c2a",
 	'SendProjectGoal',
 	'',
-	'::SendProjectGoal( Description:param.Description, KPI: param.KPI);',
+	'',
 	1,
 	0,
 	9);
@@ -2791,6 +2792,47 @@ INSERT INTO C_EP_PROXY
 	'ReadAllChangeRequest',
 	'',
 	12,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("1a2abe65-05e5-4f56-9688-7a5450e213d3",
+	"54d07859-7f11-4e8e-a0e3-c5cbc4226c09",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("1a2abe65-05e5-4f56-9688-7a5450e213d3",
+	'ReadChangeRequestImpact',
+	'',
+	'',
+	3,
+	0,
+	13);
+INSERT INTO C_EP_PROXY
+	VALUES ("54d07859-7f11-4e8e-a0e3-c5cbc4226c09",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadChangeRequestImpact',
+	'',
+	13,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("08a1b88a-f0c8-407c-b01d-125427585d58",
+	"834fa672-a665-49b3-96a4-48bf4a6c714a",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("08a1b88a-f0c8-407c-b01d-125427585d58",
+	'SendChangeRequestImpact',
+	'',
+	'::SendChangeRequestImpact( Category:param.Category, Details:param.Details);
+',
+	1,
+	0,
+	14);
+INSERT INTO C_EP_PROXY
+	VALUES ("834fa672-a665-49b3-96a4-48bf4a6c714a",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendChangeRequestImpact',
+	'',
+	14,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
