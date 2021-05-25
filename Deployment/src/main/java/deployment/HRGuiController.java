@@ -2124,11 +2124,11 @@ private static HRGuiController singleton;
          } 
          } 
         List<Milestone> mss=new ArrayList<Milestone>();
-		 public void SendProjectMilestone(  String p_Name,  int p_CompletedPlannedDate,   int p_CompletedActualDate,   int p_Weight,   int p_CompletePercentage ){
+		 public void SendProjectMilestone(  String p_Name,  int p_CompletedPlannedDate,   int p_CompletedActualDate,   int p_Weight,   boolean p_CompleteStatus ){
 
         Milestone ms=null;
           try {
-			ms=new Milestone(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompletePercentage);
+			ms=new Milestone(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompleteStatus);
 			mss.add(ms);
             //UI.Singleton().Projects().SendProjectMilestone( p_Name, p_CompletedPlannedDate, p_CompletedActualDate, p_Weight, p_CompletePercentage );
          }catch(Exception e) {

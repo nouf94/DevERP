@@ -7,7 +7,7 @@ public class Milestone {
 	private int p_Weight;		
 	private String p_ProjectCode;
     private int p_CompletedActualDate;
-	private int p_CompletePercentage;
+	private boolean p_CompleteStatus;
     
 
 	public Milestone() {
@@ -20,12 +20,12 @@ public class Milestone {
 		this.p_ProjectCode = p_ProjectCode;
     }
 
-public Milestone(  String p_Name,   int p_CompletePlannedDate,int p_CompletedActualDate,   int p_Weight,   int p_CompletePercentage ){
+public Milestone(  String p_Name,   int p_CompletePlannedDate,int p_CompletedActualDate,   int p_Weight,   boolean p_CompleteStatus ){
 		this.p_Name=p_Name;
 		this.p_CompletePlannedDate = p_CompletePlannedDate;
         this.p_CompletedActualDate = p_CompletedActualDate;
 		this.p_Weight = p_Weight;
-		this.p_CompletePercentage = p_CompletePercentage;
+		this.p_CompleteStatus = p_CompleteStatus;
     }
 	public String getP_Name() {
 		return p_Name;
@@ -62,10 +62,10 @@ public Milestone(  String p_Name,   int p_CompletePlannedDate,int p_CompletedAct
 		return p_CompletedActualDate;
 	}
 
-    public void setP_CompletePercentage(int p_CompletePercentage) {
-		this.p_CompletePercentage = p_CompletePercentage;
+    public void setP_CompletePercentage(boolean p_CompleteStatus) {
+		this.p_CompleteStatus = p_CompleteStatus;
 	}
-    public int getP_CompletePercentage() {
-		return p_CompletePercentage;
+    public boolean getP_CompletePercentage() {
+		return p_CompleteStatus;
 	}
 }
