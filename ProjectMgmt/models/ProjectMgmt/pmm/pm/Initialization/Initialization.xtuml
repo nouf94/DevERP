@@ -217,7 +217,6 @@ relate member2 to project1 across R71.''organize'';
 
 create object instance risk1 of Risks; 
 risk1.ID = 1;
-risk1.Description = "Risk1 Description";
 risk1.Probability = "Probability";
 risk1.Severity = "Hieh";
 risk1.Title = "Risk1 Title";
@@ -227,7 +226,6 @@ relate risk1 to project1 across R68.''threaten'';
 
 create object instance risk2 of Risks; 
 risk2.ID = 2;
-risk2.Description = "Risk2 Description";
 risk2.Probability = "Probability";
 risk2.Severity = "Hieh";
 risk2.Title = "Risk2 Title";

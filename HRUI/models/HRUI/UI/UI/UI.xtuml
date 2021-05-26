@@ -2894,6 +2894,66 @@ INSERT INTO C_EP_PROXY
 	'',
 	17,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("e0775035-68a4-4fa7-aff7-4680a3b317cb",
+	"8cfac134-1679-4784-b61b-816024dbb81b",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("e0775035-68a4-4fa7-aff7-4680a3b317cb",
+	'AddProjectRisk',
+	'',
+	'',
+	3,
+	0,
+	18);
+INSERT INTO C_EP_PROXY
+	VALUES ("8cfac134-1679-4784-b61b-816024dbb81b",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectRisk',
+	'',
+	18,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("a323817a-bd19-41c4-82fb-62fb94836442",
+	"56a7a1ab-8652-42b2-a9ce-c61c77901cd6",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("a323817a-bd19-41c4-82fb-62fb94836442",
+	'SendProjectRisk',
+	'',
+	'::SendProjectRisk( ID:param.ID, Title:param.Title, Severity:param.Severity, Probability:param.Probability, IsIssue:param.IsIssue, IsOpen:param.IsOpen, MitigationPlan:param.MitigationPlan, ExpectedDeadline:param.ExpectedDeadLine);',
+	1,
+	0,
+	19);
+INSERT INTO C_EP_PROXY
+	VALUES ("56a7a1ab-8652-42b2-a9ce-c61c77901cd6",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectRisk',
+	'',
+	19,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("6dc24e5e-a0ce-4b7f-aa65-1197421b6771",
+	"1de05022-2190-4241-b206-389f7329503f",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("6dc24e5e-a0ce-4b7f-aa65-1197421b6771",
+	'ReadProjectRisks',
+	'',
+	'',
+	3,
+	0,
+	20);
+INSERT INTO C_EP_PROXY
+	VALUES ("1de05022-2190-4241-b206-389f7329503f",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectRisks',
+	'',
+	20,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	"00000000-0000-0000-0000-000000000000",
