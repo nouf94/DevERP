@@ -992,9 +992,16 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("2bffe50f-7174-4788-9b38-751cde0afb88",
-	'RadDocuments',
+	'ReadDocuments',
 	'',
-	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many documents related by project->Document[R74.''Inlcudes''];
+	for each doc in documents
+	UI::SendDocument( Title:doc.Title, Path:doc.Path, State: doc.State);
+	end for;
+end if;',
 	1,
 	0,
 	15);
@@ -1002,7 +1009,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("68e73879-e362-439b-ba35-973b934d7b94",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'RadDocuments',
+	'ReadDocuments',
 	'',
 	15,
 	'../../Interfaces/Projects/Projects.xtuml');
@@ -1014,7 +1021,9 @@ INSERT INTO SPR_PS
 	VALUES ("db1f5575-9e8c-4487-800b-5f11c035d252",
 	'AddDocument',
 	'',
-	'',
+	'create object instance Doc of Document;
+Doc.CreateDocument( ProjectCode:param.ProjectCode, Title:param.Title, Path:param.Path, State: param.State);
+',
 	1,
 	0,
 	16);
@@ -1035,7 +1044,7 @@ INSERT INTO SPR_PS
 	'SendDocument',
 	'',
 	'',
-	3,
+	1,
 	0,
 	17);
 INSERT INTO C_EP_PROXY

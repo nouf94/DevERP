@@ -2840,7 +2840,7 @@ INSERT INTO SPR_REP
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
 	VALUES ("6b4b42cb-bc9f-4672-b229-1b9550cb1f7c",
-	'RadDocuments',
+	'ReadDocuments',
 	'',
 	'',
 	3,
@@ -2850,7 +2850,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("68e73879-e362-439b-ba35-973b934d7b94",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'RadDocuments',
+	'ReadDocuments',
 	'',
 	15,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
@@ -2882,8 +2882,8 @@ INSERT INTO SPR_RS
 	VALUES ("0e911e91-4527-41a2-b397-7add758db7af",
 	'SendDocument',
 	'',
-	'',
-	3,
+	'::SendDocument( Title:param.Title, Path:Param.Path, State: Param.State);',
+	1,
 	0,
 	17);
 INSERT INTO C_EP_PROXY
