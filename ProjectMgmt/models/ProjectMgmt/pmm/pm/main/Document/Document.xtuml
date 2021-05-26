@@ -17,8 +17,8 @@ INSERT INTO O_TFR
 	'self.Title=param.Title;
 self.Path=param.Path;
 self.State=param.State;
-self.Notes=param.Notes;
-self.AttachedTo=param.AttachedTo;
+
+
 
 	
 // select the project that this Goal belongs to
@@ -60,24 +60,6 @@ INSERT INTO O_TPARM
 	0,
 	'',
 	"b75eb294-95f5-41dd-814b-59c0c51267ff",
-	'');
-INSERT INTO O_TPARM
-	VALUES ("2cd195b4-1e9f-4def-9be5-7e42475968d6",
-	"1f7ddbce-0a25-43e4-841a-a88042b63782",
-	'Notes',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"a852935c-2b02-4858-bfca-c45be3f04d9d",
-	'');
-INSERT INTO O_TPARM
-	VALUES ("ba64b547-f953-471f-a683-c31941b9af15",
-	"1f7ddbce-0a25-43e4-841a-a88042b63782",
-	'AttachedTo',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"2cd195b4-1e9f-4def-9be5-7e42475968d6",
 	'');
 INSERT INTO O_TPARM
 	VALUES ("4000f557-ac45-46ea-97aa-43518eace19c",
@@ -138,42 +120,6 @@ INSERT INTO O_ATTR
 	'',
 	'',
 	'State',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("5ebae8dd-2d2d-49fa-ad47-45019e25df63",
-	"18f212d3-3304-4b22-91c5-d85170ca6e25");
-INSERT INTO O_BATTR
-	VALUES ("5ebae8dd-2d2d-49fa-ad47-45019e25df63",
-	"18f212d3-3304-4b22-91c5-d85170ca6e25");
-INSERT INTO O_ATTR
-	VALUES ("5ebae8dd-2d2d-49fa-ad47-45019e25df63",
-	"18f212d3-3304-4b22-91c5-d85170ca6e25",
-	"7bd31f57-fd65-4918-92db-d582bd7180c4",
-	'Notes',
-	'',
-	'',
-	'Notes',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("fbd30621-9bfc-4e3a-8cd3-0e94ee09c5b7",
-	"18f212d3-3304-4b22-91c5-d85170ca6e25");
-INSERT INTO O_BATTR
-	VALUES ("fbd30621-9bfc-4e3a-8cd3-0e94ee09c5b7",
-	"18f212d3-3304-4b22-91c5-d85170ca6e25");
-INSERT INTO O_ATTR
-	VALUES ("fbd30621-9bfc-4e3a-8cd3-0e94ee09c5b7",
-	"18f212d3-3304-4b22-91c5-d85170ca6e25",
-	"5ebae8dd-2d2d-49fa-ad47-45019e25df63",
-	'AttachedTo',
-	'whether charter, project scope..etc',
-	'',
-	'AttachedTo',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',

@@ -513,24 +513,6 @@ INSERT INTO S_SPARM
 	'',
 	"95f68f44-4c98-461b-8b45-46bd8b3ef9aa",
 	'');
-INSERT INTO S_SPARM
-	VALUES ("906766f9-aa80-46eb-af7b-bcd4dae63ffa",
-	"c00c0837-7fc2-4d97-81ee-642acbe98dfa",
-	'Notes',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"178150d5-b513-4307-b05f-16f11427525d",
-	'');
-INSERT INTO S_SPARM
-	VALUES ("7618f238-e5c3-41f4-a84d-6fed9cb32a1d",
-	"c00c0837-7fc2-4d97-81ee-642acbe98dfa",
-	'AttachedTo',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"906766f9-aa80-46eb-af7b-bcd4dae63ffa",
-	'');
 INSERT INTO PE_PE
 	VALUES ("c00c0837-7fc2-4d97-81ee-642acbe98dfa",
 	1,

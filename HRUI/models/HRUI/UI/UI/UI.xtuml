@@ -2834,6 +2834,66 @@ INSERT INTO C_EP_PROXY
 	'',
 	14,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("6b4b42cb-bc9f-4672-b229-1b9550cb1f7c",
+	"68e73879-e362-439b-ba35-973b934d7b94",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("6b4b42cb-bc9f-4672-b229-1b9550cb1f7c",
+	'RadDocuments',
+	'',
+	'',
+	3,
+	0,
+	15);
+INSERT INTO C_EP_PROXY
+	VALUES ("68e73879-e362-439b-ba35-973b934d7b94",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'RadDocuments',
+	'',
+	15,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("b81ac1e7-56a2-4370-9e5f-40dcd586a14a",
+	"d99bbc2a-e82f-4292-b741-3953353c30cd",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("b81ac1e7-56a2-4370-9e5f-40dcd586a14a",
+	'AddDocument',
+	'',
+	'',
+	3,
+	0,
+	16);
+INSERT INTO C_EP_PROXY
+	VALUES ("d99bbc2a-e82f-4292-b741-3953353c30cd",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddDocument',
+	'',
+	16,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("0e911e91-4527-41a2-b397-7add758db7af",
+	"79ed93ef-eff8-4ce0-95b3-38551bc79dd1",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("0e911e91-4527-41a2-b397-7add758db7af",
+	'SendDocument',
+	'',
+	'',
+	3,
+	0,
+	17);
+INSERT INTO C_EP_PROXY
+	VALUES ("79ed93ef-eff8-4ce0-95b3-38551bc79dd1",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendDocument',
+	'',
+	17,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	"00000000-0000-0000-0000-000000000000",
