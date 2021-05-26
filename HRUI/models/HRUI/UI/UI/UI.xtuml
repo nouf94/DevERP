@@ -2720,7 +2720,7 @@ INSERT INTO SPR_RS
 	VALUES ("83b56669-50ba-4826-a242-bec26b381c2a",
 	'SendProjectGoal',
 	'',
-	'',
+	'::SendProjectGoal( Description:param.Description, Impact: Param.Impact);',
 	1,
 	0,
 	9);
