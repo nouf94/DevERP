@@ -7,6 +7,106 @@ INSERT INTO O_OBJ
 	'Risks',
 	'The possibility of an undesired outcome to occur. ',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("7abbe5d8-a099-4344-aca1-88cfe73be65e",
+	"b0aa18af-0a2f-4b5f-a629-723c71756e9e",
+	'AddProjectRisk',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.ID=123;//should be generated
+self.Title=param.Title;
+self.Severity=param.Severity;
+self.Probability=param.Probability;
+self.IsIssue=param.IsIssue;
+self.IsOpen=param.IsOpen;
+self.MitigationPlan=param.MitigationPlan;
+self.ExpectedDeadline=param.ExpectedDeadline;
+
+select any project from instances of Project where selected.Code==param.ProjectCode;
+if (not_empty project)
+		relate self to project across R68.''threaten'';
+end if;
+
+
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("97ae9ab5-f438-4b7e-bc8d-c6266319b013",
+	"7abbe5d8-a099-4344-aca1-88cfe73be65e",
+	'ProjectCode',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("737e47f1-4110-4ecf-a653-da77d0c75e8a",
+	"7abbe5d8-a099-4344-aca1-88cfe73be65e",
+	'Severity',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"3d466715-66e5-4f0f-857c-a32307741e15",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("c57d4c2b-d670-4577-a1de-ea620098ae76",
+	"7abbe5d8-a099-4344-aca1-88cfe73be65e",
+	'Probability',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"737e47f1-4110-4ecf-a653-da77d0c75e8a",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("ce8eb4fb-698e-4fbe-8e21-5868e4705fd3",
+	"7abbe5d8-a099-4344-aca1-88cfe73be65e",
+	'IsOpen',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"8c182919-7141-48f5-9ab0-3a4233282fdd",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("8c182919-7141-48f5-9ab0-3a4233282fdd",
+	"7abbe5d8-a099-4344-aca1-88cfe73be65e",
+	'IsIssue',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"c57d4c2b-d670-4577-a1de-ea620098ae76",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("f182beaf-0a80-439f-8933-3ac6d2983798",
+	"7abbe5d8-a099-4344-aca1-88cfe73be65e",
+	'MitigationPlan',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"ce8eb4fb-698e-4fbe-8e21-5868e4705fd3",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("c2b62494-3782-4852-959d-ba4198123048",
+	"7abbe5d8-a099-4344-aca1-88cfe73be65e",
+	'ExpectedDeadline',
+	"ba5eda7a-def5-0000-0000-00000000000e",
+	0,
+	'',
+	"f182beaf-0a80-439f-8933-3ac6d2983798",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("3d466715-66e5-4f0f-857c-a32307741e15",
+	"7abbe5d8-a099-4344-aca1-88cfe73be65e",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"97ae9ab5-f438-4b7e-bc8d-c6266319b013",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("c0fe3615-b6e9-4c27-9aab-5a01a39154f7",
 	"b0aa18af-0a2f-4b5f-a629-723c71756e9e");
@@ -80,39 +180,75 @@ INSERT INTO O_ATTR
 	'',
 	'');
 INSERT INTO O_NBATTR
-	VALUES ("593cc8dc-9d78-4f5f-b9bc-1c5414893e87",
+	VALUES ("2161600f-02f9-406a-8f92-2d05e180460a",
 	"b0aa18af-0a2f-4b5f-a629-723c71756e9e");
 INSERT INTO O_BATTR
-	VALUES ("593cc8dc-9d78-4f5f-b9bc-1c5414893e87",
+	VALUES ("2161600f-02f9-406a-8f92-2d05e180460a",
 	"b0aa18af-0a2f-4b5f-a629-723c71756e9e");
 INSERT INTO O_ATTR
-	VALUES ("593cc8dc-9d78-4f5f-b9bc-1c5414893e87",
+	VALUES ("2161600f-02f9-406a-8f92-2d05e180460a",
 	"b0aa18af-0a2f-4b5f-a629-723c71756e9e",
 	"dd5edc6b-d03c-41cd-993c-6ea22597bc23",
-	'Description',
+	'IsIssue',
 	'',
 	'',
-	'Description',
+	'IsIssue',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("cc8eb3bb-d85d-4dfb-8955-c347cde40349",
+	"b0aa18af-0a2f-4b5f-a629-723c71756e9e");
+INSERT INTO O_BATTR
+	VALUES ("cc8eb3bb-d85d-4dfb-8955-c347cde40349",
+	"b0aa18af-0a2f-4b5f-a629-723c71756e9e");
+INSERT INTO O_ATTR
+	VALUES ("cc8eb3bb-d85d-4dfb-8955-c347cde40349",
+	"b0aa18af-0a2f-4b5f-a629-723c71756e9e",
+	"2161600f-02f9-406a-8f92-2d05e180460a",
+	'IsOpen',
+	'',
+	'',
+	'IsOpen',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("96953b97-4757-4683-8094-53a1bcf624bb",
+	"b0aa18af-0a2f-4b5f-a629-723c71756e9e");
+INSERT INTO O_BATTR
+	VALUES ("96953b97-4757-4683-8094-53a1bcf624bb",
+	"b0aa18af-0a2f-4b5f-a629-723c71756e9e");
+INSERT INTO O_ATTR
+	VALUES ("96953b97-4757-4683-8094-53a1bcf624bb",
+	"b0aa18af-0a2f-4b5f-a629-723c71756e9e",
+	"cc8eb3bb-d85d-4dfb-8955-c347cde40349",
+	'MitigationPlan',
+	'',
+	'',
+	'MitigationPlan',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000004",
 	'',
 	'');
 INSERT INTO O_NBATTR
-	VALUES ("82e82920-c939-45a4-a2f0-433501eda684",
+	VALUES ("efad03d9-3113-4c57-8c60-e0756125c598",
 	"b0aa18af-0a2f-4b5f-a629-723c71756e9e");
 INSERT INTO O_BATTR
-	VALUES ("82e82920-c939-45a4-a2f0-433501eda684",
+	VALUES ("efad03d9-3113-4c57-8c60-e0756125c598",
 	"b0aa18af-0a2f-4b5f-a629-723c71756e9e");
 INSERT INTO O_ATTR
-	VALUES ("82e82920-c939-45a4-a2f0-433501eda684",
+	VALUES ("efad03d9-3113-4c57-8c60-e0756125c598",
 	"b0aa18af-0a2f-4b5f-a629-723c71756e9e",
-	"593cc8dc-9d78-4f5f-b9bc-1c5414893e87",
-	'current_state',
+	"96953b97-4757-4683-8094-53a1bcf624bb",
+	'ExpectedDeadline',
 	'',
 	'',
-	'current_state',
+	'ExpectedDeadline',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000006",
+	"ba5eda7a-def5-0000-0000-00000000000e",
 	'',
 	'');
 INSERT INTO O_ID

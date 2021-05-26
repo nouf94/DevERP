@@ -1055,6 +1055,76 @@ INSERT INTO C_EP_PROXY
 	'',
 	17,
 	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("db6b0d4d-9b54-4156-a7da-7f4fba260737",
+	"8cfac134-1679-4784-b61b-816024dbb81b",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("db6b0d4d-9b54-4156-a7da-7f4fba260737",
+	'AddProjectRisk',
+	'',
+	'create object instance risk of Risks;
+risk.AddProjectRisk( ProjectCode:param.ProjectCode, Title:param.Title, Severity:param.Severity, Probability:param.Probability, IsIssue:param.IsIssue, IsOpen:param.IsOpen, MitigationPlan:param.MitigationPlan, ExpectedDeadline:param.ExpectedDeadline );',
+	1,
+	0,
+	18);
+INSERT INTO C_EP_PROXY
+	VALUES ("8cfac134-1679-4784-b61b-816024dbb81b",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectRisk',
+	'',
+	18,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("525e66e8-6422-4bd2-af06-f05a9b02b45b",
+	"56a7a1ab-8652-42b2-a9ce-c61c77901cd6",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("525e66e8-6422-4bd2-af06-f05a9b02b45b",
+	'SendProjectRisk',
+	'',
+	'',
+	1,
+	0,
+	19);
+INSERT INTO C_EP_PROXY
+	VALUES ("56a7a1ab-8652-42b2-a9ce-c61c77901cd6",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectRisk',
+	'',
+	19,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("34aae116-08ea-4911-938e-683b1f8f133d",
+	"1de05022-2190-4241-b206-389f7329503f",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("34aae116-08ea-4911-938e-683b1f8f133d",
+	'ReadProjectRisks',
+	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many risks related by project->Risks[R68.''exposed ''];
+	for each risk in risks
+		UI::SendProjectRisk(ID:risk.ID, Title:risk.Title, Severity:risk.Severity, Probability:risk.Probability, IsIssue:risk.IsIssue, IsOpen:risk.IsOpen, MitigationPlan:risk.MitigationPlan, ExpectedDeadline:risk.ExpectedDeadline );
+	end for; 
+end if;
+
+',
+	1,
+	0,
+	20);
+INSERT INTO C_EP_PROXY
+	VALUES ("1de05022-2190-4241-b206-389f7329503f",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectRisks',
+	'',
+	20,
+	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	"00000000-0000-0000-0000-000000000000",
