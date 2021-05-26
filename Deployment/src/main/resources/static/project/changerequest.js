@@ -158,7 +158,7 @@ var GoalApp = new Vue({
   },
   mounted: function mounted () {
     this.readGoals()
-    this.ReadStrategies()
+    //this.ReadStrategies()
 
   },
   methods: {
@@ -169,14 +169,14 @@ var GoalApp = new Vue({
         console.log(response2),
         showGoals(this.Goals)
           )).catch(error => {
-            console.log(error.response2)
+            console.log(error)
         })},
         ReadStrategies:function (){
           axios.get('/rest/readStrategies')
           .then(response2 => (this.Strategies = response2.data,
             console.log(response2)
               )).catch(error => {
-                console.log(error.response)
+                console.log(error)
             })},
     AddGoal: function (event) {
         axios.post('/rest/AddGoal', {
@@ -210,10 +210,11 @@ var MilestoneApp = new Vue({
       name: false,
       email: false
     },
-    p_ProjectCode:'Project1Code'
+    p_ProjectCode:'Project1Code',
+    selectedTask:''
   },
   mounted: function mounted () {
-    //this.readMilestone()
+    this.readMilestone()
     //this.ReadStrategies()
 
   },
@@ -221,12 +222,11 @@ var MilestoneApp = new Vue({
     readMilestone:function (){
       axios.put('/rest/ReadProjectMilestone',{
         p_ProjectCode: this.p_ProjectCode
-      }).then(response2 => (this.Tasks = response2.data,
+      }).then(response => (this.Tasks = response.data,
         showTasks(this.Tasks),
-        console.log(response),
-        showGoals()
+        console.log(response)
           )).catch(error => {
-            console.log(error.response2)
+            console.log(error)
         })},
      AddProjectMilestone: function (event) {
         axios.post('/rest/AddProjectMilestone', {
@@ -241,10 +241,16 @@ var MilestoneApp = new Vue({
             $("#Error").show();
               console.log(error)
           });
-      }//End Add Milestone Method   
+      }//End Add Milestone Method 
+      ,
+      viewTask:function(event){
+        item=(event.target.parentElement.rowIndex)-1;
+        this.selectedTask=this.Tasks[item];
+      }    
     }//End  Methods
   
 });//End Vue Milestone 
+
 
 function showGoals(Goals){
   if(Goals.length>0){
@@ -255,10 +261,14 @@ $('#NoGoals').hide();
 
 function showTasks(Tasks){
   if(Tasks.length>0){
-$('#TasksTable').show();
+$("#TasksTable").show();
 $('#NoTasks').hide();
   }
 }
+/*
+function  viewTask(task){
+  console.log(task.rowIndex)
+}*/
 // Process the requests returned from backend
 function ProcessRequest(Requests){
   //Show Table of request if there is available Requests
@@ -271,8 +281,18 @@ function ProcessRequest(Requests){
     curdate.setTime(Requests[i].p_CreationDate*1000);
     Requests[i].p_CreationDate=curdate.toLocaleString();
 }
-//this.$refs.Requests.refresh();
-
+return;
+}
+//Convert Date For MileStones
+function ConvertDates(MileStones){
+  //Show Table of request if there is available Requests
+  //Hide Message
+  //Convert date from Seconds to Date Format
+  curdate = new Date(null);
+  for(i=0;i<MileStones.length;i++){
+    curdate.setTime(MileStones[i].p_CompletePlannedDate*1000);
+    MileStones[i].p_CompletePlannedDate=curdate.toLocaleString();
+}
 return;
 }
 

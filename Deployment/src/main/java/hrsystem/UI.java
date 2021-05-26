@@ -426,9 +426,9 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
       	   
          } 
          } 
-        public void SendProjectMilestone( final String p_Name,  final int p_CompletedPlannedDate,  final int p_CompletedActualDate,  final int p_Weight,  final int p_CompletePercentage ) throws XtumlException {
+        public void SendProjectMilestone( final String p_Name,  final int p_CompletedPlannedDate,  final int p_CompletedActualDate,  final int p_Weight,  final boolean p_CompleteStatus ) throws XtumlException {
         try {
-            HRGuiController.Singleton().SendProjectMilestone( p_Name, p_CompletedPlannedDate, p_CompletedActualDate, p_Weight, p_CompletePercentage );
+            HRGuiController.Singleton().SendProjectMilestone( p_Name, p_CompletedPlannedDate, p_CompletedActualDate, p_Weight, p_CompleteStatus );
          }catch(Exception e) {
       	   
          } 

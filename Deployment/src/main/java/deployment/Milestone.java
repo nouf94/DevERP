@@ -62,10 +62,10 @@ public Milestone(  String p_Name,   int p_CompletePlannedDate,int p_CompletedAct
 		return p_CompletedActualDate;
 	}
 
-    public void setP_CompletePercentage(boolean p_CompleteStatus) {
+    public void setP_CompleteStatus(boolean p_CompleteStatus) {
 		this.p_CompleteStatus = p_CompleteStatus;
 	}
-    public boolean getP_CompletePercentage() {
+    public boolean getP_CompleteStatus() {
 		return p_CompleteStatus;
 	}
 }

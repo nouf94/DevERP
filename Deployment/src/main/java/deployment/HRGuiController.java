@@ -2130,7 +2130,6 @@ private static HRGuiController singleton;
           try {
 			ms=new Milestone(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompleteStatus);
 			mss.add(ms);
-            //UI.Singleton().Projects().SendProjectMilestone( p_Name, p_CompletedPlannedDate, p_CompletedActualDate, p_Weight, p_CompletePercentage );
          }catch(Exception e) {
       	   
          } 
