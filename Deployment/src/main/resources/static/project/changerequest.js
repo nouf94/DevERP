@@ -154,7 +154,8 @@ var GoalApp = new Vue({
     errors: {
       name: false,
       email: false
-    }
+    },
+    selectedGoal:''
   },
   mounted: function mounted () {
     this.readGoals()
@@ -190,7 +191,11 @@ var GoalApp = new Vue({
             $("#Error").show();
               console.log(error)
           });
-      }//End Add Goal Method   
+      },//End Add Goal Method   
+      viewGoal:function(event){
+        index=(event.target.parentElement.rowIndex)-1;
+        this.selectedGoal=this.Goals[index];
+      }  
     }//End  Methods
   
 });//End Vue Goal 

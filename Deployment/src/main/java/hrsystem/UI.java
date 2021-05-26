@@ -434,6 +434,15 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
          } 
     
     }
+    
+        public void SendDocument(  final String p_Title,  final String p_Path,  final int p_State) throws XtumlException {
+        try {
+            HRGuiController.Singleton().SendDocument( p_Title, p_Path, p_State );
+         }catch(Exception e) {
+      	   
+         } 
+    
+    }
 /*
         public void AssignManger( final String p_AccountName,  final String p_ProjectCode ) throws XtumlException {
             

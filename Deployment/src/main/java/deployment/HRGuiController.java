@@ -2071,7 +2071,7 @@ private static HRGuiController singleton;
 		return null;
 	}
 		List<Goal> goals=new ArrayList<Goal>();
-		 public void SendProjectGoal( final String p_Description,  final String p_KPI ){
+		 public void SendProjectGoal( String p_Description, String p_KPI ){
         Goal goal=null;
           try {
 			goal=new Goal(p_Description,p_KPI);
@@ -2153,7 +2153,19 @@ private static HRGuiController singleton;
 		return null;
         } 
 		 
-		
+		List<Document> docs=new ArrayList<Document>();
+		 public void SendDocument( String p_Title,  String p_Path,  int p_State ){
+        Document doc=null;
+          try {
+			doc=new Document(p_Title, p_Path, p_State);
+			docs.add(doc);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+
 	@GetMapping(path="/readInitiatives", produces="appliaction/json")
 	public List<deployment.SendInitiatives> ReadInitiatives() {
 		// TODO Auto-generated method stub
