@@ -793,7 +793,6 @@ if (not_empty project)
 		UI::SendProjectMilestone( Name:mile.Name, CompletedPlannedDate:mile.CompletePlannedDate, CompletedActualDate:mile.CompleteActualDate, Weight:mile.Weight, CompleteStatus:mile.CompleteStatus);
 	end for; 
 end if;
-
 ',
 	1,
 	0,
@@ -1103,7 +1102,7 @@ INSERT INTO SPR_PS
 	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
    
 if (not_empty project)
-	select many risks related by project->Risks[R68.''exposed ''];
+	select many risks related by project->Risks[R68.''exposed''];
 	for each risk in risks
 		UI::SendProjectRisk(ID:risk.ID, Title:risk.Title, Severity:risk.Severity, Probability:risk.Probability, IsIssue:risk.IsIssue, IsOpen:risk.IsOpen, MitigationPlan:risk.MitigationPlan, ExpectedDeadline:risk.ExpectedDeadline );
 	end for; 

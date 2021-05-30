@@ -2277,7 +2277,7 @@ INSERT INTO R_PART
 	"ac563def-ac25-4c22-94f6-70ea64be98d5",
 	1,
 	1,
-	'exposed ');
+	'exposed');
 INSERT INTO R_RTO
 	VALUES ("b0aa18af-0a2f-4b5f-a629-723c71756e9e",
 	"a6854854-8358-4a0a-b951-138778ddcdfd",

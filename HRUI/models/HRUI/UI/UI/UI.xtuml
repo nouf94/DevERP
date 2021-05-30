@@ -2598,7 +2598,7 @@ INSERT INTO SPR_RS
 	'CreateCharter',
 	'',
 	'',
-	3,
+	1,
 	0,
 	3);
 INSERT INTO C_EP_PROXY
@@ -2618,7 +2618,7 @@ INSERT INTO SPR_RS
 	'AddProjectMember',
 	'',
 	'',
-	3,
+	1,
 	0,
 	4);
 INSERT INTO C_EP_PROXY
@@ -2638,7 +2638,7 @@ INSERT INTO SPR_RS
 	'AddGoal',
 	'',
 	'',
-	3,
+	1,
 	0,
 	5);
 INSERT INTO C_EP_PROXY
@@ -2657,7 +2657,7 @@ INSERT INTO SPR_RS
 	VALUES ("a7fc5710-3fd4-4654-8e08-b28b6665dc79",
 	'SendProjectMilestone',
 	'',
-	'::SendProjectMilestone( Name:param.Name, CompletedPlannedDate:param.CompletedPlannedDate, CompletedActualDate:param.CompletedActualDate, Weight:param.Weight, CompleteStatus:param.CompleteStatus);
+	'::SendProjectMilestone( Name:param.Name, CompletedPlannedDate:param.CompletedPlannedDate, CompletedActualDate:param.CompletedActualDate, Weight:param.Weight,CompleteStatus:param.CompleteStatus);
 ',
 	1,
 	0,
@@ -2679,7 +2679,7 @@ INSERT INTO SPR_RS
 	'ReadProjectMilestone',
 	'',
 	'',
-	3,
+	1,
 	0,
 	7);
 INSERT INTO C_EP_PROXY
@@ -2741,7 +2741,7 @@ INSERT INTO SPR_RS
 	'ReadProjectMember',
 	'',
 	'',
-	3,
+	1,
 	0,
 	10);
 INSERT INTO C_EP_PROXY
@@ -2782,7 +2782,7 @@ INSERT INTO SPR_RS
 	'ReadAllChangeRequest',
 	'',
 	'',
-	3,
+	1,
 	0,
 	12);
 INSERT INTO C_EP_PROXY
@@ -2802,7 +2802,7 @@ INSERT INTO SPR_RS
 	'ReadChangeRequestImpact',
 	'',
 	'',
-	3,
+	1,
 	0,
 	13);
 INSERT INTO C_EP_PROXY
@@ -2843,7 +2843,7 @@ INSERT INTO SPR_RS
 	'ReadDocuments',
 	'',
 	'',
-	3,
+	1,
 	0,
 	15);
 INSERT INTO C_EP_PROXY
@@ -2863,7 +2863,7 @@ INSERT INTO SPR_RS
 	'AddDocument',
 	'',
 	'',
-	3,
+	1,
 	0,
 	16);
 INSERT INTO C_EP_PROXY
@@ -2903,7 +2903,7 @@ INSERT INTO SPR_RS
 	'AddProjectRisk',
 	'',
 	'',
-	3,
+	1,
 	0,
 	18);
 INSERT INTO C_EP_PROXY
@@ -2922,7 +2922,7 @@ INSERT INTO SPR_RS
 	VALUES ("a323817a-bd19-41c4-82fb-62fb94836442",
 	'SendProjectRisk',
 	'',
-	'::SendProjectRisk( ID:param.ID, Title:param.Title, Severity:param.Severity, Probability:param.Probability, IsIssue:param.IsIssue, IsOpen:param.IsOpen, MitigationPlan:param.MitigationPlan, ExpectedDeadline:param.ExpectedDeadLine);',
+	'::SendProjectRisk( ID:param.ID, Title:param.Title, Severity:param.Severity, Probability:param.Probability, IsIssue:param.IsIssue, IsOpen:param.IsOpen, MitigationPlan:param.MitigationPlan, ExpectedDeadline:param.ExpectedDeadline);',
 	1,
 	0,
 	19);
@@ -2943,7 +2943,7 @@ INSERT INTO SPR_RS
 	'ReadProjectRisks',
 	'',
 	'',
-	3,
+	1,
 	0,
 	20);
 INSERT INTO C_EP_PROXY
