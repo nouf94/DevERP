@@ -86,7 +86,8 @@ var app = new Vue({
         name: false,
         email: false
       },
-      selectedRequest:''
+      selectedRequest:'',
+      Impacts:''
 
     },
     mounted: function mounted () {
@@ -132,14 +133,16 @@ var app = new Vue({
               });
           },//End submitImpact Method  
           GetImpact: function (event) {
-            axios.get('/rest/ReadChangeRequestImpact', {
+            axios.put('/rest/ReadChangeRequestImpact', {
+              p_ChangeRequestCreationDate:creationDate
               }).then(response => {
                 console.log(response)
               }).catch(error => {
                   console.log(error)
               });
-          },//End read CreationDate Method 
+          },//End read GetImpact Method 
           viewRequest:function(event){
+            this.GetImpact()
             index=(event.target.parentElement.rowIndex)-1;
             this.selectedRequest=this.Requests[index];
           } 
