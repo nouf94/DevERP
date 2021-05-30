@@ -20,6 +20,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import hrsystem.UI;
 import hrsystem.hr.main.impl.EmployeeImpl.returnFromLeave;
 import io.ciera.runtime.summit.exceptions.XtumlException;
+import io.ciera.runtime.summit.types.Date;
 import sharedtypes.Payitem;
 import sharedtypes.Paytype;
 import sharedtypes.Transaction;
@@ -2328,7 +2329,17 @@ ChangeRequest chreq;
 		return null;
         } 
 
-		 
+        public void SendProjectRisk(int , String p_Title, String p_Severity, String p_Probability,boolean p_IsIssue, boolean p_IsOpen, String p_MitigationPlan, Date p_ExpectedDeadline )  {
+		//Impact imp=null;
+		
+         try {
+            //UI.Singleton().Projects().SendChangeRequestImpact( p_Category,p_Details);
+			//imp=new Impact(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompleteStatus);
+			//pimpacts.add(imp);
+         }catch(Exception e) {
+      	   
+         } 
+         } 
 	/*
 	public void AssignManger( final String p_AccountName,  final String p_ProjectCode ) {
 

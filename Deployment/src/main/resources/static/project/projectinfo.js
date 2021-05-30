@@ -307,7 +307,9 @@ var FilesApp = new Vue({
             $("#Error").show();
               console.log(error)
           });
-      }//End Add Files Method 
+      },//End Add Files Method 
+      handleFileUpload:function(event){}
+
     }//End  Methods
   
 });//End Vue Files 

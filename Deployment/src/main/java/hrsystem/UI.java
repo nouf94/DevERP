@@ -24,6 +24,7 @@ import io.ciera.runtime.summit.interfaces.IMessage;
 import io.ciera.runtime.summit.interfaces.Message;
 import io.ciera.runtime.summit.util.LOG;
 import io.ciera.runtime.summit.util.impl.LOGImpl;
+import io.ciera.runtime.summit.types.Date;
 
 
 import java.io.IOException;
@@ -395,13 +396,23 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
          } 
          } 
          
-     public void SendChangeRequestImpact( final String p_Category,  final String p_Details) throws XtumlException {
+    public void SendChangeRequestImpact( final String p_Category,  final String p_Details) throws XtumlException {
          try {
             HRGuiController.Singleton().SendChangeRequestImpact( p_Category,p_Details);
          }catch(Exception e) {
       	   
          } 
          } 
+        public void SendProjectRisk( final int p_ID,  final String p_Title,  final String p_Severity,  final String p_Probability,  final boolean p_IsIssue,  final boolean p_IsOpen,  final String p_MitigationPlan,  final Date p_ExpectedDeadline ) throws XtumlException {
+
+         try {
+            HRGuiController.Singleton().SendProjectRisk( p_ID, p_Title, p_Severity, p_Probability, p_IsIssue, p_IsOpen, p_MitigationPlan, p_ExpectedDeadline );
+
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+         
         public void ReadChangeRequestImpact( final int p_CreationDate ) throws XtumlException {
             
             try {
