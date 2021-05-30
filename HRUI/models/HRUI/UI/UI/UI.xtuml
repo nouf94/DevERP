@@ -2922,7 +2922,8 @@ INSERT INTO SPR_RS
 	VALUES ("a323817a-bd19-41c4-82fb-62fb94836442",
 	'SendProjectRisk',
 	'',
-	'::SendProjectRisk( ID:param.ID, Title:param.Title, Severity:param.Severity, Probability:param.Probability, IsIssue:param.IsIssue, IsOpen:param.IsOpen, MitigationPlan:param.MitigationPlan, ExpectedDeadline:param.ExpectedDeadline);',
+	'//::SendProjectRisk( ID:param.ID, Title:param.Title, Severity:param.Severity, Probability:param.Probability, IsIssue:param.IsIssue, IsOpen:param.IsOpen, MitigationPlan:param.MitigationPlan, ExpectedDeadline:param.ExpectedDeadline);
+::SendProjectRisk( ID:param.ID, Title:param.Title, Severity:param.Severity, Probability:param.Probability, IsIssue:param.IsIssue, IsOpen:param.IsOpen, MitigationPlan:param.MitigationPlan, ExpectedDeadline:param.ExpectedDeadline );',
 	1,
 	0,
 	19);

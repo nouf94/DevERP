@@ -5,7 +5,7 @@ INSERT INTO O_OBJ
 	'Risks',
 	5,
 	'Risks',
-	'The possibility of an undesired outcome to occur. ',
+	'The possibility of an undesired outcome to occur.  ',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_TFR
 	VALUES ("7abbe5d8-a099-4344-aca1-88cfe73be65e",
@@ -93,7 +93,7 @@ INSERT INTO O_TPARM
 	VALUES ("c2b62494-3782-4852-959d-ba4198123048",
 	"7abbe5d8-a099-4344-aca1-88cfe73be65e",
 	'ExpectedDeadline',
-	"ba5eda7a-def5-0000-0000-00000000000e",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	0,
 	'',
 	"f182beaf-0a80-439f-8933-3ac6d2983798",
@@ -248,7 +248,7 @@ INSERT INTO O_ATTR
 	'',
 	'ExpectedDeadline',
 	0,
-	"ba5eda7a-def5-0000-0000-00000000000e",
+	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
 INSERT INTO O_ID
