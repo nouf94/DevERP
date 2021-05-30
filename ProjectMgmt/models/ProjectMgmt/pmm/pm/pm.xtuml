@@ -824,11 +824,7 @@ if (not_empty project)
 	end for;
 end if;
 
-select any project2 from instances of Project where selected.Code == "Project2Code" ;
-select many goals related by project2->Goal[R75.''Fulfill''];
- for each goal in goals
-		UI::SendProjectGoal( Description:goal.Description, Impact:goal.Impact);
-	end for;',
+',
 	1,
 	0,
 	8);
