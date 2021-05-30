@@ -2152,7 +2152,7 @@ private static HRGuiController singleton;
 		}
 		return null;
         } 
-		 
+		
 		List<Document> docs=new ArrayList<Document>();
 		 public void SendDocument( String p_Title,  String p_Path,  int p_State ){
         Document doc=null;
@@ -2165,7 +2165,31 @@ private static HRGuiController singleton;
 
          } 
          } 
-
+		  /*
+		@PutMapping(path="/readDocs", consumes="application/json", produces="application/json")
+		 public List<Document> ReadDocuments() {
+		// TODO Auto-generated method stub
+		try {
+			docs.clear();
+			UI.Singleton().Projects().ReadDocuments(doc.getP_ProjectCode());
+			Thread.sleep(300);
+			return docs;
+		} catch (XtumlException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@PostMapping(path="/AddDoc", consumes="application/json")
+		public void AddDocument(@RequestBody Document doc ){
+          
+          try {
+            UI.Singleton().Projects().AddDocument(doc.getP_ProjectCode(),doc.getP_Title(),doc.get_Path(),doc.getP_State());
+         }catch(Exception e) {
+      	   
+         } 
+         } */
 	@GetMapping(path="/readInitiatives", produces="appliaction/json")
 	public List<deployment.SendInitiatives> ReadInitiatives() {
 		// TODO Auto-generated method stub
@@ -2264,13 +2288,47 @@ ChangeRequest chreq;
 			e.printStackTrace();
 		}
 	}
+		//List<Impact> pimpacts=new ArrayList<Impact>();
+		//String[] categories;
+		//String[] details;
+		List<String> categories=new ArrayList<String>();
+		List<String> details=new ArrayList<String>();
+
 	   public void SendChangeRequestImpact( final String p_Category,  final String p_Details)  {
+		//Impact imp=null;
+		
          try {
-            UI.Singleton().Projects().SendChangeRequestImpact( p_Category,p_Details);
+            //UI.Singleton().Projects().SendChangeRequestImpact( p_Category,p_Details);
+			categories.add(p_Category);
+			details.add(p_Details);
+			//imp=new Impact(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompleteStatus);
+			//pimpacts.add(imp);
          }catch(Exception e) {
       	   
          } 
          } 
+
+
+		@PutMapping(path="/ReadChangeRequestImpact", consumes="application/json", produces="application/json")	
+		public Impact ReadChangeRequestImpact(@RequestBody Impact imp ){
+          	Impact pimpacts;
+
+          try {
+			pimpacts=new Impact(categories.toArray(new String[0]),details.toArray(new String[0]));
+            UI.Singleton().Projects().ReadChangeRequestImpact(imp.getP_CreationDate());
+			Thread.sleep(700);
+			return pimpacts;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+        } 
+
+		 
 	/*
 	public void AssignManger( final String p_AccountName,  final String p_ProjectCode ) {
 

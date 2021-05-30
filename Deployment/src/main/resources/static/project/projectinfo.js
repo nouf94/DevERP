@@ -85,11 +85,12 @@ var app = new Vue({
       errors: {
         name: false,
         email: false
-      }
+      },
+      selectedRequest:''
+
     },
     mounted: function mounted () {
       this.readChnages()
-
     },
     methods: {
       readChnages:function (){
@@ -137,7 +138,11 @@ var app = new Vue({
               }).catch(error => {
                   console.log(error)
               });
-          }//End read CreationDate Method  
+          },//End read CreationDate Method 
+          viewRequest:function(event){
+            index=(event.target.parentElement.rowIndex)-1;
+            this.selectedRequest=this.Requests[index];
+          } 
       }//End  Methods
     
 });//End Vue 
@@ -256,6 +261,53 @@ var MilestoneApp = new Vue({
   
 });//End Vue Milestone 
 
+//Add File Instance
+var FilesApp = new Vue({
+  el: '#nav-files',
+  data:{
+    p_Title:'',
+    p_Path:'',
+    p_State:'',
+    Files:'',
+    errors: {
+      name: false,
+      email: false
+    },
+    p_ProjectCode:'Project1Code',
+
+  },
+  mounted: function mounted () {
+    this.readFiles()
+    //this.ReadStrategies()
+
+  },
+  methods: {
+    readFiles:function (){
+      axios.put('/rest/readDocs',{
+        p_ProjectCode: this.p_ProjectCode
+      }).then(response => (this.Files = response.data,
+        showFiles(this.Files),
+        console.log(response)
+          )).catch(error => {
+            console.log(error)
+        })},
+     UploadFiles: function (event) {
+        axios.post('/rest/AddDoc', {
+          p_Title:this.p_Title,
+          p_Path:this.p_Path,
+          p_State:this.p_State,
+          p_ProjectCode: this.p_ProjectCode
+          }).then(response => {
+           console.log(response)
+           $("#Alert").show();
+          }).catch(error => {
+            $("#Error").show();
+              console.log(error)
+          });
+      }//End Add Files Method 
+    }//End  Methods
+  
+});//End Vue Files 
 
 function showGoals(Goals){
   if(Goals.length>0){
@@ -270,10 +322,15 @@ $("#TasksTable").show();
 $('#NoTasks').hide();
   }
 }
-/*
-function  viewTask(task){
-  console.log(task.rowIndex)
-}*/
+
+function showFiles(Files){
+  if(Files.length>0){
+    $("#FilesTable").show();
+    $('#NoFiles').hide();
+      }
+    }
+
+
 // Process the requests returned from backend
 function ProcessRequest(Requests){
   //Show Table of request if there is available Requests

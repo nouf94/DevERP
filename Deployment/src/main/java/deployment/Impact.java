@@ -14,6 +14,10 @@ public class Impact {
 		this.p_Details= p_Details;
 		this.p_ChangeRequestCreationDate=p_ChangeRequestCreationDate;
 	}
+	public Impact(String[] p_Impacts,String[] p_Details) {
+		this.p_Impacts = p_Impacts;
+		this.p_Details= p_Details;
+	}
 //set and Get p_Details
 	public String[] getP_Impacts() {
 		return p_Impacts;
