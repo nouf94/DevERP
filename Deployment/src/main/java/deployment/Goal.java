@@ -23,10 +23,6 @@ public class Goal {
 		this.p_ProjectCode = p_ProjectCode;
 	}
 
-	public String toString(){
-		String str= "Desc: "+ this.p_Description+ " p_KPI: "+ this.p_KPI+" p_ProjectCode: "+this.p_ProjectCode;
-		return str;
-	}
 
 	public String getP_Description() {
 		return p_Description;

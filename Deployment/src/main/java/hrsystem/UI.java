@@ -403,7 +403,7 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
       	   
          } 
          } 
-        public void SendProjectRisk( final int p_ID,  final String p_Title,  final String p_Severity,  final String p_Probability,  final boolean p_IsIssue,  final boolean p_IsOpen,  final String p_MitigationPlan,  final Date p_ExpectedDeadline ) throws XtumlException {
+        public void SendProjectRisk( final int p_ID,  final String p_Title,  final String p_Severity,  final String p_Probability,  final boolean p_IsIssue,  final boolean p_IsOpen,  final String p_MitigationPlan,  final int p_ExpectedDeadline ) throws XtumlException {
 
          try {
             HRGuiController.Singleton().SendProjectRisk( p_ID, p_Title, p_Severity, p_Probability, p_IsIssue, p_IsOpen, p_MitigationPlan, p_ExpectedDeadline );

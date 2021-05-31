@@ -91,7 +91,7 @@ var app = new Vue({
 
     },
     mounted: function mounted () {
-      this.readChnages()
+      //this.readChnages()
     },
     methods: {
       readChnages:function (){
@@ -227,7 +227,7 @@ var MilestoneApp = new Vue({
     selectedTask:''
   },
   mounted: function mounted () {
-    this.readMilestone()
+    //this.readMilestone()
     //this.ReadStrategies()
 
   },
@@ -263,7 +263,65 @@ var MilestoneApp = new Vue({
     }//End  Methods
   
 });//End Vue Milestone 
+//Add Risk Instance
+var RiskApp = new Vue({
+  el: '#nav-risks',
+  data:{
+    p_rName:'',
+    Rtype:'',
+    Reffect:'',
+    rStatus:'',
+    p_rOwner:'',
+    Risks:'',
+    p_Response:'',
+    p_resolveDate:'',
+    errors: {
+      name: false,
+      email: false
+    },
+    p_ProjectCode:'Project1Code',
+    selectedRisk:''
+  },
+  mounted: function mounted () {
+    //this.readRisks()
 
+  },
+  methods: {
+    readRisks:function (){
+      axios.put('/rest/ReadProjectRisks',{
+        p_ProjectCode: this.p_ProjectCode
+      }).then(response => (this.Risks = response.data,
+        showRisks(this.Risks),
+        console.log(response)
+          )).catch(error => {
+            console.log(error)
+        })},
+     AddProjectRisk: function (event) {
+        axios.post('/rest/AddProjectRisk', {
+          p_ProjectCode :this.p_ProjectCode,
+          p_Title: this.p_rName,
+          p_Severity: $('#Reffect :selected').val(), 
+          p_Probability : $('#rProb :selected').val(),
+          p_IsIssue: $('#Rtype :selected').val(),
+          p_IsOpen: $('#rStatus :selected').val(),
+          p_MitigationPlan:this.p_Response,
+          p_ExpectedDeadline:(new Date(this.p_resolveDate).getTime() / 1000),  
+          }).then(response => {
+           console.log(response)
+           $("#Alert").show();
+          }).catch(error => {
+            $("#Error").show();
+              console.log(error)
+          });
+      }//End Add Risk Method 
+      ,
+      viewRisk:function(event){
+        item=(event.target.parentElement.rowIndex)-1;
+        this.selectedRisk=this.Risks[item];
+      }    
+    }//End  Methods
+  
+});//End Vue risks 
 //Add File Instance
 var FilesApp = new Vue({
   el: '#nav-files',
@@ -277,6 +335,7 @@ var FilesApp = new Vue({
       email: false
     },
     p_ProjectCode:'Project1Code',
+    touploadfiles:''
 
   },
   mounted: function mounted () {
@@ -295,8 +354,14 @@ var FilesApp = new Vue({
             console.log(error)
         })},
      UploadFiles: function (event) {
+      let formData = new FormData();
+      for( var i = 0; i < this.touploadfiles.length; i++ ){
+        let file = this.touploadfiles[i];
+        formData.append('files[' + i + ']', file);
+      }
         axios.post('/rest/AddDoc', {
           p_Title:this.p_Title,
+          formData,
           p_Path:this.p_Path,
           p_State:this.p_State,
           p_ProjectCode: this.p_ProjectCode
@@ -308,7 +373,11 @@ var FilesApp = new Vue({
               console.log(error)
           });
       },//End Add Files Method 
-      handleFileUpload:function(event){}
+      handleFileUpload:function(event){
+        //Enable the upload button
+        $( "#uploadbtn" ).prop( "disabled", false );
+        this.touploadfiles = this.$refs.files.files;
+      }
 
     }//End  Methods
   
@@ -325,6 +394,13 @@ function showTasks(Tasks){
   if(Tasks.length>0){
 $("#TasksTable").show();
 $('#NoTasks').hide();
+  }
+}
+
+function showRisks(Risks){
+  if(Risks.length>0){
+$("#RisksTable").show();
+$('#NoRisks').hide();
   }
 }
 

@@ -2166,9 +2166,9 @@ private static HRGuiController singleton;
 
          } 
          } 
-		  /*
+		  
 		@PutMapping(path="/readDocs", consumes="application/json", produces="application/json")
-		 public List<Document> ReadDocuments() {
+		 public List<Document> ReadDocuments(Document doc) {
 		// TODO Auto-generated method stub
 		try {
 			docs.clear();
@@ -2190,7 +2190,7 @@ private static HRGuiController singleton;
          }catch(Exception e) {
       	   
          } 
-         } */
+         } 
 	@GetMapping(path="/readInitiatives", produces="appliaction/json")
 	public List<deployment.SendInitiatives> ReadInitiatives() {
 		// TODO Auto-generated method stub
@@ -2329,17 +2329,46 @@ ChangeRequest chreq;
 		return null;
         } 
 
-        public void SendProjectRisk(int , String p_Title, String p_Severity, String p_Probability,boolean p_IsIssue, boolean p_IsOpen, String p_MitigationPlan, Date p_ExpectedDeadline )  {
-		//Impact imp=null;
+		List<Risk> risks=new ArrayList<Risk>();
+        public void SendProjectRisk(int p_ID, String p_Title, String p_Severity, String p_Probability,boolean p_IsIssue, boolean p_IsOpen, String p_MitigationPlan, int p_ExpectedDeadline )  {
+		Risk risk=null;
 		
          try {
-            //UI.Singleton().Projects().SendChangeRequestImpact( p_Category,p_Details);
-			//imp=new Impact(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompleteStatus);
-			//pimpacts.add(imp);
+			risk=new Risk(p_ID, p_Title, p_Severity, p_Probability, p_IsIssue, p_IsOpen, p_MitigationPlan, p_ExpectedDeadline );
+			risks.add(risk);
          }catch(Exception e) {
       	   
          } 
          } 
+
+		 @PutMapping(path="/ReadProjectRisks", consumes="application/json", produces="application/json")	
+		public List<Risk> ReadProjectRisks(@RequestBody Risk risk ){
+          try {
+			risks.clear();
+            UI.Singleton().Projects().ReadProjectRisks(risk.getP_ProjectCode());
+			Thread.sleep(700);
+			return risks;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+        } 
+
+		@PostMapping(path="/AddProjectRisk", consumes="application/json")
+		public void AddProjectRisk(@RequestBody Risk risk ){
+          
+          try {
+			  //risk.getP_IsOpen() risk.getP_IsIssue()
+            UI.Singleton().Projects().AddProjectRisk(risk.getP_ProjectCode(), risk.getP_Title(), risk.getP_Severity() ,risk.getP_Probability(),true,true,risk.getP_MitigationPlan(),risk.getP_ExpectedDeadline());
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+
 	/*
 	public void AssignManger( final String p_AccountName,  final String p_ProjectCode ) {
 
