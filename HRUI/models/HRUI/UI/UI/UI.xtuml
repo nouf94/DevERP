@@ -3016,18 +3016,77 @@ INSERT INTO C_EP_PROXY
 	23,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
+
+	VALUES ("e62f9786-4d11-44bc-8bab-2712004dd6f1",
+	"fcac62ce-5ee5-43ff-83c3-d208f313fd11",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("e62f9786-4d11-44bc-8bab-2712004dd6f1",
+	'AddProjectConstraint',
+  
 	VALUES ("f6737704-b18f-425c-b7ed-6e9a97276f93",
 	"fbd7e631-eb75-4cc0-8a51-f0e85ba456a4",
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
 	VALUES ("f6737704-b18f-425c-b7ed-6e9a97276f93",
 	'AddRequirmet',
+
 	'',
 	'',
 	3,
 	0,
 	24);
 INSERT INTO C_EP_PROXY
+
+	VALUES ("fcac62ce-5ee5-43ff-83c3-d208f313fd11",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectConstraint',
+	'',
+	24,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("d0ab0a8f-1de0-4760-afda-ce3cf16029be",
+	"6b5d1cba-27e0-420e-86c5-b253ec389a6e",
+	"
+  ");
+INSERT INTO SPR_RS
+	VALUES ("d0ab0a8f-1de0-4760-afda-ce3cf16029be",
+	'ReadProjectConstraint',
+	'',
+	'',
+	3,
+	0,
+	25);
+INSERT INTO C_EP_PROXY
+	VALUES ("6b5d1cba-27e0-420e-86c5-b253ec389a6e",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectConstraint',
+	'',
+	25,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("a68e0c46-c789-456f-97a8-8710cf00466d",
+	"c77b0802-8f03-4042-ae39-8653f18b4e7c",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("a68e0c46-c789-456f-97a8-8710cf00466d",
+	'SendProjectConstraint',
+	'',
+	'',
+	3,
+	0,
+	26);
+INSERT INTO C_EP_PROXY
+	VALUES ("c77b0802-8f03-4042-ae39-8653f18b4e7c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectConstraint',
+	'',
+	26,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+
 	VALUES ("fbd7e631-eb75-4cc0-8a51-f0e85ba456a4",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
@@ -3035,6 +3094,7 @@ INSERT INTO C_EP_PROXY
 	'',
 	24,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	"00000000-0000-0000-0000-000000000000",
@@ -4428,3 +4488,4 @@ INSERT INTO EP_PKG_PROXY
 	'',
 	0,
 	'../UI.xtuml');
+  

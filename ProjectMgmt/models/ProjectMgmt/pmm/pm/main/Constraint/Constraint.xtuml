@@ -7,6 +7,50 @@ INSERT INTO O_OBJ
 	'Constraint',
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("2b682efd-fe6a-4b26-88e0-ceeea1099cdd",
+	"c94e7798-26f8-40f5-a5d5-08d2bc8f768a",
+	'AddProjectConstraint',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.ID = 123;
+self.Title = param.Title;
+self.Note = param.Note;
+
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("06e5789b-6d82-4ecd-bbe7-bf15bfe7da6e",
+	"2b682efd-fe6a-4b26-88e0-ceeea1099cdd",
+	'ProjectCode',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("e273a492-97a7-44cd-ab94-6b394c5bb572",
+	"2b682efd-fe6a-4b26-88e0-ceeea1099cdd",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"06e5789b-6d82-4ecd-bbe7-bf15bfe7da6e",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("6548598c-8408-4558-b3a9-1028f28cb7b5",
+	"2b682efd-fe6a-4b26-88e0-ceeea1099cdd",
+	'Note',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"e273a492-97a7-44cd-ab94-6b394c5bb572",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("1a830b1e-d1cc-47cf-b093-4e139cab56b8",
 	"c94e7798-26f8-40f5-a5d5-08d2bc8f768a");
@@ -16,7 +60,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("1a830b1e-d1cc-47cf-b093-4e139cab56b8",
 	"c94e7798-26f8-40f5-a5d5-08d2bc8f768a",
-	"00000000-0000-0000-0000-000000000000",
+	"1784af11-b19a-498f-885d-7d4a3b58a155",
 	'Title',
 	'',
 	'',
@@ -41,6 +85,24 @@ INSERT INTO O_ATTR
 	'Note',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("1784af11-b19a-498f-885d-7d4a3b58a155",
+	"c94e7798-26f8-40f5-a5d5-08d2bc8f768a");
+INSERT INTO O_BATTR
+	VALUES ("1784af11-b19a-498f-885d-7d4a3b58a155",
+	"c94e7798-26f8-40f5-a5d5-08d2bc8f768a");
+INSERT INTO O_ATTR
+	VALUES ("1784af11-b19a-498f-885d-7d4a3b58a155",
+	"c94e7798-26f8-40f5-a5d5-08d2bc8f768a",
+	"00000000-0000-0000-0000-000000000000",
+	'ID',
+	'',
+	'',
+	'ID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
 INSERT INTO O_ID
