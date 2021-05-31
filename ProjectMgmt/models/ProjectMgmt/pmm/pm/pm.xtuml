@@ -1129,7 +1129,7 @@ INSERT INTO SPR_PS
 	'AddProjectScope',
 	'',
 	'',
-	3,
+	1,
 	0,
 	21);
 INSERT INTO C_EP_PROXY
@@ -1149,7 +1149,7 @@ INSERT INTO SPR_PS
 	'SendProjectScope',
 	'',
 	'',
-	3,
+	1,
 	0,
 	22);
 INSERT INTO C_EP_PROXY
@@ -1169,7 +1169,7 @@ INSERT INTO SPR_PS
 	'ReadProjectScope',
 	'',
 	'',
-	3,
+	1,
 	0,
 	23);
 INSERT INTO C_EP_PROXY
@@ -1179,6 +1179,26 @@ INSERT INTO C_EP_PROXY
 	'ReadProjectScope',
 	'',
 	23,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("6f509938-448b-461a-ab24-0c8a29ab9948",
+	"fbd7e631-eb75-4cc0-8a51-f0e85ba456a4",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("6f509938-448b-461a-ab24-0c8a29ab9948",
+	'AddRequirmet',
+	'',
+	'',
+	3,
+	0,
+	24);
+INSERT INTO C_EP_PROXY
+	VALUES ("fbd7e631-eb75-4cc0-8a51-f0e85ba456a4",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddRequirmet',
+	'',
+	24,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",

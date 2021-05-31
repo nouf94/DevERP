@@ -1432,6 +1432,37 @@ INSERT INTO C_AS
 	'',
 	0,
 	"e74ccfb8-7a33-43ec-847a-e7214c82f5fb");
+INSERT INTO C_EP
+	VALUES ("fbd7e631-eb75-4cc0-8a51-f0e85ba456a4",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddRequirmet',
+	'',
+	24);
+INSERT INTO C_AS
+	VALUES ("fbd7e631-eb75-4cc0-8a51-f0e85ba456a4",
+	'AddRequirmet',
+	'',
+	0,
+	"ad55b91b-0bf1-4f89-8d29-2ada0a80fa25");
+INSERT INTO C_PP
+	VALUES ("53cddaf4-35c6-42f3-9b16-d2e16932687e",
+	"fbd7e631-eb75-4cc0-8a51-f0e85ba456a4",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Title',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("8c616241-791c-4a9d-a815-283a17247255",
+	"fbd7e631-eb75-4cc0-8a51-f0e85ba456a4",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'Cost',
+	'',
+	0,
+	'',
+	"53cddaf4-35c6-42f3-9b16-d2e16932687e");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,
