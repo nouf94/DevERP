@@ -7,6 +7,76 @@ INSERT INTO O_OBJ
 	'Assumption',
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("1c9b26f8-c345-47bd-9158-4c34e75cdd02",
+	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2",
+	'AddProjectAssumption',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.ID = 123;
+self.Title = param.Title;
+self.Description = param.Description;
+self.Impact = param.Impact;
+self.ValidUntil = param.ValidUntil;
+
+select any project from instances of Project where selected.Code==param.ProjectCode;
+if (not_empty project)
+		relate self to project across R79.''Belongs'';
+end if;
+
+
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("b80821c6-5d84-4d6d-9675-5b41473099f1",
+	"1c9b26f8-c345-47bd-9158-4c34e75cdd02",
+	'ProjectCode',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("2b7d8a24-94fe-457d-8f0f-9c14e5334d00",
+	"1c9b26f8-c345-47bd-9158-4c34e75cdd02",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"b80821c6-5d84-4d6d-9675-5b41473099f1",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("e61d4e31-829e-40fc-8a8d-b1a04311e51b",
+	"1c9b26f8-c345-47bd-9158-4c34e75cdd02",
+	'Description',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"2b7d8a24-94fe-457d-8f0f-9c14e5334d00",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("cf930347-8cf4-43b2-8b9c-c6b61667eb2d",
+	"1c9b26f8-c345-47bd-9158-4c34e75cdd02",
+	'Impact',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"e61d4e31-829e-40fc-8a8d-b1a04311e51b",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("202ae6a0-9543-4df8-949c-847b204b946d",
+	"1c9b26f8-c345-47bd-9158-4c34e75cdd02",
+	'ValidUntil',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"cf930347-8cf4-43b2-8b9c-c6b61667eb2d",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("5f9229e8-8e8d-44cd-8e1f-9c81ab22668e",
 	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2");
@@ -16,7 +86,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("5f9229e8-8e8d-44cd-8e1f-9c81ab22668e",
 	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2",
-	"00000000-0000-0000-0000-000000000000",
+	"2e071cd5-7e7e-46e9-900e-5bbd823943f0",
 	'Title',
 	'',
 	'',
@@ -75,6 +145,24 @@ INSERT INTO O_ATTR
 	'',
 	'',
 	'ValidUntil',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("2e071cd5-7e7e-46e9-900e-5bbd823943f0",
+	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2");
+INSERT INTO O_BATTR
+	VALUES ("2e071cd5-7e7e-46e9-900e-5bbd823943f0",
+	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2");
+INSERT INTO O_ATTR
+	VALUES ("2e071cd5-7e7e-46e9-900e-5bbd823943f0",
+	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2",
+	"00000000-0000-0000-0000-000000000000",
+	'ID',
+	'',
+	'',
+	'ID',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
