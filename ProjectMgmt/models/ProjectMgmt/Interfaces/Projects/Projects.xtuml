@@ -1393,6 +1393,45 @@ INSERT INTO C_PP
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("10f687bb-8a62-4b20-abd2-98e863203a3f",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectScope',
+	'',
+	21);
+INSERT INTO C_AS
+	VALUES ("10f687bb-8a62-4b20-abd2-98e863203a3f",
+	'AddProjectScope',
+	'',
+	0,
+	"1de05022-2190-4241-b206-389f7329503f");
+INSERT INTO C_EP
+	VALUES ("e74ccfb8-7a33-43ec-847a-e7214c82f5fb",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectScope',
+	'',
+	22);
+INSERT INTO C_AS
+	VALUES ("e74ccfb8-7a33-43ec-847a-e7214c82f5fb",
+	'SendProjectScope',
+	'',
+	0,
+	"10f687bb-8a62-4b20-abd2-98e863203a3f");
+INSERT INTO C_EP
+	VALUES ("ad55b91b-0bf1-4f89-8d29-2ada0a80fa25",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectScope',
+	'',
+	23);
+INSERT INTO C_AS
+	VALUES ("ad55b91b-0bf1-4f89-8d29-2ada0a80fa25",
+	'ReadProjectScope',
+	'',
+	0,
+	"e74ccfb8-7a33-43ec-847a-e7214c82f5fb");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,
