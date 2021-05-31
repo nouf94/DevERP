@@ -1120,6 +1120,66 @@ INSERT INTO C_EP_PROXY
 	'',
 	20,
 	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("231c0593-3376-4825-a2cc-dcde8bc6fd49",
+	"2f3adffd-2524-43a5-93af-768fdeca4a1c",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("231c0593-3376-4825-a2cc-dcde8bc6fd49",
+	'SendProjectAssumption',
+	'',
+	'',
+	3,
+	0,
+	21);
+INSERT INTO C_EP_PROXY
+	VALUES ("2f3adffd-2524-43a5-93af-768fdeca4a1c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectAssumption',
+	'',
+	21,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("70ff7bed-4e28-4b74-841b-ff284d17f3b8",
+	"79c6fb80-229f-4569-a699-a1ad0dbc46dc",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("70ff7bed-4e28-4b74-841b-ff284d17f3b8",
+	'AddProjectAssumption',
+	'',
+	'',
+	3,
+	0,
+	22);
+INSERT INTO C_EP_PROXY
+	VALUES ("79c6fb80-229f-4569-a699-a1ad0dbc46dc",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectAssumption',
+	'',
+	22,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("77f0addd-b7f9-43e1-95ec-c6b6dc04b6fe",
+	"8b59047e-9e0a-4071-a415-26fc0e678f7f",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("77f0addd-b7f9-43e1-95ec-c6b6dc04b6fe",
+	'ReadProjectAssumption',
+	'',
+	'',
+	3,
+	0,
+	23);
+INSERT INTO C_EP_PROXY
+	VALUES ("8b59047e-9e0a-4071-a415-26fc0e678f7f",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectAssumption',
+	'',
+	23,
+	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	"00000000-0000-0000-0000-000000000000",
