@@ -16,7 +16,7 @@ INSERT INTO O_TFR
 	1,
 	'self.Description=param.Description;
 self.Impact = param.Impact;
-//self.KPI=param.KPI;
+
 
 
 
