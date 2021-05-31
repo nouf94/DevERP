@@ -23,6 +23,7 @@ self.IsOpen=param.IsOpen;
 self.MitigationPlan=param.MitigationPlan;
 self.ExpectedDeadline=param.ExpectedDeadline;
 
+
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
 		relate self to project across R68.''threaten'';

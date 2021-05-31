@@ -30,102 +30,6 @@ INSERT INTO GD_MD
 	0,
 	'4.1.17',
 	'HRUI::UI::UI');
-INSERT INTO GD_GE
-	VALUES ("c073e339-87ba-4d9d-9355-6600d823db98",
-	"00000000-0000-0000-0000-000000000000",
-	"f302aa73-3b6f-4030-b781-5dff4a4ef1da",
-	108,
-	0,
-	'HRUI::UI::UI::Tests');
-INSERT INTO GD_SHP
-	VALUES ("c073e339-87ba-4d9d-9355-6600d823db98");
-INSERT INTO GD_NCS
-	VALUES ("c073e339-87ba-4d9d-9355-6600d823db98");
-INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
-	"c073e339-87ba-4d9d-9355-6600d823db98");
-INSERT INTO DIM_GE
-	VALUES (0.000000,
-	0.000000,
-	"c073e339-87ba-4d9d-9355-6600d823db98",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("c073e339-87ba-4d9d-9355-6600d823db98",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_GE
-	VALUES ("5b89284b-0b6b-408e-9755-76fcbf31af53",
-	"00000000-0000-0000-0000-000000000000",
-	"d402b4d1-527a-422b-aa46-09cc944d2bea",
-	108,
-	0,
-	'HRUI::UI::UI::UIFin');
-INSERT INTO GD_SHP
-	VALUES ("5b89284b-0b6b-408e-9755-76fcbf31af53");
-INSERT INTO GD_NCS
-	VALUES ("5b89284b-0b6b-408e-9755-76fcbf31af53");
-INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
-	"5b89284b-0b6b-408e-9755-76fcbf31af53");
-INSERT INTO DIM_GE
-	VALUES (220.000000,
-	0.000000,
-	"5b89284b-0b6b-408e-9755-76fcbf31af53",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("5b89284b-0b6b-408e-9755-76fcbf31af53",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_GE
-	VALUES ("cf20e6e8-38d0-462a-b8a5-739feb6c34f3",
-	"00000000-0000-0000-0000-000000000000",
-	"9f3f7773-dfb8-44f3-a8df-8c7c9c133ae7",
-	108,
-	0,
-	'HRUI::UI::UI::UIPR');
-INSERT INTO GD_SHP
-	VALUES ("cf20e6e8-38d0-462a-b8a5-739feb6c34f3");
-INSERT INTO GD_NCS
-	VALUES ("cf20e6e8-38d0-462a-b8a5-739feb6c34f3");
-INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
-	"cf20e6e8-38d0-462a-b8a5-739feb6c34f3");
-INSERT INTO DIM_GE
-	VALUES (440.000000,
-	0.000000,
-	"cf20e6e8-38d0-462a-b8a5-739feb6c34f3",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("cf20e6e8-38d0-462a-b8a5-739feb6c34f3",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_GE
-	VALUES ("4b5b089f-26ad-42e0-859f-7c8e22f3a937",
-	"00000000-0000-0000-0000-000000000000",
-	"20543efe-1176-476d-b1d2-f7083b47970b",
-	108,
-	0,
-	'HRUI::UI::UI::UI');
-INSERT INTO GD_SHP
-	VALUES ("4b5b089f-26ad-42e0-859f-7c8e22f3a937");
-INSERT INTO GD_NCS
-	VALUES ("4b5b089f-26ad-42e0-859f-7c8e22f3a937");
-INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
-	"4b5b089f-26ad-42e0-859f-7c8e22f3a937");
-INSERT INTO DIM_GE
-	VALUES (660.000000,
-	0.000000,
-	"4b5b089f-26ad-42e0-859f-7c8e22f3a937",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("4b5b089f-26ad-42e0-859f-7c8e22f3a937",
-	0,
-	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PO
 	VALUES ("723ef2af-9f17-4893-8c39-67c5b0d8ba35",
 	"f859e576-0e98-4f6e-9102-2f3ef0483432",
@@ -2154,7 +2058,7 @@ INSERT INTO SPR_RS
 	VALUES ("83b56669-50ba-4826-a242-bec26b381c2a",
 	'SendProjectGoal',
 	'',
-	'::SendProjectGoal( Description:param.Description, Impact: Param.Impact);',
+	'::SendProjectGoal( Description:param.Description, Impact: param.Impact, KPI:param.KPI);',
 	1,
 	0,
 	9);
@@ -2448,6 +2352,127 @@ INSERT INTO C_EP_PROXY
 	'ReadProjectScope',
 	'',
 	23,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("cd0227eb-ba6a-42d5-92d1-52759f877246",
+	"0b16c49d-a289-4bba-bccd-8ac47cc4e8b5",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("cd0227eb-ba6a-42d5-92d1-52759f877246",
+	'AddProjectAssumption',
+	'',
+	'',
+	3,
+	0,
+	24);
+INSERT INTO C_EP_PROXY
+	VALUES ("0b16c49d-a289-4bba-bccd-8ac47cc4e8b5",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectAssumption',
+	'',
+	24,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("9e5626c3-853c-4076-88a1-eed7f90a9ed2",
+	"536faddc-2d35-4c59-bbc4-1d5742f9d74f",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("9e5626c3-853c-4076-88a1-eed7f90a9ed2",
+	'SendProjectAssumption',
+	'',
+	'//::SendProjectGoal( Description:param.Description, Impact: Param.Impact);
+::SendProjectAssumption( ID:param.ID, Title:param.Title, Description:param.Description, Impact:param.Impact, ValidUntil:param.ValidUntil );',
+	1,
+	0,
+	25);
+INSERT INTO C_EP_PROXY
+	VALUES ("536faddc-2d35-4c59-bbc4-1d5742f9d74f",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectAssumption',
+	'',
+	25,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("e11f7085-4c57-4130-83d6-f0fce0acdb33",
+	"3f60499b-523d-4b45-9e91-6119473496a4",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("e11f7085-4c57-4130-83d6-f0fce0acdb33",
+	'ReadProjectAssumption',
+	'',
+	'',
+	3,
+	0,
+	26);
+INSERT INTO C_EP_PROXY
+	VALUES ("3f60499b-523d-4b45-9e91-6119473496a4",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectAssumption',
+	'',
+	26,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("92f11465-d80c-4f67-89da-b28ecdf20632",
+	"91a87629-075a-46d9-9c6e-3925434fd4b7",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("92f11465-d80c-4f67-89da-b28ecdf20632",
+	'AddProjectConstraint',
+	'',
+	'',
+	3,
+	0,
+	27);
+INSERT INTO C_EP_PROXY
+	VALUES ("91a87629-075a-46d9-9c6e-3925434fd4b7",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectConstraint',
+	'',
+	27,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("80e1ef42-e2cc-4e9b-8e39-5eb0cd66824f",
+	"1b41c17f-d40c-4cea-9b29-908ca2e39ffa",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("80e1ef42-e2cc-4e9b-8e39-5eb0cd66824f",
+	'SendProjectConstraint',
+	'',
+	'::SendProjectConstraint( ID:param.ID, Title:param.Title, Note:param.Note );',
+	1,
+	0,
+	28);
+INSERT INTO C_EP_PROXY
+	VALUES ("1b41c17f-d40c-4cea-9b29-908ca2e39ffa",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectConstraint',
+	'',
+	28,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("c4dd1858-5226-476d-a016-bd7df061adb7",
+	"1b054c00-1c3f-4473-8ad0-9afc4406b685",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("c4dd1858-5226-476d-a016-bd7df061adb7",
+	'ReadProjectConstraint',
+	'',
+	'',
+	3,
+	0,
+	29);
+INSERT INTO C_EP_PROXY
+	VALUES ("1b054c00-1c3f-4473-8ad0-9afc4406b685",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectConstraint',
+	'',
+	29,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",

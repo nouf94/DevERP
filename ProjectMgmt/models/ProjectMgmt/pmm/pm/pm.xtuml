@@ -561,7 +561,7 @@ INSERT INTO SPR_PS
 	'',
 	'create object instance goal of Goal;
 
-goal.CreateGoal( Description:param.Description, Impact:param.Impact, ProjectCode:param.ProjectCode );',
+goal.CreateGoal( Description:param.Description, Impact:param.Impact, ProjectCode:param.ProjectCode, KPI:param.KPI );',
 	1,
 	0,
 	5);
@@ -635,7 +635,7 @@ INSERT INTO SPR_PS
 if (not_empty project)
 	select many goals related by project->Goal[R75.''Fulfill''];
 	for each goal in goals
-		UI::SendProjectGoal( Description:goal.Description, Impact:goal.Impact);
+		UI::SendProjectGoal( Description:goal.Description, Impact:goal.Impact, KPI:goal.KPI);
 	end for;
 end if;
 
@@ -945,7 +945,7 @@ INSERT INTO SPR_PS
 	'AddProjectScope',
 	'',
 	'',
-	3,
+	1,
 	0,
 	21);
 INSERT INTO C_EP_PROXY
@@ -965,7 +965,7 @@ INSERT INTO SPR_PS
 	'SendProjectScope',
 	'',
 	'',
-	3,
+	1,
 	0,
 	22);
 INSERT INTO C_EP_PROXY
@@ -985,7 +985,7 @@ INSERT INTO SPR_PS
 	'ReadProjectScope',
 	'',
 	'',
-	3,
+	1,
 	0,
 	23);
 INSERT INTO C_EP_PROXY
@@ -995,6 +995,148 @@ INSERT INTO C_EP_PROXY
 	'ReadProjectScope',
 	'',
 	23,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("ce7fd5f6-6e46-470c-b777-8997a751d62f",
+	"0b16c49d-a289-4bba-bccd-8ac47cc4e8b5",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("ce7fd5f6-6e46-470c-b777-8997a751d62f",
+	'AddProjectAssumption',
+	'',
+	'create object instance assumption of Assumption;
+assumption.CreateAssumption( ProjectCode:param.ProjectCode, Title:param.Title, Description:param.Description, Impact:param.Impact, ValidUntil:param.ValidUntil );
+',
+	1,
+	0,
+	24);
+INSERT INTO C_EP_PROXY
+	VALUES ("0b16c49d-a289-4bba-bccd-8ac47cc4e8b5",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectAssumption',
+	'',
+	24,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("6448092f-559a-497a-b2be-31fae5afc2d2",
+	"536faddc-2d35-4c59-bbc4-1d5742f9d74f",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("6448092f-559a-497a-b2be-31fae5afc2d2",
+	'SendProjectAssumption',
+	'',
+	'',
+	1,
+	0,
+	25);
+INSERT INTO C_EP_PROXY
+	VALUES ("536faddc-2d35-4c59-bbc4-1d5742f9d74f",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectAssumption',
+	'',
+	25,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("1ea840da-2809-46b9-9cd3-aefe64677571",
+	"3f60499b-523d-4b45-9e91-6119473496a4",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("1ea840da-2809-46b9-9cd3-aefe64677571",
+	'ReadProjectAssumption',
+	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many assumptions related by project->Assumption[R79.''Includes''];
+	for each assumption in assumptions
+		UI::SendProjectAssumption( ID:assumption.ID, Title:assumption.Title, Description:assumption.Description, Impact:assumption.Impact, ValidUntil:assumption.ValidUntil );
+	end for;
+end if;
+
+',
+	1,
+	0,
+	26);
+INSERT INTO C_EP_PROXY
+	VALUES ("3f60499b-523d-4b45-9e91-6119473496a4",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectAssumption',
+	'',
+	26,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("7fac3a72-8386-4460-bca9-5ddbee15544c",
+	"91a87629-075a-46d9-9c6e-3925434fd4b7",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("7fac3a72-8386-4460-bca9-5ddbee15544c",
+	'AddProjectConstraint',
+	'',
+	'create object instance constraint of Constraint;
+
+constraint.CreateProjectConstraint( ProjectCode:param.ProjectCode, Title:param.Title, Note:param.Note );',
+	1,
+	0,
+	27);
+INSERT INTO C_EP_PROXY
+	VALUES ("91a87629-075a-46d9-9c6e-3925434fd4b7",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectConstraint',
+	'',
+	27,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("4f1d2190-eed9-4d72-b460-0232f55a9483",
+	"1b41c17f-d40c-4cea-9b29-908ca2e39ffa",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("4f1d2190-eed9-4d72-b460-0232f55a9483",
+	'SendProjectConstraint',
+	'',
+	'',
+	1,
+	0,
+	28);
+INSERT INTO C_EP_PROXY
+	VALUES ("1b41c17f-d40c-4cea-9b29-908ca2e39ffa",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectConstraint',
+	'',
+	28,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("9d67c397-c6ce-495b-b69a-a760013574f0",
+	"1b054c00-1c3f-4473-8ad0-9afc4406b685",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("9d67c397-c6ce-495b-b69a-a760013574f0",
+	'ReadProjectConstraint',
+	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many constraints related by project->Constraint[R78.''Includes''];
+	for each constraint in constraints
+		UI::SendProjectConstraint( ID:constraint.ID, Title:constraint.Title, Note:constraint.Note );
+	end for;
+end if;
+
+',
+	1,
+	0,
+	29);
+INSERT INTO C_EP_PROXY
+	VALUES ("1b054c00-1c3f-4473-8ad0-9afc4406b685",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectConstraint',
+	'',
+	29,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
