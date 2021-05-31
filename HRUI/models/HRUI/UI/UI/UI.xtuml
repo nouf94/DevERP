@@ -2321,8 +2321,8 @@ INSERT INTO SPR_RS
 	VALUES ("4152ccec-201b-40fb-8167-b904c77e8c79",
 	'SendProjectScope',
 	'',
-	'',
-	3,
+	'::SendProjectScope( ID:param.ID, Title:param.Title, IsInScope:param.IsInScope, Description:param.Description);',
+	1,
 	0,
 	22);
 INSERT INTO C_EP_PROXY
@@ -2473,6 +2473,66 @@ INSERT INTO C_EP_PROXY
 	'ReadProjectConstraint',
 	'',
 	29,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("9a4a419c-9ab9-4784-bdfd-b6a270b1821f",
+	"6bbd7f40-b90e-41d7-a164-f8bb5475fa5b",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("9a4a419c-9ab9-4784-bdfd-b6a270b1821f",
+	'AddProjectRequirement',
+	'',
+	'',
+	3,
+	0,
+	30);
+INSERT INTO C_EP_PROXY
+	VALUES ("6bbd7f40-b90e-41d7-a164-f8bb5475fa5b",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectRequirement',
+	'',
+	30,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("fe7b8525-64a9-4f43-80f4-1b5ab18680c4",
+	"81aee76c-9800-46b5-b0ef-14ddc1ce5da6",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("fe7b8525-64a9-4f43-80f4-1b5ab18680c4",
+	'SendProjectRequirement',
+	'',
+	'::SendProjectRequirement( ID:param.ID, Title:param.Title, Cost:param.Cost );',
+	1,
+	0,
+	31);
+INSERT INTO C_EP_PROXY
+	VALUES ("81aee76c-9800-46b5-b0ef-14ddc1ce5da6",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectRequirement',
+	'',
+	31,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("58d185b5-a1c6-4185-adef-bbee8da10324",
+	"23c14ef6-6f6e-4c7a-8bc0-643d902592e7",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("58d185b5-a1c6-4185-adef-bbee8da10324",
+	'ReadProjectRequirement',
+	'',
+	'',
+	3,
+	0,
+	32);
+INSERT INTO C_EP_PROXY
+	VALUES ("23c14ef6-6f6e-4c7a-8bc0-643d902592e7",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectRequirement',
+	'',
+	32,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",

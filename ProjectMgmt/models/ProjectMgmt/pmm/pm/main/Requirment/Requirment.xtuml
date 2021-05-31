@@ -7,6 +7,57 @@ INSERT INTO O_OBJ
 	'Requirment',
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("2dec745f-2a8b-4a91-b2c4-34b645930de4",
+	"61c903d5-04d3-4622-b1ba-f76033155e2f",
+	'CreateProjectRequirement',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.ID = 124;
+self.Title = param.Title;
+self.Cost = param.Cost;
+	
+
+select any project from instances of Project where selected.Code==param.ProjectCode;
+if (not_empty project)
+		relate self to project across R77.''Belongs'';
+end if;
+
+
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("dbd87b44-a83b-437f-b7c6-8f1a71f57e90",
+	"2dec745f-2a8b-4a91-b2c4-34b645930de4",
+	'ProjectCode',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("c697396f-011b-49c0-8b6d-884f7df39438",
+	"2dec745f-2a8b-4a91-b2c4-34b645930de4",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"dbd87b44-a83b-437f-b7c6-8f1a71f57e90",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("2f35af77-137c-40f7-ab0e-d3c7210954a2",
+	"2dec745f-2a8b-4a91-b2c4-34b645930de4",
+	'Cost',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"c697396f-011b-49c0-8b6d-884f7df39438",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("67de8f15-f961-4dd6-8cb8-7064536d3387",
 	"61c903d5-04d3-4622-b1ba-f76033155e2f");
@@ -16,7 +67,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("67de8f15-f961-4dd6-8cb8-7064536d3387",
 	"61c903d5-04d3-4622-b1ba-f76033155e2f",
-	"00000000-0000-0000-0000-000000000000",
+	"6e889661-a6ca-4d0e-ba1b-082fa0106132",
 	'Title',
 	'',
 	'',
@@ -41,6 +92,24 @@ INSERT INTO O_ATTR
 	'Cost',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("6e889661-a6ca-4d0e-ba1b-082fa0106132",
+	"61c903d5-04d3-4622-b1ba-f76033155e2f");
+INSERT INTO O_BATTR
+	VALUES ("6e889661-a6ca-4d0e-ba1b-082fa0106132",
+	"61c903d5-04d3-4622-b1ba-f76033155e2f");
+INSERT INTO O_ATTR
+	VALUES ("6e889661-a6ca-4d0e-ba1b-082fa0106132",
+	"61c903d5-04d3-4622-b1ba-f76033155e2f",
+	"00000000-0000-0000-0000-000000000000",
+	'ID',
+	'',
+	'',
+	'ID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
 INSERT INTO O_ID

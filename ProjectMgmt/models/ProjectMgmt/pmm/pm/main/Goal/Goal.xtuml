@@ -24,10 +24,7 @@ self.KPI = param.KPI;
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
 		relate self to project across R75.''Acheived by'';
-end if;
-
-
-',
+end if;',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
