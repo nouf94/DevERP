@@ -1121,62 +1121,62 @@ INSERT INTO C_EP_PROXY
 	20,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("231c0593-3376-4825-a2cc-dcde8bc6fd49",
-	"2f3adffd-2524-43a5-93af-768fdeca4a1c",
+	VALUES ("4236ccce-f995-40a4-b472-28e2e60081ba",
+	"10f687bb-8a62-4b20-abd2-98e863203a3f",
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
-	VALUES ("231c0593-3376-4825-a2cc-dcde8bc6fd49",
-	'SendProjectAssumption',
+	VALUES ("4236ccce-f995-40a4-b472-28e2e60081ba",
+	'AddProjectScope',
 	'',
 	'',
 	3,
 	0,
 	21);
 INSERT INTO C_EP_PROXY
-	VALUES ("2f3adffd-2524-43a5-93af-768fdeca4a1c",
+	VALUES ("10f687bb-8a62-4b20-abd2-98e863203a3f",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'SendProjectAssumption',
+	'AddProjectScope',
 	'',
 	21,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("70ff7bed-4e28-4b74-841b-ff284d17f3b8",
-	"79c6fb80-229f-4569-a699-a1ad0dbc46dc",
+	VALUES ("ee5c1c6b-9977-4e03-a16e-fec34cc4fa03",
+	"e74ccfb8-7a33-43ec-847a-e7214c82f5fb",
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
-	VALUES ("70ff7bed-4e28-4b74-841b-ff284d17f3b8",
-	'AddProjectAssumption',
+	VALUES ("ee5c1c6b-9977-4e03-a16e-fec34cc4fa03",
+	'SendProjectScope',
 	'',
 	'',
 	3,
 	0,
 	22);
 INSERT INTO C_EP_PROXY
-	VALUES ("79c6fb80-229f-4569-a699-a1ad0dbc46dc",
+	VALUES ("e74ccfb8-7a33-43ec-847a-e7214c82f5fb",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddProjectAssumption',
+	'SendProjectScope',
 	'',
 	22,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("77f0addd-b7f9-43e1-95ec-c6b6dc04b6fe",
-	"8b59047e-9e0a-4071-a415-26fc0e678f7f",
+	VALUES ("4ef4ec6b-41a6-4a4f-ab10-c4c3b1bd252a",
+	"ad55b91b-0bf1-4f89-8d29-2ada0a80fa25",
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
-	VALUES ("77f0addd-b7f9-43e1-95ec-c6b6dc04b6fe",
-	'ReadProjectAssumption',
+	VALUES ("4ef4ec6b-41a6-4a4f-ab10-c4c3b1bd252a",
+	'ReadProjectScope',
 	'',
 	'',
 	3,
 	0,
 	23);
 INSERT INTO C_EP_PROXY
-	VALUES ("8b59047e-9e0a-4071-a415-26fc0e678f7f",
+	VALUES ("ad55b91b-0bf1-4f89-8d29-2ada0a80fa25",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'ReadProjectAssumption',
+	'ReadProjectScope',
 	'',
 	23,
 	'../../Interfaces/Projects/Projects.xtuml');

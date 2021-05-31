@@ -2956,62 +2956,62 @@ INSERT INTO C_EP_PROXY
 	20,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
-	VALUES ("bf95e268-bc77-4463-88e3-4cc0900f1c96",
-	"2f3adffd-2524-43a5-93af-768fdeca4a1c",
+	VALUES ("f7dc6336-c134-4141-a72f-6dbad33e5d4d",
+	"10f687bb-8a62-4b20-abd2-98e863203a3f",
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
-	VALUES ("bf95e268-bc77-4463-88e3-4cc0900f1c96",
-	'SendProjectAssumption',
+	VALUES ("f7dc6336-c134-4141-a72f-6dbad33e5d4d",
+	'AddProjectScope',
 	'',
 	'',
 	3,
 	0,
 	21);
 INSERT INTO C_EP_PROXY
-	VALUES ("2f3adffd-2524-43a5-93af-768fdeca4a1c",
+	VALUES ("10f687bb-8a62-4b20-abd2-98e863203a3f",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'SendProjectAssumption',
+	'AddProjectScope',
 	'',
 	21,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
-	VALUES ("3f8e5127-de2f-4326-a6fc-ea25f671b07d",
-	"79c6fb80-229f-4569-a699-a1ad0dbc46dc",
+	VALUES ("4152ccec-201b-40fb-8167-b904c77e8c79",
+	"e74ccfb8-7a33-43ec-847a-e7214c82f5fb",
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
-	VALUES ("3f8e5127-de2f-4326-a6fc-ea25f671b07d",
-	'AddProjectAssumption',
+	VALUES ("4152ccec-201b-40fb-8167-b904c77e8c79",
+	'SendProjectScope',
 	'',
 	'',
 	3,
 	0,
 	22);
 INSERT INTO C_EP_PROXY
-	VALUES ("79c6fb80-229f-4569-a699-a1ad0dbc46dc",
+	VALUES ("e74ccfb8-7a33-43ec-847a-e7214c82f5fb",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddProjectAssumption',
+	'SendProjectScope',
 	'',
 	22,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_REP
-	VALUES ("48bf836a-19b0-45dc-b0d2-3c0e1c2467ce",
-	"8b59047e-9e0a-4071-a415-26fc0e678f7f",
+	VALUES ("7eef0d64-c5fe-4ce7-8bb7-b39bd562830b",
+	"ad55b91b-0bf1-4f89-8d29-2ada0a80fa25",
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
-	VALUES ("48bf836a-19b0-45dc-b0d2-3c0e1c2467ce",
-	'ReadProjectAssumption',
+	VALUES ("7eef0d64-c5fe-4ce7-8bb7-b39bd562830b",
+	'ReadProjectScope',
 	'',
 	'',
 	3,
 	0,
 	23);
 INSERT INTO C_EP_PROXY
-	VALUES ("8b59047e-9e0a-4071-a415-26fc0e678f7f",
+	VALUES ("ad55b91b-0bf1-4f89-8d29-2ada0a80fa25",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'ReadProjectAssumption',
+	'ReadProjectScope',
 	'',
 	23,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
