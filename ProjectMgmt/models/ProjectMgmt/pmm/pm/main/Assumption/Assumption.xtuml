@@ -18,7 +18,7 @@ INSERT INTO O_TFR
 self.Title = param.Title;
 self.Description = param.Description;
 self.Impact = param.Impact;
-self.ValidUntil = param.ValidUntil;
+self.ValidUntil = param.ValidUntil; 
 
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
