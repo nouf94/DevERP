@@ -1180,6 +1180,66 @@ INSERT INTO C_EP_PROXY
 	'',
 	23,
 	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("8fd59a8f-a98d-4433-9d72-ab2f364ed0db",
+	"fcac62ce-5ee5-43ff-83c3-d208f313fd11",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("8fd59a8f-a98d-4433-9d72-ab2f364ed0db",
+	'AddProjectConstraint',
+	'',
+	'',
+	3,
+	0,
+	24);
+INSERT INTO C_EP_PROXY
+	VALUES ("fcac62ce-5ee5-43ff-83c3-d208f313fd11",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectConstraint',
+	'',
+	24,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("7f51145e-9090-4b8a-b447-ad535aa3cc51",
+	"6b5d1cba-27e0-420e-86c5-b253ec389a6e",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("7f51145e-9090-4b8a-b447-ad535aa3cc51",
+	'ReadProjectConstraint',
+	'',
+	'',
+	3,
+	0,
+	25);
+INSERT INTO C_EP_PROXY
+	VALUES ("6b5d1cba-27e0-420e-86c5-b253ec389a6e",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectConstraint',
+	'',
+	25,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("eb233f63-616d-461d-ade7-d89798374662",
+	"c77b0802-8f03-4042-ae39-8653f18b4e7c",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("eb233f63-616d-461d-ade7-d89798374662",
+	'SendProjectConstraint',
+	'',
+	'',
+	3,
+	0,
+	26);
+INSERT INTO C_EP_PROXY
+	VALUES ("c77b0802-8f03-4042-ae39-8653f18b4e7c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectConstraint',
+	'',
+	26,
+	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	"00000000-0000-0000-0000-000000000000",

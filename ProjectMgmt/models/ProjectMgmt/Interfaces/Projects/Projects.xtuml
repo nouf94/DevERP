@@ -1432,6 +1432,81 @@ INSERT INTO C_AS
 	'',
 	0,
 	"e74ccfb8-7a33-43ec-847a-e7214c82f5fb");
+INSERT INTO C_EP
+	VALUES ("fcac62ce-5ee5-43ff-83c3-d208f313fd11",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectConstraint',
+	'',
+	24);
+INSERT INTO C_AS
+	VALUES ("fcac62ce-5ee5-43ff-83c3-d208f313fd11",
+	'AddProjectConstraint',
+	'',
+	0,
+	"ad55b91b-0bf1-4f89-8d29-2ada0a80fa25");
+INSERT INTO C_PP
+	VALUES ("807f977d-1dee-4fd9-8e00-1aa3ad495e42",
+	"fcac62ce-5ee5-43ff-83c3-d208f313fd11",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Title',
+	'',
+	0,
+	'',
+	"1d4b98c2-253d-44a0-9199-4e61ca4bc0a7");
+INSERT INTO C_PP
+	VALUES ("1d4b98c2-253d-44a0-9199-4e61ca4bc0a7",
+	"fcac62ce-5ee5-43ff-83c3-d208f313fd11",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("34eb2241-eb1a-4ac2-b5b6-0a8841c6a2e1",
+	"fcac62ce-5ee5-43ff-83c3-d208f313fd11",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Note',
+	'',
+	0,
+	'',
+	"807f977d-1dee-4fd9-8e00-1aa3ad495e42");
+INSERT INTO C_EP
+	VALUES ("6b5d1cba-27e0-420e-86c5-b253ec389a6e",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectConstraint',
+	'',
+	25);
+INSERT INTO C_AS
+	VALUES ("6b5d1cba-27e0-420e-86c5-b253ec389a6e",
+	'ReadProjectConstraint',
+	'',
+	0,
+	"fcac62ce-5ee5-43ff-83c3-d208f313fd11");
+INSERT INTO C_PP
+	VALUES ("38112cbf-cc7c-4b00-b218-eea884a4c216",
+	"6b5d1cba-27e0-420e-86c5-b253ec389a6e",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("c77b0802-8f03-4042-ae39-8653f18b4e7c",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectConstraint',
+	'',
+	26);
+INSERT INTO C_AS
+	VALUES ("c77b0802-8f03-4042-ae39-8653f18b4e7c",
+	'SendProjectConstraint',
+	'',
+	1,
+	"6b5d1cba-27e0-420e-86c5-b253ec389a6e");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,
