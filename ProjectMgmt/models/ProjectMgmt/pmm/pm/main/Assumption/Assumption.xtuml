@@ -36,7 +36,8 @@ INSERT INTO O_ATTR
 	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2",
 	"5f9229e8-8e8d-44cd-8e1f-9c81ab22668e",
 	'Description',
-	'',
+	'
+',
 	'',
 	'Description',
 	0,

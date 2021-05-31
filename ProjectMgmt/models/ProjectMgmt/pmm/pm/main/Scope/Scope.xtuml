@@ -7,6 +7,51 @@ INSERT INTO O_OBJ
 	'Scope',
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("a03e14a6-7206-44f5-9732-054c517c1e09",
+	"69062bf0-22f5-4241-90ca-563adecd1504",
+	'AddProjectScope',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.Title=param.Title;
+self.IsInScope=param.IsInScope;
+self.Description=param.Description;
+
+
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("30ae1a1b-3619-48e6-8773-2bf78fa00c2d",
+	"a03e14a6-7206-44f5-9732-054c517c1e09",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("2dba6a52-38b1-40ca-9a88-23b3c179e94c",
+	"a03e14a6-7206-44f5-9732-054c517c1e09",
+	'IsInScope',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"30ae1a1b-3619-48e6-8773-2bf78fa00c2d",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("6fccf2f4-b0ec-44f0-9e8f-d8647ac87b6e",
+	"a03e14a6-7206-44f5-9732-054c517c1e09",
+	'Description',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"2dba6a52-38b1-40ca-9a88-23b3c179e94c",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("8a9fb7f3-7912-46d5-bfa9-3e15fa74a493",
 	"69062bf0-22f5-4241-90ca-563adecd1504");
