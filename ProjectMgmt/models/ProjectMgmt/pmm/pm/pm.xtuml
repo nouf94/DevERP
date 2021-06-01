@@ -944,7 +944,9 @@ INSERT INTO SPR_PS
 	VALUES ("4236ccce-f995-40a4-b472-28e2e60081ba",
 	'AddProjectScope',
 	'',
-	'',
+	'create object instance scope of Scope;
+scope.AddProjectScope( ProjectCode:param.ProjectCode, Title:param.Title, IsInScope:param.IsInScope, Description:param.Description );
+',
 	1,
 	0,
 	21);
@@ -984,7 +986,16 @@ INSERT INTO SPR_PS
 	VALUES ("4ef4ec6b-41a6-4a4f-ab10-c4c3b1bd252a",
 	'ReadProjectScope',
 	'',
-	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many scopes related by project->Scope[R76.''Includs''];
+	for each scope in scopes
+		UI::SendProjectScope( ID:scope.ID, Title:scope.Title, IsInScope:scope.IsInScope, Description:scope.Description );
+	end for;
+end if;
+
+',
 	1,
 	0,
 	23);
@@ -1137,6 +1148,77 @@ INSERT INTO C_EP_PROXY
 	'ReadProjectConstraint',
 	'',
 	29,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("814b6050-52ab-4b61-9f7a-fb80ec611bed",
+	"6bbd7f40-b90e-41d7-a164-f8bb5475fa5b",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("814b6050-52ab-4b61-9f7a-fb80ec611bed",
+	'AddProjectRequirement',
+	'',
+	'create object instance requirment of Requirment;
+requirment.CreateProjectRequirement( ProjectCode:param.ProjectCode, Title:param.Title, Cost:param.Cost );
+',
+	1,
+	0,
+	30);
+INSERT INTO C_EP_PROXY
+	VALUES ("6bbd7f40-b90e-41d7-a164-f8bb5475fa5b",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectRequirement',
+	'',
+	30,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("efa286b4-f32e-4c91-925e-3caf81eb12f9",
+	"81aee76c-9800-46b5-b0ef-14ddc1ce5da6",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("efa286b4-f32e-4c91-925e-3caf81eb12f9",
+	'SendProjectRequirement',
+	'',
+	'',
+	3,
+	0,
+	31);
+INSERT INTO C_EP_PROXY
+	VALUES ("81aee76c-9800-46b5-b0ef-14ddc1ce5da6",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectRequirement',
+	'',
+	31,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("721d8d15-ed77-44bc-acb5-397b42e4632c",
+	"23c14ef6-6f6e-4c7a-8bc0-643d902592e7",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("721d8d15-ed77-44bc-acb5-397b42e4632c",
+	'ReadProjectRequirement',
+	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many requirements related by project->Requirment[R77.''Includes''];
+	for each requirment in requirements
+		UI::SendProjectRequirement( ID:requirment.ID, Title:requirment.Title, Cost:requirment.Cost );
+	end for;
+end if;
+
+',
+	1,
+	0,
+	32);
+INSERT INTO C_EP_PROXY
+	VALUES ("23c14ef6-6f6e-4c7a-8bc0-643d902592e7",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectRequirement',
+	'',
+	32,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",

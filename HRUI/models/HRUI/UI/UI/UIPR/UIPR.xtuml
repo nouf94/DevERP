@@ -723,6 +723,103 @@ INSERT INTO PE_PE
 	"9f3f7773-dfb8-44f3-a8df-8c7c9c133ae7",
 	"00000000-0000-0000-0000-000000000000",
 	1);
+INSERT INTO S_SYNC
+	VALUES ("71499812-8905-44ad-bae7-1a6a4e19d8dc",
+	"00000000-0000-0000-0000-000000000000",
+	'SendProjectRequirement',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	0,
+	8);
+INSERT INTO S_SPARM
+	VALUES ("c51ca416-b28a-4c20-a510-5a635e92d97c",
+	"71499812-8905-44ad-bae7-1a6a4e19d8dc",
+	'ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("a5c07179-7fac-4a39-8a0d-fddaacf14714",
+	"71499812-8905-44ad-bae7-1a6a4e19d8dc",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"c51ca416-b28a-4c20-a510-5a635e92d97c",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("6ca14516-b647-473b-af27-0ab4888b783a",
+	"71499812-8905-44ad-bae7-1a6a4e19d8dc",
+	'Cost',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"a5c07179-7fac-4a39-8a0d-fddaacf14714",
+	'');
+INSERT INTO PE_PE
+	VALUES ("71499812-8905-44ad-bae7-1a6a4e19d8dc",
+	1,
+	"9f3f7773-dfb8-44f3-a8df-8c7c9c133ae7",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("441bd891-abe7-4211-8a9c-19ca50b062cf",
+	"00000000-0000-0000-0000-000000000000",
+	'SendProjectScope',
+	'',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	3,
+	'',
+	0,
+	9);
+INSERT INTO S_SPARM
+	VALUES ("bf66ca93-6d3d-419b-8eba-a391bcbf03aa",
+	"441bd891-abe7-4211-8a9c-19ca50b062cf",
+	'ID',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("4b0a31cd-a89e-425f-9ff8-082f8b6303cd",
+	"441bd891-abe7-4211-8a9c-19ca50b062cf",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"bf66ca93-6d3d-419b-8eba-a391bcbf03aa",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("29bc3bef-396f-4dca-9107-cbfee346b84c",
+	"441bd891-abe7-4211-8a9c-19ca50b062cf",
+	'IsInScope',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	0,
+	'',
+	"4b0a31cd-a89e-425f-9ff8-082f8b6303cd",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("dfe26d3e-0544-46fe-986f-12b5a53a42f8",
+	"441bd891-abe7-4211-8a9c-19ca50b062cf",
+	'Description',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"29bc3bef-396f-4dca-9107-cbfee346b84c",
+	'');
+INSERT INTO PE_PE
+	VALUES ("441bd891-abe7-4211-8a9c-19ca50b062cf",
+	1,
+	"9f3f7773-dfb8-44f3-a8df-8c7c9c133ae7",
+	"00000000-0000-0000-0000-000000000000",
+	1);
 INSERT INTO PE_PE
 	VALUES ("9f3f7773-dfb8-44f3-a8df-8c7c9c133ae7",
 	1,
