@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <!-- we should put all page meta tags inside the head element/tag -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>الموظفون</title>
+    <!-- CSS FILES -->
+		<link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">   
+    <link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+    <link id="stylecss" href="../style.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet" media="all">
+    <link href="../css/custom_style.css" rel="stylesheet" media="all">
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      #app {
+        min-height: 95.5vh;
+        position: relative;
+        margin: 0;
+        padding-bottom: 100px; 
+        box-sizing: border-box;
+      }
+
+      #footer {
+        position: absolute;
+        bottom: 0;
+        color:white;
+        width: 100%;
+      }
+      ul {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+      
+    </style>
+    <!-- JS FILES -->
+    <script src="../vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="../vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="../vendor/animsition/animsition.min.js"></script>
+  </head>
+
+  <!-- We should put all the page's content inside the body element/tag -->
+  <body>
+
+    <div id="app">
+      <mynavbar></mynavbar>
+      <myheader id="header"></myheader>  
+      <div  id="content_links">
+        
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2">
+            <ul class="list-unstyled">
+              <br> <br> <br>
+               <li><a href="/hrs/home.html">الرئيسية</a></li>
+                <br>
+                <li class="underline" @click="seeID" v-bind:id="id" style="color: #007bff">الملف الشخصي</li>
+                <br>
+                <li><a href="./staff_list.html">استعراض الموظفين</a></li>
+                 <li><a href="./staff_leave_form.html">طلب اجازة</a> </li>
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <div id="summary">   
+              <div class="row m-t-25">
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c1">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-accounts"></i>
+                        </div>
+                        <div class="text">
+                          <h3>11</h3>
+                          <span>عدد الموظفين</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart1" height="130px"></canvas>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c2">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-run"></i>
+                        </div>
+                        <div class="text">
+                          <h3>9</h3>
+                          <span>على رأس العمل</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart2" height="130px"></canvas>
+  
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c3">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-hotel"></i>
+                        </div>
+                        <div class="text">
+                          <h3>2</h3>
+                          <span>في إجازة</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart3" height="130px"></canvas>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c4">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-file-text"></i>
+                        </div>
+                        <div class="text">
+                          <h3>3</h3>
+                          <span>طلبات الإجازة</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart4" height="130px"></canvas>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+
+            <div class="col-md-12 p-0 m-0">
+              <canvas id="myChart"  height="430"></canvas>
+            </div>
+
+            <hr>
+
+            <div id="action-home"></div>
+          </div>
+        </div>
+
+      </div>
+      <myfooter id="footer"></myfooter>
+    </div>
+</body>
+
+            <script class="vue"></script>
+    <script src="./home_employee_role.js"></script>
+    <!-- I put my js code inside this file -->
+    <script src="../js/staff_main.js"></script>
+    <!-- TODO : You should check this file again -->
+    <!-- <script src="../js/main.js"></script> -->
+    <script> 
+      $(function(){
+        // TODO : This way to add custom code inside vuejs template isn't efficent 
+        // We can buid it as vue js template after that we can add it again into content [vue template]
+      
+        $("#content").html($("#content_links").html()); // this statement will make some conflicts on work
+        // here becuse of the above statement i changed the method of loading chart by put each one inside spreated function after that call all functions
+        // this is also can help has assign arrguments for each method { Reuseability }
+        var allEmployeesLabel = ['يناير', 'فبراير', 'مارس', 'أبريل'];
+        var allEmployeesData  = [4, 7, 9, 11];
+        LoadAllEmployeesChart (allEmployeesLabel,allEmployeesData);
+        var leaveRequestLabel = ['يناير', 'فبراير', 'مارس', 'أبريل'];
+        var leaveRequestData  = [1, 3, 4, 3];
+        LoadLeaveRequestsChart(leaveRequestLabel,leaveRequestData);
+        var workEmployeeLabel = ['يناير', 'فبراير', 'مارس', 'أبريل'];
+        var workEmployeeData  = [1, 2, 4, 2];
+        LoadOnWorkEmployeesChart(workEmployeeLabel,workEmployeeData);
+        var leaveEmployeeLabel = ['يناير', 'فبراير', 'مارس', 'أبريل'];
+        var leaveEmployeeData  = [4, 7, 9, 9];
+        LoadOnLeaveEmployeesChart (leaveEmployeeLabel,leaveEmployeeData);
+        AllInOne();
+      });
+    </script> 
+
+</html>

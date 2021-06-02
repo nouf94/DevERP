@@ -1,0 +1,39 @@
+{% extends "hrs/leave_home.html" %}
+
+
+{% block action %}
+<div class="row">
+    <div class="col-md-1"> </div>
+    <div class="col-md-6">
+
+<h4>{{department}}</h4>
+<hr>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-1"> </div>
+    <div class="col-md-6">
+    <div align="left"> <a href="{% url 'hr:delete_department' department.id %} ">حذف </a> | <a href="{% url 'hr:update_department' department.id %} ">تعديل  </a></div>
+        <p><strong>المسمى:</strong> {{department.name}}</p>
+        {% if department.parant_department is None %}
+        <p><strong>الإدارة العليا:</strong> لا يوجد</p>
+        {% else %}
+        <p><strong>الإدارة العليا:</strong> {{department.parant_department}}</p>
+        {% endif %}
+        <p><strong>الوصف:</strong> {{department.description}}</p>
+        <p><strong>المدير:</strong> {{department.manager}}</p>
+        <p><strong>الإدارات التابعة:</strong></p>
+        {% if department.child_departments %}
+        {% for dep in department.child_departments %}
+        <p>{{dep}}</p>
+        {% endfor %}
+        {% else %}
+        <p>لا يوجد</p>
+        {% endif %}
+
+
+    </div>
+    </div>
+
+ {% endblock %}

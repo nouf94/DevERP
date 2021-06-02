@@ -1,0 +1,13 @@
+{% extends "hrs/home.html" %}
+
+
+         {% block contents_links %}
+            <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="{% url 'hr:index' %}">الرئيسية</a></li>
+                <br>
+                <li><a href="{% url 'hr:leaves' %} ">استعراض الإجازات</a> </li>
+                <li><a href="{% url 'hr:create_leave' %} ">استحداث إجازة</a> </li>
+        </ul>
+        {% endblock %}

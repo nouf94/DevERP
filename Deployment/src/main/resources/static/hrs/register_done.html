@@ -1,0 +1,89 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+  </head>
+  <body>
+<div id="app">
+  <mynavbar></mynavbar>
+  <myheader id="header"></myheader>
+  <myjs id="js"></myjs>
+<mycontent id="content"></mycontent>
+  <myfooter id="footer"></myfooter>
+  </div>
+  
+  <script src="./home.js"></script>
+  
+    
+<style>
+    #app {
+  min-height: 94.5vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px; 
+  box-sizing: border-box;
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  color:white;
+  width: 100%;
+}
+</style>
+
+<div id="reg-content" style="display: none"><div class="row">
+        <div class="col-md-1"> </div>
+
+<div class="col-md-6">
+    <h4>الموظف {{staff.first_name}} {{staff.last_name}} </h4>
+    <hr>
+
+</div>
+
+
+</div>
+<div class="row">
+        <div class="col-md-1"> </div>
+
+<div class="col-md-6">
+    <div align="left">
+
+        <div class="form">
+      <h3>انشئ حساب {{staff.first_name}} بنجاح!</h3>
+      <br>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label-sm">المعرف</label>
+            <div class="col-sm-8">
+            {{ new_user.username }}
+            </div>
+        </div>
+
+
+
+     </div>
+
+
+    </div>
+</div>
+</div>
+</div>
+</body>
+<script> 
+$(document).ready( function() {
+   $("#content").html($("#reg-content").html());
+});
+    
+</script>
+</html>

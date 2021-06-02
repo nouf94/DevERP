@@ -1,0 +1,108 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<title>بيانات البدل</title>
+
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+ </head>
+ <body>
+<div id="app">
+  <mynavbar></mynavbar>
+  <myheader id="header"></myheader>
+  <myjs id="js"></myjs>
+  <mycontent id="content"></mycontent>
+  <myfooter id="footer"></myfooter>
+  </div>
+  
+  <script src="home.js"></script>
+  
+<style>
+    #app {
+  min-height: 94.5vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px; 
+  box-sizing: border-box;
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  color:white;
+  width: 100%;
+}
+</style>
+
+
+
+<div  style="display: none">
+    <div   id="content_links">
+    <div class="row">
+    <div class="col-md-2">
+        
+            <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <br>
+                <li><a href="./grade_list.html">استعراض المراتب</a> </li>
+                <li><a href="./bonus_list.html">استعراض البدلات</a> </li>
+                <li><a href="./bonus_form.html">استحداث بدل</a> </li>
+        </ul>
+       
+    </div>
+        <div class="col-md-8"><br><hr>
+         
+              <div id="action-home">
+        	<div class="row">
+    <div class="col-md-1"> </div>
+    <div class="col-md-6">
+
+<h4>{{bonus}}</h4>
+<hr>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-1"> </div>
+    <div class="col-md-6">
+    <div align="left"> <a href="bonus_delete">حذف </a> | <a href="{% url 'hr:update_bonus' bonus.id %} ">تعديل  </a></div>
+        <p><strong>المسمى:</strong> {{bonus.name}}</p>
+       
+        <p><strong>المبلغ:</strong> {{bonus.amount}}</p>
+       
+            <p><strong>النسبة:</strong> {{bonus.percentage}}</p>
+       
+
+
+    </div>
+    </div>
+
+
+              </div>
+        </div>
+    
+    </div>
+    </div>
+    </div>
+    </body> 
+     <script> 
+    $(function(){
+      $("#content").html($("#content_links").html());
+    });
+    </script> 
+    
+    
+</html>

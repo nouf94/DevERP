@@ -1,0 +1,113 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+  
+ 
+<div id="app">
+  <mynavbar></mynavbar>
+  <myheader id="header"></myheader>
+  <myjs id="js"></myjs>
+  <mycontent id="content"></mycontent>
+  <myfooter id="footer"></myfooter>
+  </div>
+  
+  <script src="./home.js"></script>
+  
+<style>
+    #app {
+  min-height: 94.5vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px; 
+  box-sizing: border-box;
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  color:white;
+  width: 100%;
+}
+</style>
+</head>
+<body>
+
+
+    <div  style="display: none">
+    <div   id="content_links">
+    <div class="row">
+    <div class="col-md-2">
+         
+            <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <br>
+                <li><a href="./staff_list.html">استعراض الموظفين</a></li>
+                <li><a href="./staff_form.html">إضافة موظف</a> </li>
+                 <li><a href="./staff_commence.html">بدء موظف</a> </li>
+                 <li><a href="./staff_leave.js">طلب اجازة</a> </li>
+                 <li><a href="./manage_leave.html">الموافقة على اجازة</a> </li>
+                 <li><a href="./staff_return.html">عودة الموظف من الاجازة</a> </li>
+                 <li><a href="./new_account.html">اضافة حساب جديد</a> </li>
+                <br>
+                <br>
+                <li><a href="./staff_bonus_list.html">استعراض بدلات الموظفين</a></li>
+                <li><a href="./staff_bonus_form.html">اضافة بدل لموظف</a></li>
+        </ul>
+        
+         </div>
+    <div class="col-md-8"><br><hr>
+         
+              <div id="action-home">
+              		
+        <h3 align="right">بدلات الموظفين</h3>
+<br>
+<div class="row align-right">
+
+         <div class="col-md-2">
+        <a href="staff_bonus_detail">{{staff_bonus.staff}}</a>
+        </div>
+        <div class="col-md-3"> {{staff_bonus.bonus}}</div>
+        <div class="col-md-2">{{staff_bonus.amount}}</div>
+        <div class="col-md-3">{{staff_bonus.percentage}}</div>
+        <div class="col-md-3">{{staff_bonus.date_added}}</div>
+
+
+
+    </div>
+<br>
+   
+              </div>
+              <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+              <script class="vue"></script>
+              
+    </div>
+    </div>
+    </div>
+    </div>
+    </body>
+     <script> 
+    $(function(){
+      $("#content").html($("#content_links").html());
+    });
+    </script> 
+    
+</html>
+
+
+
+

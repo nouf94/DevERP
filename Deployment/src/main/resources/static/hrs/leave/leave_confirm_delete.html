@@ -1,0 +1,13 @@
+{% extends "hrs/leave_home.html" %}
+
+
+  {% block action %}
+  <h3>حذف إدارة</h3>
+
+<p>  هل أنت متأكد من رغبتك في حذف {{ department }}؟</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="نعم, احذف.">
+</form>
+    {% endblock %}

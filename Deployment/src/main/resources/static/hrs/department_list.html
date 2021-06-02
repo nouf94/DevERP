@@ -1,0 +1,156 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<title>استعراض الادارات</title>
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+<meta name="description" content="au theme template">
+<meta name="author" content="Hau Nguyen">
+<meta name="keywords" content="au theme template">
+
+    <script src="../webjars/jquery/jquery.min.js"></script>
+    <script src="../webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="../webjars/stomp-websocket/stomp.min.js"></script>
+   
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+  
+    <style>
+  body {
+  min-height: 94.5vh;
+  position: relative; 
+}
+   
+   #body{
+   position: relative; 
+   padding-bottom:10vh;
+   }
+
+   
+#footer {
+  position: absolute;
+  bottom: 5.5%;
+  color:white;
+  width: 100%;
+  margin: 0;
+  bottom:  54;
+}
+
+
+</style>
+  </head>
+  <body>
+
+ <div id="app">
+  <mynavbar></mynavbar>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div id="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+    <div class="container">
+      <a class="navbar-brand" href="./home.html"> الموارد البشرية</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+             	
+            <li class="nav-item">
+            <a class="nav-link" href="./staff_home.html">الموظفون</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="./leave_home.html">الإجازات</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./job_home.html">الوظائف</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="./grade_home.html">المراتب</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./department_home.html">الإدارات</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./pay_home.html">الرواتب</a>
+          </li>
+
+
+           
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+
+    <div   id="content_links">
+     <div class="row">
+    <div class="col-md-2">
+            
+            <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <br>
+                <li><a href="./department_list.html">استعراض الإدارات</a> </li>
+                <li><a href="./department_form.html">استحداث إدارة</a> </li>
+        </ul>
+       
+
+    </div>
+    <div class="col-md-8">
+      
+  
+      <br><hr>
+         
+              <div id="action-home">
+              
+          <h3 align="right">دليل الإدارات</h3>
+<br>
+
+<div class="row align-right">
+<form id="signup-form">
+	<table style="width: 120%">
+	<tr>
+		<th>الادارة</th>
+		<th>المهام</th>
+		<th>الوصف</th>
+		<th>المدير</th>
+		<th>الادارة العليا</th>
+	</tr>
+	<tr v-for="department in allDepartment">
+    <td>{{department.p_Name}}</td>
+    <td>{{department.p_Mission}}</td>
+    <td v-if="department.p_Description !== ''">{{department.p_Description}}</td><td v-if="department.p_Description === ''" align="center">-</td>
+    <td>{{department.p_Manager}}</td>
+    <td>{{department.p_ManagingDepartment}}</td>
+  </tr>
+    </table>
+</form>
+    </div>
+<br>
+              </div>
+    </div>
+    </div>
+    </div>
+</div>
+  </body>
+     <script src="../base.js"></script>	
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+              <script class="vue" src="./department_list.js"></script> 
+
+
+
+</html>
+
+ 

@@ -1,0 +1,370 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<title>اضافة موظف</title>
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+   	<link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+   	
+    <link href="../css/theme.css" rel="stylesheet" media="all">
+    <link href="../css/custom_style.css" rel="stylesheet" media="all">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="../vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="../vendor/animsition/animsition.min.js"></script>
+
+   
+  
+    <style>
+     body {
+  min-height: 94.5vh;
+  position: relative; 
+}
+   
+   #body{
+   position: relative; 
+   padding-bottom:10vh;
+   }
+
+   
+#footer {
+  position: absolute;
+  bottom: 5.5%;
+  color:white;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+}
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline p {
+  margin: 5px 10px 5px 0;
+  color: black;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+
+@media (max-width: 900px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.inner-flex{
+padding-right: 3.1%;
+}
+.inner-first{
+padding-left: 6% !important;
+}
+.second-inner-input{
+margin-right: 0.5% !important;
+}
+.third-firts-line-input{
+margin-right: 0.3% !important;
+}
+.fouth-inner{
+margin-right: 2.8% !important;
+}
+@media (min-width: 1510px) {
+.inner-flex{
+padding-right: 0.8%;
+}
+.inner-first{
+padding-left: 6% !important;
+}
+.second-inner-input{
+margin-right: 0.5% !important;
+}
+.third-firts-line-input{
+margin-right: 0.3% !important;
+}
+.fouth-inner{
+margin-right: 2.2% !important;
+}
+}
+.button{
+display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    line-height: 19px;
+    cursor: pointer;
+    margin-left: -1px;
+    padding: 4px 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    border: 1px solid #c6c6c6;
+    color: #000;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.button:active{
+background-color: #f6f6f6;
+    background-image: -webkit-linear-gradient(top,#f6f6f6,#f1f1f1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    }
+    ul {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+</style>
+  </head>
+  <body>
+ <div id="app">
+  <mynavbar></mynavbar>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div id="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+    <div class="container">
+      <a class="navbar-brand" href="./home.html"> الموارد البشرية</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto" id="navlist">
+             	
+            <li class="nav-item" v-if="a">
+            <a class="nav-link" href="./staff_home.html">الموظفون</a>
+          </li>
+             <li class="nav-item" v-if="a">
+            <a class="nav-link" href="./leave_home.html">الإجازات</a>
+          </li>
+
+          <li class="nav-item" v-if="a">
+            <a class="nav-link" href="./job_home.html">الوظائف</a>
+          </li>
+           <li class="nav-item" v-if="a">
+            <a class="nav-link" href="./grade_home.html">المراتب</a>
+          </li>
+          <li class="nav-item" v-if="b">
+            <a class="nav-link" href="./department_home.html">الإدارات</a>
+          </li>
+            <li class="nav-item" v-if="a">
+            <a class="nav-link" href="./pay_home.html">الرواتب</a>
+          </li>
+
+
+           
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+   <div   id="content_links">
+    <div class="row">
+    <div class="col-md-2">
+            <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <br>
+                <li><a href="./staff_list.html">استعراض الموظفين</a></li>
+                <li><a href="./staff_form.html">إضافة موظف</a> </li>
+                 <li><a href="./staff_leave_form.html">طلب اجازة</a> </li>
+                 <li><a href="./manage_leave.html">الموافقة على اجازة</a> </li>
+                <li><a href="./staff_bonus_form.html">اضافة بدل لموظف</a></li>
+        </ul>
+        
+         </div>
+    <div class="col-md-8">
+    <br>
+    <div>
+    <p>
+    	<a href="./staff_home.html">الموظفون</a> /
+    	<a href="./staff_from.html">إضافة موظف</a>
+    </p>
+    </div>
+    <hr>
+     <h3 align="right">إضافة موظف</h3>
+    <hr>
+              <div id="action-home">
+              	<form id="signup" @submit.prevent="processForm" @submit="submitProduct">
+              	<div class="form-inline">
+  			 	<p>الرقم الوظيفي:</p>
+                <input class="inner-first" type="text" name="employeeID" v-model="employeeID"/><br><br>
+                <p class="inner-flex">رقم الهوية الوطنية/رقم الاقامة:</p>
+                <input class="inner-first" type="text" name="nid" v-model="nationalID"/><br><br>
+                </div>
+                <div class="form-inline">
+  			 	<p>الاسم الاول:</p>
+                <input class="second-inner-input" type="text" name="firstName" v-model="firstName"/><br><br>
+                <p class="second-inner">الاسم الثاني:</p>
+                <input type="text" name="middleName" v-model="middleName"/><br><br>
+                <p class="second-inner">الاسم الاخير:</p>
+                <input type="text" name="lastName" v-model="lastName"/><br><br>
+                </div>
+                 <div class="form-inline">
+                <p class="third-firts-line">تاريخ الميلاد:</p>
+                <input class="third-firts-line-input" type="text" name="dateOfBirth" v-model="dateOfBirth"/><br><br>
+                <p class="third-inner">الدرجة العلمية:</p>
+                <input list="degrees" name="degree" v-model="degree"/><br><br>
+                <datalist id="degrees">
+				  <option v-for="option in options" v-bind:value="option">
+				  </option>
+				  </datalist>
+                <p class="fouth-inner">الجنس:</p>
+                <input list="genders" name="gender" v-model="gender"/><br><br>
+                <datalist id="genders">
+				  <option v-for="select in selects" v-bind:value="select">
+				  </option>
+				  </datalist>
+				   </div>
+				    <div class="form-inline">
+				    <p>البريد الإلكتروني:</p>
+				    <input type="text" name="email" v-model="email" />
+				    </div>
+                <div>
+                <br>
+     			<input class="button" type="submit" value="ارسال" />
+     			<br><br>
+     			</div>
+     			</form>
+     			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+              <script class="vue" src="./staff_form.js"></script>	
+              </div>
+              <hr>
+               <div id="summary">   
+              <div class="row m-t-25">
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c1">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-accounts"></i>
+                        </div>
+                        <div class="text">
+                          <h3>11</h3>
+                          <span>عدد الموظفين</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart1" height="130px"></canvas>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c2">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-run"></i>
+                        </div>
+                        <div class="text">
+                          <h3>9</h3>
+                          <span>على رأس العمل</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart2" height="130px"></canvas>
+  
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c3">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-hotel"></i>
+                        </div>
+                        <div class="text">
+                          <h3>2</h3>
+                          <span>في إجازة</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart3" height="130px"></canvas>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c4">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-file-text"></i>
+                        </div>
+                        <div class="text">
+                          <h3>3</h3>
+                          <span>طلبات الإجازة</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart4" height="130px"></canvas>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              
+    </div>
+    </div>
+    </div>
+   
+</div>
+</body>
+     		<script src="../base.js"></script>	 
+			 <script src="../js/staff_main.js"></script>
+    <!-- TODO : You should check this file again -->
+    <!-- <script src="../js/main.js"></script> -->
+    <script> 
+      $(function(){
+        // TODO : This way to add custom code inside vuejs template isn't efficent 
+        // We can buid it as vue js template after that we can add it again into content [vue template]
+      
+        $("#content").html($("#content_links").html()); // this statement will make some conflicts on work
+        // here becuse of the above statement i changed the method of loading chart by put each one inside spreated function after that call all functions
+        // this is also can help has assign arrguments for each method { Reuseability }
+        var allEmployeesLabel = ['يناير', 'فبراير', 'مارس', 'أبريل'];
+        var allEmployeesData  = [4, 7, 9, 11];
+        LoadAllEmployeesChart (allEmployeesLabel,allEmployeesData);
+        var leaveRequestLabel = ['يناير', 'فبراير', 'مارس', 'أبريل'];
+        var leaveRequestData  = [1, 3, 4, 3];
+        LoadLeaveRequestsChart(leaveRequestLabel,leaveRequestData);
+        var workEmployeeLabel = ['يناير', 'فبراير', 'مارس', 'أبريل'];
+        var workEmployeeData  = [1, 2, 4, 2];
+        LoadOnWorkEmployeesChart(workEmployeeLabel,workEmployeeData);
+        var leaveEmployeeLabel = ['يناير', 'فبراير', 'مارس', 'أبريل'];
+        var leaveEmployeeData  = [4, 7, 9, 9];
+        LoadOnLeaveEmployeesChart (leaveEmployeeLabel,leaveEmployeeData);
+        AllInOne();
+      });
+    </script> 
+
+
+</html>

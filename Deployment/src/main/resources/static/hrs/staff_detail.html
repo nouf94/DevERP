@@ -1,0 +1,212 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<title>بيانات الموظف</title>
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+  
+   
+  
+    <style>
+  body {
+  min-height: 94.5vh;
+  position: relative; 
+}
+   
+   #body{
+   position: block; 
+   padding-bottom:20vh;
+   }
+
+   
+#footer {
+  position: absolute;
+  bottom: 5.5%;
+  color:white;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+}
+</style>
+  </head>
+  <body>
+ <div id="app">
+  <mynavbar></mynavbar>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div id="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+    <div class="container">
+      <a class="navbar-brand" href="./home.html"> الموارد البشرية</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto" v-if="role ==='Managers' || role ==='HR'">
+             	
+            <li class="nav-item">
+            <a class="nav-link" href="./staff_home.html">الموظفون</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="./leave_home.html">الإجازات</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./job_home.html">الوظائف</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="./grade_home.html">المراتب</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./department_home.html">الإدارات</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./pay_home.html">الرواتب</a>
+          </li>
+        </ul>
+         <ul class="navbar-nav ml-auto" v-if="role ==='Employees'">
+             	
+            <li class="nav-item">
+            <a class="nav-link" href="./staff_home.html">الموظفون</a>
+          </li>
+           
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+    <div   id="content_links">
+    <div class="row">
+    <div class="col-md-2">
+         
+            <ul class="list-unstyled" v-if="role === 'Managers' || role ==='HR'">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <br>
+                <li><a href="./staff_list.html">استعراض الموظفين</a></li>
+                <li><a href="./staff_form.html">إضافة موظف</a> </li>
+                 <li><a href="./staff_leave_form.html">طلب اجازة</a> </li>
+                 <li><a href="./manage_leave.html">الموافقة على اجازة</a> </li>
+                <li><a href="./staff_bonus_form.html">اضافة بدل لموظف</a></li>
+        </ul>
+        <ul class="list-unstyled" v-if="role === 'Employees'">
+                <br> <br> <br>
+
+                <li><a href="/hrs/home.html">الرئيسية</a></li>
+                <br>
+                <li class="underline" @click="seeID" v-bind:id="id" style="color: #007bff">الملف الشخصي</li>
+                <br>
+                <li><a href="./staff_list.html">استعراض الموظفين</a></li>
+                 <li><a href="./staff_leave_form.html">طلب اجازة</a> </li>
+        </ul>
+        
+         </div>
+    <div class="col-md-8"><br>
+    <div>
+    	<p>
+    		<a href="./staff_home.html">الموظفون</a> / 
+    		<a href="./staff_list.html">استعراض الموظفين</a> / 
+    		<a href="./staff_detail.html">بيانات الموظف</a>
+    	</p>
+    </div>
+    <hr>
+         
+              
+              <div id="action-home">
+              		
+         
+<div class="row">
+        <div class="col-md-1"> </div>
+
+<div class="col-md-10">
+   
+    <h4>الموظف {{employee[0].p_FirstName}} {{employee[0].p_MiddleName}} {{employee[0].p_LastName}}</h4>
+    <a @click="delete_staff" v-bind:id="employee[0].p_EmployeeID">حذف </a> |
+                       <a href="./staff_edit.html">تعديل  </a> |
+                           <a href="./staff_detail.html">الملف الشخصي  </a> |
+                           حالة الموظف: على رأس العمل
+   
+    <hr>
+</div>
+</div>
+
+<div class="row">
+        <div class="col-md-1"> </div>
+
+<div class="col-md-8" align="left">
+   						<!-- TODO make this link more efficient and depends on if the user has an account or not -->
+                      
+       
+                        <a href="register">عدل الحساب  </a>|
+        
+                <a @click="seeBonus" v-bind:id="employee[0].p_EmployeeID" style="color: #007bff">هيكل المرتب </a> |
+                <a href="./staff_bonus_form.html">إضافة بدل </a>
+  
+ </div>
+</div>
+    <div class="row">
+                <div class="col-md-3"> </div>
+
+<div class="col-md-6" align="right">
+
+   <div>
+    <br>
+    <p><strong>حساب المستخدم:</strong> {{employee[0].p_Email}}</p>
+
+<br>
+<p><strong>الرقم الوظيفي:</strong> {{employee[0].p_EmployeeID}}</p>
+    <p><strong>السجل المدني:</strong> {{employee[0].p_NationalID}}</p>
+    <p><strong>تاريخ الميلاد:</strong> {{employee[0].p_DateOfBirth}}</p>
+
+<p><strong>البريد الالكتروني:</strong> {{employee[0].p_Email}}</p>
+    <p><strong>الدرجة العلمية:</strong> {{employee[0].p_Degree}}</p>
+
+<p><strong>رقم هاتف العمل:</strong> {{employee[0].p_OfficePhone}}</p>
+    <p><strong>الجنس:</strong> {{employee[0].p_Gender}}</p>
+
+    <p><strong>تاريخ بدء العمل:</strong> {{employee[0].p_StartDate}}</p>
+
+
+<br>
+<p><strong>رصيد الإجازات العادية:</strong> {{employee[0].p_LeaveBalance}}</p>
+<p><strong>رصيد الإجازات المرضية:</strong> {{employee[0].p_SickLeaveBalance}}</p>
+
+<!-- TODO  make these buttons functional-->
+  <button style="pointer-events: none;  background: grey;">بدء موظف</button>
+  <button style="pointer-events: none; background: grey;">عودة الموظف من الاجازة</button>
+</div>
+
+</div>
+    </div>
+
+
+              </div>
+              <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+              <script class="vue" src="./staff_detail.js"></script>
+              
+    </div>
+    </div>
+    </div>
+   </div>
+   </body>
+     <script id="base"></script>	 
+    
+</html>
+
+

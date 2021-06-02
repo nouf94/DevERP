@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <!-- we should put all page meta tags inside the head element/tag -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>الرواتب</title>
+    <!-- CSS FILES -->
+		<link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">   
+    <link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+    <link id="stylecss" href="../style.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet" media="all">
+    <link href="../css/custom_style.css" rel="stylesheet" media="all">
+    <style>
+      #app {
+        min-height: 95.5vh;
+        position: relative;
+        margin: 0;
+        padding-bottom: 100px; 
+        box-sizing: border-box;
+      }
+
+      #footer {
+        position: absolute;
+        bottom: 0;
+        color:white;
+        width: 100%;
+      }
+      ul {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+    </style>
+    <!-- JS FILES -->
+    <script src="../vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="../vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="../vendor/animsition/animsition.min.js"></script>
+  </head>
+
+  <!-- We should put all the page's content inside the body element/tag -->
+  <body>
+
+    <div id="app">
+      <mynavbar></mynavbar>
+      <myheader id="header"></myheader>
+      <myjs id="js"></myjs>
+      <mycontent id="content"></mycontent>
+      <myfooter id="footer"></myfooter>
+    </div>
+    <div style="display: none">
+      <div  id="content_links">
+        
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2">
+            <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <br>
+                <li><a href="./pay_review.html">مراجعة الرواتب</a> </li>
+
+        </ul>
+          </div>
+          <div class="col-md-8">
+            <div id="summary">   
+              <div class="row m-t-25">
+
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c1">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-long-arrow-up"></i>
+                        </div>
+                        <div class="text">
+                          <h3>13400</h3>
+                          <span>أعلى راتب</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart1" height="130px"></canvas>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c2">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-accounts"></i>
+                        </div>
+                        <div class="text">
+                          <h3>9450</h3>
+                          <span>متوسط الرواتب</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart2" height="130px"></canvas>
+  
+                    </div>
+                  </div>
+                </div>
+				<div class="col-lg-1"></div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c3">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-long-arrow-down"></i>
+                        </div>
+                        <div class="text">
+                          <h3>5500</h3>
+                          <span>أدنى راتب</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart3" height="130px"></canvas>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <hr>
+
+            <div class="col-md-12 p-0 m-0">
+              <canvas id="myChart"  height="430"></canvas>
+            </div>
+
+            <hr>
+
+            <div id="action-home"></div>
+            <script class="vue"></script>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="./home.js"></script>
+    <!-- I put my js code inside this file -->
+    <script src="../js/pay_main.js"></script>
+    <!-- TODO : You should check this file again -->
+    <!-- <script src="../js/main.js"></script> -->
+    <script> 
+      $(function(){
+        // TODO : This way to add custom code inside vuejs template isn't efficent 
+        // We can buid it as vue js template after that we can add it again into content [vue template]
+      
+        $("#content").html($("#content_links").html()); // this statement will make some conflicts on work
+        // here becuse of the above statement i changed the method of loading chart by put each one inside spreated function after that call all functions
+        // this is also can help has assign arrguments for each method { Reuseability }
+        var allEmployeesLabel = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'];
+        var allEmployeesData  = [5000,8000,7000,9000,8000,12000,13400];
+        LoadAllEmployeesChart (allEmployeesLabel,allEmployeesData);
+        var workEmployeeLabel = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'];
+        var workEmployeeData  = [3000,3500,4000,4500,4700,5000,5500];
+        LoadOnWorkEmployeesChart(workEmployeeLabel,workEmployeeData);
+        var leaveEmployeeLabel = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'];
+        var leaveEmployeeData  = [4000,6000,5000,7000,6000,8000, 9450];
+        LoadOnLeaveEmployeesChart (leaveEmployeeLabel,leaveEmployeeData);
+        AllInOne();
+      });
+    </script> 
+</body>
+</html>

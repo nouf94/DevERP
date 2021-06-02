@@ -1,0 +1,47 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script> 
+    $(function(){
+      $("#pay").load("pay_home.html");
+      $("#form").load("hr_form.html");
+      setTimeout(function(){ $("#pay-detail").html($("#pay-form").html()); }, 200);
+    });
+    </script> 
+    </head>
+    <head>
+<div id="pay"></div>
+<div id="pay-form" style="display: none">
+<div id="form"></div>
+
+<hr>
+{% if pay_list %}
+     {% for pay in pay_list %}
+
+         <a href="pay_list.html">{{pay.date}}</a>
+ <br>
+    {%  endfor %}
+{% else %}
+    <p>لا يوجد رواتب حاليا</p>
+
+{% endif %}
+<hr>
+
+{% if year_pay_list %}
+     {% for year_pay in year_pay_list %}
+
+         {{year_pay.year}}
+ <br>
+    {%  endfor %}
+{% else %}
+    <p>لا يوجد رواتب حاليا</p>
+
+{% endif %}
+
+{% endblock %}
+</div>
+</head>
+</html>

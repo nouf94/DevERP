@@ -1,0 +1,135 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<title>إلغاء إجازة</title>
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+   
+  
+    <style>
+    body {
+  min-height: 94.5vh;
+  position: relative; 
+}
+   
+   #body{
+   position: relative; 
+   padding-bottom:10vh;
+   }
+
+   
+#footer {
+  position: absolute;
+  bottom: 5.5%;
+  color:white;
+  width: 100%;
+  margin: 0;
+  bottom: 54;
+}
+</style>
+  </head>
+  <body>
+ <div id="app">
+  <mynavbar></mynavbar>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div id="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+    <div class="container">
+      <a class="navbar-brand" href="./home.html"> الموارد البشرية</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+             	
+            <li class="nav-item">
+            <a class="nav-link" href="./staff_home.html">الموظفون</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="./leave_home.html">الإجازات</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./job_home.html">الوظائف</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="./grade_home.html">المراتب</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./department_home.html">الإدارات</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./pay_home.html">الرواتب</a>
+          </li>
+
+
+           
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+   <div   id="content_links">
+    <div class="row">
+    <div class="col-md-2">
+            <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <br>
+                <li><a href="./leave_list.html">استعراض الإجازات</a> </li>
+                <li><a href="./leave_form.html">استحداث إجازة</a> </li>
+                <li><a href="./leave_delete.html">إلغاء إجازة</a> </li>
+        </ul>
+        
+         </div>
+    <div class="col-md-8"><br><hr>
+         
+              <div id="action-home">
+              	<form id="signup-form" @submit.prevent="processForm" @submit="submitProduct">
+                <p>اسم الاجازة:</p>
+                <input type="text" name="name" v-model="name"/>
+                <div>
+                <br><br>
+     			<input type="submit" value="ارسل">
+     			</div>
+     			</form>
+     			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+              <script class="vue" src="./leave_delete.js"></script>	
+              </div>
+              
+              
+    </div>
+    </div>
+    </div>
+     <div id="home-pagination">
+<div class="row">
+    <div class="col-md-3"></div>
+ <div class="col-md-8">
+     
+       
+    
+ </div>
+</div>
+</div>
+</div>
+</body>
+     		<script src="../base.js"></script>	 
+
+
+
+</html>

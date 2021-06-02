@@ -1,0 +1,389 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<title>نظام الموارد البشرية</title>
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  
+
+<meta name="description" content="au theme template">
+<meta name="author" content="Hau Nguyen">
+<meta name="keywords" content="au theme template">
+
+    <script src="../webjars/jquery/jquery.min.js"></script>
+    <script src="../webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="../webjars/stomp-websocket/stomp.min.js"></script>
+   
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+  
+<link href="../vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+<link href="../css/font-face.css" rel="stylesheet" media="all">
+<link href="../vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+<link href="../vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+<link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all"> 
+<link href="../vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+<link href="../vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+<link href="../vendor/wow/animate.css" rel="stylesheet" media="all">
+<link href="../vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+<link href="../vendor/slick/slick.css" rel="stylesheet" media="all">
+<link href="../vendor/select2/select2.min.css" rel="stylesheet" media="all">
+<link href="../vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link href="../css/theme.css" rel="stylesheet" media="all">
+    <link href="../css/custom_style.css" rel="stylesheet" media="all">
+  </head>
+  <body>
+<div id="app">
+  <mynavbar></mynavbar>
+  <myheader id="header"></myheader>
+  <myjs id="js"></myjs>
+<mycontent id="content"></mycontent>
+  <myfooter id="footer"></myfooter>
+  </div>
+  <div id="x"></div>
+  <script id="home"></script>
+  <script src="./home_check_role.js"></script>
+  
+<style>
+     #app {
+  min-height: 95.5vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px; 
+  box-sizing: border-box;
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  color:white;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+      ul {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+</style>
+
+</body>
+
+
+
+
+
+<script src="../vendor/jquery-3.2.1.min.js"></script>
+
+<script src="../vendor/bootstrap-4.1/popper.min.js"></script>
+<script src="../vendor/bootstrap-4.1/bootstrap.min.js"></script>
+
+<script src="../vendor/slick/slick.min.js">
+    </script>
+<script src="../vendor/wow/wow.min.js"></script>
+<script src="../vendor/animsition/animsition.min.js"></script>
+<script src="../vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+<script src="../vendor/counter-up/jquery.waypoints.min.js"></script>
+<script src="../vendor/counter-up/jquery.counterup.min.js">
+    </script>
+<script src="../vendor/circle-progress/circle-progress.min.js"></script>
+<script src="../vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../vendor/chartjs/Chart.bundle.min.js"></script>
+<script src="../vendor/select2/select2.min.js">
+    </script>
+
+<script> 
+    $(function(){
+      var xmlhttp = new XMLHttpRequest();
+  	var breeds = {};
+  	var here
+  	function sendXHR(type, url, data, callback) {
+  		xmlhttp = new XMLHttpRequest() || new window.ActiveXObject("Microsoft.XMLHTTP");
+  		xmlhttp.open(type, url, true);
+  		xmlhttp.send(data);
+  		xmlhttp.onreadystatechange = function() { // Use onreadystatechange instead onload.
+  	      if (this.status === 200 && this.readyState === 4) {
+  	        callback(this.response);
+				var list = JSON.parse(xmlhttp.responseText)
+				var i = 0;
+				var opt = document.getElementById("messages");
+				var w = null;
+				var j = 0;
+				for (i in list){
+					j = 0;
+					if(w == null){
+						for(j in list[i])
+							if(j == 0){
+								console.log(i, j);
+								console.log(list[i][j]);
+								if(list[i][j]==="bonus"){
+									
+									w = "<p> اضافة بدل</p>";
+									w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+									w += "<hr>";
+								}else{
+									if(list[i][j]==="employee"){
+										
+										w = "<p> اضافة موظف</p>";
+										w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+										w += "<hr>";
+									}else{
+										if(list[i][j]==="grade"){
+											
+											w = "<p> اضافة مرتبة</p>";
+											w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+											w += "<hr>";
+									}else{
+											if(list[i][j]==="job"){
+												
+												w = "<p> اضافة وظيفة</p>";
+												w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+												w += "<hr>";
+											}else{
+												if(list[i][j]==="leave"){
+													
+													w = "<p> اضافة اجازة</p>";
+													w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+													w += "<hr>";
+												}else{
+													if(list[i][j]==="step"){
+														
+														w = "<p> اضافة درجة</p>";
+														w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+														w += "<hr>";
+													}else{
+														if(list[i][j]==="employeeBonus"){
+															
+															w = "<p> اضافة بدل لموظف</p>";
+															w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+															w += "<hr>";
+														}else{
+															if(list[i][j]==="employeeCommence"){
+																
+																w = "<p> بدء العمل لموظف</p>";
+																w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+																w += "<hr>";
+															}else{
+																if(list[i][j]==="employeeJob"){
+																	
+																	w = "<p> اضافة وظيفة الى موظف</p>";
+																	w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+																	w += "<hr>";
+																}else{
+																	if(list[i][j]==="employeeReturn"){
+																		
+																		w = "<p> عودة موظف من اجازة</p>";
+																		w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+																		w += "<hr>";
+																	}else{
+																		if(list[i][j]==="leaveRequest"){
+																			
+																			w = "<p> اضافة اجازة الى موظف</p>";
+																			w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+																			w += "<hr>";
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+								
+							}else{
+								console.log(i, j);
+								console.log(list[i][j]);
+						if(list[i][j]==="bonus"){
+							
+							w += "<p> اضافة بدل</p>";
+							w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+							w += "<hr>";
+						}else{
+							if(list[i][j]==="employee"){
+								
+								w += "<p> اضافة موظف</p>";
+								w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+								w += "<hr>";
+							}else{
+								if(list[i][j]==="grade"){
+									
+									w += "<p> اضافة مرتبة</p>";
+									w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+									w += "<hr>";
+							}else{
+									if(list[i][j]==="job"){
+										
+										w += "<p> اضافة وظيفة</p>";
+										w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+										w += "<hr>";
+									}else{
+										if(list[i][j]==="leave"){
+											
+											w += "<p> اضافة اجازة</p>";
+											w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+											w += "<hr>";
+										}else{
+											if(list[i][j]==="step"){
+												
+												w += "<p> اضافة درجة</p>";
+												w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+												w += "<hr>";
+											}else{
+												if(list[i][j]==="employeeBonus"){
+													
+													w += "<p> اضافة بدل لموظف</p>";
+													w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+													w += "<hr>";
+												}else{
+													if(list[i][j]==="employeeCommence"){
+														
+														w += "<p> بدء العمل لموظف</p>";
+														w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+														w += "<hr>";
+													}else{
+														if(list[i][j]==="employeeJob"){
+															
+															w += "<p> اضافة وظيفة الى موظف</p>";
+															w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+															w += "<hr>";
+														}else{
+															if(list[i][j]==="employeeReturn"){
+																
+																w += "<p> عودة موظف من اجازة</p>";
+																w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+																w += "<hr>";
+															}else{
+																if(list[i][j]==="leaveRequest"){
+																	
+																	w += "<p> اضافة اجازة الى موظف</p>";
+																	w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+																	w += "<hr>";
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+							}
+					}else{
+						j=0;
+						for(j in list[i]){
+							console.log(i, j);
+							console.log(list[i][j]);
+					if(list[i][j]==="bonus"){
+						
+						w += "<p> اضافة بدل</p>";
+						w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+						w += "<hr>";
+					}else{
+						if(list[i][j]==="employee"){
+							
+							w += "<p> اضافة موظف</p>";
+							w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+							w += "<hr>";
+						}else{
+							if(list[i][j]==="grade"){
+								
+								w += "<p> اضافة مرتبة</p>";
+								w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+								w += "<hr>";
+						}else{
+								if(list[i][j]==="job"){
+									
+									w += "<p> اضافة وظيفة</p>";
+									w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+									w += "<hr>";
+								}else{
+									if(list[i][j]==="leave"){
+										
+										w += "<p> اضافة اجازة</p>";
+										w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+										w += "<hr>";
+									}else{
+										if(list[i][j]==="step"){
+											
+											w += "<p> اضافة درجة</p>";
+											w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+											w += "<hr>";
+										}else{
+											if(list[i][j]==="employeeBonus"){
+												
+												w += "<p> اضافة بدل لموظف</p>";
+												w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+												w += "<hr>";
+											}else{
+												if(list[i][j]==="employeeCommence"){
+													
+													w += "<p> بدء العمل لموظف</p>";
+													w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+													w += "<hr>";
+												}else{
+													if(list[i][j]==="employeeJob"){
+														
+														w += "<p> اضافة وظيفة الى موظف</p>";
+														w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+														w += "<hr>";
+													}else{
+														if(list[i][j]==="employeeReturn"){
+															
+															w += "<p> عودة موظف من اجازة</p>";
+															w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+															w += "<hr>";
+														}else{
+															if(list[i][j]==="leaveRequest"){
+																
+																w += "<p> اضافة اجازة الى موظف</p>";
+																w+= "<p>"+ list[1][j].replace(/\//g, "، "); +"</p>";
+																w += "<hr>";
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+						
+						}
+					}
+					
+				}
+				opt.innerHTML = w;
+				
+  	      }
+  	    };
+  	  }
+		
+		sendXHR("GET", "messages", null, function(response) {
+		breeds = JSON.parse(response);
+		});
+    });
+    </script> 
+</html>

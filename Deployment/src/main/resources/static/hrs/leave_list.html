@@ -1,0 +1,249 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<title>استعراض الإجازات</title>
+
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="description" content="au theme template">
+<meta name="author" content="Hau Nguyen">
+<meta name="keywords" content="au theme template">
+
+ 
+    <script src="../webjars/jquery/jquery.min.js"></script>
+    <script src="../webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="../webjars/stomp-websocket/stomp.min.js"></script>
+   
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+   	
+    <link href="../css/theme.css" rel="stylesheet" media="all">
+    <link href="../css/custom_style.css" rel="stylesheet" media="all">
+    
+		<link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">   
+  
+  
+  <script>
+$(document).ready( function(){
+    	var xmlhttp = new XMLHttpRequest();
+    	var breeds = {};
+    	var here
+    	function sendXHR(type, url, data, callback) {
+    		xmlhttp = new XMLHttpRequest() || new window.ActiveXObject("Microsoft.XMLHTTP");
+    		xmlhttp.open(type, url, true);
+    		xmlhttp.send(data);
+    		xmlhttp.onreadystatechange = function() { // Use onreadystatechange instead onload.
+    	      if (this.status === 200 && this.readyState === 4) {
+    	        callback(this.response);
+    	        var list = JSON.parse(xmlhttp.responseText);
+    	        var opt = document.getElementById("leaves");
+    	        var w = null;
+    	        var j;
+    	        console.log(list);
+    	        for (i in list){
+    	        	if(w == null){
+    	        		w = "<tr>"+
+    	                 	"<th>اسم الاجازة</th>"+
+    	                 	"<th>الحد الاقصى للايام</th>"+
+    	                 	"<th>الحد الادنى للايام</th>"+
+    	                 "</tr><tr>";
+    	                 w += "<td>"+ list[i].p_Name + "</td>";
+    	                  w += "<td>"+ list[i].p_MaximumDays + "</td>";
+    	                  w += "<td>"+ list[i].p_MinimumDays + "</td>";
+    	                 w += "</tr>";
+    	        	}else{
+   	                 w += "<td>"+ list[i].p_Name + "</td>";
+    	                  w += "<td>"+ list[i].p_MaximumDays + "</td>";
+    	                  w += "<td>"+ list[i].p_MinimumDays + "</td>";
+   	                 w += "</tr>";
+    	        	}
+    	        	
+    	        	
+    	        }
+    	        opt.innerHTML = w;
+    	      }
+    	    };
+    	  }
+		
+		sendXHR("GET", "/rest/ReadLeaveSpecification", null, function(response) {
+		breeds = JSON.parse(response);
+		});
+    });
+    </script>
+    
+  </head>
+  
+  
+  
+  <body>
+  
+<div id="app">
+  <mynavbar></mynavbar>
+  <myheader id="header"></myheader>
+  <myjs id="js"></myjs>
+  <div   id="content_links">
+    <div class="row">
+    <div class="col-md-2" align="right">
+         
+            <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <br>
+                <li><a href="./leave_list.html">استعراض الإجازات</a> </li>
+                <li><a href="./leave_form.html">استحداث إجازة</a> </li>
+        </ul>
+       
+         </div>
+    <div class="col-md-8">      
+      <br>
+      <div>
+      		<p>
+      			<a href="./leave_home.html">الإجازات</a> / 
+      			<a href="./leave_list.html">استعراض الإجازات</a>
+      		</p>	
+      </div>
+      <hr>
+         
+              <div id="action-home">
+              <h3 align="right">دليل الإجازات</h3>
+              <hr>
+<br>
+
+<div class="row align-right">
+		<table id="leaves" style="width:100%; color: black">
+		</table>
+      
+    </div>
+<br>
+  <hr>
+    <div id="summary">   
+              <div class="row m-t-25">
+				
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c1">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-long-arrow-up"></i>
+                        </div>
+                        <div class="text">
+                          <h3>365</h3>
+                          <span>الحد الأعلى للأيام</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart1" height="130px"></canvas>
+
+                    </div>
+                  </div>
+                </div>
+				<div class="col-lg-1"></div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c2">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-long-arrow-down"></i>
+                        </div>
+                        <div class="text">
+                          <h3>180</h3>
+                          <span>الحد الأدنى للأيام</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart2" height="130px"></canvas>
+  
+                    </div>
+                  </div>
+                </div>
+				<div class="col-lg-1"></div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="overview-item overview-item--c3">
+                    <div class="overview__inner">
+                      <div class="overview-box clearfix">
+                        <div class="icon">
+                          <i class="zmdi zmdi-hotel"></i>
+                        </div>
+                        <div class="text">
+                          <h3>2</h3>
+                          <span>موظفون في إجازة</span>
+                        </div>
+                      </div>
+                        <canvas id="widgetChart3" height="130px"></canvas>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+   
+              </div>
+    </div>
+    </div>
+    </div>
+  <myfooter id="footer"></myfooter>
+  </div>
+  
+  <script src="./home.js"></script>
+  
+<style>
+     
+    #app {
+  min-height: 95.5vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px; 
+  box-sizing: border-box;
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  color:white;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+ ul {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+</style>
+
+</body>
+ <script src="../js/leave_main.js"></script>
+    <!-- TODO : You should check this file again -->
+    <!-- <script src="../js/main.js"></script> -->
+    <script> 
+      $(function(){
+        // TODO : This way to add custom code inside vuejs template isn't efficent 
+        // We can buid it as vue js template after that we can add it again into content [vue template]
+      
+        $("#content").html($("#content_links").html()); // this statement will make some conflicts on work
+        // here becuse of the above statement i changed the method of loading chart by put each one inside spreated function after that call all functions
+        // this is also can help has assign arrguments for each method { Reuseability }
+        var allEmployeesLabel = ['Sick Leave', 'Regular Leave', 'Exceptional Leave'];
+        var allEmployeesData  = [5, 105, 365];
+        LoadAllEmployeesChart (allEmployeesLabel,allEmployeesData);
+        var workEmployeeLabel = ['يناير', 'فبراير', 'مارس'];
+        var workEmployeeData  = [5, 10, 2];
+        LoadOnWorkEmployeesChart(workEmployeeLabel,workEmployeeData);
+        var leaveEmployeeLabel = ['Sick Leave', 'Regular Leave', 'Exceptional Leave'];
+        var leaveEmployeeData  = [1, 5, 180];
+        LoadOnLeaveEmployeesChart (leaveEmployeeLabel,leaveEmployeeData);
+        AllInOne();
+      });
+    </script> 
+ 
+</html>

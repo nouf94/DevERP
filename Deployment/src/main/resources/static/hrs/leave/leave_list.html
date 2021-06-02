@@ -1,0 +1,24 @@
+{% extends "hrs/leave_home.html" %}
+
+{% block action %}
+
+          <h3 align="right">دليل الإجازات</h3>
+<br>
+{% if leave_list %}
+     {% for leave in leave_list %}
+<div class="row align-right">
+
+         <div class="col-md-3">
+        <a href="{{ department.get_absolute_url }}">{{leave}} </a>
+        </div>
+        <div class="col-md-3"> {{leave.name}}</div>
+        <div class="col-md-3">{{leave.max_of_days}}</div>
+
+    </div>
+<br>
+    {%  endfor %}
+{% else %}
+    <p>لا يوجد إجازات حاليا</p>
+
+{% endif %}
+    {% endblock %}
