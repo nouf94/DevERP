@@ -946,6 +946,7 @@ INSERT INTO SPR_PS
 	'',
 	'create object instance scope of Scope;
 scope.AddProjectScope( ProjectCode:param.ProjectCode, Title:param.Title, IsInScope:param.IsInScope, Description:param.Description );
+
 ',
 	1,
 	0,
@@ -994,6 +995,7 @@ if (not_empty project)
 		UI::SendProjectScope( ID:scope.ID, Title:scope.Title, IsInScope:scope.IsInScope, Description:scope.Description );
 	end for;
 end if;
+
 
 ',
 	1,
@@ -1180,7 +1182,7 @@ INSERT INTO SPR_PS
 	'SendProjectRequirement',
 	'',
 	'',
-	3,
+	1,
 	0,
 	31);
 INSERT INTO C_EP_PROXY
@@ -1219,6 +1221,77 @@ INSERT INTO C_EP_PROXY
 	'ReadProjectRequirement',
 	'',
 	32,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("d7f46c96-582c-41aa-adef-29ce7d3cc922",
+	"0233b265-a8a2-498a-b546-dc0384397c4f",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("d7f46c96-582c-41aa-adef-29ce7d3cc922",
+	'AddProjectStakeholder',
+	'',
+	'create object instance stakeholder of Stakeholder;
+stakeholder.AddProjectStakeholder( ProjectCode:param.ProjectCode,Name:param.Name, Influence:param.Influence, Priorty:param.Priorty, Interest:param.Interest );
+
+',
+	1,
+	0,
+	33);
+INSERT INTO C_EP_PROXY
+	VALUES ("0233b265-a8a2-498a-b546-dc0384397c4f",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectStakeholder',
+	'',
+	33,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("f3718c64-68e7-4cac-9d95-842ff43f3f8a",
+	"823a1c3a-daab-4e63-acbe-e352d82738a6",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("f3718c64-68e7-4cac-9d95-842ff43f3f8a",
+	'ReadProjectStakeholder',
+	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+   
+if (not_empty project)
+	select many stakeholders related by project->Stakeholder[R81.''affected by''];
+	for each stakeholder in stakeholders
+		UI::SendProjectStakeholder( Name:stakeholder.Name, Influence:stakeholder.Influence, Priorty:stakeholder.Priorty, Interest:stakeholder.Interest );
+	end for;
+end if;',
+	1,
+	0,
+	34);
+INSERT INTO C_EP_PROXY
+	VALUES ("823a1c3a-daab-4e63-acbe-e352d82738a6",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectStakeholder',
+	'',
+	34,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("d16938a5-099b-404a-85e3-afc609bbbebe",
+	"54eb1d33-cc1d-4373-84b8-f5606403e328",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("d16938a5-099b-404a-85e3-afc609bbbebe",
+	'SendProjectStakeholder',
+	'',
+	'',
+	1,
+	0,
+	35);
+INSERT INTO C_EP_PROXY
+	VALUES ("54eb1d33-cc1d-4373-84b8-f5606403e328",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectStakeholder',
+	'',
+	35,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
