@@ -1,0 +1,179 @@
+<html dir="rtl" lang="AR">
+  <head>
+    <title>Staff List</title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="vue.js"></script>
+    <script src="webjars/jquery/jquery.min.js"></script>
+    <script src="webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="webjars/stomp-websocket/stomp.min.js"></script>
+   
+<link id="bootstrapcss" href="bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="header.css" rel="stylesheet">
+   	<link id="stylecss" href="style.css" rel="stylesheet">
+  
+   
+  
+    <style>
+     body {
+  min-height: 94.5vh;
+  position: relative; 
+}
+   
+   #body{
+   position: relative; 
+   padding-bottom:10vh;
+   }
+
+   
+#footer {
+  position: absolute;
+  bottom: 5.5%;
+  color:white;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+}
+
+.underline:hover{
+text-decoration: underline;
+color: red;
+}
+
+</style>
+</head>
+ <div id='app'>
+  <mynavbar></mynavbar>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div id="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'hr:index' %}"> الموارد البشرية</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto" v-if="role ==='Managers'">
+             	
+            <li class="nav-item">
+            <a class="nav-link" href="staff_list">الموظفون</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="overtime_list">خارج الدوام</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="leave_list">الإجازات</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="job_list">الوظائف</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="grade_list">المراتب</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="department_list">الإدارات</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="pay_home">الرواتب</a>
+          </li>
+        </ul>
+         <ul class="navbar-nav ml-auto" v-if="role ==='Employees'">
+             	
+            <li class="nav-item">
+            <a class="nav-link" href="staff_list">الموظفون</a>
+          </li>
+           
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+    <div   id="content_links">
+    <div class="row">
+    <div class="col-md-2">
+         	
+            <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="hrs">الرئيسية</a></li>
+                <br>
+                <li><a href="staff_list">استعراض الموظفين</a></li>
+                <li><a href="staff_form">إضافة موظف</a> </li>
+                 <li><a href="staff_commence">بدء موظف</a> </li>
+                 <li><a href="staff_leave">طلب اجازة</a> </li>
+                 <li><a href="manageLeave">الموافقة على اجازة</a> </li>
+                 <li><a href="staff_return">عودة الموظف من الاجازة</a> </li>
+                 <li><a href="new_account">اضافة حساب جديد</a> </li>
+                <br>
+                <br>
+                <li><a href="staff_bonus_list">استعراض بدلات الموظفين</a></li>
+                <li><a href="staff_bonus_form">اضافة بدل لموظف</a></li>
+        </ul>
+        <ul class="list-unstyled" v-if="role === 'Employees'">
+                <br> <br> <br>
+
+                <li><a href="hrs">الرئيسية</a></li>
+                <br>
+                <li class="underline" @click="seeID" v-bind:id="id" style="color: #007bff">الملف الشخصي</li>
+                <br>
+                <li><a href="staff_list">استعراض الموظفين</a></li>
+                 <li><a href="staff_leave">طلب اجازة</a> </li>
+        </ul>
+        
+         </div>
+    <div class="col-md-9"><br><hr>
+         
+              <div id="action-home">
+              		
+          <h3 align="right">دليل الموظفين</h3>
+<br>
+  
+
+<div class="row align-right">
+		<form id="signup-form" @submit.prevent="processForm" style="width:60%">
+		<table id="employees" style="width:100%">
+				<tr>
+    	                 	<th>الاسم</th>
+    	                 	<th>البريد الالكتروني</th>
+    	                 	<th>هاتف العمل</th>
+    	           </tr><!--
+    	           <tr v-for="employee in allEmployees" @click="seeID" v-bind:id="employee[0]" style="color: #007bff" v-if="role === 'Managers'">
+    	           <td>{{employee[2]}} {{employee[3]}} {{employee[4]}}</td>	
+    	           <td>{{employee[5]}}</td>
+    	           <td>{{employee[6]}}</td>v-if="role === 'Employees'"
+    	           </tr>-->
+    	           <tr v-for="employee in allEmployees" v-bind:id="employee[0]">
+    	           <td>{{employee[2]}} {{employee[3]}} {{employee[4]}}</td>	
+    	           <td>{{employee[5]}}</td>
+    	           <td>{{employee[6]}}</td>
+    	           </tr>
+		</table>
+		</form>
+    </div>
+<br>
+   <p id="xx"></p>
+              </div>
+              
+              
+              
+    </div>
+    </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <script src='base.js'></script>	
+              <script class="vue" src="staff_list.js"></script> 
+</html>

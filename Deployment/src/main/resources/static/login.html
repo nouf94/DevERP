@@ -1,0 +1,92 @@
+<html dir="rtl" lang="AR">
+<meta charset="utf-8">
+<title>تسجيل الدخول</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link id="bootstrapcss" href="bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="header.css" rel="stylesheet">
+     <link id="stylecss" href="style.css" rel="stylesheet">
+     
+<script src="vue.js"></script>
+
+    <script src="webjars/jquery/jquery.min.js"></script>
+    <script src="webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+   
+  
+    <style>
+#footer {
+  position: absolute;
+  bottom: 5%;
+  color:white;
+  width: 100%;
+  background-color: #0b2047;
+}
+</style>
+  <body>
+ <div id='app'>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div style=" text-align: center;">
+  <nav class="navbar navbar-expand-lg navbar-light static-top" style="background-color: #0b2047">
+
+    <div class="container justify-content-center">
+      <a class="navbar-brand" href="/Deployment/home/page/" style=" color: white;"> نظام إدارة الموارد المؤسسية التجريبي</a>
+      </div>
+  
+  </nav>
+  </div>
+  
+   <div   id="content_links">
+    <div class="row" style="height:60%">
+    <div class="col-md-2">
+            
+         </div>
+    <div style="width:100%"><br><hr style="border-top: 1px solid white;">
+              <div id="action-home" class="form">
+              	<form action="/login" method="POST" id="signup-form">
+                <p>اسم المستخدم:</p>
+                <input type="text" id="username" name="username" v-model="user"/>
+                <p>كلمة المرور:</p>
+                <input type="password" id="password" name="password" v-model="password">
+                <div>
+                  <p id="error" style="color: red; display: none;">اسم المستخدم أو كلمة المرور غير صحيحة</p>
+                <br><br>
+     			<input type="submit" value="ارسل" style="background-color: #0b2047; color:white">
+     			</div>
+     			</form>
+     			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+              <script class="vue" src="login.js"></script>	
+              </div>
+              
+              
+    </div>
+    </div>
+    </div>
+     <div id="home-pagination">
+<div class="row">
+    <div class="col-md-3"></div>
+ <div class="col-md-8">
+     
+        <div class="home-pagination">
+            
+        </div>
+        
+    
+ </div>
+</div>
+</div>
+          	
+         <script src="baseLogin.js"></script>	
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!--This file shall be embbed whenever we want to add top navigation to the pages -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+    <div class="container">
+      <a class="navbar-brand" href="#"> إدارة المشاريع</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto" v-if="role ==='Managers' || role ==='HR'">
+             	
+            <li class="nav-item">
+            <a class="nav-link" href="./initiative.html">المبادارات</a>
+          </li>
+          
+             <li class="nav-item">
+            <a class="nav-link" href="./projects.html">المشاريع</a>
+          </li>
+         
+             <li class="nav-item">
+            <a class="nav-link" href="./strategies.html">الاستراتيجيات</a>
+          </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>

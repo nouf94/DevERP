@@ -1,0 +1,94 @@
+<html dir="rtl" lang="AR">
+<meta charset="utf-8">
+<title>الصفحة الرئيسية</title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+  <script src="vue.js"></script>
+  <link id="bootstrapcss" href="bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="header.css" rel="stylesheet">
+   	<link id="stylecss" href="style.css" rel="stylesheet">
+  
+<div id="app">
+  <mynavbar></mynavbar>
+  <myheader id="header"></myheader>
+  <myjs id="js"></myjs>
+<mycontent id="content"></mycontent>
+  <myfooter id="footer"></myfooter>
+  </div>
+  
+  <script src="base.js"></script>
+  
+<style>
+    #app {
+  min-height: 94.5vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px; 
+  box-sizing: border-box;
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  color:white;
+  width: 100%;
+}
+</style>
+
+<div style="display: none">
+  <header id="home-header" >
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+  </video>
+  <div class="container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+      <div class="w-100 text-white">
+        <h1 class="display-3">مرحبا بك في نظام إدارة الموارد المؤسسية</h1>
+        <p class="lead mb-0">متابعة نظام الموادر المؤسسية لمدينة الملك عبدالعزيز للعلوم والتقنية</p>
+      </div>
+    </div>
+  </div>
+</header>
+</div>
+  
+  <div style="display: none">
+   <div id="home-content">
+   <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">هذا النظام</h1>
+        <p class="lead">أعد هذا النظام باعتباره نموذجا تجريبا طور بالاستعانة بمنهجية النمذجة فائقة السرعة</p>
+        <ul class="list-unstyled">
+          <li>نسخة ١,٥</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript 
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+-->
+
+
+<script> 
+$(document).ready( function() {
+     $("#header").html('<header>' + $("#home-header").html()+ '</header>');
+     $("#content").html($("#home-content").html());
+    
+});
+    
+</script>
+
+</html>
