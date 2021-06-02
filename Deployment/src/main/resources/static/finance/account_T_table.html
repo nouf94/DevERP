@@ -1,0 +1,203 @@
+<html dir="rtl" lang="AR">
+  <head>
+    <title>استعراض الموظفين</title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<meta name="description" content="au theme template">
+<meta name="author" content="Hau Nguyen">
+<meta name="keywords" content="au theme template">
+
+    <script src="../vue.js"></script>
+    <script src="../webjars/jquery/jquery.min.js"></script>
+    <script src="../webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="../webjars/stomp-websocket/stomp.min.js"></script>
+   
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+   	 <link href="../css/theme.css" rel="stylesheet" media="all">
+    <link href="../css/custom_style.css" rel="stylesheet" media="all">
+    
+		<link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <style>
+      body {
+  min-height: 94.5vh;
+  position: relative; 
+}
+   
+   #body{
+   position: block; 
+   padding-bottom:20vh;
+   }
+
+   
+#footer {
+  position: absolute;
+  bottom: 5.5%;
+  color:white;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+}
+ul {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.underline:hover{
+text-decoration: underline;
+color: red;
+}
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td { border-left: 1px dotted #000; border-right: 1px dotted #000;}
+.table td:first-child { border-right: none;  border-left: none;} 
+.table td:nth-child(2) { border-right: none; }
+.table td:last-child {
+    border-left: none;
+}
+
+.table th {
+  border-bottom: 1px dotted black;
+}
+
+.table th:first-child { border-bottom:none;}
+.tableSpace{
+    width: fit-content;
+}
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+ <div id="app">
+  <mynavbar></mynavbar>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div id="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+    <div class="container">
+      <a class="navbar-brand" href="/finance/home.html"> النظام المالي</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+             	
+            <li class="nav-item">
+            <a class="nav-link" href="./budget_home.html">الميزانية</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="./expenses_home.html">التقرير المالي</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./program_home.html">البرامج</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="./journal_home.html">اليوميات</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./account_home.html">الحسابات</a>
+          </li>
+        </ul>
+         
+      </div>
+    </div>
+  </nav>
+
+
+
+    <div   id="content_links">
+    <div class="row">
+    <div class="col-md-2">
+         		<ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <li><a href="./accounts.html">استعراض الحسابات</a> </li>
+                <li><a href="./account_form.html">إنشاء حساب جديد</a> </li>
+        </ul>
+         </div>
+    <div class="col-md-8">
+	<br>
+      
+      
+      <hr>
+         
+              <div id="action-home">
+              		
+          <h3 align="right">بيانات الحساب: <span v-if="account.length !== 0">{{account[0].p_Code}}</span></h3>
+<br>
+		<form id="signup-form" @submit.prevent="processForm" style="width:60%; padding-right: 20%">
+    <table class="table" id="employees" v-if="account.length !== 0">
+				<tr align="center">
+							<th></th>
+    	                 	<th>دائن</th>
+    	                 	<th>مدين</th>
+    	           </tr>
+    	           <tr v-for="acc in account">
+	    	           <td style="width: 15%">
+	    	           		<p class="tableSpace">الرمز:</p>
+	    	           		<p class="tableSpace">القيمة:</p>
+	    	           		<p class="tableSpace">التاريخ:</p>
+	    	           		<p class="tableSpace">الوصف:</p>
+	    	           </td>
+	    	           <td v-if="account.length !== 0 && acc.p_Type === 'Credit'" style="width: 40%">
+	    	           		<p class="tableSpace" style="padding-bottom: 10px;">{{acc.p_Code}}</p>
+	    	           		<p class="tableSpace"style="padding-bottom: 10px;">{{acc.p_Amount.toLocaleString()}}</p>
+	    	           		<p class="tableSpace"style="padding-bottom: 10px;">{{acc.p_Date}}</p>
+	    	           		<p class="tableSpace">{{acc.p_Description}}</p>
+	    	           </td>
+	    	           <td v-else>
+	    	           </td>
+	    	           <td v-if="account.length !== 0 && acc.p_Type ==='Debit'" style="width: 40%">
+	    	           		<p class="tableSpace" style="padding-bottom: 10px;">{{acc.p_Code}}</p>
+	    	           		<p class="tableSpace"style="padding-bottom: 10px;">{{acc.p_Amount.toLocaleString()}}</p>
+	    	           		<p class="tableSpace"style="padding-bottom: 10px;">{{acc.p_Date}}</p>
+	    	           		<p class="tableSpace">{{acc.p_Description}}</p>
+	    	           </td>
+	    	           <td v-else>
+	    	           </td>
+	    	           
+    	           </tr>
+		</table>
+		</form>
+    </div>
+<br>
+<hr>
+      
+              </div>
+              
+              
+              
+    </div>
+    </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+              <script class="vue" src="../base.js"></script> 
+              <script src="./account_T_table.js"></script> 
+              
+
+              
+</html>

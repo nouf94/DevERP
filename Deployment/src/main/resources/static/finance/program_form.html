@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="AR">
+<head>
+	<link href="https://unpkg.com/tabulator-tables@4.8.2/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.8.2/dist/js/tabulator.min.js"></script>
+<link href="https://unpkg.com/tabulator-tables@4.8.2/dist/css/tabulator_simple.min.css" rel="stylesheet">
+
+<meta charset="utf-8">
+<title>النظام المالي</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+  
+  <link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+   	
+</head>
+<body>
+	<div id="body">
+	<mynavbar></mynavbar>
+	<myheader></myheader>
+	<div class="row">
+				<div class="col-md-2">
+				 <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <br>
+                <li><a href="./program.html">استعراض البرامج</a> </li>
+                <li><a href="./program_form.html">اضافة برنامج</a> </li>
+        </ul>
+				</div>
+				<div class="col-md-8">
+				<br>
+				<div>
+						<p>
+							<a href="./home.html">النظام المالي</a> / 
+							<a href="./program.html">البرامج</a> / 
+							<a href="./program_form.html">إضافة برنامج</a>
+						</p>
+				</div>
+				<hr>
+				<h3>إضافة برنامج</h3>
+				<hr>
+			<form>
+					<div class="form-inline">
+						<label>اسم البرنامج:</label>
+						<input type="text" name="p_Name"/>
+						<label style="margin-right: 6%">الرمز:</label>
+						<input type="text" name="p_Code"/>
+						</div>
+						<div class="form-inline">
+							<label>المدة الزمنية:</label>
+							<input type="text" name="p_Duration"/>
+							<label style="margin-right: 5%">تاريخ البداية:</label>
+							<input type="text" name="p_StartDate"/>
+						</div>
+						<div class="form-inline">
+							<label>التكلفة:</label>
+							<input type="text" name="p_Costs" />
+							<label style="margin-right: 3%">المصروفات:</label>
+							<input type="text" name="p_Expenditure" />
+						</div>
+						<div class="form-inline">
+							<label>الحساب:</label>
+							<input type="text" name="p_Account" />
+							<label style="margin-right: 3%">وصف البرنامج:</label>
+							<textarea name="p_Description" rows="2" cols="50" style="border-color: #cfcfcf;
+							  border-width: 1px;
+							  border-style: solid;
+							  border-radius: 0;"></textarea>
+						</div>
+						
+						<input class="button" type="submit" value="ارسال">
+					</form>
+<hr>
+</div>
+</div>
+<myfooter id="footer"></myfooter>
+ </div>
+
+<script type="text/javascript" src="./program_form.js"></script>
+
+  
+<style>
+  #body {
+  min-height: 94.5vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px; 
+  box-sizing: border-box;
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  color:white;
+  width: 100%;
+}
+
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline p {
+  margin: 5px 10px 5px 0;
+  color: black;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+
+@media (max-width: 900px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.button{
+display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    line-height: 19px;
+    cursor: pointer;
+    margin-left: -1px;
+    padding: 4px 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    border: 1px solid #c6c6c6;
+    color: #000;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.button:active{
+background-color: #f6f6f6;
+    background-image: -webkit-linear-gradient(top,#f6f6f6,#f1f1f1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+</style>
+</body>
+</html>

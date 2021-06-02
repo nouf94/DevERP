@@ -1,0 +1,143 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+   	
+   	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ </head>
+ <body>
+  
+<div id="app">
+  <mynavbar></mynavbar>
+  <myheader id="header"></myheader>
+  
+  <myjs id="js"></myjs>
+      <div class="row">
+    <div class="col-md-2">
+         
+            <ul class="list-unstyled">
+                <br> <br> <br>
+
+                <li><a href="./home.html">الرئيسية</a></li>
+                <br>
+                <li><a href="./pay_review.html">مراجعة الرواتب</a> </li>
+
+        </ul>
+ </div>
+
+  <div class="col-md-8">
+  <div class="col-md-6">
+           
+        </div>
+  
+  
+  <br>
+  <div>
+  	<p>
+  		<a href="./pay_home.html">الرواتب</a> / 
+  		<a href="./pay_review.html">مراجعة الرواتب</a>
+  	</p>
+  </div>
+  <hr>
+  
+  <div id="action-pay">
+        
+
+<br>
+<div class="row">
+<h3>مراجعة رواتب الموظفين</h3> 
+        <div class="row">
+            <h4 style="color:blue;">{{ notification }}</h4>
+        </div>
+		
+        <div class="col-md-6">
+            
+        </div>
+    </div>
+
+   
+<div class="row">
+        <div class="col-md-12">
+         
+            <table id="payrolldepts" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>متاح للمراجعة</th>
+                </tr>
+                </thead>
+                <tbody id="payrolls">   
+                		<tr v-for="payment, i in allPayment" v-if="allPayment != null && payment.p_Status == 'APPROVED'">
+	                			<td><input type='checkbox' name='selected' :value='i' align='right'>
+	                			<strong v-if="i == 0 || (i > 0 && allPayment[i - 1].p_EmployeeID != payment.p_EmployeeID || allPayment[i - 1].p_Status === 'INITIAL')">{{payment.p_FirstName}} {{payment.p_MiddleName}} {{payment.p_LastName}} </strong><br>
+	                			{{payment.p_Name}}<br>
+	                			{{payment.p_Date}}<br>
+	                			{{payment.p_Type}}<br>
+	                			{{parseInt(payment.p_Amount).toLocaleString()}}<br>
+	                			{{payment.p_Status}}<br>
+	                			</input>
+	                			</td>
+                		</tr>
+
+                </tbody>
+            </table>
+            
+                <input type="submit" @click="approve" value="دفع"/>
+                <input type="submit" value="تحت المراجعة"/>
+        </div>
+    </div>
+
+
+  
+</div>
+</div>
+    </div>
+  <myfooter id="footer"></myfooter>
+  </div>
+  <script src='../vue.js'></script>
+  <script src='./pay_review.js'></script>
+  </body> 
+<style>
+    #app {
+  min-height: 94.5vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px; 
+  box-sizing: border-box;
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  color:white;
+  width: 100%;
+}
+
+th, td {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 0;
+  
+}
+.container-fluid.padding{
+background-color: #0b2047;
+
+}
+
+
+
+</style>
+
+</html>

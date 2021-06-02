@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="AR">
+<head>
+
+  <link href="https://unpkg.com/tabulator-tables@4.8.2/dist/css/tabulator.min.css" rel="stylesheet">
+	<link href="https://unpkg.com/tabulator-tables@4.8.2/dist/css/tabulator_simple.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.8.2/dist/js/tabulator.min.js"></script>
+
+<meta charset="utf-8">
+<title>النظام المالي</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+  
+  <link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+   	
+   		<link id="stylecss" href="../css/custom_style_finance.css" rel="stylesheet">
+ 
+ <style>
+  #body {
+  min-height: 94.5vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 100px; 
+  box-sizing: border-box;
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  color:white;
+  width: 100%;
+}
+
+  .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 20%;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 25%;
+      }
+    }
+
+    @media only screen and (max-width: 800px) {
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 30%;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 35%;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 60%;
+      }
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .tabulator [class*="col-"] {
+      width: auto !important;
+    }
+
+    .tabulator-col-title {
+      padding-left: 0 !important;
+      text-align: center !important;
+    }
+
+    #example-table .tabulator-calcs-holder {
+      font-weight: bold;
+      color: black;
+    }
+
+    .tabulator-col[aria-sort="none"] .tabulator-col-sorter i {
+      color: #999;
+    }
+
+    /* Define the style when the column is sorted in ascending order */
+    .tabulator-col[aria-sort="asc"] .tabulator-col-sorter i {
+      color: #f00;
+    }
+
+    /* Define the style when the column is sorted in descending order */
+    .tabulator-col[aria-sort="desc"] .tabulator-col-sorter i {
+      color: #f00;
+      transform: scaleY(-1);
+      /* flip the icon vertically so the arrow points down */
+    }
+
+
+
+</style>
+   	
+</head>
+<body>
+	<div id="body">
+	<mynavbar></mynavbar>
+	<myheader></myheader>
+	 <div id="content">
+      <div class="row">
+        <div class="col-md-2">
+        	<ul class="list-unstyled">
+                <br> <br> <br>
+ 				<li><a href="./home.html">الرئيسية</a></li>
+                <li><a href="./journal_table.html">استعراض جدول اليوميات</a> </li>
+                <li><a href="./journal_pending.html">استعراض جدول الصرف</a> </li>
+                <li><a href="./journal_transfer.html">استعراض جدول المناقلات</a> </li>
+                <li><a href="./journal_form.html">إنشاء جدول يوميات</a> </li>
+                <li><a href="./journal_expense_form.html">إنشاء جدول يوميات المصروفات</a> </li>
+        </ul>
+        </div>
+        <div class="col-md-8 col-sm-12 col-xs-12 content-body">
+        <div>
+			<p>
+				<a href="./home.html">النظام المالي</a> / 
+				<a href="./journal_table.html">اليوميات</a> / 
+				<a href="./journal_transfer.html">استعراض جدول المناقلات</a>
+			</p>
+			</div>
+		<hr>
+		<div class="col-md-3 col-sm-12 col-xs-12">
+		<h3>جدول المناقلات</h3>
+            </div>
+            <hr>
+          <div class="col-md-12 col-sm-12 col-xs-12 body-search" id="search">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 col-xs-12">
+                <select class="form-control" id="filter-field">
+                 <option></option>
+			    <option value="p_Column">العامود</option>
+			    <option value="p_Description">الوصف</option>
+                </select>
+              </div>
+              <div class="col-md-3 col-sm-12 col-xs-12">
+                <input class="form-control" id="filter-value" type="text" placeholder="البحث">
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                <button class="btn btn-danger" id="filter-clear">مسح</button>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="col-md-12 col-sm-12 col-xs-12" id="example-table"></div>
+        </div>
+      </div>
+    </div>
+<myfooter id="footer"></myfooter>
+ </div>
+
+
+</div>
+<script type="text/javascript" src="./journal_transfer.js"></script>
+
+  
+
+</body>
+</html>

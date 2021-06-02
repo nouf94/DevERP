@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="au theme template">
+	<meta name="author" content="Hau Nguyen">
+	<meta name="keywords" content="au theme template">
+	<title>النظام المالي</title>
+	<!-- CSS FILES -->
+	<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+	<link id="headercss" href="../header.css" rel="stylesheet">
+	<link id="stylecss" href="../style.css" rel="stylesheet">
+	<link href="../vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+	<link href="../css/font-face.css" rel="stylesheet" media="all">
+	<link href="../vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/wow/animate.css" rel="stylesheet" media="all">
+	<link href="../vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/slick/slick.css" rel="stylesheet" media="all">
+	<link href="../vendor/select2/select2.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+	<link href="../css/theme.css" rel="stylesheet" media="all">
+	<link href="../css/custom_style_finance.css" rel="stylesheet" media="all">
+	<!-- JS FILES -->
+	<script src="../vue.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="../webjars/jquery/jquery.min.js"></script>
+	<script src="../webjars/sockjs-client/sockjs.min.js"></script>
+	<script src="../webjars/stomp-websocket/stomp.min.js"></script>
+
+	<style>
+		#body {
+			min-height: 95.5vh;
+			position: relative;
+			margin: 0;
+			padding-bottom: 100px;
+			box-sizing: border-box;
+			text-align: right;
+		}
+
+
+		#footer {
+			position: absolute;
+			bottom: 0;
+			color: white;
+			width: 100%;
+		}
+
+		@-webkit-keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		@keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		.chartjs-render-monitor {
+			-webkit-animation: chartjs-render-animation 0.001s;
+			animation: chartjs-render-animation 0.001s;
+		}
+
+		@-webkit-keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		@keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		.chartjs-render-monitor {
+			-webkit-animation: chartjs-render-animation 0.001s;
+			animation: chartjs-render-animation 0.001s;
+		}
+
+		#summary .row {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		 ul {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+	</style>
+
+</head>
+
+<body>
+	<div id="body">
+		<mynavbar></mynavbar>
+		<myheader></myheader>
+		<div id="content">
+
+			<div class="row">
+				<div class="col-md-2">
+				<ul class="list-unstyled">
+                <br> <br> <br>
+
+                 <li><a href="./home.html">الرئيسية</a></li>
+                <li><a href="./journal_table.html">استعراض جدول اليوميات</a> </li>
+                <li><a href="./journal_pending.html">استعراض جدول الصرف</a> </li>
+                <li><a href="./journal_transfer.html">استعراض جدول المناقلات</a> </li>
+                <li><a href="./journal_form.html">إنشاء جدول يوميات</a> </li>
+                <li><a href="./journal_expense_form.html">إنشاء جدول يوميات المصروفات</a> </li>
+        </ul>
+        
+				</div>
+				<div class="col-md-8">
+					<hr>
+					<div id="summary">
+						<div class="row m-t-25">
+
+							<div class="col-sm-6 col-lg-3 " style="margin-right: -20px;">
+								<div class="overview-item overview-item--c1">
+									<div class="overview__inner">
+										<div class="overview-box clearfix">
+											<div class="icon">
+												<i class="zmdi zmdi-accounts"></i>
+											</div>
+											<div class="text">
+												<h3>120</h3>
+											</div>
+										</div>
+										<div class="overview-text">
+											<h4>الميزانية المتبقية</h4>
+										</div>
+										<canvas id="widgetChart1" height="130px"></canvas>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-lg-3">
+								<div class="overview-item overview-item--c2">
+									<div class="overview__inner">
+										<div class="overview-box clearfix">
+											<div class="icon">
+												<i class="zmdi zmdi-refresh-sync"></i>
+											</div>
+											<div class="text">
+												<h3>100</h3>
+											</div>
+										</div>
+										<div class="overview-text">
+											<h4>الإرتباطات</h4>
+										</div>
+										<canvas id="widgetChart3" height="130px"></canvas>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-lg-3">
+								<div class="overview-item overview-item--c3">
+									<div class="overview__inner">
+										<div class="overview-box clearfix">
+											<div class="icon">
+												<i class="zmdi zmdi-layers"></i>
+											</div>
+											<div class="text">
+												<h3>20</h3>
+											</div>
+										</div>
+										<div class="overview-text">
+											<h4>الحسابات</h4>
+										</div>
+										<canvas id="widgetChart2" height="130px"></canvas>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-lg-3">
+								<div class="overview-item overview-item--c4">
+									<div class="overview__inner">
+										<div class="overview-box clearfix">
+											<div class="icon">
+												<i class="zmdi zmdi-money"></i>
+											</div>
+											<div class="text">
+												<h3>230,000</h3>
+											</div>
+										</div>
+										<div class="overview-text">
+											<h4>الميزانية السنوية</h4>
+										</div>
+										<canvas id="widgetChart4" height="130px"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+					<div class="col-md-12">
+						<div class="row">
+
+							<div class="col-lg-6">
+								<div class="au-card recent-report-card">
+									<div class="au-card-inner">
+										<h3 class="title-2">حجم الإنفاق</h3>
+										<div class="chart-info">
+											<div class="chart-info__left">
+												<div class="chart-note">
+													<span class="dot dot--blue"></span>
+													<span>المشاريع</span>
+												</div>
+												<div class="chart-note mr-0">
+													<span class="dot dot--red"></span>
+													<span>البنود</span>
+												</div>
+											</div>
+											<div class="chart-info__right">
+												<div class="chart-statis">
+													<span class="index incre">
+														<i class="zmdi zmdi-long-arrow-up"></i>25%</span>
+													<span class="label">البنود</span>
+												</div>
+												<div class="chart-statis mr-0">
+													<span class="index decre">
+														<i class="zmdi zmdi-long-arrow-down"></i>10%</span>
+													<span class="label">المشروعات</span>
+												</div>
+											</div>
+										</div>
+										<div class="col-xl-12 p-0">
+											<canvas id="spent-chart" height="294" width="720"
+												class="chartjs-render-monitor"
+												style="display: block; height: 147px; width: 360px;"></canvas>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-6">
+								<div class="au-card chart-percent-card">
+									<div class="au-card-inner">
+										<h3 class="title-2 tm-b-5">الميزانية السنوية</h3>
+										<div class="row no-gutters">
+											<div class="col-xl-12">
+												<div class="chart-note-wrap">
+													<ul class="list-inline">
+														<li class="list-inline-item">
+															<span class="dot dot--blue"></span>
+															<span>المشاريع</span>
+														</li>
+														<li class="list-inline-item">
+															<span class="dot dot--red"></span>
+															<span>النبود</span>
+														</li>
+													</ul>
+													<div class="chart-note mr-0 d-block">
+
+													</div>
+													<div class="chart-note mr-0 d-block">
+
+													</div>
+												</div>
+											</div>
+											<div class="col-xl-12">
+												<canvas id="annual-budget" height="200" class="chartjs-render-monitor"
+													style="display: block; height: 200px; width: 100%;"></canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<myfooter id="footer"></myfooter>
+	</div>
+
+	<script src="./journal.js"></script>
+	<!-- I put my js code inside this file -->
+	<script src="../js/finance_main.js"></script>
+	<!-- TODO : You should check this file again -->
+	<!-- <script src="../js/main.js"></script> -->
+	<script>
+		$(function () {
+			// TODO : This way to add custom code inside vuejs template isn't efficent 
+			// We can buid it as vue js template after that we can add it again into content [vue template]
+
+			//$("#content").html($("#content_links").html()); // this statement will make some conflicts on work
+			// here becuse of the above statement i changed the method of loading chart by put each one inside spreated function after that call all functions
+			// this is also can help has assign arrguments for each method { Reuseability }
+			// load ...
+			var leftBudgetLabel = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'];
+			var leftBudgetData = [78, 81, 80, 45, 34, 12, 40];
+			LoadLeftBudgetChart(leftBudgetLabel, leftBudgetData);
+
+			// load ...
+			var connectionsLabel = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'];
+			var connectionsData = [78, 81, 80, 45, 34, 12, 40];
+			LoadConnectionsChart(connectionsLabel, connectionsData);
+
+			// load ...
+			var accountsLabel = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'];
+			var accountsData = [78, 81, 80, 45, 34, 12, 40];
+			LoadAccountsChart(accountsLabel, accountsData);
+
+			// load ...
+			var budgetLabel = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'];
+			var budgetData = [78, 81, 80, 45, 34, 12, 40];
+			LoadBudgetChart(budgetLabel, budgetData);
+
+			// load annual budget charts
+			var annualBudgetLabel = ['المشروعات', 'البنود'];
+			var annualBudgetData = [{
+				label: "My First dataset",
+				data: [65, 35],
+				backgroundColor: [
+					'#00b5e9',
+					'#fa4251',
+				],
+				hoverBackgroundColor: [
+					'#00b5e9',
+					'#fa4251',
+				],
+				borderWidth: [
+					0, 0
+				],
+				hoverBorderColor: [
+					'transparent',
+					'transparent',
+				]
+			}
+			];
+			loadAnnualBudget(annualBudgetLabel, annualBudgetData);
+
+			// load spent volume chart
+			const brandProduct = 'rgba(0,181,233,0.8)'
+			const brandService = 'rgba(0,173,95,0.8)'
+			const brandred = 'rgb(255,0,0,0.8)'
+
+			var elements = 10
+			var data1 = [52, 60, 55, 50, 65, 80, 57, 70, 105, 200]
+			var data2 = [102, 70, 80, 100, 56, 53, 80, 75, 65, 90]
+			var spentAmountLabel = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', ''];
+			var spentAmountData = [
+				{
+					label: 'حجم الإنفاق على البنود',
+					backgroundColor: brandred,
+					borderColor: 'transparent',
+					pointHoverBackgroundColor: '#fff',
+					borderWidth: 0,
+					data: data1
+
+				},
+				{
+					label: 'حجم الإنفاق على المشاريع',
+					backgroundColor: brandProduct,
+					borderColor: 'transparent',
+					pointHoverBackgroundColor: '#fff',
+					borderWidth: 0,
+					data: data2
+
+				}
+			];
+			loadSpentAmount(spentAmountLabel, spentAmountData);
+		});
+	</script>
+</body>
+
+</html>

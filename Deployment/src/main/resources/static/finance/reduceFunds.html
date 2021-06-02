@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="au theme template">
+	<meta name="author" content="Hau Nguyen">
+	<meta name="keywords" content="au theme template">
+	<title>النظام المالي</title>
+	<!-- CSS FILES -->
+	<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+	<link id="headercss" href="../header.css" rel="stylesheet">
+	<link id="stylecss" href="../style.css" rel="stylesheet">
+	<link href="../vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+	<link href="../css/font-face.css" rel="stylesheet" media="all">
+	<link href="../vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/wow/animate.css" rel="stylesheet" media="all">
+	<link href="../vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/slick/slick.css" rel="stylesheet" media="all">
+	<link href="../vendor/select2/select2.min.css" rel="stylesheet" media="all">
+	<link href="../vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+	<link href="../css/theme.css" rel="stylesheet" media="all">
+	<link href="../css/custom_style_finance.css" rel="stylesheet" media="all">
+	<!-- JS FILES -->
+	<script src="../vue.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="../webjars/jquery/jquery.min.js"></script>
+	<script src="../webjars/sockjs-client/sockjs.min.js"></script>
+	<script src="../webjars/stomp-websocket/stomp.min.js"></script>
+
+	<style>
+		#body {
+			min-height: 95.5vh;
+			position: relative;
+			margin: 0;
+			padding-bottom: 100px;
+			box-sizing: border-box;
+			text-align: right;
+		}
+
+
+		#footer {
+			position: absolute;
+			bottom: 0;
+			color: white;
+			width: 100%;
+		}
+
+		@-webkit-keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		@keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		.chartjs-render-monitor {
+			-webkit-animation: chartjs-render-animation 0.001s;
+			animation: chartjs-render-animation 0.001s;
+		}
+
+		@-webkit-keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		@keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		.chartjs-render-monitor {
+			-webkit-animation: chartjs-render-animation 0.001s;
+			animation: chartjs-render-animation 0.001s;
+		}
+
+		#summary .row {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		 ul {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline p {
+  margin: 5px 10px 5px 0;
+  color: black;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+
+@media (max-width: 900px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.button{
+display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    line-height: 19px;
+    cursor: pointer;
+    margin-left: -1px;
+    padding: 4px 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    border: 1px solid #c6c6c6;
+    color: #000;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.button:active{
+background-color: #f6f6f6;
+    background-image: -webkit-linear-gradient(top,#f6f6f6,#f1f1f1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    }
+	</style>
+
+</head>
+
+<body>
+	<div id="body">
+		<mynavbar></mynavbar>
+		<myheader></myheader>
+		<div id="content">
+
+			<div class="row">
+				<div class="col-md-2">
+				
+        
+				</div>
+				<div class="col-md-8">
+				<br>
+				<div>
+						<p>
+							<a href="./home.html">النظام المالي</a> / 
+							<a href="./journal">الميزانية</a> / 
+							<a href="./reduceFunds.html">إضافة تخفيض</a>
+						</p>
+				</div>
+				<hr>
+				<h3>إضافة تخفيض</h3>
+				<hr>
+				<div>
+					<form id="form-in">
+					<div class="form-inline">
+						<label> اسم البند:</label>
+						<input list="options" name="account" v-model="account"/>
+						<datalist id="options">
+						  <option v-for="acc in accounts" v-bind:value="acc.p_Code">
+						  {{acc.p_Name}}
+						  </option>
+						</datalist>
+						<label>المبلغ:</label>
+						<input type="text" name="amount" v-model="amount"/>
+						</div>
+						<input class="button" type="submit" @click="submitForm" value="ارسال">
+					</form>
+					<hr>
+
+					</div>
+				</div>
+				</div>
+
+
+		</div>
+		<myfooter id="footer"></myfooter>
+	</div>
+
+	<script src="./reduceFunds.js"></script>
+	<!-- I put my js code inside this file -->
+	<script src="../js/finance_main.js"></script>
+	<!-- TODO : You should check this file again -->
+	<!-- <script src="../js/main.js"></script> -->
+</body>
+
+</html>
