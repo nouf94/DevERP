@@ -683,7 +683,7 @@ INSERT INTO SPR_PS
 	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
    
 if (not_empty project)
-	select many members related by project->Member[R71.''Organized by''];
+	select many members related by project->Member[R71.''includes''];
 	
 	for each member in members
 		UI::sendProjectMember( MemberName:member.MemberName, Role:member.Role );

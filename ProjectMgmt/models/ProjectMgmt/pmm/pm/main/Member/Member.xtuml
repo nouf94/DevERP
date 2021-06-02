@@ -20,7 +20,7 @@ self.Role = param.Role;
 // select the project that this Hierarchy belongs to
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
-		relate self to project across R71.''organize'';
+		relate self to project across R71.''work in '';
 end if;',
 	1,
 	'',

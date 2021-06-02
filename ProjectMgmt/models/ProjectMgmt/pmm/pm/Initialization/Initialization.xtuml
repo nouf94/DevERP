@@ -205,13 +205,13 @@ create object instance member1 of Member;
 
 member1.MemberName="nouf alamer";
 member1.Role="dev";
-relate member1 to project1 across R71.''organize'';
+relate member1 to project1 across R71.''work in '';
 
 create object instance member2 of Member; 
 
 member2.MemberName="Ghalia alrajban";
 member2.Role="manager";
-relate member2 to project1 across R71.''organize'';
+relate member2 to project1 across R71.''work in '';
 
 //------------------------------------------------------
 
