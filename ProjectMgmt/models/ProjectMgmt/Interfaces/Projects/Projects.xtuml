@@ -1873,6 +1873,135 @@ INSERT INTO C_PP
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("0233b265-a8a2-498a-b546-dc0384397c4f",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectStakeholder',
+	'',
+	33);
+INSERT INTO C_AS
+	VALUES ("0233b265-a8a2-498a-b546-dc0384397c4f",
+	'AddProjectStakeholder',
+	'',
+	0,
+	"23c14ef6-6f6e-4c7a-8bc0-643d902592e7");
+INSERT INTO C_PP
+	VALUES ("c9cd2d69-d476-4ead-a6b3-a6d6c191029b",
+	"0233b265-a8a2-498a-b546-dc0384397c4f",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("b967de19-4ef7-452e-809c-8a9d90cb2d29",
+	"0233b265-a8a2-498a-b546-dc0384397c4f",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Name',
+	'',
+	0,
+	'',
+	"c9cd2d69-d476-4ead-a6b3-a6d6c191029b");
+INSERT INTO C_PP
+	VALUES ("57d9e2a8-e1da-4961-b3cb-8f1133db38cc",
+	"0233b265-a8a2-498a-b546-dc0384397c4f",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Influence',
+	'',
+	0,
+	'',
+	"b967de19-4ef7-452e-809c-8a9d90cb2d29");
+INSERT INTO C_PP
+	VALUES ("0e9e09e1-eb1c-449c-86e9-415a1de9971e",
+	"0233b265-a8a2-498a-b546-dc0384397c4f",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Priorty',
+	'',
+	0,
+	'',
+	"57d9e2a8-e1da-4961-b3cb-8f1133db38cc");
+INSERT INTO C_PP
+	VALUES ("cbbb1c1a-5965-4f6d-a0b7-df72b98d068e",
+	"0233b265-a8a2-498a-b546-dc0384397c4f",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Interest',
+	'',
+	0,
+	'',
+	"0e9e09e1-eb1c-449c-86e9-415a1de9971e");
+INSERT INTO C_EP
+	VALUES ("823a1c3a-daab-4e63-acbe-e352d82738a6",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectStakeholder',
+	'',
+	34);
+INSERT INTO C_AS
+	VALUES ("823a1c3a-daab-4e63-acbe-e352d82738a6",
+	'ReadProjectStakeholder',
+	'',
+	0,
+	"0233b265-a8a2-498a-b546-dc0384397c4f");
+INSERT INTO C_PP
+	VALUES ("60125364-e491-4482-9670-4fe00f74c934",
+	"823a1c3a-daab-4e63-acbe-e352d82738a6",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("54eb1d33-cc1d-4373-84b8-f5606403e328",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectStakeholder',
+	'',
+	35);
+INSERT INTO C_AS
+	VALUES ("54eb1d33-cc1d-4373-84b8-f5606403e328",
+	'SendProjectStakeholder',
+	'',
+	1,
+	"823a1c3a-daab-4e63-acbe-e352d82738a6");
+INSERT INTO C_PP
+	VALUES ("ec8b5f48-f6d0-403b-8fa2-bfedef565d8f",
+	"54eb1d33-cc1d-4373-84b8-f5606403e328",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Name',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("13714bbe-aa2a-4412-8935-b8b418a2b30c",
+	"54eb1d33-cc1d-4373-84b8-f5606403e328",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Influence',
+	'',
+	0,
+	'',
+	"ec8b5f48-f6d0-403b-8fa2-bfedef565d8f");
+INSERT INTO C_PP
+	VALUES ("310a059b-db5d-43b5-8404-3ea21230c596",
+	"54eb1d33-cc1d-4373-84b8-f5606403e328",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Priorty',
+	'',
+	0,
+	'',
+	"13714bbe-aa2a-4412-8935-b8b418a2b30c");
+INSERT INTO C_PP
+	VALUES ("b5efd89c-ba5c-4d1c-98a7-92757dc05340",
+	"54eb1d33-cc1d-4373-84b8-f5606403e328",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Interest',
+	'',
+	0,
+	'',
+	"310a059b-db5d-43b5-8404-3ea21230c596");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,
