@@ -3,21 +3,25 @@ package deployment;
 public class Goal {
 	private String p_Description;
 	private String p_KPI;
+	private String p_Impact;
 	private String p_ProjectCode;
 
 	
 	
 	public Goal() {
-		
+
 	}
-	public Goal(String p_Description, String p_KPI, String p_ProjectCode) {
+	public Goal(String p_Description, String p_Impact , String p_ProjectCode,String p_KPI) {
 		this.p_Description = p_Description;
 		this.p_KPI = p_KPI;
 		this.p_ProjectCode = p_ProjectCode;
 	}
-	public Goal(String p_Description, String p_KPI) {
+
+	public Goal(String p_Description,  String p_Impact, String p_KPI) {
 		this.p_Description = p_Description;
 		this.p_KPI = p_KPI;
+		this.p_Impact = p_Impact;
+
 	}
 		public Goal(String p_ProjectCode) {
 		this.p_ProjectCode = p_ProjectCode;
@@ -36,6 +40,13 @@ public class Goal {
 	}
 	public void setP_KPI(String p_KPI) {
 		this.p_KPI = p_KPI;
+	}
+	
+	public String getP_Impact() {
+		return p_Impact;
+	}
+	public void setP_Impact(String p_Impact) {
+		this.p_Impact = p_Impact;
 	}
 
 	public String getP_ProjectCode() {

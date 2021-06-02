@@ -2072,11 +2072,10 @@ private static HRGuiController singleton;
 		return null;
 	}
 		List<Goal> goals=new ArrayList<Goal>();
-		 public void SendProjectGoal( String p_Description, String p_KPI ){
+		 public void SendProjectGoal( String p_Description,String p_Impact,String p_KPI ){
         Goal goal=null;
           try {
-			goal=new Goal(p_Description,p_KPI);
-			System.out.println("Desc: "+p_Description+ "KPI: "+p_KPI);
+			goal=new Goal(p_Description,p_Impact,p_KPI);
 			goals.add(goal);
 
          }catch(Exception e) {
@@ -2089,7 +2088,8 @@ private static HRGuiController singleton;
 		public void AddGoal(@RequestBody Goal goal ){
           
           try {
-            UI.Singleton().Projects().AddGoal( goal.getP_Description(), goal.getP_KPI(), goal.getP_ProjectCode());
+			  
+            UI.Singleton().Projects().AddGoal(goal.getP_Description() , goal.getP_Impact(), goal.getP_ProjectCode(), goal.getP_KPI());
          }catch(Exception e) {
       	   
          } 

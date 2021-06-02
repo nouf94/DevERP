@@ -91,7 +91,7 @@ var app = new Vue({
 
     },
     mounted: function mounted () {
-      //this.readChnages()
+      this.readChnages()
     },
     methods: {
       readChnages:function (){
@@ -115,7 +115,7 @@ var app = new Vue({
               //If the Change request has more than one Impact submit the rest Impacts here
              this.submitImpact(response.data[0]['p_CreationDate'])
              $("#Alert").show();
-             this.readChnages()
+             this.readChnages()//To Update List of Requests
             }).catch(error => {
               $("#Error").show()
                 console.log(error)
@@ -189,12 +189,14 @@ var GoalApp = new Vue({
             })},
     AddGoal: function (event) {
         axios.post('/rest/AddGoal', {
-          p_KPI: this.p_GoalEffect,
           p_Description: this.p_gName,
+          p_Impact: this.p_GoalEffect,
           p_ProjectCode: this.p_ProjectCode,
+          p_KPI: this.p_GoalEffect,
           }).then(response => {
            console.log(response)
            $("#Alert").show();
+           this.readGoals()//To Update List of Goals
           }).catch(error => {
             $("#Error").show();
               console.log(error)
@@ -216,6 +218,7 @@ var MilestoneApp = new Vue({
     p_tName:'',
     p_Mstatus:'',
     p_Mweight:'',
+    p_MCweight:'',
     p_MExpDate:'',
     p_MAcutDate:'',
     Tasks:'',
@@ -227,7 +230,7 @@ var MilestoneApp = new Vue({
     selectedTask:''
   },
   mounted: function mounted () {
-    //this.readMilestone()
+    this.readMilestone()
     //this.ReadStrategies()
 
   },
@@ -243,13 +246,14 @@ var MilestoneApp = new Vue({
         })},
      AddProjectMilestone: function (event) {
         axios.post('/rest/AddProjectMilestone', {
-          p_Name: this.p_Name,
-          p_CompletePlannedDate: '0',
+          p_Name: this.p_tName,
+          p_CompletePlannedDate: (new Date(this.p_MExpDate).getTime() / 1000) ,
           p_Weight: this.p_Mweight,
           p_ProjectCode: this.p_ProjectCode
           }).then(response => {
            console.log(response)
            $("#Alert").show();
+           this.readMilestone()//Update MS
           }).catch(error => {
             $("#Error").show();
               console.log(error)
@@ -283,8 +287,7 @@ var RiskApp = new Vue({
     selectedRisk:''
   },
   mounted: function mounted () {
-    //this.readRisks()
-
+    this.readRisks()
   },
   methods: {
     readRisks:function (){
@@ -309,6 +312,7 @@ var RiskApp = new Vue({
           }).then(response => {
            console.log(response)
            $("#Alert").show();
+           this.readRisks()//Update Risk List
           }).catch(error => {
             $("#Error").show();
               console.log(error)
@@ -339,7 +343,7 @@ var FilesApp = new Vue({
 
   },
   mounted: function mounted () {
-    this.readFiles()
+    //this.readFiles()
     //this.ReadStrategies()
 
   },
@@ -368,6 +372,7 @@ var FilesApp = new Vue({
           }).then(response => {
            console.log(response)
            $("#Alert").show();
+           //this.readFiles()//Update Files
           }).catch(error => {
             $("#Error").show();
               console.log(error)
@@ -387,27 +392,57 @@ function showGoals(Goals){
   if(Goals.length>0){
 $('#GoalsTable').show();
 $('#NoGoals').hide();
+  }else{
+    $('#NoGoals').show();
+    $('#GoalsTable').hide();
   }
 }
 
 function showTasks(Tasks){
-  if(Tasks.length>0){
-$("#TasksTable").show();
-$('#NoTasks').hide();
+  if(Tasks.length==0){
+    $('#NoTasks').show();
+    $('#TasksTable').hide();
+    return;
   }
+  //Convert Date For MileStones or Tasks
+  //Convert date from Seconds to Date Format
+  curdate = new Date(null);
+  for(i=0;i<Tasks.length;i++){
+    $("#TasksTable").show();
+    $('#NoTasks').hide();
+    curdate.setTime(Tasks[i].p_CompletePlannedDate*1000);
+    Tasks[i].p_CompletePlannedDate=curdate.toLocaleDateString();
+    curdate.setTime(Tasks[i].p_CompletedActualDate*1000);
+    Tasks[i].p_CompletedActualDate=curdate.toLocaleDateString();
+}
+return;
 }
 
 function showRisks(Risks){
-  if(Risks.length>0){
-$("#RisksTable").show();
-$('#NoRisks').hide();
+  if(Risks.length==0){
+    $('#NoRisks').show();
+    $('#RisksTable').hide();
+    return;
   }
+  //Convert Date For Risks
+  //Convert date from Seconds to Date Format
+  curdate = new Date(null);
+  for(i=0;i<Risks.length;i++){
+    $("#RisksTable").show();
+    $('#NoRisks').hide();
+    curdate.setTime(Risks[i].p_ExpectedDeadline*1000);
+    Risks[i].p_ExpectedDeadline=curdate.toLocaleDateString();
+}
+return;
 }
 
 function showFiles(Files){
   if(Files.length>0){
     $("#FilesTable").show();
     $('#NoFiles').hide();
+      }else{
+        $('#NoFiles').show();
+        $('#FilesTable').hide();
       }
     }
 
@@ -422,19 +457,7 @@ function ProcessRequest(Requests){
     document.getElementById('NoReqts').style.display="none";
     document.getElementById('RequestsTable').style.display="block";
     curdate.setTime(Requests[i].p_CreationDate*1000);
-    Requests[i].p_CreationDate=curdate.toLocaleString();
-}
-return;
-}
-//Convert Date For MileStones
-function ConvertDates(MileStones){
-  //Show Table of request if there is available Requests
-  //Hide Message
-  //Convert date from Seconds to Date Format
-  curdate = new Date(null);
-  for(i=0;i<MileStones.length;i++){
-    curdate.setTime(MileStones[i].p_CompletePlannedDate*1000);
-    MileStones[i].p_CompletePlannedDate=curdate.toLocaleString();
+    Requests[i].p_CreationDate=curdate.toLocaleDateString();
 }
 return;
 }

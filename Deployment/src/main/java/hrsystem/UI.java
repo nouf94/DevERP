@@ -429,14 +429,23 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
       	   
          } 
          } 
-         public void SendProjectGoal( final String p_Description,  final String p_KPI ) throws XtumlException {
+         public void SendProjectGoal( final String p_Description,  final String p_Impact, final String p_KPI ) throws XtumlException {
           
           try {
-            HRGuiController.Singleton().SendProjectGoal( p_Description, p_KPI );
+            HRGuiController.Singleton().SendProjectGoal( p_Description, p_Impact, p_KPI );
          }catch(Exception e) {
       	   
          } 
          } 
+         public void SendProjectConstraint( final int p_ID,  final String p_Title,  final String p_Note ) throws XtumlException {
+
+
+         }
+         public void SendProjectAssumption( final int p_ID,  final String p_Title,  final String p_Description,  final String p_Impact,  final int p_ValidUntil ) throws XtumlException {
+
+             
+         }
+
         public void SendProjectMilestone( final String p_Name,  final int p_CompletedPlannedDate,  final int p_CompletedActualDate,  final int p_Weight,  final boolean p_CompleteStatus ) throws XtumlException {
         try {
             HRGuiController.Singleton().SendProjectMilestone( p_Name, p_CompletedPlannedDate, p_CompletedActualDate, p_Weight, p_CompleteStatus );

@@ -20,7 +20,7 @@ public class Milestone {
 		this.p_ProjectCode = p_ProjectCode;
     }
 
-public Milestone(  String p_Name,   int p_CompletePlannedDate,int p_CompletedActualDate,   int p_Weight,   boolean p_CompleteStatus ){
+public Milestone( String p_Name,   int p_CompletePlannedDate,int p_CompletedActualDate,   int p_Weight,   boolean p_CompleteStatus ){
 		this.p_Name=p_Name;
 		this.p_CompletePlannedDate = p_CompletePlannedDate;
         this.p_CompletedActualDate = p_CompletedActualDate;
