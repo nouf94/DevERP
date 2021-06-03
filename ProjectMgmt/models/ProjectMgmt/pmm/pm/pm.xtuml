@@ -30,6 +30,54 @@ INSERT INTO GD_MD
 	0,
 	'4.1.17',
 	'ProjectMgmt::pmm::pm');
+INSERT INTO GD_GE
+	VALUES ("86553e9e-509b-4ed9-b4f6-8bad9d63a532",
+	"00000000-0000-0000-0000-000000000000",
+	"d8941aac-fe97-4ede-8994-e08f0fa770a0",
+	108,
+	0,
+	'ProjectMgmt::pmm::pm::Initialization');
+INSERT INTO GD_SHP
+	VALUES ("86553e9e-509b-4ed9-b4f6-8bad9d63a532");
+INSERT INTO GD_NCS
+	VALUES ("86553e9e-509b-4ed9-b4f6-8bad9d63a532");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"86553e9e-509b-4ed9-b4f6-8bad9d63a532");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"86553e9e-509b-4ed9-b4f6-8bad9d63a532",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("86553e9e-509b-4ed9-b4f6-8bad9d63a532",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("6a2a2ea8-83f5-406d-9de6-c467b8ed1077",
+	"00000000-0000-0000-0000-000000000000",
+	"6177f291-1d29-415e-bed8-570d8e84b959",
+	108,
+	0,
+	'ProjectMgmt::pmm::pm::main');
+INSERT INTO GD_SHP
+	VALUES ("6a2a2ea8-83f5-406d-9de6-c467b8ed1077");
+INSERT INTO GD_NCS
+	VALUES ("6a2a2ea8-83f5-406d-9de6-c467b8ed1077");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"6a2a2ea8-83f5-406d-9de6-c467b8ed1077");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"6a2a2ea8-83f5-406d-9de6-c467b8ed1077",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("6a2a2ea8-83f5-406d-9de6-c467b8ed1077",
+	0,
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PO
 	VALUES ("6682b901-e90c-4009-8856-6794e02a617d",
 	"6b567f7b-1b30-4818-b8a0-dfca9c0a25d8",
@@ -1292,6 +1340,31 @@ INSERT INTO C_EP_PROXY
 	'SendProjectStakeholder',
 	'',
 	35,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("9e1e74df-a2d1-4b00-87fc-daf73d1d8ff3",
+	"e2825e90-8c9a-42af-9412-4a52840f818f",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("9e1e74df-a2d1-4b00-87fc-daf73d1d8ff3",
+	'TestReadChangeRequestByCreationDte',
+	'',
+	'select any change from instances of ChangeRequest where selected.CreationDate == param.CreationDate ; 
+   
+if (not_empty change )
+	
+		UI::SendChangeRequest( CreationDate:change.CreationDate, Title:change.Title, Description:change.Description, Justification: change.Justification);	
+end if;',
+	1,
+	0,
+	36);
+INSERT INTO C_EP_PROXY
+	VALUES ("e2825e90-8c9a-42af-9412-4a52840f818f",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'TestReadChangeRequestByCreationDte',
+	'',
+	36,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
