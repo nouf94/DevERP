@@ -2281,7 +2281,8 @@ private static HRGuiController singleton;
 	public void AddChangeRequestImpact(@RequestBody Impact Impacts) {
 ChangeRequest chreq;
 		try{
-			for(int i = 0; i < Impacts.getP_Impacts().length; i++) {
+			//int i=1; // skipped the first impact because it was sent in the CreateChangeRequest
+			for(int i = 1; i < Impacts.getP_Impacts().length; i++) {
 			chreq=new ChangeRequest(Impacts.getP_Impacts()[i], Impacts.getP_Details()[i], Impacts.getP_CreationDate() );
 			UI.Singleton().Projects().AddChangeRequestImpact(chreq.getP_ImpactCategory(),chreq.getP_ImpactDetails(),chreq.getP_CreationDate());
 			}

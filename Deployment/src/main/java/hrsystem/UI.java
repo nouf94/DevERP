@@ -463,6 +463,12 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
          } 
     
     }
+    public void SendProjectRequirement( final int p_ID,  final String p_Title,  final double p_Cost ) throws XtumlException {
+    }
+    public void SendProjectStakeholder( final String p_Name,  final String p_Influence,  final String p_Priorty,  final String p_Interest ) throws XtumlException {
+    }
+    public void SendProjectScope( final int p_ID,  final String p_Title,  final boolean p_IsInScope,  final String p_Description ) throws XtumlException {
+    }
 /*
         public void AssignManger( final String p_AccountName,  final String p_ProjectCode ) throws XtumlException {
             
