@@ -2303,6 +2303,7 @@ ChangeRequest chreq;
             //UI.Singleton().Projects().SendChangeRequestImpact( p_Category,p_Details);
 			categories.add(p_Category);
 			details.add(p_Details);
+			System.out.println("Cat: "+ p_Category +" Detail: "+ p_Details) ;
 			//imp=new Impact(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompleteStatus);
 			//pimpacts.add(imp);
          }catch(Exception e) {

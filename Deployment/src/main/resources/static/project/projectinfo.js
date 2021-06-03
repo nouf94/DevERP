@@ -42,6 +42,7 @@ var app = new Vue({
             p_ImpactCategory: Impacts[0],
             p_ImpactDetails: Details[0]
             }).then(response => {
+              
               //If the Change request has more than one Impact submit the rest Impacts here
               if(Impacts.length>1){
              this.submitImpact(response.data[0]['p_CreationDate'])}
@@ -388,7 +389,7 @@ function ProcessRequest(Requests){
     document.getElementById('NoReqts').style.display="none";
     document.getElementById('RequestsTable').style.display="block";
     curdate.setTime(Requests[i].p_CreationDate*1000);
-    Requests[i].p_CreationDate=curdate.toLocaleDateString();
+    //Requests[i].p_CreationDate=curdate.toLocaleDateString();
 }
 return;
 }
