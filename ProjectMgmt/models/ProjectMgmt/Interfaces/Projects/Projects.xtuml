@@ -2002,6 +2002,28 @@ INSERT INTO C_PP
 	0,
 	'',
 	"310a059b-db5d-43b5-8404-3ea21230c596");
+INSERT INTO C_EP
+	VALUES ("e2825e90-8c9a-42af-9412-4a52840f818f",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'TestReadChangeRequestByCreationDte',
+	'',
+	36);
+INSERT INTO C_AS
+	VALUES ("e2825e90-8c9a-42af-9412-4a52840f818f",
+	'TestReadChangeRequestByCreationDte',
+	'',
+	0,
+	"54eb1d33-cc1d-4373-84b8-f5606403e328");
+INSERT INTO C_PP
+	VALUES ("4fc59878-15be-43e3-88de-9331b5b59b0d",
+	"e2825e90-8c9a-42af-9412-4a52840f818f",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'CreationDate',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO PE_PE
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	1,
