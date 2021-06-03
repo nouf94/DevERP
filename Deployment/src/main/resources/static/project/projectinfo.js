@@ -34,6 +34,7 @@ var app = new Vue({
           })},
       submitValues: function (event) {
         GetImpact();
+        console.log(Impacts[0])
           axios.put('/rest/CreateChangeRequest', {
             p_Title: this.p_Title,
             p_Description: this.p_Description,
@@ -42,7 +43,7 @@ var app = new Vue({
             p_ImpactCategory: Impacts[0],
             p_ImpactDetails: Details[0]
             }).then(response => {
-              
+              console.log(response)
               //If the Change request has more than one Impact submit the rest Impacts here
               if(Impacts.length>1){
              this.submitImpact(response.data[0]['p_CreationDate'])}

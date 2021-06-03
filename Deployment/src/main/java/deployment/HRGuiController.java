@@ -2296,11 +2296,9 @@ ChangeRequest chreq;
 		List<String> categories=new ArrayList<String>();
 		List<String> details=new ArrayList<String>();
 
-	   public void SendChangeRequestImpact( final String p_Category,  final String p_Details)  {
-		//Impact imp=null;
-		
+	   public void SendChangeRequestImpact( final String p_Category,  final String p_Details)  {		
          try {
-            //UI.Singleton().Projects().SendChangeRequestImpact( p_Category,p_Details);
+			
 			categories.add(p_Category);
 			details.add(p_Details);
 			System.out.println("Cat: "+ p_Category +" Detail: "+ p_Details) ;
@@ -2311,15 +2309,16 @@ ChangeRequest chreq;
          } 
          } 
 
-
 		@PutMapping(path="/ReadChangeRequestImpact", consumes="application/json", produces="application/json")	
 		public Impact ReadChangeRequestImpact(@RequestBody Impact imp ){
           	Impact pimpacts;
 
           try {
-			pimpacts=new Impact(categories.toArray(new String[0]),details.toArray(new String[0]));
+			categories.clear();
+			details.clear();
             UI.Singleton().Projects().ReadChangeRequestImpact(imp.getP_CreationDate());
 			Thread.sleep(700);
+			pimpacts=new Impact(categories.toArray(new String[0]),details.toArray(new String[0]));
 			return pimpacts;
          }catch (XtumlException e) {
 			// TODO Auto-generated catch block
