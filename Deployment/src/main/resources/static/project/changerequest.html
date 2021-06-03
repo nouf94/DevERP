@@ -1,0 +1,286 @@
+<html dir="rtl" lang="AR">
+  <head>
+    <title>طلب تغيير</title>
+    <!--META-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="au theme template">
+<meta name="author" content="Hau Nguyen">
+<meta name="keywords" content="au theme template">
+<!--page Content loader-->
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../vue.js"></script>
+<script src="../webjars/jquery/jquery.min.js"></script>
+<script src="../webjars/sockjs-client/sockjs.min.js"></script>
+<script src="../webjars/stomp-websocket/stomp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<!--Style-->
+<link href="../css/custom_style.css" rel="stylesheet" media="all">
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+<link id="headercss" href="../header.css" rel="stylesheet">
+<link id="stylecss" href="../style.css" rel="stylesheet">
+<link href="../css/theme.css" rel="stylesheet" media="all">
+<link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+<style>
+body {
+  min-height: 94.5vh;
+  position: relative; 
+}
+#body{
+   position: block; 
+   padding-bottom:20vh;
+   }
+#footer {
+  position: absolute;
+  bottom: 5.5%;
+  color:white;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+}
+/*ul {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}*/
+.underline:hover{
+text-decoration: underline;
+color: red;
+}
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.form-inline p {
+  margin: 5px 10px 5px 0;
+  color: black;
+}
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 5px 5px 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+@media (max-width: 900px) {
+  .form-inline input {
+    margin: 10px 0;
+  } 
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.button{
+display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    line-height: 19px;
+    cursor: pointer;
+    margin-left: -1px;
+    padding: 4px 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    border: 1px solid #c6c6c6;
+    color: #000;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.button:active{
+background-color: #f6f6f6;
+    background-image: -webkit-linear-gradient(top,#f6f6f6,#f1f1f1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    }
+    textarea{
+    border-color: #cfcfcf;
+	  border-width: 1px;
+	  border-style: solid;
+      border-radius: 0;}
+     
+      .sidebar-content {
+    transition: margin-left .35s ease-in-out,left .35s ease-in-out,margin-right .35s ease-in-out,right .35s ease-in-out;
+}
+.sidebar-dropdown .sidebar-link {
+    padding: .55rem 1.5rem .55rem 3.7rem;
+    font-weight: 400;
+    color: #666;
+    
+}
+#ProjectMgt .sidebar-link:hover{
+    background-color:#666;
+    color: #ffffff;
+}
+.align-middle {
+    vertical-align: middle!important;
+    color: #666;
+
+}
+.sidebar [data-toggle=collapse]:before {
+    content: " ";
+    border: solid;
+    border-width: 0 .1rem .1rem 0;
+    display: inline-block;
+    padding: 2px;
+    color:#666;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 1rem;
+    right: 15.7rem;
+    transition: all .2s ease-out;
+}
+.sidebar [aria-expanded=true]:before, .sidebar [data-toggle=collapse]:not(.collapsed):before {
+    transform: rotate(-135deg);
+    top: 1.2rem;
+    color:#666;
+
+}
+</style>
+</head>
+<!--Body Start-->
+<body>
+ <div id="app">
+  <mynavbar></mynavbar>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div id="body">
+      <!--top nav-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark static-top">
+    <div class="container" >
+      <a class="navbar-brand" href="#" style="color: #ffff;"> إدارة المشاريع</a>
+      <button class="navbar-toggler" type="button" data-toggle="" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto" v-if="role ==='Managers' || role ==='HR'">             	
+            <li class="nav-item">
+            <a class="nav-link" href="./initiative.html">المبادارات</a>
+          </li>         
+             <li class="nav-item">
+            <a class="nav-link" href="./projects.html">المشاريع</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="./strategies.html">الاستراتيجيات</a>
+          </li>            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div   id="content_links">
+    <div class="row">
+    <div class="col-md-8">
+    <br>
+    <!--Tree Nav-->
+	<div>
+		<p>
+			<a href="./initiative.html">إدارة المشاريع</a> / 
+			<a href="./projects.html">المشاريع</a> /  
+			<a href="./project_form.html">إضافة مشروع</a>	
+		</p>
+	</div>
+      <hr>
+         
+        <div id="action-home">
+              		
+          <h3 align="right">طلب تغيير</h3>
+          <hr>
+<br>
+  <div id='chnageform'>
+		<form id="pchange-form" @submit.prevent="processForm" >
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="CDescription">وصف التغيير</label>
+                <textarea  class="form-control" id="CDescription"  name="p_Description" v-model="p_Description" placeholder=""></textarea>
+                </div>
+            <div class="form-group col-md-6">
+			<label for="Reason">مبررات التغيير</label>
+			<input type="text" class="form-control" id="Justification"name= 'p_Justification' placeholder="" v-model='p_Justification' >
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+			<label class="">أثر التغيير</label><br>
+                <input type="checkbox" id="time" onclick="selectCat()" name="p_ImpactCategory"  value="time">
+                <label for="time" ><span >الجدول الزمني</span>
+                </label><br>
+                <input type="checkbox" id="scope" name="p_ImpactCategory" onclick="selectCat()"  value="scope">
+                <label  for="scope"><span class=""> نطاق العمل </span></label>
+                <br>
+                <input type="checkbox" id="cost" onclick="selectCat()" name="p_ImpactCategory"  value="cost">
+                <label for="cost"><span >التكلفة </span>
+                </label><br>
+                <input type="checkbox" id="quality" name="p_ImpactCategory" onclick="selectCat()"  value="quality"> 
+                <label for="quality"><span ></span>الجودة 
+                </label><br>
+            </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6" > 
+            <label for="ImpactDetails">التفاصيل  </label>
+            <textarea  class="form-control" id="ImpactDetails"  name="p_ImpactDetails" v-model="p_ImpactDetails" placeholder=""></textarea>
+          </div>
+        <div class="form-group col-md-6" style="display:none;" id="AssociatedCost"> 
+			<label for="AssocCost">التكلفة  </label>
+			<input type="text" class="form-control"  id="AssocCost" name=""  >
+        </div>
+      </div>
+      <div class="row form-group col-md-6" style="display:none;" id="changedDate" >
+          <label for="CStartDate">تاريخ البداية  </label>
+          <input type="date" class="form-control" id="CStartDate" name=""  >
+        <label for="CEndDate">تاريخ الإنتهاء  </label>
+        <input type="date" class="form-control"  id="CEndDate" name=""  >
+    </div>
+
+</div>
+		<br>
+		<input class="btn btn-primary" type="submit" @click="submitValues" value="ارسال"/>
+		</form>
+    </div>
+    
+    </div>
+<br>
+<hr>   
+    </div>
+</div>
+    </div>
+
+</div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script id="base"></script>
+<script  class="vue" src="./changerequest.js"></script>
+
+<script>
+    function showCost(){
+        var AssociatedCost = document.getElementById("AssociatedCost");
+        if (AssociatedCost.style.display === "none") {
+            AssociatedCost.style.display = "inline";
+        } else {
+            AssociatedCost.style.display = "none";
+        }    
+    }
+    function showDate(){
+        var datePicker = document.getElementById("changedDate");
+        if (datePicker.style.display === "none") {
+            datePicker.style.display = "block";
+        } else {
+            datePicker.style.display = "none";
+        }  
+
+    }
+    
+    function selectCat(){
+
+
+    }
+
+</script>          
+</html>

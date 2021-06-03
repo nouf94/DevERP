@@ -1,0 +1,229 @@
+<html dir="rtl" lang="AR">
+  <head>
+    <title>إضافة مشروع</title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<meta name="description" content="au theme template">
+<meta name="author" content="Hau Nguyen">
+<meta name="keywords" content="au theme template">
+
+    <script src="../vue.js"></script>
+    <script src="../webjars/jquery/jquery.min.js"></script>
+    <script src="../webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="../webjars/stomp-websocket/stomp.min.js"></script>
+   
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+   	 <link href="../css/theme.css" rel="stylesheet" media="all">
+    <link href="../css/custom_style.css" rel="stylesheet" media="all">
+    
+		<link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <style>
+      body {
+  min-height: 94.5vh;
+  position: relative; 
+}
+   
+   #body{
+   position: block; 
+   padding-bottom:20vh;
+   }
+
+   
+#footer {
+  position: absolute;
+  bottom: 5.5%;
+  color:white;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+}
+ul {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.underline:hover{
+text-decoration: underline;
+color: red;
+}
+
+
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline p {
+  margin: 5px 10px 5px 0;
+  color: black;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 5px 5px 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+
+@media (max-width: 900px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.button{
+display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    line-height: 19px;
+    cursor: pointer;
+    margin-left: -1px;
+    padding: 4px 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    border: 1px solid #c6c6c6;
+    color: #000;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.button:active{
+background-color: #f6f6f6;
+    background-image: -webkit-linear-gradient(top,#f6f6f6,#f1f1f1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    }
+    textarea{
+    border-color: #cfcfcf;
+	  border-width: 1px;
+	  border-style: solid;
+	  border-radius: 0;
+  }
+</style>
+</head>
+<body>
+ <div id="app">
+  <mynavbar></mynavbar>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div id="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+    <div class="container">
+      <a class="navbar-brand" href="#"> إدارة المشاريع</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto" v-if="role ==='Managers' || role ==='HR'">
+             	
+            <li class="nav-item">
+            <a class="nav-link" href="./initiative.html">المبادارات</a>
+          </li>
+          
+             <li class="nav-item">
+            <a class="nav-link" href="./projects.html">المشاريع</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="./strategies.html">الاستراتيجيات</a>
+          </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+    <div   id="content_links">
+    <div class="row">
+    <div class="col-md-2">
+         	 <ul class="list-unstyled">
+         	<br> <br> <br>
+         		<li><a href="#">الرئيسية</a></li>
+         		<br>
+         		<li><a href="#">استعراض المشاريع</a></li>
+         		<li><a href="./project_form.html">إضافة مشروع</a></li>
+         	</ul>
+        
+        
+         </div>
+    <div class="col-md-8">
+	<br>
+	<div>
+		<p>
+			<a href="./initiative.html">إدارة المشاريع</a> / 
+			<a href="./projects.html">المشاريع</a> /  
+			<a href="./project_form.html">إضافة مشروع</a>
+			
+		</p>
+	</div>
+      <hr>
+         
+              <div id="action-home">
+              		
+          <h3 align="right">إضافة مشروع</h3>
+          <hr>
+<br>
+  
+		<form id="signup-form" @submit.prevent="processForm" style="width:100%">
+		<div class="form-inline">
+			<label>الرمز:</label>
+			<input type="text"  name= 'p_Code' v-model='p_Code' />
+			<label>الاسم:</label>
+			<input type="text" name= 'p_Name' v-model='p_Name' />
+		</div>
+		<div class="form-inline">
+			<label>ناريخ البدء:</label>
+			<input type="text" name='p_StartDate' v-model='p_StartDate' />
+			<label>تاريخ الاإنتهاء:</label>
+			<input type="text" name="p_EndDate" v-model='p_EndDate' />
+		</div>
+		<div class="form-inline">
+			<label>الميزانية:</label>
+			<input type="text"  name="p_Budget" v-model="p_Budget" />
+			<label>الوصف:</label>
+			<textarea  name="p_Description" v-model="p_Description" ></textarea>
+		</div>
+		<br>
+		<input class="button" type="submit" @click="submitValues" value="ارسال"/>
+		
+		</form>
+    </div>
+<br>
+<hr>
+     </div>
+              
+              
+              
+    </div>
+    </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <script id="base"></script>
+              <script class="vue" src="./strategies.js"></script> 
+              
+
+
+              
+</html>

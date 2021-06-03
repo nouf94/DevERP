@@ -1,0 +1,172 @@
+<html dir="rtl" lang="AR">
+<head>
+<meta charset="utf-8">
+<title>بيانات المبادرة</title>
+<script src="../vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   
+<link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+    <link id="headercss" href="../header.css" rel="stylesheet">
+   	<link id="stylecss" href="../style.css" rel="stylesheet">
+  
+   
+  
+    <style>
+  body {
+  min-height: 94.5vh;
+  position: relative; 
+}
+   
+   #body{
+   position: block; 
+   padding-bottom:20vh;
+   }
+
+   
+#footer {
+  position: absolute;
+  bottom: 5.5%;
+  color:white;
+  width: 100%;
+  margin: 0;
+  bottom: 0;
+}
+</style>
+  </head>
+  <body>
+ <div id="app">
+  <mynavbar></mynavbar>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div id="body">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+    <div class="container">
+      <a class="navbar-brand" href="#"> إدارة المشاريع</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto" v-if="role ==='Managers' || role ==='HR'">
+             	
+            <li class="nav-item">
+            <a class="nav-link" href="./initiative.html">المبادارات</a>
+          </li>
+          
+             <li class="nav-item">
+            <a class="nav-link" href="./projects.html">المشاريع</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="./strategies.html">الاستراتيجيات</a>
+          </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+    <div   id="content_links">
+    <div class="row">
+    <div class="col-md-2">
+        <ul class="list-unstyled">
+         	<br> <br> <br>
+         		<li><a href="#">الرئيسية</a></li>
+         		<br>
+         		<li><a href="#">استعراض المبادارات</a></li>
+         		<li><a href="./initiative_form.html">إضافة مبادرة</a></li>
+         	</ul>
+        
+         </div>
+    <div class="col-md-8"><br>
+    <div>
+    	<p>
+    		<a href="./initiative.html">المبادارات</a> / 
+    		<a href="./milestone.html">استعراض المبادرات</a> / 
+    		<a href="./milestone.html">بيانات المبادرة</a>
+    	</p>
+    </div>
+    <hr>
+         
+              
+              <div id="action-home">
+              		
+         
+<div class="row">
+        <div class="col-md-1"> </div>
+
+<div class="col-md-10">
+   
+    <h4> مبادرة:
+    <br>
+    مبادرة إطار تنظيمي لتعزيز البرمجيات الحرة ومفتوحة المصدر</h4>
+   
+    | <a href="./milestone_form.html">إضافة إنجاز </a> |
+     <hr>
+</div>
+</div>
+
+<div class="row">
+        <div class="col-md-1"> </div>
+
+<div class="col-md-8" align="left">
+ </div>
+</div>
+    <div class="row">
+
+<div class="col-md-6" align="right" v-for="emp in employee">
+
+   <div>
+    <br>
+    <p><strong>اسم الانجاز:</strong> {{emp.p_Name}}</p>
+
+<p><strong>الرقم الكامل للانجاز:</strong> {{emp.p_FullCode}}</p>
+    <p><strong>الرقم المختصر للانجاز:</strong> {{emp.p_Code}}</p>
+    <p><strong>نوع الانجاز:</strong> {{emp.p_Type}}</p>
+
+<p><strong>معيار الانجاز:</strong> {{emp.p_SuccessCriteria}}</p>
+    <p><strong>المخطط انجازه:</strong> {{emp.p_CompletePlanned}}</p>
+
+<p><strong>الانجاز الفعلي:</strong> {{emp.p_CompleteActual}}</p>
+    <p><strong>تم الانهاء:</strong> {{emp.p_Complete}}</p>
+
+    <p><strong>الثقل:</strong> {{emp.p_Weight}}</p>
+
+
+<br>
+<p><strong>النسبة:</strong> {{emp.p_Percentage}}</p>
+<p><strong>الحالة:</strong> {{emp.p_sdState}}</p>
+
+<p><strong>الوصف:</strong> {{emp.p_sdDescription}}</p>
+<p><strong>ملاحظات:</strong> {{emp.p_Notes}}</p>
+
+<p><strong>أسباب عدم الانتهاء:</strong> {{emp.p_IncompleteReasons}}</p>
+
+</div>
+<hr>
+</div>
+
+    </div>
+
+
+              </div>
+              <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+              <script class="vue" src="./milestone.js"></script>
+              
+    </div>
+    </div>
+    </div>
+   </div>
+   </body>
+     <script id="base"></script>	 
+    
+</html>
+
+

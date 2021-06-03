@@ -1,0 +1,1505 @@
+<html dir="rtl" lang="AR">
+    <head>
+        <!-- Required meta tags-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="au theme template">
+        <meta name="author" content="Hau Nguyen">
+        <meta name="keywords" content="au theme template">
+    
+        <!-- Title Page-->
+        <title>مشروع تطوير إنترنت الأشياء</title>
+    
+        <!-- Fontfaces CSS-->
+        <!-- Cutom CSS-->
+        <link href="../css/custom_style.css" rel="stylesheet" media="all">
+        <link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
+        <link id="headercss" href="../header.css" rel="stylesheet">
+        <link id="stylecss" href="../style.css" rel="stylesheet">
+         <!-- Main CSS-->
+         <link href="../css/theme.css" rel="stylesheet" media="all">
+         <!---->
+         <link href="../css/font-face.css" rel="stylesheet" media="all">
+         <link href="../vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+          <link href="../vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+          <link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+      
+          <!-- Bootstrap CSS
+          <link href="../vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all"> 
+          This one causes the tags to go to left
+      -->
+          <!-- Vendor CSS-->
+          <link href="../vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+          <link href="../vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+          <link href="../vendor/wow/animate.css" rel="stylesheet" media="all">
+          <link href="../vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+          <link href="../vendor/slick/slick.css" rel="stylesheet" media="all">
+          <link href="../vendor/select2/select2.min.css" rel="stylesheet" media="all">
+          <link href="../vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+        <style>
+            body {
+        min-height: 94.5vh;
+        position: relative; 
+      }
+         
+         #body{
+         position: block; 
+         padding-bottom:20vh;
+         }
+      
+         
+      #footer {
+        position: absolute;
+        bottom: 5.5%;
+        color:white;
+        width: 100%;
+        margin: 0;
+        bottom: 0;
+      }
+      ul {
+          display: block;
+          margin-block-end: 1em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
+          padding-inline-start: 40px;
+      }
+      
+      .underline:hover{
+      text-decoration: underline;
+      color: red;
+      }
+      
+      
+      .form-inline {  
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+      }
+      
+      .form-inline p {
+        margin: 5px 10px 5px 0;
+        color: black;
+      }
+      
+      .form-inline input {
+        vertical-align: middle;
+        margin: 5px 5px 5px 10px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+      }
+      
+      
+      @media (max-width: 900px) {
+        .form-inline input {
+          margin: 10px 0;
+        }
+        
+        .form-inline {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+      .button{
+      display: inline-block;
+          text-align: center;
+          border-radius: 2px;
+          line-height: 19px;
+          cursor: pointer;
+          margin-left: -1px;
+          padding: 4px 15px;
+          box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+          background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+          border: 1px solid #c6c6c6;
+          color: #000;
+          text-decoration: none;
+          font-family: sans-serif;
+      }
+      .button:active{
+      background-color: #f6f6f6;
+          background-image: -webkit-linear-gradient(top,#f6f6f6,#f1f1f1);
+          box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+          }
+          textarea{
+          border-color: #cfcfcf;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 0;
+        }
+      </style>
+    </head>
+<!--Body Start-->
+<body>
+ <div id="app">
+  <mynavbar></mynavbar>
+  <myfooter id="footer"></myfooter>
+  </div>  
+  <div id="body">
+      <!--top nav-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark static-top">
+    <div class="container" >
+      <a class="navbar-brand" href="#" style="color: #ffff;"> إدارة المشاريع</a>
+      <button class="navbar-toggler" type="button" data-toggle="" data-target="#home-navbarResponsive" aria-controls="home-navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="home-navbarResponsive">
+        <ul class="navbar-nav ml-auto" v-if="role ==='Managers' || role ==='HR'">             	
+            <li class="nav-item">
+            <a class="nav-link" href="./initiative.html">المبادارات</a>
+          </li>         
+             <li class="nav-item">
+            <a class="nav-link" href="./projects.html">المشاريع</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="./strategies.html">الاستراتيجيات</a>
+          </li>            
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div   id="content_links">
+    <div class="row">
+    <div class="col-md-3"id="">
+        <nav id="sidebar" class="sidebar collapsed bg-light" >
+            <div class="sidebar-content js-simplebar" data-simplebar="init" style="height: 100%; overflow: hidden scroll;">
+				<ul class="sidebar-nav">
+					
+					<li class="sidebar-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout align-middle"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                            <a href="#ProjectMgt" data-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
+
+              <span class="align-middle">إدارة المشاريع</span>
+            </a>
+						<ul id="ProjectMgt" class="sidebar-dropdown list-unstyled collapse" data-parent="#sidebar" style>
+							<li class="sidebar-item"><a class="sidebar-link" href="dashboard-default.html">استعراض المشاريع</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="dashboard-saas.html"> إنشاء مشروع</a></li>
+              <li class="sidebar-item"><a class="sidebar-link" href="dashboard-analytics.html">طلب تغيير</a></li>
+						</ul>
+					</li>
+                </ul>
+ </div>
+</nav>
+         
+    </div>
+
+    <div class="col-md-8">
+    <br>
+    <!--Tree Nav-->
+	<div>
+		<p>
+			<a href="./initiative.html">إدارة المشاريع</a> / 
+			<a href="./projects.html">المشاريع</a> /  
+            مشروع تطوير إنترنت الأشياء	
+        		</p>
+  </div>
+
+      <hr>
+         
+        <div id="action-home">
+              		
+          <h3 align="right"> مشروع تطوير إنترنت الأشياء	</h3>
+          <hr>
+<br>
+
+
+<div class="card">
+    <div class="card-header">
+    <strong class="card-title">وصف المشروع</strong>
+    </div>
+    <div class="card-body">
+    <p class="card-text">
+        تطوير مشروع انترنت الأشياء
+    </p>
+    </div>
+    </div>
+  
+            <div class="row">
+            
+                <div class="progress row">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+               
+                </div>
+            </div>
+        </br>
+          <!-- Alerts Section -->
+          <div id="Alert" style="display: none;">
+  <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+    تم إرسال الطلب بنجاح     
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+        </button>
+        </div>
+      </div>
+      <div id="Error" style="display: none;">
+        <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+حدث خطأ الرجاء المحاولة في وقت لاحق 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">×</span>
+              </button>
+              </div>
+            </div>
+    <div class="row"> 
+
+        <div class="default-tab .col-md-6 .offset-md-3">
+            <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active show" id="nav-goals-tab" data-toggle="tab" href="#nav-goals" role="tab" aria-controls="nav-goals" aria-selected="true">الأهداف</a>
+            <a class="nav-item nav-link" id="nav-outputs-tab" data-toggle="tab" href="#nav-outputs" role="tab" aria-controls="nav-outputs" aria-selected="false">المخرجات</a>
+            <a class="nav-item nav-link" id="nav-tasks-tab" data-toggle="tab" href="#nav-tasks" role="tab" aria-controls="nav-tasks" aria-selected="false">المعالم</a>
+            <a class="nav-item nav-link" id="nav-procplan-tab" data-toggle="tab" href="#nav-procplan" role="tab" aria-controls="nav-procplan" aria-selected="false">خطة المشتريات</a>
+            <a class="nav-item nav-link" id="nav-risks-tab" data-toggle="tab" href="#nav-risks" role="tab" aria-controls="nav-risks" aria-selected="false">المخاطر والمشاكل</a>
+            <a class="nav-item nav-link" id="nav-requests-tab" data-toggle="tab" href="#nav-requests" role="tab" aria-controls="nav-requests" aria-selected="false">الطلبات</a>
+            <a class="nav-item nav-link" id="nav-files-tab" data-toggle="tab" href="#nav-files" role="tab" aria-controls="nav-files" aria-selected="false">الملفات</a>
+            <a class="nav-item nav-link" id="nav-team-tab" data-toggle="tab" href="#nav-team" role="tab" aria-controls="nav-team" aria-selected="false">أعضاء الفريق</a>
+  
+          </div>
+            </nav>
+            <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                <div class="tab-pane fade active show" id="nav-goals" role="tabpanel" aria-labelledby="nav-goals-tab">
+                </br>
+                  <!-- Add Goal-->
+                  <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#addGoal">
+                    <i class="zmdi zmdi-plus"></i>إضافة هدف</button>
+                    <!-- Modal -->
+<div id="addGoal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">إضافة هدف</h4>
+      </div>
+      <div class="modal-body" style="float: right;">
+          <form  id="pgoal-form" >
+              <div class="form-row">
+                  <div class="form-group col-lg-12">
+                  <label for="gName"> الهدف</label>
+                  <input type="text"  class="form-control" id="gName"name= 'p_gName' placeholder="" v-model='p_gName' >
+              </div>
+              <div class="form-group col-lg-12">
+                <label for="GoalEffect" >مستوى التأثير  </label> </br>
+                <textarea  class="form-control" id="GoalEffect"name='p_GoalEffect' placeholder="" v-model='p_GoalEffect' ></textarea>
+            </div>
+          </div>
+
+      <div class="form-row">
+        <div class="form-group col-lg-12">
+          <label> الهدف الاستراتيجي </label>
+            <select name="select" id="GoalStr"  v-for="stratgy in Strategies" class="form-control">
+            <option value=""> {{stratgy.p_Name}}</option>
+            </select>
+    </div>
+    <div class="form-group col-lg-12">
+      <label> مقياس الأداء</label>
+      <select name="select" id="GoalKPI" class="form-control">
+        <option value="0">مقياس ١</option>
+        <option value="1"> مقياس ٢</option>
+        </select> 
+      </div>
+</div>     
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" @click="AddGoal" class="btn btn-primary " data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
+        &nbsp;
+        <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+                  <!-- Goal Table -->
+               
+                </br>
+                <div id="NoGoals" style="display: none;"  > 
+                  <h3 class="text-center title-2">لا يوجد طلبات مدخلة</h3>
+                </div>
+
+                <div class="table-responsive table-responsive-data2" style="display: none;" id="GoalsTable">
+                    <table class="table table-data2">
+                    <thead>
+                    <tr>
+                    <th>
+                    #
+                    </th>
+                    <th>الهدف</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="tr-shadow" data-toggle="modal" v-for="(goal, index)  in Goals"  @click="viewGoal" data-target="#viewGoal" >
+                    <td>
+                    {{index+1}}
+                    </td>
+                    <td> {{goal.p_Description}}    </td>
+                    <td>
+                    <div class="table-data-feature">
+                    <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                    <i class="zmdi zmdi-edit"></i>
+                    </button>
+                    <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                    <i class="zmdi zmdi-delete"></i>
+                    </button>
+                    <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
+                    <i class="zmdi zmdi-more"></i>
+                    </button>
+                    </div>
+                    </td>
+                    </tr>
+                    <tr class="spacer"></tr>
+              
+                    <tr class="spacer"></tr>
+                    </tbody>
+                    </table>
+                  </div><!-- Close Table div-->
+
+                    <!-- View Goal -->
+
+                    <div id="viewGoal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+                    
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">{{selectedGoal.p_Description}} </h4>
+                          </div>
+                          <div class="modal-body" style="float: right;">
+                            <div class="form-row">
+                              <div class="form-group col-lg-12">
+                              <label for="tName"><strong> الهدف </strong></label></br>
+                              <label  id="tName" >
+                              {{selectedGoal.p_Description}}</label>
+                          </div>
+                          <div class="form-group col-md-6" >
+                            <label for="Mweight"><strong>  التأثير </strong></label></br>
+                            <label  id="Mweight" >
+                              {{selectedGoal.p_Impact}}</label>
+                          </div>
+                      </div>                
+                <hr>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label><strong>الأهداف الاستراتيجية المرتبطة</strong></label>
+                      <ul>
+                        <li>هدف ١</li>
+                        <li>هدف ٢</li>
+                      </ul>
+              </div>
+              <div class="form-group col-md-6">
+                <label><strong> مقاييس الأداء</strong></label>
+                <ul>
+                  <li>مقياس ١</li>
+                  <li>مقياس ٢</li>
+                </ul>
+              </div>
+             </div>
+                </div><!-- close body-->
+                <div class="modal-footer">
+                  <button type="reset" class="btn btn-info" data-dismiss="modal"><i class="fa fa-arrow-circle-left"></i>العودة</button>
+                </div><!-- close Footer-->
+                      </div><!--close Content-->
+            </div><!--Close Dialog-->
+               </div><!--Close viewGoal-->
+                </div><!--Close Goals nav-->
+
+                <div class="tab-pane fade " id="nav-outputs" role="tabpanel" aria-labelledby="nav-outputs-tab">
+               <!-- Add Output-->
+              </br>
+              <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#addOutput">
+                 <i class="zmdi zmdi-plus"></i>إضافة مخرج</button>
+
+                 <!-- Modal -->
+<div id="addOutput" class="modal fade" role="dialog">
+ <div class="modal-dialog">
+
+   <!-- Modal content-->
+   <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+       <h4 class="modal-title">إضافة مخرج</h4>
+     </div>
+     <div class="modal-body" style="float: right;">
+         <form  id="poutput-form" >
+             <div class="form-row">
+                 <div class="form-group col-lg-12">
+                 <label for="OName"> المخرج</label>
+                 <input type="text"  class="form-control" id="OName"name= 'p_OName' placeholder="" v-model='p_OName' >
+             </div>
+             <div class="form-group col-lg-12">
+               <label for="ODesc" > وصف المخرج </label> </br>
+               <textarea class="form-control" id="ODesc"name= 'p_ODesc' placeholder="" v-model='p_ODesc' ></textarea>
+           </div>
+         </div>
+
+         <div class="form-row">
+            
+             <div class="form-group col-md-6" >
+                 <label for="OStartDate" >تاريخ البدء    </label>
+                 <input type="date" class="form-control"  id="OStartDate" name="p_OStartDate" v-model="p_OStartDate" >
+             </div>
+        
+             <div class="form-group col-md-6">
+                 <label for="OEndDate">تاريخ الإنتهاء   </label>
+                 <input type="date" class="form-control"  id="OEndDate" name="p_OEndDate" v-model="p_OEndDate" >
+             </div>
+     </div>
+     <div class="form-row">
+       <div class="form-group col-lg-12">
+         <label>المخرجات المرتبطة</label>
+           <select name="select" id="ODlivrables" class="form-control">
+           <option value="0">مخرج ١</option>
+           <option value="1"> مخرج ٢</option>
+           </select>
+   </div>
+   <div class="form-group col-lg-12">
+    <label> التسليمات </label>
+      <select name="select" id="ODlivrables" class="form-control">
+      <option value="0">ت ١</option>
+      <option value="1"> ت٢ ٢</option>
+      </select>
+</div>
+
+</div>
+
+         </form>
+     </div>
+     <div class="modal-footer">
+       
+       <button type="submit" class="btn btn-primary " data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
+       &nbsp;
+       <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
+
+     </div>
+   </div>
+
+ </div>
+</div>
+               
+
+               <!-- Outputs Table -->
+              </br>
+              <div class="table-responsive table-responsive-data2">
+                  <table class="table table-data2">
+                  <thead>
+                  <tr>
+                  <th>
+                  <label class="au-checkbox">
+                  <input type="checkbox">
+                  <span class="au-checkmark"></span>
+                  </label>
+                  </th>
+                  <th>المخرج</th>
+                  <th> المدة</th>
+                  <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="tr-shadow" data-toggle="modal" data-target="#viewTask" >
+                  <td>
+                  <label class="au-checkbox">
+                  <input type="checkbox">
+                  <span class="au-checkmark"></span>
+                  </label>
+                  </td>
+                  <td> تسليم تقرير المرحلة الأولى</td>
+                  <td>٢٠ يوم</td>
+                
+                  <td>
+                  <div class="table-data-feature">
+                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                  <i class="zmdi zmdi-edit"></i>
+                  </button>
+                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                  <i class="zmdi zmdi-delete"></i>
+                  </button>
+                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
+                  <i class="zmdi zmdi-more"></i>
+                  </button>
+                  </div>
+                  </td>
+                  </tr>
+      
+                  <tr class="spacer"></tr>
+      
+                  <tr class="tr-shadow">
+                  <td>
+                  <label class="au-checkbox">
+                  <input type="checkbox">
+                  <span class="au-checkmark"></span>
+                  </label>
+                  </td>
+                  <td>تسليم تقرير تدريب الموظفين</td>
+                  <td> ١٥ يوم</td>
+                  <td>
+                  <div class="table-data-feature">
+                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                  <i class="zmdi zmdi-edit"></i>
+                  </button>
+                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                  <i class="zmdi zmdi-delete"></i>
+                  </button>
+                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
+                  <i class="zmdi zmdi-more"></i>
+                  </button>
+                  </div>
+                  </td>
+                  </tr>
+                  <tr class="spacer"></tr>
+                  </tbody>
+                  </table>
+
+               <!-- View Output -->
+                </div>
+
+                </div>
+                
+            <div class="tab-pane fade " id="nav-tasks" role="tabpanel" aria-labelledby="nav-tasks-tab">
+            </br>
+                 <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#addTask">
+                    <i class="zmdi zmdi-plus"></i>إضافة معلم</button>
+
+                    <!-- Modal -->
+<div id="addTask" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">إضافة معلم</h4>
+        </div>
+        <div class="modal-body" style="float: right;">
+            <form  id="ptask-form" >
+                <div class="form-row">
+                    <div class="form-group col-lg-12">
+                    <label for="tName"> المعلم</label>
+                    <input type="text"  class="form-control" id="tName"name= 'p_tName' placeholder="" v-model="p_tName" >
+                </div>
+                <div class="form-group col-lg-12">
+                  <label for="Mstatus" >حالة المعلم </label> </br>
+                  <input type="checkbox" class="mr-3" id="Mstatus"name= 'p_Mstatus' placeholder="" v-model='p_Mstatus' >
+                  <label for="Mstatus" class="form-check-label">مكتمل</label>
+
+              </div>
+            </div>
+
+            <div class="form-row">
+               
+              <div class="form-group col-md-6" >
+                <label for="Mweight"> وزن المعلم</label>
+                <input type="text"  class="form-control" id="Mweight"name= 'p_Mweight' placeholder="" v-model='p_Mweight' >
+              </div>
+         
+              <div class="form-group col-md-6">
+                  <label>وزن المعلم التراكمي  </label>
+                  <input type="text"  class="form-control" id="MCweight"name= 'p_MCweight' placeholder="" v-model='p_MCweight' >
+                </div>
+      </div>
+            <div class="form-row">
+               
+                <div class="form-group col-md-6" >
+                    <label for="MExpDate" >تاريخ الإنتهاء المتوقع   </label>
+                    <input type="date" class="form-control"  id="MExpDate" name="p_MExpDate" v-model="p_MExpDate" >
+                </div>
+           
+                <div class="form-group col-md-6">
+                    <label for="MAcutDate">تاريخ الإنتهاء الفعلي  </label>
+                    <input type="date" class="form-control"  id="MAcutDate" name="p_MAcutDate" v-model="p_MAcutDate" >
+                </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-lg-12">
+            <label>المخرجات المرتبطة</label>
+              <select name="select" id="MSDlivrables" class="form-control">
+              <option value="0">مخرج ١</option>
+              <option value="1"> مخرج ٢</option>
+              </select>
+      </div>
+      <div class="form-group col-lg-12">
+        <label>المخاطر المرتبطة</label>
+        <select name="select" id="MSrisks" class="form-control">
+          <option value="0">خطر ١</option>
+          <option value="1"> خطر ٢</option>
+          </select>  </div>
+  </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>الوثائق الداعمة</label>
+            <input type="file" id="file-input" name="file-input" class="form-control-file">
+          </div>
+        </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          
+          <button type="submit" class="btn btn-primary " @click='AddProjectMilestone' data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
+          &nbsp;
+          <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
+
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+<!-- Tasks Table-->
+        </br>
+        <div id="NoTasks"  style="display: none;" >  
+          <h3 class="text-center title-2">لا يوجد معالم مدخلة</h3>
+        </div>
+        <div class="table-responsive table-responsive-data2" style="display: none;" id='TasksTable'>
+            <table class="table table-data2">
+            <thead>
+            <tr>
+            <th>
+            <label class="au-checkbox">
+            <input type="checkbox">
+            <span class="au-checkmark"></span>
+            </label>
+            </th>
+            <th>المعلم</th>
+            <th> تاريخ الإنتهاء المتوقع</th>
+            <th>الحالة</th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="tr-shadow" data-toggle="modal" v-for="task in Tasks" @click="viewTask"  data-target="#viewTask" >
+            <td>
+            <label class="au-checkbox">
+            <input type="checkbox">
+            <span class="au-checkmark"></span>
+            </label>
+            </td>
+            <td>{{task.p_Name}} </td>
+            <td> {{task.p_CompletedActualDate}}</td>
+            <td>
+            <span v-if="task.p_CompletePercentage" class="status--process">مكتمل</span>
+            <span v-else class="status--denied">لم يكتمل</span>
+
+            </td>
+            <td>
+            <div class="table-data-feature">
+            <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+            <i class="zmdi zmdi-edit"></i>
+            </button>
+            <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+            <i class="zmdi zmdi-delete"></i>
+            </button>
+            <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
+            <i class="zmdi zmdi-more"></i>
+            </button>
+            </div>
+            </td>
+            </tr>            
+            <tr class="spacer"></tr>
+            </tbody>
+            </table>
+
+            <div id="viewTask" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+              
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">{{selectedTask.p_Name}} </h4>
+                    </div>
+                    <div class="modal-body" style="float: right;">
+                      <div class="form-row">
+                        <div class="form-group col-lg-12">
+                        <label for="tName"><strong> المعلم </strong></label></br>
+                        <label  id="tName" >
+                        {{selectedTask.p_Name}}</label>
+                    </div>
+                    <div class="form-group col-lg-12">
+                      <label for="Mstatus" ><strong>حالة المعلم </strong></label> </br>
+                      <span v-if="selectedTask.p_CompletePercentage" class="status--process">مكتمل</span>
+                      <span v-else class="status--denied">لم يكتمل</span>
+              
+                  </div>
+                </div>
+    <hr>
+                <div class="form-row">
+                   
+                  <div class="form-group col-md-6" >
+                    <label for="Mweight"><strong> وزن المعلم </strong></label></br>
+                    <label  id="Mweight" >
+                      {{selectedTask.p_Weight}}</label>
+                  </div>
+             
+                  <div class="form-group col-md-6">
+                      <label><strong>وزن المعلم التراكمي  </strong></label></br>
+                      <label  id="Mweight" >
+                         </label>
+                      </div>
+          </div>
+          <hr>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6" >
+                        <label for="MExpDate" ><strong>تاريخ الإنتهاء المتوقع  </strong> </label></br>
+                        <label id="MExpDate" >  {{selectedTask.p_CompletePlannedDate}}  </label>
+                    </div>
+               
+                    <div class="form-group col-md-6">
+                        <label for="MAcutDate"><strong>تاريخ الإنتهاء الفعلي  </strong></label></br>
+                        <label id="MAcutDate" >  {{selectedTask.p_CompletedActualDate}}  </label>
+                    </div>
+            </div>
+            <hr>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label><strong>المخرجات المرتبطة</strong></label>
+                  <ul>
+                    <li>مخرج ١</li>
+                    <li>مخرج ٢</li>
+                  </ul>
+          </div>
+          <div class="form-group col-md-6">
+            <label><strong>المخاطر المرتبطة</strong></label>
+            <ul>
+              <li>خطر ١</li>
+              <li>خطر ٢</li>
+            </ul>
+          </div>
+         </div>
+         <hr>
+
+            <div class="form-row">
+            <div class="form-group col-md-6">
+              <label><strong>الوثائق الداعمة</strong></label>
+                <input type="file" id="file-input" name="file-input" class="form-control-file">
+              </div>    
+            </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="reset" class="btn btn-info" data-dismiss="modal"> <i class="fa fa-arrow-circle-left"></i>العودة</button>
+                    </div>
+
+                  </div>
+
+            </div>
+             </div>
+            </div>
+       
+            </div>
+            <div class="tab-pane fade" id="nav-procplan" role="tabpanel" aria-labelledby="nav-procplan-tab">
+
+              <!-- Add Procurment -->
+
+            </br>
+            <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#addProc">
+               <i class="zmdi zmdi-plus"></i>إضافة شراء</button>
+
+               <!-- Modal -->
+<div id="addProc" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+ <!-- Modal content-->
+ <div class="modal-content">
+   <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal">&times;</button>
+     <h4 class="modal-title">إضافة شراء</h4>
+   </div>
+   <div class="modal-body" style="float: right;">
+       <form  id="pproc-form" >
+           <div class="form-row">
+               <div class="form-group col-lg-12">
+               <label for="Pscope"> نطاق الشراء</label>
+               <input type="text"  class="form-control" id="Pscope"name= 'p_Pscope' placeholder="" v-model='p_Pscope' >
+           </div>
+           <div class="form-group col-lg-12">
+             <label for="Pcost" > القيمة المتوقعة </label> </br>
+             <div class=" input-group">
+            <input type="text" class="form-control" id="Pcost"name= 'p_Pcost' placeholder="" v-model='p_Pcost' >
+            <div class="input-group-addon">   ريال</div>
+          </div>
+        </div>
+
+         <div class="form-group col-lg-12" >
+          <label for="Pmethod">  طريقة الشراء</label>
+          <input type="text"  class="form-control" id="Pmethod"name= 'p_Pmethod' placeholder="" v-model='p_Pmethod' >
+        
+        </div>
+       </div>
+
+       </form>
+   </div>
+   <div class="modal-footer">
+     
+     <button type="submit" class="btn btn-primary " data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
+     &nbsp;
+     <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
+
+   </div>
+ </div>
+
+</div>
+</div>
+
+              <!-- Procurment Table -->
+
+            </br>
+            <div class="table-responsive table-responsive-data2">
+                <table class="table table-data2">
+                <thead>
+                <tr>
+                <th>
+                <label class="au-checkbox">
+                <input type="checkbox">
+                <span class="au-checkmark"></span>
+                </label>
+                </th>
+                <th>نطاق الشراء</th>
+                <th>التكلفة المتوقعة </th>
+                <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tr-shadow" data-toggle="modal" data-target="#viewProc" >
+                <td>
+                <label class="au-checkbox">
+                <input type="checkbox">
+                <span class="au-checkmark"></span>
+                </label>
+                </td>
+                <td> شراء معدات </td>
+                <td>٣٠،٠٠٠ ريال </td>
+                <td>
+                <div class="table-data-feature">
+                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                <i class="zmdi zmdi-edit"></i>
+                </button>
+                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                <i class="zmdi zmdi-delete"></i>
+                </button>
+                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
+                <i class="zmdi zmdi-more"></i>
+                </button>
+                </div>
+                </td>
+                </tr>
+    
+                <tr class="spacer"></tr>
+    
+                <tr class="tr-shadow">
+                <td>
+                <label class="au-checkbox">
+                <input type="checkbox">
+                <span class="au-checkmark"></span>
+                </label>
+                </td>
+                <td>  تدريب الموظفين</td>
+                <td> ١٥،٠٠٠ ريال </td>
+                <td>
+                <div class="table-data-feature">
+                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                <i class="zmdi zmdi-edit"></i>
+                </button>
+                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                <i class="zmdi zmdi-delete"></i>
+                </button>
+                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
+                <i class="zmdi zmdi-more"></i>
+                </button>
+                </div>
+                </td>
+                </tr>
+                <tr class="spacer"></tr>
+                </tbody>
+                </table>
+
+             <!-- View procurment -->
+            </div>    
+            </div>
+            <div class="tab-pane fade" id="nav-risks" role="tabpanel" aria-labelledby="nav-risks-tab">
+            </br>
+            <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#addRisk">
+               <i class="zmdi zmdi-plus"></i> إضافة خطر/ مشكلة  </button>
+
+  <!-- Modal -->
+  <div id="addRisk" class="modal fade">
+    <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content" id="riskcnt">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">إضافة خطر/ مشكلة</h4>
+        </div>
+        <div class="modal-body">
+            <form  id="prisk-form">
+                <div class="form-row">
+                    <div class="form-group col-lg-12">
+                    <label for="rName"> الخطر/المشكلة</label>
+                    <input type="text"  class="form-control" id="rName"name= 'p_rName' placeholder="" v-model='p_rName' >
+                  </div>
+                </div>
+                  <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="rType">  النوع</label>
+                  <select name="select" id="Rtype" onchange="showProb(this)"  class="form-control">
+                    <option v-bind:value="false">خطر </option>
+                    <option v-bind:value="true"> مشكلة </option>
+                    </select>             
+                   </div>
+                   <div class="form-group col-md-6" >
+                    <label for="rStatus">  الحالة</label>
+                    <select name="select" id="rStatus"  class="form-control">
+                      <option value="true"> مفتوح</option>
+                      <option value="false"> مغلق</option>
+                      </select>
+                   </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="rEffect"> التأثير </label>
+                <select name="select" id="Reffect" class="form-control">
+                  <option value="high">عالي </option>
+                  <option value="medium">  متوسط </option>
+                  <option value="low">  منخفض </option>
+                  </select>             
+                 </div>
+                 <div class="form-group col-md-6"  id="probSec">
+                  <label for="rProb">  الاحتمالية</label>
+                  <select name="select" id="rProb" class="form-control" >
+                    <option value="frequent"> غالباً</option>
+                    <option value="occasional"> أحياناً</option>
+                    <option value="unlikely"> نادرًا </option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-lg-12" >
+                    <label>المالك</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control"  name="p_rOwner" v-model="p_rOwner" >
+                      <div class="input-group-addon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    </div>
+
+                </div>
+                <div class="form-group col-lg-12" >
+                  <label for="Response">  الإجراء</label>
+                  <textarea  class="form-control" id="Response"name= 'p_Response' placeholder="" v-model='p_Response' ></textarea>
+                </div>
+              </div>
+              <div class="form-row">
+            
+                <div class="form-group col-lg-12" >
+                  <label for="resolveDate">  التاريخ المتوقع لإنهاء الإجراء </label>
+                  <input type="date"  class="form-control" id="resolveDate"name= 'p_resolveDate' placeholder="" v-model='p_resolveDate' >
+                </div>
+              </div>
+
+            </form>
+      
+        </div>
+      <div class="modal-footer">  
+        <button type="submit" class="btn btn-primary " @click="AddProjectRisk" data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
+        &nbsp;
+        <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
+    </div>
+       </div>
+    </div>
+  </div>
+
+  <!-- Risks Table -->
+               
+</br>
+<div id="NoRisks" style="display: none;"> 
+  <h3 class="text-center title-2">لا يوجد مخاطر/مشاكل مدخلة</h3>
+</div>
+
+<div class="table-responsive table-responsive-data2" style="display: none;" id="RisksTable">
+    <table class="table table-data2">
+    <thead>
+    <tr>
+    <th>
+    #
+    </th>
+    <th>الخطر/المشكلة</th>
+    <th>تاريخ الانتهاء المتوقع</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="tr-shadow" data-toggle="modal" v-for="(risk, index)  in Risks"  @click="viewRisk" data-target="#viewRisk" >
+    <td>
+    {{index+1}}
+    </td>
+    <td> <span>{{risk.p_Title}} </span> </td>
+    <td> {{risk.p_ExpectedDeadline}} </td>
+    <td>
+    <div class="table-data-feature">
+    <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+    <i class="zmdi zmdi-edit"></i>
+    </button>
+    <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+    <i class="zmdi zmdi-delete"></i>
+    </button>
+    <div >
+   <!-- <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
+    <i v-if="risk.p_IsIssue && risk.p_IsOpen" class="fa fa-exclamation-circle" style="color: red;"></i>
+    </button>-->
+  </div>
+    </div>
+    </td>
+    </tr>
+    <tr class="spacer"></tr>
+
+    <tr class="spacer"></tr>
+    </tbody>
+    </table>
+  </div><!-- Close Table div-->
+
+  <div id="viewRisk" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">{{selectedRisk.p_Title}} </h4>
+        </div>
+        <div class="modal-body" style="float: right;">
+          <div class="form-row">
+            <div class="form-group col-lg-12">
+            <label for="riName"><strong> الخطر/المشكلة </strong></label></br>
+            <label  id="riName" >
+            {{selectedRisk.p_Title}}</label>
+        </div>
+        <div class="form-group col-md-6" >
+          <label for="rRespon"><strong>  الإجراء </strong></label></br>
+          <label  id="rRespon" >
+            {{selectedRisk.p_MitigationPlan}}</label>
+        </div>
+    </div>                
+<hr>
+<div class="form-row">
+<div class="form-group col-md-6">
+<label for="ritype"><strong>  النوع </strong></label></br>
+<label  id="ritype" >
+  <span v-if="selectedRisk.p_IsIssue" >مشكلة</span>
+  <span v-else>خطر</span>
+</label>
+</div>
+<div class="form-group col-md-6" >
+<label for="riOpen"><strong> الحالة </strong></label></br>
+<label id="riOpen" >
+  <span v-if="selectedRisk.p_IsOpen"  > مفتوح </span>
+  <span v-else > مغلق </span>
+</label>
+</div>
+</div>                
+<hr>
+<div class="form-row">
+  <div class="form-group col-md-6">
+  <label for="riEffrct"><strong>  التأثير </strong></label></br>
+  <label  id="riEffrct" >
+    <span v-if="selectedRisk.p_Severity == 'high' " >عالي</span>
+    <span v-else-if="selectedRisk.p_Severity == 'medium' ">متوسط</span>
+    <span v-else-if="selectedRisk.p_Severity == 'low' " >منخفض</span>
+  </label>
+  </div>
+  <div class="form-group col-md-6" >
+  <label for="riProb"><strong> الاحتمالية </strong></label></br>
+  <label id="riProb" >
+    <span v-if="selectedRisk.p_Probability == 'frequent' " >غالباً</span>
+    <span v-else-if="selectedRisk.p_Probability == 'occasional' ">أحياناً</span>
+    <span v-else-if="selectedRisk.p_Probability == 'unlikely' " >نادرًا</span>
+  </label>
+  </div>
+  </div>                
+  <hr>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <label for="riOwner"><strong>  المالك </strong></label></br>
+    <label  id="ritype" >
+
+    </label>
+    </div>
+    <div class="form-group col-md-6" >
+    <label for="riDate"><strong> التاريخ المتوقع لإنهاء الإجراء </strong></label></br>
+    <label id="riDate" >
+      {{selectedRisk.p_ExpectedDeadline}}
+    </label>
+    </div>
+    </div>  
+
+
+</div><!-- close body-->
+<div class="modal-footer">
+<button type="reset" class="btn btn-info" data-dismiss="modal"><i class="fa fa-arrow-circle-left"></i>العودة</button>
+</div><!-- close Footer-->
+    </div><!--close Content-->
+</div><!--Close Dialog-->
+</div><!--Close viewRisk-->
+
+
+            </div>
+            <div class="tab-pane fade" id="nav-requests" role="tabpanel" aria-labelledby="nav-requests-tab">
+            </br>
+              <button id="addchange" class="au-btn au-btn-icon au-btn--green au-btn--small li-modal" data-toggle="modal" data-target="#Change" >
+                <i class="zmdi zmdi-plus"></i> إضافة طلب تغيير </button>
+
+                <!-- Change Modal -->
+  <div id="Change" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md">
+       <!-- Modal content-->
+       <div class="modal-content" id="Changereq" style="float: right;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"> طلب تغيير</h4>
+        </div>
+        <div class="modal-body" style="float: right;" >
+		<form id="pchange-form" onsubmit="ValidateRequest()">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Ctitle">طلب التغيير</label>
+                <input  type="text"class="form-control" id="Ctitle"  name="p_title" v-model="p_Title" placeholder=""/>
+                </div>
+              <div class="form-group col-md-6">
+                <label for="CDescription">وصف التغيير</label>
+                <textarea  class="form-control" id="CDescription"  name="p_Description" v-model="p_Description" placeholder=""></textarea>
+                </div>
+                </div>
+                <div class="form-row">
+            <div class="form-group col-md-6">
+			<label for="Reason">مبررات التغيير</label>
+			<textarea class="form-control" id="Justification"name= 'p_Justification' placeholder="" v-model='p_Justification' ></textarea>
+        </div>
+
+        <div class="form-group col-md-6">
+			<label class="">أثر التغيير</label><br>
+                <input type="checkbox" id="time" name="p_ImpactCategory" onclick="ShowTime(this)" value="time">
+                <label for="time" ><span >الجدول الزمني</span>
+                </label><br>
+                <input type="checkbox" id="scope" name="p_ImpactCategory"  onclick="ShowScope(this)"  value="scope">
+                <label  for="scope"><span class=""> نطاق العمل </span></label>
+                <br>
+                <input type="checkbox" id="cost" name="p_ImpactCategory"   onclick="ShowCost(this)" value="cost">
+                <label for="cost"><span >التكلفة </span>
+                </label><br>
+                <input type="checkbox" id="quality" name="p_ImpactCategory"  onclick="ShowQuality(this)" value="quality"> 
+                <label for="quality"><span ></span>الجودة 
+                </label><br>
+                
+                  <div class="invalid-feedback" id="NoImpactError" >يجب إختيار أحد الخيارات أعلاه</div>
+
+            </div>
+            
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6"  id="qualityText" style="display:none;"> 
+            <label for="ImpactDetails">  التأثير على الجودة </label>
+            <textarea  class="form-control" id="qualityDetails"  name="p_ImpactDetails" placeholder=""></textarea>
+          </div>
+          <div class="form-group col-md-6" id="scopeText" style="display:none;" > 
+            <label for="ImpactDetails">  التأثير على نطاق العمل </label>
+            <textarea  class="form-control" id="scopeDetails"  name="p_ImpactDetails" placeholder=""></textarea>
+          </div>
+
+          <div class="form-row">
+        <div class="form-group col-md-6" style="display:none;" id="AssociatedCost"> 
+			<label for="AssocCost">التكلفة  </label>
+			<input type="text" class="form-control"  id="AssocCost" name=""  >
+        </div>
+      <div class="row form-group col-md-6" style="display:none;" id="changedDate" >
+          <label for="CStartDate">تاريخ البداية  </label>
+          <input type="date" class="form-control" id="CStartDate" name=""  >
+        <label for="CEndDate">تاريخ الإنتهاء  </label>
+        <input type="date" class="form-control"  id="CEndDate" name=""  >
+      </div>
+      </div>
+          </div>
+        </div>
+        <div class="modal-footer">  
+        <button type="submit" class="btn btn-primary " @click="submitValues" data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> إرسال</button>
+          &nbsp;
+          <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
+      </div>
+  
+    </form>
+
+       </div>
+       
+    </div>
+  </div>
+
+
+<!-- Requests Table -->
+<div id="NoReqts" > 
+ 
+  <h3 class="text-center title-2">لا يوجد طلبات مدخلة</h3>
+</div>
+<div class="table-responsive table-responsive-data2" id="RequestsTable" style="display: none;" >
+  <table class="table table-data2" id="Requests" ref="Requests">
+  <thead>
+  <tr>
+  <th>
+  <label class="au-checkbox">
+  <input type="checkbox">
+  <span class="au-checkmark"></span>
+  </label>
+  </th>
+  <th>الطلب</th>
+  <th>تاريخ الإنشاء</th>
+  <th>الحالة</th>
+  <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="tr-shadow" data-toggle="modal" v-for="req in Requests" @click="viewRequest" data-target="#viewRequest" >
+  <td>
+  <label class="au-checkbox">
+  <input type="checkbox">
+  <span class="au-checkmark"></span>
+  </label>
+  </td>
+  <td>{{req.p_Title}}</td>
+  <td>{{req.p_CreationDate}}</td>
+  <td>
+  <span class="status--process">مكتمل</span>
+  </td>
+  <td>
+  <div class="table-data-feature">
+  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+  <i class="zmdi zmdi-delete"></i>
+  </button>
+  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
+  <i class="zmdi zmdi-more"></i>
+  </button>
+  </div>
+  </td>
+  </tr>
+  <tr class="spacer"></tr>
+  </tbody>
+  </table>
+
+</div>
+<!-- View Goal -->
+
+                    <div id="viewRequest" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+                    
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">{{selectedRequest.p_Title}} </h4>
+                          </div>
+                          <div class="modal-body" style="float: right;">
+                            <div class="form-row">
+                              <div class="form-group col-lg-12">
+                              <label for="rName"><strong> الطلب </strong></label></br>
+                              <label  id="rName" >
+                              {{selectedRequest.p_Title}}</label>
+                          </div>
+                          <div class="form-group col-md-6" >
+                            <label for="rdescp"><strong>  الوصف </strong></label></br>
+                            <label  id="rdescp" >
+                              {{selectedRequest.p_Description}}</label>
+                          </div>
+                      </div>                
+                <hr>
+                <div class="form-row">
+                  <div class="form-group col-lg-12">
+                  <label for="rjust"><strong> مبررات التغيير </strong></label></br>
+                  <label  id="rjust" >
+                  {{selectedRequest.p_Justification}}</label>
+              </div>
+              <div class="form-group col-md-6" >
+                <label for="rEffect"><strong>  أثر التغيير </strong></label></br>
+                  <ul id="rEffect" >
+                    <li>هدف ١</li>
+                    <li>هدف ٢</li>
+                  </ul>
+              </div>
+          </div>                
+          <hr>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label><strong>الأهداف الاستراتيجية المرتبطة</strong></label>
+                      <ul>
+                        <li>هدف ١</li>
+                        <li>هدف ٢</li>
+                      </ul>
+              </div>
+              <div class="form-group col-md-6">
+                <label><strong> مقاييس الأداء</strong></label>
+                <ul>
+                  <li>مقياس ١</li>
+                  <li>مقياس ٢</li>
+                </ul>
+              </div>
+             </div>
+                </div><!-- close body-->
+                <div class="modal-footer">
+                  <button type="reset" class="btn btn-info" data-dismiss="modal"><i class="fa fa-arrow-circle-left"></i>العودة</button>
+                </div><!-- close Footer-->
+                      </div><!--close Content-->
+            </div><!--Close Dialog-->
+               </div><!--Close viewGoal-->
+
+            </div>
+            <div class="tab-pane fade" id="nav-files" role="tabpanel" aria-labelledby="nav-files-tab">
+                <br>
+                <div class="card text-center" style="background-color: rgb(247,247,247);" >
+                <div class="card-body">
+                    <input type="file" id="files" ref="files" v-on:change="handleFileUpload()" name="file-multiple-input" multiple="" >
+                    </div>
+                    <button type="reset" id="uploadbtn" @click="UploadFiles" class="btn btn-info" data-dismiss="modal" disabled><i class="fa fa-upload" ></i>&nbsp; رفع الملف </button>
+
+                </div>
+
+              </br>
+              <div id="NoFiles" style="display: none;" > 
+                <h3 class="text-center title-2">لا يوجد ملفات </h3>
+              </div>
+              <div class="table-responsive table-responsive-data2" style="display: none;" id="FilesTable">
+                  <table class="table table-data2">
+                  <thead>
+                  <tr>
+                  <th>
+                  #
+                  </th>
+                  <th>اسم الملف</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="tr-shadow" data-toggle="modal" v-for="(file, index)  in Files"  @click="" data-target="#viewFile" >
+                  <td>
+                  {{index+1}}
+                  </td>
+                  <td> {{file.p_Title}}   </td>
+                  <td>
+                  <div class="table-data-feature">
+                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                  <i class="zmdi zmdi-delete"></i>
+                  </button>
+                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
+                  <i class="zmdi fa-download"></i>
+                  </button>
+                  </div>
+                  </td>
+                  </tr>
+                  <tr class="spacer"></tr>
+            
+                  <tr class="spacer"></tr>
+                  </tbody>
+                  </table>
+                </div><!-- Close Table div-->
+
+            </div>
+            <div class="tab-pane fade" id="nav-team" role="tabpanel" aria-labelledby="nav-team-tab">
+            </div>
+            </div>
+    </div>
+
+       
+		<br>
+    </div>
+<br>
+<hr>   
+    </div>
+</div>
+    </div>
+
+</div>
+    <!-- Jquery JS-->
+    <script type="application/javascript" src="../vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script type="application/javascript" src="../vendor/bootstrap-4.1/popper.min.js"></script>
+    <script type="application/javascript" src="../vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!--Vue JS-->
+    <script  type="application/javascript" src="../vue.js"></script>
+    <!-- Vendor JS       -->
+    <script type="application/javascript" src="../vendor/slick/slick.min.js"></script>
+    <script type="application/javascript" src="../vendor/wow/wow.min.js"></script>
+    <script type="application/javascript" src="../vendor/animsition/animsition.min.js"></script>
+    <script type="application/javascript" src="../vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script type="application/javascript" src="../vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script type="application/javascript" src="../vendor/counter-up/jquery.counterup.min.js"></script>
+    <script type="application/javascript" src="../vendor/circle-progress/circle-progress.min.js"></script>
+    <script type="application/javascript" src="../vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script type="application/javascript" src="../vendor/chartjs/Chart.bundle.min.js"></script>
+    <script type="application/javascript" src="../vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script type="application/javascript"  src="../js/main.js"></script>
+
+</body>
+<script type="application/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="application/javascript" id="base"></script>
+<script type="application/javascript" class="vue" src="./projectinfo.js"></script>
+
+
+<script type="application/javascript" >
+function ShowTime(elm){
+        if($(elm).is(":checked"))   {
+            $("#changedDate").show();
+            document.getElementById('CStartDate').required=true;
+            document.getElementById('CEndDate').required=true;
+          }else{
+            $("#changedDate").hide();
+            document.getElementById('CStartDate').required=false;
+          }
+}
+function ShowScope(elm){
+  if($(elm).is(":checked")){   
+            $("#scopeText").show();
+            document.getElementById('scopeText').required=true;
+          }else{
+            $("#scopeText").hide();
+            document.getElementById('scopeText').required=false;
+        }
+}
+function ShowCost(elm){
+  if($(elm).is(":checked")) {
+            $("#AssociatedCost").show();
+            document.getElementById('AssociatedCost').required=true;
+          }else{
+            $("#AssociatedCost").hide();           
+             document.getElementById('AssociatedCost').required=false;
+        }
+}
+function showProb(elm){
+  if($('#Rtype :selected').val()=="false"){
+    $('#probSec').show();
+  }else{
+    console.log($('#Rtype :selected').val())
+    $('#probSec').hide();
+  }
+
+}
+
+function ShowQuality(elm){
+  if($(elm).is(":checked"))   {
+            $("#qualityText").show();
+            document.getElementById('qualityText').required=true;
+
+  }else{
+            $("#qualityText").hide();
+            document.getElementById('qualityText').required=false;
+  }
+}
+function ValidateRequest(){
+if($('input[name="p_ImpactCategory"]:checked').length > 0){
+  document.getElementById('NoImpactError').innerHTML="يجب إختيار أحد الخيارات أعلاه";
+return;
+}
+}/*
+$(function(){  
+    $('#riskcnt').load('addrisk.html');  
+});*/
+</script>          
+</html>
