@@ -86,7 +86,7 @@ var app = new Vue({
             index=(event.target.parentElement.rowIndex)-1;
             this.selectedRequest=this.Requests[index];
             this.ReadChangeRequestImpact(this.selectedRequest.p_CreationDate)
-            this.ReadChangeRequesttst(this.selectedRequest.p_CreationDate)
+            //this.ReadChangeRequesttst(this.selectedRequest.p_CreationDate)
 
           } 
       }//End  Methods
