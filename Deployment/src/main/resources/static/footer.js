@@ -1,4 +1,4 @@
-Vue.component('myfooter', {
+  Vue.component('myfooter', {
     template:' <div> '+
 '<div class="container-fluid padding" style="background-color:#0b2047"> '+
         '<div class="row text-center"> '+

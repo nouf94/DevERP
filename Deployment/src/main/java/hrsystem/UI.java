@@ -413,14 +413,7 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
          } 
          } 
          
-        public void ReadChangeRequestImpact( final int p_CreationDate ) throws XtumlException {
-            
-            try {
-            HRGuiController.Singleton().ReadChangeRequestImpact( p_CreationDate);
-         }catch(Exception e) {
-      	   
-         } 
-         } 
+
          public void sendProjectMember ( final String p_MemberName,  final String p_Role ) throws XtumlException {
           
           try {

@@ -27,14 +27,13 @@ var app = new Vue({
       readChnages:function (){
         axios.get('/rest/ReadAllChangeRequest')
         .then(response2 => (this.Requests = response2.data,
-          console.log(response2),
+          //console.log(response2),
           ProcessRequest(this.Requests)
             )).catch(error => {
               console.log(error.response)
           })},
       submitValues: function (event) {
         GetImpact();
-        console.log(Impacts[0])
           axios.put('/rest/CreateChangeRequest', {
             p_Title: this.p_Title,
             p_Description: this.p_Description,
@@ -43,7 +42,6 @@ var app = new Vue({
             p_ImpactCategory: Impacts[0],
             p_ImpactDetails: Details[0]
             }).then(response => {
-              console.log(response)
               //If the Change request has more than one Impact submit the rest Impacts here
               if(Impacts.length>1){
              this.submitImpact(response.data[0]['p_CreationDate'])}
@@ -74,10 +72,22 @@ var app = new Vue({
                   console.log(error)
               });
           },//End read GetImpact Method 
+          ReadChangeRequesttst: function (selectedDate) {
+            axios.put('/rest/TestReadChangeRequestByCreationDte', {
+              p_CreationDate:selectedDate
+              }).then(response => {
+                console.log('This is the tst result: ')
+                console.log(response)
+              }).catch(error => {
+                  console.log(error)
+              });
+          },//End read GetImpact Method 
           viewRequest:function(event){
             index=(event.target.parentElement.rowIndex)-1;
             this.selectedRequest=this.Requests[index];
             this.ReadChangeRequestImpact(this.selectedRequest.p_CreationDate)
+            this.ReadChangeRequesttst(this.selectedRequest.p_CreationDate)
+
           } 
       }//End  Methods
     

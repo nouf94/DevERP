@@ -36,6 +36,11 @@ public class ChangeRequest {
 		this.p_CreationDate = p_CreationDate;
 
 	}
+	public ChangeRequest(int p_CreationDate) {
+		this.p_CreationDate = p_CreationDate;
+
+	}
+
 	public String getP_Title() {
 		return p_Title;
 	}

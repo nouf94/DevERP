@@ -1997,12 +1997,12 @@ private static HRGuiController singleton;
 		return null;
 	}
 
-	@GetMapping(path="/ReadChangeRequestImpact", produces="application/json")
+	//@GetMapping(path="/ReadChangeRequestImpact", produces="application/json")
+	/*@PutMapping(path="/ReadChangeRequestImpact", consumes="application/json", produces="application/json")	
 	public Impact ReadChangeRequestImpact(int p_CreationDate) {
 		// TODO Auto-generated method stub
 		try {
 			Impact imp = new Impact();
-
 			UI.Singleton().Projects().ReadChangeRequestImpact(p_CreationDate);
 			Thread.sleep(700);
 			return imp;
@@ -2014,7 +2014,28 @@ private static HRGuiController singleton;
 			e.printStackTrace();
 		}
 		return null;
+	}*/
+
+	//List<ChangeRequest> changes = new ArrayList<ChangeRequest>();
+	@PutMapping(path="/TestReadChangeRequestByCreationDte", consumes="application/json", produces="application/json")	
+	public List<ChangeRequest> TestReadChangeRequestByCreationDte(@RequestBody ChangeRequest ch) {
+		// TODO Auto-generated method stub
+	try {
+			changes.clear();
+			UI.Singleton().Projects().TestReadChangeRequestByCreationDte(ch.getP_CreationDate());
+			Thread.sleep(700);
+			return changes;
+		} catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+
 	}
+	
  	List<ChangeRequest> changes = new ArrayList<ChangeRequest>();
 	@GetMapping(path="/ReadAllChangeRequest", produces="application/json")
 	public List<ChangeRequest> ReadAllChangeRequest() {
