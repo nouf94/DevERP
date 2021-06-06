@@ -22,15 +22,20 @@ CR.Justification = param.Justification;
 CR.ID=param.ID;
 */
 
-select any CR from instances of ChangeRequest where selected.CreationDate == param.CreationDate;
+/*select any CR from instances of ChangeRequest where selected.CreationDate == param.CreationDate;
 CR.Title=param.Title;
 CR.Description = param.Description;
 CR.Justification = param.Justification;
-	
+*/
+self.Title=param.Title;
+self.Description = param.Description;
+self.Justification = param.Justification;
 // select the project that this milestone belongs to
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
-		relate CR to project across R72.''Effects'';
+	//	relate CR to project across R72.''Effects'';
+		relate self to project across R72.''Effects'';
+	
 end if;
 
 // impact 
