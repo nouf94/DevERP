@@ -9,12 +9,6 @@ Vue.component('mynavbar', {
       '<div class="collapse navbar-collapse" id="navbarResponsive">'+
         '<ul class="navbar-nav ml-auto">'+
                       '<li class="nav-item">'+
-
-            
-
-               
-
-
             '<a class="nav-link" href="/Deployment/home/ar/">'+
 
              ' الرئيسية'+
@@ -30,9 +24,6 @@ Vue.component('mynavbar', {
           '<a class="nav-link" href="/project/home.html">إدارة المشاريع</a>'+
         '</li>'+
              '<li class="nave-item"><a class="nav-link" href="/logout"> تسجيل خروج   </a></li>'+
-
-                         
-
            
         '</ul>'+
       '</div>'+
