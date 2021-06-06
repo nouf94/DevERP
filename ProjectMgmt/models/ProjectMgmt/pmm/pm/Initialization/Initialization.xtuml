@@ -237,20 +237,20 @@ relate risk2 to project2 across R68.''threaten'';
 
 
 create object instance CR of ChangeRequest; 
-//tC=TIM::current_seconds();
+tC=TIM::current_seconds();
 
-CR.CreateChangeRequest( Title:"CR11", Description:"DDd", Justification:"jjjjj", ProjectCode:"Project1Code", CreationDate:3, ImpactCategory:"iii", ImpactDetails:"IIMM" );
+CR.CreateChangeRequest( Title:"CR11", Description:"DDd", Justification:"jjjjj", ProjectCode:"Project1Code", CreationDate:tC, ImpactCategory:"1", ImpactDetails:"IIMM" );
 
 create object instance impact of Impact; 
 
-impact.AddImpact( Category:"2", Details:"ddddd", ChangeRequestCreationDate:3 );
+impact.AddImpact( Category:"2", Details:"ddddd", ChangeRequestCreationDate:tC );
 
 
 
 create object instance CR2 of ChangeRequest; 
-CR2.CreateChangeRequest( Title:"CR22", Description:"DDd222", Justification:"jjjjj222", ProjectCode:"Project2Code", CreationDate:0, ImpactCategory:"2", ImpactDetails:"d22222" );
+CR2.CreateChangeRequest( Title:"CR22", Description:"DDd222", Justification:"jjjjj222", ProjectCode:"Project2Code", CreationDate:0, ImpactCategory:"3", ImpactDetails:"d22222" );
 create object instance impact2 of Impact; 
-impact2.AddImpact( Category:"3", Details:"ddddd33333", ChangeRequestCreationDate:0);
+impact2.AddImpact( Category:"4", Details:"ddddd33333", ChangeRequestCreationDate:CR2.CreationDate);
 
 
 

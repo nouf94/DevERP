@@ -30,6 +30,7 @@ CR.Justification = param.Justification;
 self.Title=param.Title;
 self.Description = param.Description;
 self.Justification = param.Justification;
+self.CreationDate=param.CreationDate;
 // select the project that this milestone belongs to
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
