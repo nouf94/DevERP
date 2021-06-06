@@ -466,12 +466,13 @@ INSERT INTO SPR_PS
 	'CreateChangeRequest',
 	'',
 	'create object instance CR of ChangeRequest;
-CR.CreationDate =TIM::current_seconds();
+TC =TIM::current_seconds();
 
 
-CR.CreateChangeRequest ( Title:param.Title, Description:param.Description, Justification:param.Justification, ProjectCode:param.ProjectCode, CreationDate:CR.CreationDate, ImpactCategory:param.ImpactCategory, ImpactDetails: param.ImpactDetails);
+CR.CreateChangeRequest ( Title:param.Title, Description:param.Description, Justification:param.Justification, ProjectCode:param.ProjectCode, CreationDate:TC, ImpactCategory:param.ImpactCategory, ImpactDetails: param.ImpactDetails);
 
-UI::SendChangeRequest( CreationDate:CR.CreationDate, Title:param.Title, Description:param.Description, Justification:param.Justification );
+UI::SendChangeRequest( CreationDate:TC, Title:param.Title, Description:param.Description, Justification:param.Justification );
+
 ',
 	1,
 	0,
@@ -783,9 +784,10 @@ if (not_empty changerequests)
 	
 	for each CH in changerequests
 		UI::SendChangeRequest( CreationDate:CH.CreationDate, Title:CH.Title, Description:CH.Description, Justification: CH.Justification);
+//	LOG::LogInteger(message:"creation date",i: CH.Description);
+LOG::LogTime( message:"creation date",t: CH.CreationDate);
 	end for;
 end if;
-
 ',
 	1,
 	0,
@@ -809,9 +811,11 @@ INSERT INTO SPR_PS
 	'select any change from instances of ChangeRequest where selected.CreationDate == param.CreationDate ; 
    
 if (not_empty change )
-	select many impacts related by change ->Impact[R73.''Includes''];
+	select many impacts related by change->Impact[R73.''Includes''];
 	for each impact in impacts
 		UI::SendChangeRequestImpact( Category:impact.Category, Details:impact.Details );
+		//LOG::LogTime( message:"creation date",t: impact.Category);
+		LOG::LogInfo( message:impact.Details );
 	end for;
 end if;',
 	1,
