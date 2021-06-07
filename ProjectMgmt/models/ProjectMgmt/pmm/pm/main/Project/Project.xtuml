@@ -8,6 +8,105 @@ INSERT INTO O_OBJ
 	'A group of activities set to achieve an 
 outcome with a defined beginning and end ',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("b94791bf-e023-4bff-b5f9-29a9a3c1ea32",
+	"5bf7a393-7efb-4cdf-8223-efe001e05df8",
+	'AddProject',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'
+	
+	self.Code = param.Code;
+	self.Name = param.Name;
+	self.Description = param.Description; 
+	self.StartDate = param.StartDate;
+	self.EndDate = param.EndDate;
+	self.Budget = param.Budget;
+	self.Duration=param.Duration; 
+	self.Sponsor=param.Sponsor;
+	
+
+
+
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("6ab13ab7-b705-4134-aa91-b4a16f019f26",
+	"b94791bf-e023-4bff-b5f9-29a9a3c1ea32",
+	'Code',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("4c831706-c6dc-47f2-a6a3-252d683778ac",
+	"b94791bf-e023-4bff-b5f9-29a9a3c1ea32",
+	'Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"6ab13ab7-b705-4134-aa91-b4a16f019f26",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("c276c0d6-3ed0-4e8a-a5a1-977556d6bf1c",
+	"b94791bf-e023-4bff-b5f9-29a9a3c1ea32",
+	'Description',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"4c831706-c6dc-47f2-a6a3-252d683778ac",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("bf883a66-c031-4f0f-b7d8-b1b00de6826b",
+	"b94791bf-e023-4bff-b5f9-29a9a3c1ea32",
+	'StartDate',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"c276c0d6-3ed0-4e8a-a5a1-977556d6bf1c",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("4bcdf9ec-996c-474a-9677-b2d091743480",
+	"b94791bf-e023-4bff-b5f9-29a9a3c1ea32",
+	'EndDate',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"bf883a66-c031-4f0f-b7d8-b1b00de6826b",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("0ada7a33-d584-4813-81e2-1c673b4f55ac",
+	"b94791bf-e023-4bff-b5f9-29a9a3c1ea32",
+	'Budget',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"4bcdf9ec-996c-474a-9677-b2d091743480",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("b4cadce6-b888-4bab-be78-5c980e664739",
+	"b94791bf-e023-4bff-b5f9-29a9a3c1ea32",
+	'Duration',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"0ada7a33-d584-4813-81e2-1c673b4f55ac",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("e987dec0-0095-4e7d-b10a-a749af059e82",
+	"b94791bf-e023-4bff-b5f9-29a9a3c1ea32",
+	'Sponsor',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"b4cadce6-b888-4bab-be78-5c980e664739",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("cf6eb72f-54f1-4738-bff6-c0f8866387ff",
 	"5bf7a393-7efb-4cdf-8223-efe001e05df8");
@@ -113,15 +212,12 @@ INSERT INTO O_ATTR
 	'',
 	'Budget',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
+	"ba5eda7a-def5-0000-0000-000000000003",
 	'',
 	'');
-INSERT INTO O_DBATTR
+INSERT INTO O_NBATTR
 	VALUES ("3570debe-e6d7-44d3-ae11-c8514107f540",
-	"5bf7a393-7efb-4cdf-8223-efe001e05df8",
-	'self.Duration = self.EndDate - self.StartDate;',
-	1,
-	0);
+	"5bf7a393-7efb-4cdf-8223-efe001e05df8");
 INSERT INTO O_BATTR
 	VALUES ("3570debe-e6d7-44d3-ae11-c8514107f540",
 	"5bf7a393-7efb-4cdf-8223-efe001e05df8");
