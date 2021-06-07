@@ -1392,6 +1392,34 @@ INSERT INTO C_EP_PROXY
 	'',
 	37,
 	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("57524bd5-3e4d-4b34-bc64-3b6172822b19",
+	"e7d2b948-7b81-40d9-a09c-525730a44895",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("57524bd5-3e4d-4b34-bc64-3b6172822b19",
+	'ReadChangeRequests',
+	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many CRs related by project->ChangeRequest[R72.''Effected by''];
+	for each CH in CRs
+		UI::SendChangeRequest( CreationDate:CH.CreationDate, Title:CH.Title, Description:CH.Description, Justification: CH.Justification);
+		
+	end for;
+end if;',
+	1,
+	0,
+	38);
+INSERT INTO C_EP_PROXY
+	VALUES ("e7d2b948-7b81-40d9-a09c-525730a44895",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadChangeRequests',
+	'',
+	38,
+	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	"00000000-0000-0000-0000-000000000000",

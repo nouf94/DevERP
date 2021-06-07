@@ -2603,7 +2603,7 @@ INSERT INTO SPR_RS
 	'TestReadChangeRequestByCreationDte',
 	'',
 	'',
-	3,
+	1,
 	0,
 	36);
 INSERT INTO C_EP_PROXY
@@ -2623,7 +2623,7 @@ INSERT INTO SPR_RS
 	'ReadProject',
 	'',
 	'',
-	3,
+	1,
 	0,
 	37);
 INSERT INTO C_EP_PROXY
@@ -2633,6 +2633,26 @@ INSERT INTO C_EP_PROXY
 	'ReadProject',
 	'',
 	37,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("b4dc1922-14f2-4ac3-a254-de67757c1257",
+	"e7d2b948-7b81-40d9-a09c-525730a44895",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("b4dc1922-14f2-4ac3-a254-de67757c1257",
+	'ReadChangeRequests',
+	'',
+	'',
+	3,
+	0,
+	38);
+INSERT INTO C_EP_PROXY
+	VALUES ("e7d2b948-7b81-40d9-a09c-525730a44895",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadChangeRequests',
+	'',
+	38,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
