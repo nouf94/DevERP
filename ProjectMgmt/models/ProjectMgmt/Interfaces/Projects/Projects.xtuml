@@ -332,12 +332,30 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("3714d92c-9008-4651-80b6-cadb44761443",
 	"b68f3204-5e86-499d-88df-db00b93866ef",
-	"ba5eda7a-def5-0000-0000-000000000002",
+	"ba5eda7a-def5-0000-0000-000000000003",
 	'Budget',
 	'',
 	0,
 	'',
 	"8784ca7f-7407-4f4e-92bc-46f46811084b");
+INSERT INTO C_PP
+	VALUES ("735ae756-24c5-4d41-a904-f07e5874e144",
+	"b68f3204-5e86-499d-88df-db00b93866ef",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Duration',
+	'',
+	0,
+	'',
+	"3714d92c-9008-4651-80b6-cadb44761443");
+INSERT INTO C_PP
+	VALUES ("ab8b3380-38e0-4a16-bd91-3e2e1dc52c8d",
+	"b68f3204-5e86-499d-88df-db00b93866ef",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Sponsor',
+	'',
+	0,
+	'',
+	"735ae756-24c5-4d41-a904-f07e5874e144");
 INSERT INTO C_EP
 	VALUES ("1afcea8f-1baf-4bd0-999f-9363af4ca62d",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -422,12 +440,12 @@ INSERT INTO C_EP
 	VALUES ("bc328c2e-2892-4f5f-869a-c51fcb125847",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'ReadProjects',
+	'ReadAllProjects',
 	'',
 	0);
 INSERT INTO C_AS
 	VALUES ("bc328c2e-2892-4f5f-869a-c51fcb125847",
-	'ReadProjects',
+	'ReadAllProjects',
 	'',
 	0,
 	"1d5ac5a5-3c6f-45dc-ba1a-b7dd16ef624e");
@@ -492,12 +510,30 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("5266b9d8-594e-4418-a0bb-f240c7bfea08",
 	"8dc4a734-be3b-4ab9-a837-6a24b94e3215",
-	"ba5eda7a-def5-0000-0000-000000000002",
+	"ba5eda7a-def5-0000-0000-000000000003",
 	'Budget',
 	'',
 	0,
 	'',
 	"a5490dcc-e81f-494d-a6a5-26deb4f589eb");
+INSERT INTO C_PP
+	VALUES ("28f11644-6cfc-44cf-91a4-8db05d77ae42",
+	"8dc4a734-be3b-4ab9-a837-6a24b94e3215",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Duration',
+	'',
+	0,
+	'',
+	"5266b9d8-594e-4418-a0bb-f240c7bfea08");
+INSERT INTO C_PP
+	VALUES ("01b4155b-d9ae-4aec-ab59-74b123e51cd0",
+	"8dc4a734-be3b-4ab9-a837-6a24b94e3215",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Sponsor',
+	'',
+	0,
+	'',
+	"28f11644-6cfc-44cf-91a4-8db05d77ae42");
 INSERT INTO C_EP
 	VALUES ("823d6250-b774-4665-8272-9dc2cc28eadd",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -2020,6 +2056,28 @@ INSERT INTO C_PP
 	"e2825e90-8c9a-42af-9412-4a52840f818f",
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'CreationDate',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("4a83f808-e45b-4690-8d37-0c1ebcd6d560",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProject',
+	'',
+	37);
+INSERT INTO C_AS
+	VALUES ("4a83f808-e45b-4690-8d37-0c1ebcd6d560",
+	'ReadProject',
+	'',
+	0,
+	"e2825e90-8c9a-42af-9412-4a52840f818f");
+INSERT INTO C_PP
+	VALUES ("93c30aaf-6ce5-47aa-ad4e-43dc19e8500b",
+	"4a83f808-e45b-4690-8d37-0c1ebcd6d560",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
 	'',
 	0,
 	'',

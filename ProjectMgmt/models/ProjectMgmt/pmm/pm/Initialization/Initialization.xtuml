@@ -244,13 +244,13 @@ CR.CreateChangeRequest( Title:"CR11", Description:"DDd", Justification:"jjjjj", 
 create object instance impact of Impact; 
 
 impact.AddImpact( Category:"2", Details:"ddddd", ChangeRequestCreationDate:tC );
-
+tC2=TIM::current_seconds()+1;
 
 
 create object instance CR2 of ChangeRequest; 
-CR2.CreateChangeRequest( Title:"CR22", Description:"DDd222", Justification:"jjjjj222", ProjectCode:"Project2Code", CreationDate:0, ImpactCategory:"3", ImpactDetails:"d22222" );
+CR2.CreateChangeRequest( Title:"CR22", Description:"DDd222", Justification:"jjjjj222", ProjectCode:"Project2Code", CreationDate:tC2, ImpactCategory:"3", ImpactDetails:"d22222" );
 create object instance impact2 of Impact; 
-impact2.AddImpact( Category:"4", Details:"ddddd33333", ChangeRequestCreationDate:CR2.CreationDate);
+impact2.AddImpact( Category:"4", Details:"ddddd33333", ChangeRequestCreationDate:tC2);
 
 
 

@@ -1791,7 +1791,7 @@ INSERT INTO SPR_REP
 	"172ad968-3c5c-47a8-b686-fa95025756b2");
 INSERT INTO SPR_RS
 	VALUES ("29fa9173-7c14-4346-8ea9-e73197a8ad66",
-	'ReadProjects',
+	'ReadAllProjects',
 	'',
 	'',
 	1,
@@ -1801,7 +1801,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("bc328c2e-2892-4f5f-869a-c51fcb125847",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'ReadProjects',
+	'ReadAllProjects',
 	'',
 	0,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
@@ -1813,7 +1813,7 @@ INSERT INTO SPR_RS
 	VALUES ("50b93fe4-4ca2-4d45-9fa8-c7b6aed64fdd",
 	'SendProjects',
 	'',
-	'::SendProjects( Code:param.Code, Name:param.Name, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, Budget:param.Budget );',
+	'::SendProjects( Code:param.Code, Name:param.Name, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, Budget:param.Budget , Duration:param.Duration,Sponsor:param.Sponsor);',
 	1,
 	0,
 	0);
@@ -2613,6 +2613,26 @@ INSERT INTO C_EP_PROXY
 	'TestReadChangeRequestByCreationDte',
 	'',
 	36,
+	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("db17c738-b5d9-4b2c-a855-3890e9431064",
+	"4a83f808-e45b-4690-8d37-0c1ebcd6d560",
+	"172ad968-3c5c-47a8-b686-fa95025756b2");
+INSERT INTO SPR_RS
+	VALUES ("db17c738-b5d9-4b2c-a855-3890e9431064",
+	'ReadProject',
+	'',
+	'',
+	3,
+	0,
+	37);
+INSERT INTO C_EP_PROXY
+	VALUES ("4a83f808-e45b-4690-8d37-0c1ebcd6d560",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProject',
+	'',
+	37,
 	'../../../../../ProjectMgmt/models/ProjectMgmt/Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
