@@ -1957,10 +1957,10 @@ private static HRGuiController singleton;
 	}
 	
 	@PostMapping(path="/createProject", consumes="application/json")
-	public void CreateProject(String p_Code, String p_Name, String p_Description, int p_StartDate,  int p_EndDate, int p_Budget ) {
+	public void CreateProject( String p_Code,  String p_Name,  String p_Description,  int p_StartDate,  int p_EndDate,  double p_Budget,  int p_Duration,  String p_Sponsor ) {
 		// TODO Auto-generated method stub
 		try {
-			UI.Singleton().Projects().CreateProject(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget);
+			UI.Singleton().Projects().CreateProject(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget, p_Duration, p_Sponsor);
 		} catch (XtumlException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -2064,11 +2064,12 @@ private static HRGuiController singleton;
          } 
          } 
 	
-	     List<Project> projects=new ArrayList<Project>();
-		 public void SendProjects( final String p_Code,  final String p_Name,  final String p_Description,  final int p_StartDate,  final int p_EndDate,  final int p_Budget ){
+	    List<Project> projects=new ArrayList<Project>();
+		public void SendProjects( final String p_Code,  final String p_Name,  final String p_Description,  final int p_StartDate,  final int p_EndDate,  final double p_Budget,  final int p_Duration,  final String p_Sponsor){
         Project proj=null;
           try {
-			proj=new Project(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget);
+			proj=new Project(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget, p_Duration, p_Sponsor);
+			System.out.println("project name:" +p_Name+" Project Code: "+ p_Code+ " p_Description: "+p_Description+" p_StartDate: "+p_StartDate+" p_EndDate: "+p_EndDate+" p_Budget: "+p_Budget+" p_Duration: "+p_Duration+" p_Sponsor: "+p_Sponsor);
 			projects.add(proj);
 
          }catch(Exception e) {
@@ -2078,14 +2079,18 @@ private static HRGuiController singleton;
          } 
 
 	@GetMapping(path="/ReadProjects", produces="appliaction/json")
-	public List<Project> ReadProjects() {
+	public List<Project> ReadAllProjects() {
 		// TODO Auto-generated method stub
 		try {
 			projects.clear();
-			UI.Singleton().Projects().ReadProjects();
-			Thread.sleep(300);
+			UI.Singleton().Projects().ReadAllProjects();
+			Thread.sleep(700);
+			System.out.println(projects.size());
 			return projects;
-		} catch (XtumlException | InterruptedException e) {
+		} catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

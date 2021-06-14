@@ -1270,17 +1270,18 @@
               
           </div>  
            <div class="form-row">
-            <div class="form-group col-md-6" >
-              <label ><strong>  أثر التغيير </strong></label></br>
+            <div class="form-group col-lg-12" >
+              <label ><h3>  أثر التغيير </h3></label></br>
             </div>
-            <div class="form-group col-md-6" v-for="Impact in selectedImpacts" >
+            <div class="form-group col-lg-12" v-for="Impact in selectedImpacts" >
             <label for="Impact" v-if="Impact.p_ImpactCategory == 'quality' " ><strong>  الجودة </strong></label></br>
             <label for="Impact" v-if="Impact.p_ImpactCategory == 'scope' " ><strong>   نطاق العمل </strong></label></br>
             <label for="Impact" v-if="Impact.p_ImpactCategory == 'cost' " ><strong>    التكلفة </strong></label></br>
-            <label for="Impact" v-if="Impact.p_ImpactCategory == 'time' " ><strong>     الجدول الزمني </strong></label></br>
             <label  id="Impact" v-if="Impact.p_ImpactCategory != 'time' ">
             {{Impact.p_ImpactDetails}}</label>
-            <div v-if="Impact.p_ImpactCategory == 'time' ">
+            <label for="Impact" v-if="Impact.p_ImpactCategory == 'time' " ><strong>     الجدول الزمني </strong></label></br>
+           
+            <div v-if="Impact.p_ImpactCategory == 'time' " class="col-lg-12">
               <label for="CStartDate">تاريخ البداية  </label>
               <input type="date" class="form-control" id="VCStartDate" name="" v-bind:value="Impact.p_StartDate" readonly >
             <label for="CEndDate">تاريخ الإنتهاء  </label>
