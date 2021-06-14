@@ -150,8 +150,8 @@ project1.Sponsor="noni";
 create object instance project2 of Project;
 project2.Code = "Project2Code";
 project2.Name = "Project2Name";
-project1.Description="D2";
-project1.Sponsor="Gogi";
+project2.Description="D2";
+project2.Sponsor="Gogi";
 
 
 // MILESTONE
