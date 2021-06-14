@@ -9,11 +9,12 @@ public class ChangeRequest {
 	private int p_CreationDate;
 	private String p_ImpactCategory;
 	private String p_ImpactDetails;
-
+	private String StartDate;
+	private String EndDate;
 	public ChangeRequest() {
 		
 	}
-	public ChangeRequest(String p_Title,String p_Description, String p_Justification, String p_ProjectCode, int p_CreationDate,String p_ImpactCategory, String p_ImpactDetails) {
+	public ChangeRequest(String p_Title,String p_Description, String p_Justification, String p_ProjectCode, int p_CreationDate,String p_ImpactCategory, String p_ImpactDetails,String StartDate, String EndDate) {
 		this.p_Title=p_Title;
 		this.p_Description = p_Description;
 		this.p_Justification = p_Justification;
@@ -21,6 +22,8 @@ public class ChangeRequest {
 		this.p_CreationDate = p_CreationDate;
 		this.p_ImpactCategory = p_ImpactCategory;
 		this.p_ImpactDetails = p_ImpactDetails;
+		this.StartDate = StartDate;
+		this.EndDate = EndDate;
 
 	}
 	public ChangeRequest( int p_CreationDate,String p_Title,String p_Description, String p_Justification) {
@@ -30,10 +33,24 @@ public class ChangeRequest {
 		this.p_CreationDate = p_CreationDate;
 
 	}
-		public ChangeRequest( String p_ImpactCategory, String p_ImpactDetails, int p_CreationDate) {
+		public ChangeRequest( String p_ImpactCategory, String p_ImpactDetails) {
+		this.p_ImpactCategory = p_ImpactCategory;
+		this.p_ImpactDetails = p_ImpactDetails;
+
+
+	}
+	public ChangeRequest( String p_ImpactCategory, String StartDate, String EndDate) {
+		this.p_ImpactCategory = p_ImpactCategory;
+		this.StartDate = StartDate;
+		this.EndDate = EndDate;
+
+
+	}
+		public ChangeRequest( String p_ImpactCategory, String p_ImpactDetails,int p_CreationDate) {
 		this.p_ImpactCategory = p_ImpactCategory;
 		this.p_ImpactDetails = p_ImpactDetails;
 		this.p_CreationDate = p_CreationDate;
+
 
 	}
 	public ChangeRequest(int p_CreationDate) {
@@ -90,5 +107,22 @@ public class ChangeRequest {
 
 	public void setP_ImpactDetails(String p_ImpactDetails) {
 		this.p_ImpactDetails = p_ImpactDetails;
+	}
+
+
+	public String getP_StartDate() {
+		return StartDate;
+	}
+
+	public void setP_StartDate(String StartDate) {
+		this.StartDate = StartDate;
+	}
+
+	public String getP_EndDate() {
+		return EndDate;
+	}
+
+	public void setP_EndDate(String EndDate) {
+		this.EndDate = EndDate;
 	}
 }

@@ -4,15 +4,15 @@ public class Impact {
 
 	private String[] p_Impacts;
 	private String[] p_Details;
-	private int p_ChangeRequestCreationDate;
+	private int p_CreationDate;
 
 	public Impact() {
 		
 	}
-	public Impact(String[] p_Impacts,String[] p_Details, int p_ChangeRequestCreationDate) {
+	public Impact(String[] p_Impacts,String[] p_Details, int p_CreationDate) {
 		this.p_Impacts = p_Impacts;
 		this.p_Details= p_Details;
-		this.p_ChangeRequestCreationDate=p_ChangeRequestCreationDate;
+		this.p_CreationDate=p_CreationDate;
 	}
 	public Impact(String[] p_Impacts,String[] p_Details) {
 		this.p_Impacts = p_Impacts;
@@ -34,10 +34,10 @@ public class Impact {
 	}
 //set and Get p_ChangeRequestCreationDate	
 	public int getP_CreationDate() {
-		return p_ChangeRequestCreationDate;
+		return p_CreationDate;
 	}
-	public void setP_CreationDate(int p_ChangeRequestCreationDate) {
-		this.p_ChangeRequestCreationDate = p_ChangeRequestCreationDate;
+	public void setP_CreationDate(int p_CreationDate) {
+		this.p_CreationDate = p_CreationDate;
 	}
 
 }

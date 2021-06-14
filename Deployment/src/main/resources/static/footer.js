@@ -29,5 +29,5 @@ Vue.component('myfooter', {
 '</div>'});
 
 new Vue({
-    el:'#app',
+    el:'#footer',
   })
