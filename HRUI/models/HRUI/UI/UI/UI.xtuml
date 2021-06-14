@@ -1813,7 +1813,9 @@ INSERT INTO SPR_RS
 	VALUES ("50b93fe4-4ca2-4d45-9fa8-c7b6aed64fdd",
 	'SendProjects',
 	'',
-	'::SendProjects( Code:param.Code, Name:param.Name, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, Budget:param.Budget , Duration:param.Duration,Sponsor:param.Sponsor);',
+	'::SendProjects( Code:param.Code, Name:param.Name, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, Budget:param.Budget , Duration:param.Duration,Sponsor:param.Sponsor);
+
+',
 	1,
 	0,
 	0);
