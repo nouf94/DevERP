@@ -104,18 +104,22 @@ Vue.component('mynavbar', {
         p_StartDate: '',
         p_EndDate: '',
         p_Budget: '',
+        p_Duration:'',
+        p_Sponsor:''
     },
     methods: {
       submitValues: function () {
-        console.log({ nid: parseInt(this.nid) }) 
           axios.post('/rest/createProject', {
             p_Code: this.p_Code,
             p_Name: this.p_Name,
             p_Description: this.p_Description,
             p_StartDate: this.p_StartDate,
             p_EndDate: this.p_EndDate,
-            p_Budget: this.p_Budget
+            p_Budget: this.p_Budget,
+            p_Duration:this.p_Duration,
+            p_Sponsor: this.p_Sponsor
             }).then(response => {
+              console.log(response);
                 window.location.href = '/project/home.html';
             }).catch(error => {
                 console.log(error.response)

@@ -105,19 +105,23 @@ Vue.component('mynavbar', {
 		  '</div>'});
 
  var app = new Vue({
-    el: '#body',
+    el: '#Projects',
     data:{
-      projects:''
+
+      Projects:''
     },
-    mounted (){
-          axios.get('/rest/ReadProjects').then(response => {
-              this.projects= response.date,
-              console.log(this.projects)
-        }).catch(error => {
-                console.log(error.response)
-            });
-      }
-      
-    
-})
+    mounted: function mounted () {
+      this.ReadProjects()
+    },//End Mounted
+    methods: {
+      ReadProjects:function (event){
+        axios.get('/rest/ReadProjects')
+        .then(response => (this.Projects = response.data,
+          console.log(response)
+          )).catch(error => {
+              console.log(error.response)
+          })}//End ReadProject
+
+        }//End Methods
+});
 

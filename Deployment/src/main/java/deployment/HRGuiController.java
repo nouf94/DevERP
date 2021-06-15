@@ -2064,7 +2064,6 @@ private static HRGuiController singleton;
          } 
          } 
 	
-	    List<Project> projects=new ArrayList<Project>();
 		public void SendProjects( final String p_Code,  final String p_Name,  final String p_Description,  final int p_StartDate,  final int p_EndDate,  final double p_Budget,  final int p_Duration,  final String p_Sponsor){
         Project proj=null;
           try {
@@ -2076,16 +2075,15 @@ private static HRGuiController singleton;
       	   	e.printStackTrace();
 
          } 
-         } 
-
-	@GetMapping(path="/ReadProjects", produces="appliaction/json")
-	public List<Project> ReadAllProjects() {
+         }
+		 
+	@PutMapping(path="/ReadProject", produces="application/json", consumes="application/json")
+	public List<Project> ReadProject(@RequestBody Project pro) {
 		// TODO Auto-generated method stub
 		try {
 			projects.clear();
-			UI.Singleton().Projects().ReadAllProjects();
+			UI.Singleton().Projects().ReadProject(pro.getP_Code());
 			Thread.sleep(700);
-			System.out.println(projects.size());
 			return projects;
 		} catch (XtumlException e) {
 			// TODO Auto-generated catch block
@@ -2094,6 +2092,26 @@ private static HRGuiController singleton;
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
+	}
+			  
+	List<Project> projects=new ArrayList<Project>();
+	@GetMapping(path="/ReadProjects", produces="appliaction/json")
+	public List<Project> ReadAllProjects() {
+		// TODO Auto-generated method stub
+		try {
+			projects.clear();
+			UI.Singleton().Projects().ReadAllProjects();
+			Thread.sleep(700);
+			return projects;
+		} catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(projects.size());
 		return null;
 	}
 		List<Goal> goals=new ArrayList<Goal>();

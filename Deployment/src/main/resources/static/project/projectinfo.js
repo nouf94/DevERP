@@ -1,6 +1,31 @@
 var Impacts=[];
 var Details=[]; 
 
+//Add ProjectInfo Instance
+var ProjectInfoApp = new Vue({
+  el: '#projectInfo',
+  data:{
+    p_Code:'Project1Code',
+    Projects:''
+  },
+  mounted: function mounted () {
+    this.readProjectInfo()
+    //this.ReadStrategies()
+
+  },
+  methods: {
+    readProjectInfo:function (event){
+      axios.put('/rest/ReadProject',{
+        p_Code: this.p_Code
+      }).then(response => (this.Projects = response.data,
+        console.log(response)
+          )).catch(error => {
+            console.log(error)
+        })
+      }
+    }//End Methods
+});//End Vue ProjectInfo
+
 //Change Request Instance
 var app = new Vue({
     el: '#nav-requests',
@@ -25,7 +50,7 @@ var app = new Vue({
       this.readChnages()
     },
     methods: {
-      readChnages:function (){
+      readChnages:function (event){
         axios.get('/rest/ReadAllChangeRequest')
         .then(response2 => (this.Requests = response2.data,
           //console.log(response2),
