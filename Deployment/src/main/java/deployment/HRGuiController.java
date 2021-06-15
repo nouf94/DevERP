@@ -2076,7 +2076,7 @@ private static HRGuiController singleton;
 
          } 
          }
-		 
+
 	@PutMapping(path="/ReadProject", produces="application/json", consumes="application/json")
 	public List<Project> ReadProject(@RequestBody Project pro) {
 		// TODO Auto-generated method stub
@@ -2084,6 +2084,7 @@ private static HRGuiController singleton;
 			projects.clear();
 			UI.Singleton().Projects().ReadProject(pro.getP_Code());
 			Thread.sleep(700);
+			System.out.println(projects.size());
 			return projects;
 		} catch (XtumlException e) {
 			// TODO Auto-generated catch block

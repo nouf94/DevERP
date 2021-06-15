@@ -9,7 +9,9 @@ public class Project {
     private double p_Budget;
     private int p_Duration;
     private String p_Sponsor;
-
+	
+	public Project(){
+	}
 	public Project(String p_Code, String p_Name, String p_Description, int p_StartDate, int p_EndDate, double p_Budget, int p_Duration, String p_Sponsor){
         
         this.p_Code=p_Code;
@@ -73,7 +75,7 @@ public class Project {
     public int getP_Duration() {
 		return p_Duration;
 	}
-	public void setP_Budget(int p_Duration) {
+	public void setP_Duration(int p_Duration) {
 		this.p_Duration = p_Duration;
 	}
 

@@ -107,7 +107,6 @@ Vue.component('mynavbar', {
  var app = new Vue({
     el: '#Projects',
     data:{
-
       Projects:''
     },
     mounted: function mounted () {

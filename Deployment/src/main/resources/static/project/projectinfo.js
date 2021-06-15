@@ -1,6 +1,7 @@
 var Impacts=[];
 var Details=[]; 
 
+
 //Add ProjectInfo Instance
 var ProjectInfoApp = new Vue({
   el: '#projectInfo',
