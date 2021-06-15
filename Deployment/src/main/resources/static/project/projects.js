@@ -115,7 +115,7 @@ Vue.component('mynavbar', {
     methods: {
       ReadProjects:function (event){
         axios.get('/rest/ReadProjects')
-        .then(response => (this.Projects = response.data,
+        .then(response => (
           console.log(response)
           )).catch(error => {
               console.log(error.response)

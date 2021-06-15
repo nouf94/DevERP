@@ -2064,7 +2064,7 @@ private static HRGuiController singleton;
          } 
          } 
 	
-		public void SendProjects( final String p_Code,  final String p_Name,  final String p_Description,  final int p_StartDate,  final int p_EndDate,  final double p_Budget,  final int p_Duration,  final String p_Sponsor){
+		public void SendProjects( String p_Code, String p_Name, String p_Description, int p_StartDate, int p_EndDate, double p_Budget, int p_Duration, String p_Sponsor){
         Project proj=null;
           try {
 			proj=new Project(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget, p_Duration, p_Sponsor);
