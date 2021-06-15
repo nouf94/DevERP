@@ -376,16 +376,28 @@ INSERT INTO SPR_PS
 	VALUES ("332607a5-c30d-462e-87b0-d76aefef858a",
 	'ReadAllProjects',
 	'',
-	'select many prgs from instances of Project ; 
+	'//select many prgs from instances of Project ; 
    
  // LOG::LogInfo(message:"Sending employee set .." );	
 
-  for each prg in prgs
-	UI::SendProjects( Code:prg.Code, Name:prg.Name, Description:prg.Description, StartDate:prg.StartDate, EndDate:prg.EndDate, Budget:prg.Budget, Duration:prg.Duration,Sponsor:prg.Sponsor );
+  //for each prg in prgs
+	//UI::SendProjects( Code:prg.Code, Name:prg.Name, Description:prg.Description, StartDate:prg.StartDate, EndDate:prg.EndDate, Budget:prg.Budget, Duration:prg.Duration,Sponsor:prg.Sponsor );
   
-  LOG::LogInfo( message:prg.Code );
+ // LOG::LogInfo( message:prg.Code );
   
-  end for;
+  //end for;
+
+
+select many projcts from Project;
+
+if (not_empty projcts)
+	
+	for each prg in projcts
+		UI::SendProjects( Code:prg.Code, Name:prg.Name, Description:prg.Description, StartDate:prg.StartDate, EndDate:prg.EndDate, Budget:prg.Budget, Duration:prg.Duration,Sponsor:prg.Sponsor );
+		
+
+	end for;
+end if;
 ',
 	1,
 	0,
