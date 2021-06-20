@@ -1406,17 +1406,17 @@ INSERT INTO SPR_PS
 	'ReadAllTheProjects',
 	'',
 	'
-/*select many projects from Project;
+select many projects from Project;
 
 if (not_empty projects)
 		for each project in projects
 		UI::SendProjects( Code:project.Code, Name:project.Name, Description:project.Description, StartDate:project.StartDate, EndDate:project.EndDate, Budget:project.Budget, Duration:project.Duration, Sponsor:project.Sponsor );
-LOG::LogInfo( message:project.Code );
+//LOG::LogInfo( message:project.Code );
 
 	end for;
-end if;*/
+end if;
 
-select any project from instances of Project where selected.Code == "Project1Code";  
+/*select any project from instances of Project where selected.Code == "Project1Code";  
 select any project2 from instances of Project where selected.Code == "Project2Code";  
 if (not_empty project)
 
@@ -1427,7 +1427,7 @@ UI::SendProjects( Code:project2.Code, Name:project2.Name, Description:project2.D
 //LOG::LogInfo( message:project.Code );
 //LOG::LogInfo( message:project2.Code );
 end if;
-',
+*/',
 	1,
 	0,
 	39);
