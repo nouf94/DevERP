@@ -30,6 +30,54 @@ INSERT INTO GD_MD
 	0,
 	'4.1.17',
 	'ProjectMgmt::pmm::pm');
+INSERT INTO GD_GE
+	VALUES ("655ba2b3-03f3-4242-b88d-f11e5763f99e",
+	"00000000-0000-0000-0000-000000000000",
+	"d8941aac-fe97-4ede-8994-e08f0fa770a0",
+	108,
+	0,
+	'ProjectMgmt::pmm::pm::Initialization');
+INSERT INTO GD_SHP
+	VALUES ("655ba2b3-03f3-4242-b88d-f11e5763f99e");
+INSERT INTO GD_NCS
+	VALUES ("655ba2b3-03f3-4242-b88d-f11e5763f99e");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"655ba2b3-03f3-4242-b88d-f11e5763f99e");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"655ba2b3-03f3-4242-b88d-f11e5763f99e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("655ba2b3-03f3-4242-b88d-f11e5763f99e",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("75182793-8fab-4fcb-8a95-c3a4db8035ed",
+	"00000000-0000-0000-0000-000000000000",
+	"6177f291-1d29-415e-bed8-570d8e84b959",
+	108,
+	0,
+	'ProjectMgmt::pmm::pm::main');
+INSERT INTO GD_SHP
+	VALUES ("75182793-8fab-4fcb-8a95-c3a4db8035ed");
+INSERT INTO GD_NCS
+	VALUES ("75182793-8fab-4fcb-8a95-c3a4db8035ed");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"75182793-8fab-4fcb-8a95-c3a4db8035ed");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"75182793-8fab-4fcb-8a95-c3a4db8035ed",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("75182793-8fab-4fcb-8a95-c3a4db8035ed",
+	0,
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PO
 	VALUES ("6682b901-e90c-4009-8856-6794e02a617d",
 	"6b567f7b-1b30-4818-b8a0-dfca9c0a25d8",
@@ -1298,21 +1346,17 @@ INSERT INTO SPR_PS
 	VALUES ("1c95de0c-f54d-4a3a-9ff3-5e8fb551fdcb",
 	'ReadProject',
 	'',
-	'//select any project from instances of Project where selected.Code == "Project1Code"; 
-//select any project1 from instances of Project where selected.Code == "Project2Code"; 
-select many projects from Project;
-   
-if (not_empty projects)
-	for each project in projects
+	'select any project from instances of Project where selected.Code == param.ProjectCode;  
+ 
+if (not_empty project)
+
 	
 	UI::SendProjects( Code:project.Code, Name:project.Name, Description:project.Description, StartDate:project.StartDate, EndDate:project.EndDate, Budget:project.Budget, Duration:project.Duration, Sponsor:project.Sponsor );
-	//UI::SendProjects( Code:project1.Code, Name:project1.Name, Description:project1.Description, StartDate:project1.StartDate, EndDate:project1.EndDate, Budget:project1.Budget, Duration:project1.Duration, Sponsor:project1.Sponsor );
-	//LOG::LogInfo( message:project.Code );
-	LOG::LogInfo( message:project.Code );
-	//LOG::LogReal( message:"prg.Budget", r:prg.Budget );
-	end for;
+
 	
 end if;
+
+
 ',
 	1,
 	0,
@@ -1361,17 +1405,27 @@ INSERT INTO SPR_PS
 	VALUES ("4bcebb79-ce83-4b50-ba79-a89185feddee",
 	'ReadAllTheProjects',
 	'',
-	'select many projcts from Project;
+	'
+/*select many projects from Project;
 
-if (not_empty projcts)
-	
-	for each prg in projcts
-		UI::SendProjects(Code:prg.Code, Name:prg.Name, Description:prg.Description, StartDate:prg.StartDate, EndDate:prg.EndDate, Budget:prg.Budget, Duration:prg.Duration,Sponsor:prg.Sponsor);
-//	LOG::LogInfo( message:prg.Code );
-//	LOG::LogReal( message:"prg.Budget", r:prg.Budget );
-	
+if (not_empty projects)
+		for each project in projects
+		UI::SendProjects( Code:project.Code, Name:project.Name, Description:project.Description, StartDate:project.StartDate, EndDate:project.EndDate, Budget:project.Budget, Duration:project.Duration, Sponsor:project.Sponsor );
+LOG::LogInfo( message:project.Code );
 
 	end for;
+end if;*/
+
+select any project from instances of Project where selected.Code == "Project1Code";  
+select any project2 from instances of Project where selected.Code == "Project2Code";  
+if (not_empty project)
+
+	
+UI::SendProjects( Code:project.Code, Name:project.Name, Description:project.Description, StartDate:project.StartDate, EndDate:project.EndDate, Budget:project.Budget, Duration:project.Duration, Sponsor:project.Sponsor );
+UI::SendProjects( Code:project2.Code, Name:project2.Name, Description:project2.Description, StartDate:project2.StartDate, EndDate:project2.EndDate, Budget:project2.Budget, Duration:project2.Duration, Sponsor:project2.Sponsor );
+
+//LOG::LogInfo( message:project.Code );
+//LOG::LogInfo( message:project2.Code );
 end if;
 ',
 	1,
