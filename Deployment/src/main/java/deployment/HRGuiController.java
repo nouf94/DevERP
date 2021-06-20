@@ -2068,8 +2068,7 @@ private static HRGuiController singleton;
         Project proj;
           try {
 			proj=new Project(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget , p_Duration, p_Sponsor);
-			if(projects.size()<1){
-			projects.add(proj);}
+			projects.add(proj);
 
          }catch(Exception e) {
       	   	e.printStackTrace();
