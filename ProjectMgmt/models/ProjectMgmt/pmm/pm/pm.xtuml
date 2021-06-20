@@ -1298,17 +1298,19 @@ INSERT INTO SPR_PS
 	VALUES ("1c95de0c-f54d-4a3a-9ff3-5e8fb551fdcb",
 	'ReadProject',
 	'',
-	'select any project from instances of Project where selected.Code == "Project1Code"; 
-select any project1 from instances of Project where selected.Code == "Project2Code"; 
-
+	'//select any project from instances of Project where selected.Code == "Project1Code"; 
+//select any project1 from instances of Project where selected.Code == "Project2Code"; 
+select many projects from Project;
    
-if (not_empty project)
+if (not_empty projects)
+	for each project in projects
 	
 	UI::SendProjects( Code:project.Code, Name:project.Name, Description:project.Description, StartDate:project.StartDate, EndDate:project.EndDate, Budget:project.Budget, Duration:project.Duration, Sponsor:project.Sponsor );
-	UI::SendProjects( Code:project1.Code, Name:project1.Name, Description:project1.Description, StartDate:project1.StartDate, EndDate:project1.EndDate, Budget:project1.Budget, Duration:project1.Duration, Sponsor:project1.Sponsor );
+	//UI::SendProjects( Code:project1.Code, Name:project1.Name, Description:project1.Description, StartDate:project1.StartDate, EndDate:project1.EndDate, Budget:project1.Budget, Duration:project1.Duration, Sponsor:project1.Sponsor );
+	//LOG::LogInfo( message:project.Code );
 	LOG::LogInfo( message:project.Code );
-	LOG::LogInfo( message:project1.Code );
-//	LOG::LogReal( message:"prg.Budget", r:prg.Budget );
+	//LOG::LogReal( message:"prg.Budget", r:prg.Budget );
+	end for;
 	
 end if;
 ',
