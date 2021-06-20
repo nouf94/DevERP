@@ -14,7 +14,7 @@
         <!-- Cutom CSS-->
         <link href="../css/custom_style.css" rel="stylesheet" media="all">
         <link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
-        <link id="headercss" href="../header.css" rel="stylesheet">
+       <!-- <link id="headercss" href="../header.css" rel="stylesheet">-->
         <link id="stylecss" href="../style.css" rel="stylesheet">
          <!-- Main CSS-->
          <link href="../css/theme.css" rel="stylesheet" media="all">
@@ -23,11 +23,6 @@
          <link href="../vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
           <link href="../vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
           <link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-      
-          <!-- Bootstrap CSS
-          <link href="../vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all"> 
-          This one causes the tags to go to left
-      -->
           <!-- Vendor CSS-->
           <link href="../vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
           <link href="../vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
@@ -56,13 +51,13 @@
         margin: 0;
         bottom: 0;
       }
-      ul {
+    /*  ul {
           display: block;
           margin-block-end: 1em;
           margin-inline-start: 0px;
           margin-inline-end: 0px;
           padding-inline-start: 40px;
-      }
+      }*/
       
       .underline:hover{
       text-decoration: underline;
@@ -130,8 +125,8 @@
     </head>
 <!--Body Start-->
 <body>
- <div id="app">
-  <mynavbar ></mynavbar>
+ <div>
+ <mynavbar id="navbar" ></mynavbar>
   <myfooter id="footer" ></myfooter>
   </div>  
   <div id="body">
@@ -158,8 +153,7 @@
           <hr>
 <br>
 
-
-<div class="card">
+<div class="card" id="projectInfo">
     <div class="card-header">
     <strong class="card-title">وصف المشروع</strong>
     </div>
@@ -199,7 +193,7 @@
 
         <div class="default-tab .col-md-6 .offset-md-3">
             <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active show" id="nav-goals-tab" data-toggle="tab" href="#nav-goals" role="tab" aria-controls="nav-goals" aria-selected="true">الأهداف</a>
             <a class="nav-item nav-link" id="nav-outputs-tab" data-toggle="tab" href="#nav-outputs" role="tab" aria-controls="nav-outputs" aria-selected="false">المخرجات</a>
             <a class="nav-item nav-link" id="nav-tasks-tab" data-toggle="tab" href="#nav-tasks" role="tab" aria-controls="nav-tasks" aria-selected="false">المعالم</a>
@@ -1254,7 +1248,7 @@
                           </div>
                           <div class="modal-body" style="float: right;">
                             <div class="form-row">
-                              <div class="form-group col-lg-12">
+                              <div class="form-group col-md-6">
                               <label for="rName"><strong> الطلب </strong></label></br>
                               <label  id="rName" >
                               {{selectedRequest.p_Title}}</label>
@@ -1265,38 +1259,55 @@
                               {{selectedRequest.p_Description}}</label>
                           </div>
                       </div>                
-                <hr>
                 <div class="form-row">
                   <div class="form-group col-lg-12">
                   <label for="rjust"><strong> مبررات التغيير </strong></label></br>
                   <label  id="rjust" >
                   {{selectedRequest.p_Justification}}</label>
               </div>
-              <div class="form-group col-md-6" >
-                <label for="rEffect"><strong>  أثر التغيير </strong></label></br>
-                  <ul id="rEffect" >
-                    <li>هدف ١</li>
-                    <li>هدف ٢</li>
-                  </ul>
+              <hr>
+              
+          </div>  
+           <div class="form-row">
+            <div class="form-group col-lg-12" >
+              <label ><h3>  أثر التغيير </h3></label></br>
+            </div>
+            <div class="form-group col-lg-12" v-for="Impact in selectedImpacts" >
+            <label for="Impact" v-if="Impact.p_ImpactCategory == 'quality' " ><strong>  الجودة </strong></label></br>
+            <label for="Impact" v-if="Impact.p_ImpactCategory == 'scope' " ><strong>   نطاق العمل </strong></label></br>
+            <label for="Impact" v-if="Impact.p_ImpactCategory == 'cost' " ><strong>    التكلفة </strong></label></br>
+            <label  id="Impact" v-if="Impact.p_ImpactCategory != 'time' ">
+            {{Impact.p_ImpactDetails}}</label>
+            <label for="Impact" v-if="Impact.p_ImpactCategory == 'time' " ><strong>     الجدول الزمني </strong></label></br>
+           
+            <div v-if="Impact.p_ImpactCategory == 'time' " class="col-md-4">
+              <label for="CStartDate" class="control-label mb-1">تاريخ البداية  </label>
+              <input type="date" class="form-control cc-exp" id="VCStartDate" name="" v-bind:value="Impact.p_StartDate" readonly >
+            <label for="CEndDate" class="control-label mb-1" >تاريخ الإنتهاء  </label>
+            <input type="date" class="form-control cc-exp" id="VCEndDate" name=""  v-bind:value="Impact.p_EndDate" readonly>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+              <div class="form-group">
+                  <label for="cc-exp" class="control-label mb-1">Expiration</label>
+                  <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY" autocomplete="cc-exp">
+                  <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
               </div>
-          </div>                
-          <hr>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label><strong>الأهداف الاستراتيجية المرتبطة</strong></label>
-                      <ul>
-                        <li>هدف ١</li>
-                        <li>هدف ٢</li>
-                      </ul>
+          </div>
+          <div class="col-6">
+              <label for="x_card_code" class="control-label mb-1">Security code</label>
+              <div class="input-group">
+                  <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code" data-val-cc-cvc="Please enter a valid security code" autocomplete="off">
+
               </div>
-              <div class="form-group col-md-6">
-                <label><strong> مقاييس الأداء</strong></label>
-                <ul>
-                  <li>مقياس ١</li>
-                  <li>مقياس ٢</li>
-                </ul>
-              </div>
-             </div>
+          </div>
+      </div>
+
+
+    </div>                
+          
                 </div><!-- close body-->
                 <div class="modal-footer">
                   <button type="reset" class="btn btn-info" data-dismiss="modal"><i class="fa fa-arrow-circle-left"></i>العودة</button>
@@ -1376,7 +1387,15 @@
     <script type="application/javascript" src="../vendor/bootstrap-4.1/popper.min.js"></script>
     <script type="application/javascript" src="../vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <!--Vue JS-->
+    <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script  type="application/javascript" src="../vue.js"></script>
+    <script type="application/javascript" src="../navbar.js"></script>
+    <script type="application/javascript" src="../footer.js"></script>
+    <script type="application/javascript" class="vue" src="./projectinfo.js"></script>
+
+
+
+
     <!-- Vendor JS       -->
     <script type="application/javascript" src="../vendor/slick/slick.min.js"></script>
     <script type="application/javascript" src="../vendor/wow/wow.min.js"></script>
@@ -1392,13 +1411,8 @@
 
     <!-- Main JS-->
     <script type="application/javascript"  src="../js/main.js"></script>
+    <script type="application/javascript" id="base"></script>
 
-</body>
-<script type="application/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script type="application/javascript" id="base"></script>
-<script type="application/javascript" class="vue" src="./projectinfo.js"></script>
-<script type="application/javascript" src="../footer.js"></script>
-<script type="application/javascript" src="../navbar.js"></script>
 
 
 <script type="application/javascript" >
@@ -1459,5 +1473,6 @@ return;
 $(function(){  
     $('#riskcnt').load('addrisk.html');  
 });*/
-</script>          
+</script>   
+</body>
 </html>

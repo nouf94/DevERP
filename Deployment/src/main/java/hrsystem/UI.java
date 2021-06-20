@@ -378,10 +378,10 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
 
 
 
-     public void  SendProjects( final String p_Code,  final String p_Name,  final String p_Description,  final int p_StartDate,  final int p_EndDate,  final int p_Budget )throws XtumlException {
+     public void  SendProjects( final String p_Code,  final String p_Name,  final String p_Description,  final int p_StartDate,  final int p_EndDate,  final double p_Budget,  final int p_Duration,  final String p_Sponsor )throws XtumlException {
     	    
         try {
-              HRGuiController.Singleton().SendProjects(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget);
+              HRGuiController.Singleton().SendProjects(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget, p_Duration, p_Sponsor);
           }catch(Exception e) {
               
           }  

@@ -1957,10 +1957,10 @@ private static HRGuiController singleton;
 	}
 	
 	@PostMapping(path="/createProject", consumes="application/json")
-	public void CreateProject(String p_Code, String p_Name, String p_Description, int p_StartDate,  int p_EndDate, int p_Budget ) {
+	public void CreateProject( String p_Code,  String p_Name,  String p_Description,  int p_StartDate,  int p_EndDate,  double p_Budget,  int p_Duration,  String p_Sponsor ) {
 		// TODO Auto-generated method stub
 		try {
-			UI.Singleton().Projects().CreateProject(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget);
+			UI.Singleton().Projects().CreateProject(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget, p_Duration, p_Sponsor);
 		} catch (XtumlException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -2064,32 +2064,55 @@ private static HRGuiController singleton;
          } 
          } 
 	
-	     List<Project> projects=new ArrayList<Project>();
-		 public void SendProjects( final String p_Code,  final String p_Name,  final String p_Description,  final int p_StartDate,  final int p_EndDate,  final int p_Budget ){
+		public void SendProjects( String p_Code, String p_Name, String p_Description, int p_StartDate, int p_EndDate, double p_Budget, int p_Duration, String p_Sponsor){
         Project proj=null;
           try {
-			proj=new Project(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget);
-			System.out.println(proj.toString());
+			proj=new Project(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget, p_Duration, p_Sponsor);
+			System.out.println("project name:" +p_Name+" Project Code: "+ p_Code+ " p_Description: "+p_Description+" p_StartDate: "+p_StartDate+" p_EndDate: "+p_EndDate+" p_Budget: "+p_Budget+" p_Duration: "+p_Duration+" p_Sponsor: "+p_Sponsor);
 			projects.add(proj);
 
          }catch(Exception e) {
       	   	e.printStackTrace();
 
          } 
-         } 
+         }
 
-	@GetMapping(path="/ReadProjects", produces="appliaction/json")
-	public List<Project> ReadProjects() {
+	@PutMapping(path="/ReadProject", produces="application/json", consumes="application/json")
+	public List<Project> ReadProject(@RequestBody Project pro) {
 		// TODO Auto-generated method stub
 		try {
 			projects.clear();
-			UI.Singleton().Projects().ReadProjects();
-			Thread.sleep(300);
+			UI.Singleton().Projects().ReadProject(pro.getP_Code());
+			Thread.sleep(700);
+			System.out.println(projects.size());
 			return projects;
-		} catch (XtumlException | InterruptedException e) {
+		} catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
+	}
+			  
+	List<Project> projects=new ArrayList<Project>();
+	@GetMapping(path="/ReadProjects", produces="appliaction/json")
+	public List<Project> ReadAllProjects() {
+		// TODO Auto-generated method stub
+		try {
+			projects.clear();
+			UI.Singleton().Projects().ReadAllProjects();
+			Thread.sleep(700);
+			return projects;
+		} catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(projects.size());
 		return null;
 	}
 		List<Goal> goals=new ArrayList<Goal>();
@@ -2122,7 +2145,6 @@ private static HRGuiController singleton;
           try {
 			goals.clear();
             UI.Singleton().Projects().ReadProjectGoals(goal.getP_ProjectCode());
-			System.out.println(goal.getP_ProjectCode());
 			Thread.sleep(700);
 			return goals;
          }catch (XtumlException e) {
@@ -2299,8 +2321,8 @@ private static HRGuiController singleton;
 
 	}
 	@PostMapping(path="/AddChangeRequestImpact", consumes="application/json")
-	public void AddChangeRequestImpact(@RequestBody Impact Impacts) {
-ChangeRequest chreq;
+	public void AddChangeRequestImpact( @RequestBody Impact Impacts) {
+		ChangeRequest chreq;
 		try{
 			//int i=1; // skipped the first impact because it was sent in the CreateChangeRequest
 			for(int i = 1; i < Impacts.getP_Impacts().length; i++) {
@@ -2311,36 +2333,37 @@ ChangeRequest chreq;
 			e.printStackTrace();
 		}
 	}
-		//List<Impact> pimpacts=new ArrayList<Impact>();
-		//String[] categories;
-		//String[] details;
-		List<String> categories=new ArrayList<String>();
-		List<String> details=new ArrayList<String>();
 
-	   public void SendChangeRequestImpact( final String p_Category,  final String p_Details)  {		
-         try {
-			
-			categories.add(p_Category);
-			details.add(p_Details);
-			System.out.println("Cat: "+ p_Category +" Detail: "+ p_Details) ;
-			//imp=new Impact(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompleteStatus);
-			//pimpacts.add(imp);
+		List<ChangeRequest> ReadImpacts=new ArrayList<ChangeRequest>();
+
+	   public void SendChangeRequestImpact(  String p_Category,  String p_Details)  {		
+        ChangeRequest imp;
+		 try {
+		
+		System.out.println(p_Category);
+			if(p_Category.equals("time")){	
+			 String[] arrSplit = p_Details.split(",");
+			 System.out.println(arrSplit[0]);
+			imp=new ChangeRequest(p_Category, arrSplit[0],arrSplit[1]);
+ 			}else{
+			imp=new ChangeRequest(p_Category, p_Details);
+			}
+			ReadImpacts.add(imp);
          }catch(Exception e) {
       	   
          } 
          } 
 
 		@PutMapping(path="/ReadChangeRequestImpact", consumes="application/json", produces="application/json")	
-		public Impact ReadChangeRequestImpact(@RequestBody Impact imp ){
-          	Impact pimpacts;
+		public List<ChangeRequest> ReadChangeRequestImpact(@RequestBody ChangeRequest ch ){
 
           try {
-			categories.clear();
-			details.clear();
-            UI.Singleton().Projects().ReadChangeRequestImpact(imp.getP_CreationDate());
+			//categories.clear();
+			ReadImpacts.clear();
+            UI.Singleton().Projects().ReadChangeRequestImpact(ch.getP_CreationDate());
 			Thread.sleep(700);
-			pimpacts=new Impact(categories.toArray(new String[0]),details.toArray(new String[0]));
-			return pimpacts;
+			//pimpacts=new Impact(categories.toArray(new String[0]),details.toArray(new String[0]));
+			return ReadImpacts;
          }catch (XtumlException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

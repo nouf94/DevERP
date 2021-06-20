@@ -1,6 +1,32 @@
 var Impacts=[];
 var Details=[]; 
 
+
+//Add ProjectInfo Instance
+var ProjectInfoApp = new Vue({
+  el: '#projectInfo',
+  data:{
+    p_Code:'Project1Code',
+    Projects:''
+  },
+  mounted: function mounted () {
+    this.readProjectInfo()
+    //this.ReadStrategies()
+
+  },
+  methods: {
+    readProjectInfo:function (event){
+      axios.put('/rest/ReadProject',{
+        p_Code: this.p_Code
+      }).then(response => (this.Projects = response.data,
+        console.log(response)
+          )).catch(error => {
+            console.log(error)
+        })
+      }
+    }//End Methods
+});//End Vue ProjectInfo
+
 //Change Request Instance
 var app = new Vue({
     el: '#nav-requests',
@@ -17,14 +43,15 @@ var app = new Vue({
         email: false
       },
       selectedRequest:'',
+      selectedImpacts:'',
       Impacts:''
-
+  
     },
     mounted: function mounted () {
       this.readChnages()
     },
     methods: {
-      readChnages:function (){
+      readChnages:function (event){
         axios.get('/rest/ReadAllChangeRequest')
         .then(response2 => (this.Requests = response2.data,
           //console.log(response2),
@@ -53,10 +80,11 @@ var app = new Vue({
             });
         },//End SubmitValues Method  
         submitImpact: function (creationDate) {
+          console.log(creationDate)
             axios.post('/rest/AddChangeRequestImpact', {
               p_Impacts: Impacts,
               p_Details: Details,
-              p_ChangeRequestCreationDate:creationDate
+              p_CreationDate:creationDate
               }).then(response => {
                 console.log(response)
               }).catch(error => {
@@ -65,19 +93,12 @@ var app = new Vue({
           },//End submitImpact Method  
           ReadChangeRequestImpact: function (selectedDate) {
             axios.put('/rest/ReadChangeRequestImpact', {
-              p_ChangeRequestCreationDate:selectedDate
-              }).then(response => {
-                console.log(response)
-              }).catch(error => {
-                  console.log(error)
-              });
-          },//End read GetImpact Method 
-          ReadChangeRequesttst: function (selectedDate) {
-            axios.put('/rest/TestReadChangeRequestByCreationDte', {
               p_CreationDate:selectedDate
               }).then(response => {
-                console.log('This is the tst result: ')
-                console.log(response)
+                this.selectedImpacts=response.data;
+                //ConvertDatetoJSON(this.selectedImpacts);
+                console.log(response.data)
+
               }).catch(error => {
                   console.log(error)
               });
@@ -86,7 +107,6 @@ var app = new Vue({
             index=(event.target.parentElement.rowIndex)-1;
             this.selectedRequest=this.Requests[index];
             this.ReadChangeRequestImpact(this.selectedRequest.p_CreationDate)
-            //this.ReadChangeRequesttst(this.selectedRequest.p_CreationDate)
 
           } 
       }//End  Methods
@@ -378,7 +398,6 @@ function showRisks(Risks){
 }
 return;
 }
-
 function showFiles(Files){
   if(Files.length>0){
     $("#FilesTable").show();
@@ -389,6 +408,13 @@ function showFiles(Files){
       }
     }
 
+function ConvertDatetoJSON(Impacts){
+  for(i=0;i<Impacts.length;i++){
+    if(Impacts[i].p_ImpactDetails){
+return;
+    }
+  }
+}
 
 // Process the requests returned from backend
 function ProcessRequest(Requests){
@@ -422,9 +448,7 @@ function GetImpact(){
     // Get Start and End Date and push to details
     StartDate=$('#CStartDate').val();
     EndDate=$('#CEndDate').val();
-     text = '{ "NewTimeline" : [' +
-    '{ "StartDate":"'+StartDate+'" },' +
-    '{ "EndDate":"'+EndDate+'" } ]}';
+    text = StartDate+","+EndDate;
     Details.push(text);
   }
 });
