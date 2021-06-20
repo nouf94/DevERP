@@ -122,7 +122,7 @@ color: red;
   
 		<form id="signup-form" @submit.prevent="processForm" style="width:100%">
 		<table id="Projects" style="width:100%">
-				<tr >
+				<tr v-for="(proj, index)  in Projects" >
     	                 	<th>الاسم</th>
     	                 	<th>الوصف</th>
     	                 	<th>مدير المشروع</th>
@@ -133,8 +133,8 @@ color: red;
     	           <tr style="color: #007bff">
 	    	           <td><a href="./projectinfo.html">
                     <div style="height:100%;width:100%">
-                      مشروع تطوير إنترنت الأشياء
-                    </div>
+{{proj.p_Name}} 
+</div>
                   </a>
                    </td>
 	    	           <td>-</td>
@@ -144,15 +144,7 @@ color: red;
 	    	           <td>5,000,000</td>
     	           
     	           </tr>
-    	           <tr style="color: #007bff">
-	    	           <td>مشروع تطوير السيارة الذكية</td>
-	    	           <td>-</td>
-	    	           <td>خالد ين سعد</td>
-	    	           <td>2020-05-01</td>
-	    	           <td>2021-12-29</td>
-	    	           <td>3,000,000</td>
-    	           
-    	           </tr>
+    	          
 		</table>
 		</form>
     </div>

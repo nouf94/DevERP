@@ -55,8 +55,9 @@ var app = new Vue({
     },
     methods: {
       readChnages:function (event){
-        axios.get('/rest/ReadAllChangeRequest')
-        .then(response2 => (this.Requests = response2.data,
+        axios.put('/rest/ReadChangeRequests',{
+          p_ProjectCode: this.p_ProjectCode
+        }).then(response2 => (this.Requests = response2.data,
           //console.log(response2),
           ProcessRequest(this.Requests)
             )).catch(error => {
