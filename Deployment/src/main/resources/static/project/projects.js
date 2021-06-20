@@ -107,7 +107,7 @@ Vue.component('mynavbar', {
  var Projectsapp = new Vue({
     el: '#Projects',
     data:{
-      Projects:'s',
+      allProjects:'',
     
     },
     mounted: function mounted () {
@@ -117,8 +117,7 @@ Vue.component('mynavbar', {
       ReadProjects:function (event){
         axios.get('/rest/ReadAllTheProjects')
         .then(response => (
-          this.Projects=response.data,
-          console.log(this.Projects)
+          this.allProjects=response.data
           )).catch(error => {
               console.log(error.response)
           })}//End ReadProject

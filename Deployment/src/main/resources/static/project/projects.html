@@ -120,9 +120,8 @@ color: red;
           <hr>
 <br>
   
-		<form id="signup-form" @submit.prevent="processForm" style="width:100%">
 		<table id="Projects" style="width:100%">
-				<tr v-for="(proj, index)  in Projects" >
+				<tr>
     	                 	<th>الاسم</th>
     	                 	<th>الوصف</th>
     	                 	<th>مدير المشروع</th>
@@ -130,7 +129,7 @@ color: red;
     	                 	<th>تاريخ النهاية</th>
     	                 	<th>الميزانية</th>
     	           </tr>
-    	           <tr style="color: #007bff">
+    	           <tr style="color: #007bff" v-for="proj in allProjects" >
 	    	           <td><a href="./projectinfo.html">
                     <div style="height:100%;width:100%">
 {{proj.p_Name}} 
@@ -146,7 +145,6 @@ color: red;
     	           </tr>
     	          
 		</table>
-		</form>
     </div>
 <br>
 <hr>
@@ -167,6 +165,6 @@ color: red;
 <script type="application/javascript"  class="vue" src="./projects.js"></script> 
 
      <script id="base"></script>
-    <script class="vue" src="./role.js"></script>
+<script class="vue" src="./role.js"></script>
            
 </html>
