@@ -30,54 +30,6 @@ INSERT INTO GD_MD
 	0,
 	'4.1.17',
 	'ProjectMgmt::pmm::pm');
-INSERT INTO GD_GE
-	VALUES ("9cd353ba-b5a7-4c10-8ccd-1d4096e49eeb",
-	"00000000-0000-0000-0000-000000000000",
-	"d8941aac-fe97-4ede-8994-e08f0fa770a0",
-	108,
-	0,
-	'ProjectMgmt::pmm::pm::Initialization');
-INSERT INTO GD_SHP
-	VALUES ("9cd353ba-b5a7-4c10-8ccd-1d4096e49eeb");
-INSERT INTO GD_NCS
-	VALUES ("9cd353ba-b5a7-4c10-8ccd-1d4096e49eeb");
-INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
-	"9cd353ba-b5a7-4c10-8ccd-1d4096e49eeb");
-INSERT INTO DIM_GE
-	VALUES (0.000000,
-	0.000000,
-	"9cd353ba-b5a7-4c10-8ccd-1d4096e49eeb",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("9cd353ba-b5a7-4c10-8ccd-1d4096e49eeb",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_GE
-	VALUES ("2e08026c-8db0-437b-8825-9f34718d3c7e",
-	"00000000-0000-0000-0000-000000000000",
-	"6177f291-1d29-415e-bed8-570d8e84b959",
-	108,
-	0,
-	'ProjectMgmt::pmm::pm::main');
-INSERT INTO GD_SHP
-	VALUES ("2e08026c-8db0-437b-8825-9f34718d3c7e");
-INSERT INTO GD_NCS
-	VALUES ("2e08026c-8db0-437b-8825-9f34718d3c7e");
-INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
-	"2e08026c-8db0-437b-8825-9f34718d3c7e");
-INSERT INTO DIM_GE
-	VALUES (220.000000,
-	0.000000,
-	"2e08026c-8db0-437b-8825-9f34718d3c7e",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("2e08026c-8db0-437b-8825-9f34718d3c7e",
-	0,
-	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PO
 	VALUES ("6682b901-e90c-4009-8856-6794e02a617d",
 	"6b567f7b-1b30-4818-b8a0-dfca9c0a25d8",
@@ -1346,11 +1298,17 @@ INSERT INTO SPR_PS
 	VALUES ("1c95de0c-f54d-4a3a-9ff3-5e8fb551fdcb",
 	'ReadProject',
 	'',
-	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+	'select any project from instances of Project where selected.Code == "Project1Code"; 
+select any project1 from instances of Project where selected.Code == "Project2Code"; 
+
    
 if (not_empty project)
 	
 	UI::SendProjects( Code:project.Code, Name:project.Name, Description:project.Description, StartDate:project.StartDate, EndDate:project.EndDate, Budget:project.Budget, Duration:project.Duration, Sponsor:project.Sponsor );
+	UI::SendProjects( Code:project1.Code, Name:project1.Name, Description:project1.Description, StartDate:project1.StartDate, EndDate:project1.EndDate, Budget:project1.Budget, Duration:project1.Duration, Sponsor:project1.Sponsor );
+	LOG::LogInfo( message:project.Code );
+	LOG::LogInfo( message:project1.Code );
+//	LOG::LogReal( message:"prg.Budget", r:prg.Budget );
 	
 end if;
 ',
@@ -1406,9 +1364,10 @@ INSERT INTO SPR_PS
 if (not_empty projcts)
 	
 	for each prg in projcts
-		UI::SendProjects( Code:prg.Code, Name:prg.Name, Description:prg.Description, StartDate:prg.StartDate, EndDate:prg.EndDate, Budget:prg.Budget, Duration:prg.Duration,Sponsor:prg.Sponsor );
-		//LOG::LogInfo( message:prg.Code );
-		
+		UI::SendProjects(Code:prg.Code, Name:prg.Name, Description:prg.Description, StartDate:prg.StartDate, EndDate:prg.EndDate, Budget:prg.Budget, Duration:prg.Duration,Sponsor:prg.Sponsor);
+//	LOG::LogInfo( message:prg.Code );
+//	LOG::LogReal( message:"prg.Budget", r:prg.Budget );
+	
 
 	end for;
 end if;
