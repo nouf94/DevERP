@@ -1,13 +1,13 @@
 var Impacts=[];
 var Details=[]; 
-
+var Project="";
 
 //Add ProjectInfo Instance
 var ProjectInfoApp = new Vue({
   el: '#projectInfo',
   data:{
-    p_Code:'Project1Code',
-    Projects:''
+    p_Code:'Project2Code',
+    ProjectInfo:''
   },
   mounted: function mounted () {
     this.readProjectInfo()
@@ -18,14 +18,17 @@ var ProjectInfoApp = new Vue({
     readProjectInfo:function (event){
       axios.put('/rest/ReadProject',{
         p_Code: this.p_Code
-      }).then(response => (this.Projects = response.data,
-        console.log(response)
-          )).catch(error => {
+      }).then(response => (this.ProjectInfo = response.data[0],
+        console.log(response),
+        $("#projectName").html(this.ProjectInfo.p_Name),
+        $("#ProjectDesc").html(this.ProjectInfo.p_Description)
+        )).catch(error => {
             console.log(error)
         })
       }
     }//End Methods
 });//End Vue ProjectInfo
+
 
 //Change Request Instance
 var app = new Vue({
@@ -92,6 +95,7 @@ var app = new Vue({
               });
           },//End submitImpact Method  
           ReadChangeRequestImpact: function (selectedDate) {
+            console.log(selectedDate)
             axios.put('/rest/ReadChangeRequestImpact', {
               p_CreationDate:selectedDate
               }).then(response => {
@@ -426,7 +430,7 @@ function ProcessRequest(Requests){
     document.getElementById('NoReqts').style.display="none";
     document.getElementById('RequestsTable').style.display="block";
     curdate.setTime(Requests[i].p_CreationDate*1000);
-    //Requests[i].p_CreationDate=curdate.toLocaleDateString();
+    Requests[i].p_CreationDate=curdate.toLocaleDateString();
 }
 return;
 }

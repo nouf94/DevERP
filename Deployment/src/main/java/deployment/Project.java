@@ -1,6 +1,6 @@
 package deployment;
 
-public class Project {
+public class Project{
     private String p_Code;
     private String p_Name;
     private String p_Description;
@@ -9,9 +9,10 @@ public class Project {
     private double p_Budget;
     private int p_Duration;
     private String p_Sponsor;
-	
+
 	public Project(){
 	}
+
 	public Project(String p_Code, String p_Name, String p_Description, int p_StartDate, int p_EndDate, double p_Budget, int p_Duration, String p_Sponsor){
         
         this.p_Code=p_Code;
@@ -23,6 +24,7 @@ public class Project {
 		this.p_Duration=p_Duration;
         this.p_Sponsor=p_Sponsor;
     }
+
 	public Project(String p_Code){
 	this.p_Code=p_Code;
 
@@ -85,5 +87,8 @@ public class Project {
 	public void setP_Sponsor(String p_Sponsor) {
 		this.p_Sponsor = p_Sponsor;
 	}
-
+	public String toString() {
+		String str="project name:" +this.p_Name+" Project Code: "+ this.p_Code+ "Desc: "+this.p_Description+ " sdt: "+this.p_StartDate+ " Edt: "+this.p_EndDate+" Dur: "+this.p_Duration+" Bgt: "+this.p_Budget+" Sponser: "+this.p_Sponsor;
+		return str;
+    }
 }

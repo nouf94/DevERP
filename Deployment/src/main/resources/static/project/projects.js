@@ -104,10 +104,11 @@ Vue.component('mynavbar', {
 	           
 		  '</div>'});
 
- var app = new Vue({
+ var Projectsapp = new Vue({
     el: '#Projects',
     data:{
-      Projects:''
+      Projects:'',
+    
     },
     mounted: function mounted () {
       this.ReadProjects()
