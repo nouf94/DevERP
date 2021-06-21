@@ -1439,6 +1439,146 @@ INSERT INTO C_EP_PROXY
 	'',
 	39,
 	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("e93ea122-9fb2-4f19-9f9f-69d35a5875a7",
+	"5531cd48-c559-4e8f-a16f-8964c02142c3",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("e93ea122-9fb2-4f19-9f9f-69d35a5875a7",
+	'AddOutcome',
+	'',
+	'',
+	3,
+	0,
+	40);
+INSERT INTO C_EP_PROXY
+	VALUES ("5531cd48-c559-4e8f-a16f-8964c02142c3",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddOutcome',
+	'',
+	40,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("cb246aab-7ef7-4e33-9c90-c4cb3bb2edc6",
+	"1b3a39ef-5bc7-48a4-901f-a59d186420d3",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("cb246aab-7ef7-4e33-9c90-c4cb3bb2edc6",
+	'AddDelivrable',
+	'',
+	'',
+	3,
+	0,
+	41);
+INSERT INTO C_EP_PROXY
+	VALUES ("1b3a39ef-5bc7-48a4-901f-a59d186420d3",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddDelivrable',
+	'',
+	41,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("e6fd3815-472b-48be-b496-31046b38b5aa",
+	"6844d8eb-ae59-465d-8cb1-d97659cbffc7",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("e6fd3815-472b-48be-b496-31046b38b5aa",
+	'AddPurchase',
+	'',
+	'',
+	3,
+	0,
+	42);
+INSERT INTO C_EP_PROXY
+	VALUES ("6844d8eb-ae59-465d-8cb1-d97659cbffc7",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddPurchase',
+	'',
+	42,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("dd2a75e7-0fa8-47e6-a6a0-ae79bff54f52",
+	"b6e799ba-3017-4b0d-ab7d-0952ebdf30b0",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("dd2a75e7-0fa8-47e6-a6a0-ae79bff54f52",
+	'ReadProjectOutcome',
+	'',
+	'',
+	3,
+	0,
+	43);
+INSERT INTO C_EP_PROXY
+	VALUES ("b6e799ba-3017-4b0d-ab7d-0952ebdf30b0",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectOutcome',
+	'',
+	43,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("630153a2-8f49-4b23-b215-823bc96b4258",
+	"f0a66038-b18d-4800-93dd-818c5897b0d5",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("630153a2-8f49-4b23-b215-823bc96b4258",
+	'ReadProjectPurchase',
+	'',
+	'',
+	3,
+	0,
+	44);
+INSERT INTO C_EP_PROXY
+	VALUES ("f0a66038-b18d-4800-93dd-818c5897b0d5",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectPurchase',
+	'',
+	44,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("a6d2f860-c987-45de-8456-458c7f9f2c6a",
+	"0ee64c57-5817-401b-9450-669fbc4c669b",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("a6d2f860-c987-45de-8456-458c7f9f2c6a",
+	'ReadOutcomeDelivirables',
+	'',
+	'',
+	3,
+	0,
+	45);
+INSERT INTO C_EP_PROXY
+	VALUES ("0ee64c57-5817-401b-9450-669fbc4c669b",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadOutcomeDelivirables',
+	'',
+	45,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("7275e59e-9628-4eb7-ac0f-78e5f64e37d2",
+	"eb6067c7-ddb6-4f8f-9bbd-d6529549e364",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("7275e59e-9628-4eb7-ac0f-78e5f64e37d2",
+	'SendPurchase',
+	'',
+	'',
+	3,
+	0,
+	46);
+INSERT INTO C_EP_PROXY
+	VALUES ("eb6067c7-ddb6-4f8f-9bbd-d6529549e364",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendPurchase',
+	'',
+	46,
+	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
 	"00000000-0000-0000-0000-000000000000",
