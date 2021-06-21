@@ -14,8 +14,17 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'',
-	3,
+	'self.ID=0;
+self.Scope=param.Scope;
+self.ExpectedCost=param.ExpectedCost;
+
+select any project from instances of Project where selected.Code==param.ProjectCode;
+if (not_empty project)
+	
+		relate self to project across R83.''Belongs'';
+	
+end if;',
+	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	0,
