@@ -245,6 +245,16 @@ create object instance purchase of Purchase;
 purchase.AddPurchase( ProjectCode:"Project1Code", Scope:"scoope", ExpectedCost: 1.1);
 
 
+// -------------------------------------------------
+// PROJECT OUTCOME
+//--------------------------------------------
+create object instance outcome of Outcome;
+outcome.AddOutcome(ID:111, Title:"Outcome Title", Description:"Description", StartDate:0, EndDate:0, ProjectCode:"Project1Code");
+
+// ------------------------------------------
+create object instance deliverable of Deliverable;
+deliverable.AddDelivrable(OutcomeID:111, Title:"DeliverableTitle");
+
 //...............................
 
 
@@ -263,6 +273,9 @@ create object instance CR2 of ChangeRequest;
 CR2.CreateChangeRequest( Title:"CR22", Description:"DDd222", Justification:"jjjjj222", ProjectCode:"Project2Code", CreationDate:tC2, ImpactCategory:"3", ImpactDetails:"d22222" );
 create object instance impact2 of Impact; 
 impact2.AddImpact( Category:"4", Details:"ddddd33333", ChangeRequestCreationDate:tC2);
+
+
+
 ',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
