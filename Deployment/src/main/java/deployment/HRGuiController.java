@@ -1997,26 +1997,7 @@ private static HRGuiController singleton;
 		return null;
 	}
 
-	//@GetMapping(path="/ReadChangeRequestImpact", produces="application/json")
-	/*@PutMapping(path="/ReadChangeRequestImpact", consumes="application/json", produces="application/json")	
-	public Impact ReadChangeRequestImpact(int p_CreationDate) {
-		// TODO Auto-generated method stub
-		try {
-			Impact imp = new Impact();
-			UI.Singleton().Projects().ReadChangeRequestImpact(p_CreationDate);
-			Thread.sleep(700);
-			return imp;
-		} catch (XtumlException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}*/
-
-	//List<ChangeRequest> changes = new ArrayList<ChangeRequest>();
+	
 	@PutMapping(path="/TestReadChangeRequestByCreationDte", consumes="application/json", produces="application/json")	
 	public List<ChangeRequest> TestReadChangeRequestByCreationDte(@RequestBody ChangeRequest ch) {
 		// TODO Auto-generated method stub
@@ -2084,7 +2065,6 @@ private static HRGuiController singleton;
         Project proj;
           try {
 			proj=new Project(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget , p_Duration, p_Sponsor);
-			System.out.println(proj.toString());			
 			projects.add(proj);
 
          }catch(Exception e) {
@@ -2354,10 +2334,8 @@ private static HRGuiController singleton;
         ChangeRequest imp;
 		 try {
 		
-		System.out.println(p_Category);
 			if(p_Category.equals("time")){	
 			 String[] arrSplit = p_Details.split(",");
-			 System.out.println(arrSplit[0]);
 			imp=new ChangeRequest(p_Category, arrSplit[0],arrSplit[1]);
  			}else{
 			imp=new ChangeRequest(p_Category, p_Details);

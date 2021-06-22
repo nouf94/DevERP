@@ -1212,7 +1212,7 @@
   </label>
   </td>
   <td>{{req.p_Title}}</td>
-  <td>{{req.p_CreationDate}}</td>
+  <td>{{req.p_CreationDateConverted}}</td>
   <td>
   <span class="status--process">مكتمل</span>
   </td>
@@ -1232,7 +1232,7 @@
   </table>
 
 </div>
-<!-- View Goal -->
+<!-- View Requests -->
 
                     <div id="viewRequest" class="modal fade" role="dialog">
                       <div class="modal-dialog">
@@ -1269,41 +1269,33 @@
             <div class="form-group col-lg-12" >
               <label ><h3>  أثر التغيير </h3></label></br>
             </div>
-            <div class="form-group col-lg-12" v-for="Impact in selectedImpacts" >
+            <div class="form-group col-md-6" v-for="Impact in selectedImpacts" >
             <label for="Impact" v-if="Impact.p_ImpactCategory == 'quality' " ><strong>  الجودة </strong></label></br>
             <label for="Impact" v-if="Impact.p_ImpactCategory == 'scope' " ><strong>   نطاق العمل </strong></label></br>
             <label for="Impact" v-if="Impact.p_ImpactCategory == 'cost' " ><strong>    التكلفة </strong></label></br>
             <label  id="Impact" v-if="Impact.p_ImpactCategory != 'time' ">
             {{Impact.p_ImpactDetails}}</label>
             <label for="Impact" v-if="Impact.p_ImpactCategory == 'time' " ><strong>     الجدول الزمني </strong></label></br>
-           
-            <div v-if="Impact.p_ImpactCategory == 'time' " class="col-md-4">
-              <label for="CStartDate" class="control-label mb-1">تاريخ البداية  </label>
-              <input type="date" class="form-control cc-exp" id="VCStartDate" name="" v-bind:value="Impact.p_StartDate" readonly >
-            <label for="CEndDate" class="control-label mb-1" >تاريخ الإنتهاء  </label>
-            <input type="date" class="form-control cc-exp" id="VCEndDate" name=""  v-bind:value="Impact.p_EndDate" readonly>
-            </div>
-        </div>
-
-        <div class="row">
-          <div class="col-6">
-              <div class="form-group">
-                  <label for="cc-exp" class="control-label mb-1">Expiration</label>
-                  <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY" autocomplete="cc-exp">
-                  <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+        
+            <div class="form-row" v-if="Impact.p_ImpactCategory == 'time' " >
+              <div class="col-6">
+                  <div class="form-group">
+                      <label for="CStartDate" class="control-label mb-1">تاريخ البداية </label>
+                      <input id="CStartDate" name="CStartDate" type="date" class="form-control cc-exp" v-bind:value="Impact.p_StartDate" readonly/>
+                      <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                  </div>
               </div>
-          </div>
-          <div class="col-6">
-              <label for="x_card_code" class="control-label mb-1">Security code</label>
-              <div class="input-group">
-                  <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code" data-val-cc-cvc="Please enter a valid security code" autocomplete="off">
-
+              <div class="col-6">
+                  <label for="VCEndDate" class="control-label mb-1"> تاريخ الإنتهاء </label>
+                  <div class="input-group">
+                      <input id="VCEndDate" name="VCEndDate" type="date" class="form-control cc-cvc"  v-bind:value="Impact.p_EndDate" readonly/>
+    
+                  </div>
               </div>
+          </div>  <!--End Date Row-->
           </div>
-      </div>
+           </div>
 
-
-    </div>                
           
                 </div><!-- close body-->
                 <div class="modal-footer">

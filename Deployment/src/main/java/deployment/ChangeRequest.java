@@ -7,6 +7,7 @@ public class ChangeRequest {
 	private String p_Justification;		
 	private String p_ProjectCode;
 	private int p_CreationDate;
+	private String p_CreationDateConverted;
 	private String p_ImpactCategory;
 	private String p_ImpactDetails;
 	private String StartDate;
@@ -14,7 +15,7 @@ public class ChangeRequest {
 	public ChangeRequest() {
 		
 	}
-	public ChangeRequest(String p_Title,String p_Description, String p_Justification, String p_ProjectCode, int p_CreationDate,String p_ImpactCategory, String p_ImpactDetails,String StartDate, String EndDate) {
+	public ChangeRequest(String p_Title,String p_Description, String p_Justification, String p_ProjectCode, int p_CreationDate,String p_CreationDateConverted,String p_ImpactCategory, String p_ImpactDetails,String StartDate, String EndDate) {
 		this.p_Title=p_Title;
 		this.p_Description = p_Description;
 		this.p_Justification = p_Justification;
@@ -24,6 +25,7 @@ public class ChangeRequest {
 		this.p_ImpactDetails = p_ImpactDetails;
 		this.StartDate = StartDate;
 		this.EndDate = EndDate;
+		this.p_CreationDateConverted=p_CreationDateConverted;
 
 	}
 	public ChangeRequest( int p_CreationDate,String p_Title,String p_Description, String p_Justification) {
@@ -125,4 +127,13 @@ public class ChangeRequest {
 	public void setP_EndDate(String EndDate) {
 		this.EndDate = EndDate;
 	}
+	
+	public String getP_CreationDateConverted() {
+		return p_CreationDateConverted;
+	}
+
+	public void setP_CreationDateConverted(String p_CreationDateConverted) {
+		this.p_CreationDateConverted = p_CreationDateConverted;
+	}
+	
 }

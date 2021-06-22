@@ -19,7 +19,6 @@ var ProjectInfoApp = new Vue({
       axios.put('/rest/ReadProject',{
         p_Code: this.p_Code
       }).then(response => (this.ProjectInfo = response.data[0],
-        console.log(response),
         $("#projectName").html(this.ProjectInfo.p_Name),
         $("#ProjectDesc").html(this.ProjectInfo.p_Description)
         )).catch(error => {
@@ -74,8 +73,10 @@ var app = new Vue({
             p_ImpactDetails: Details[0]
             }).then(response => {
               //If the Change request has more than one Impact submit the rest Impacts here
-              if(Impacts.length>1){
-             this.submitImpact(response.data[0]['p_CreationDate'])}
+            if(Impacts.length>1){
+             this.submitImpact(response.data[0]['p_CreationDate'])
+            }
+            $('#pchange-form')[0].reset();//Clear Form after Submit Seccssfully
              $("#Alert").show();
              this.readChnages()//To Update List of Requests
             }).catch(error => {
@@ -84,7 +85,6 @@ var app = new Vue({
             });
         },//End SubmitValues Method  
         submitImpact: function (creationDate) {
-          console.log(creationDate)
             axios.post('/rest/AddChangeRequestImpact', {
               p_Impacts: Impacts,
               p_Details: Details,
@@ -96,19 +96,18 @@ var app = new Vue({
               });
           },//End submitImpact Method  
           ReadChangeRequestImpact: function (selectedDate) {
-            console.log(selectedDate)
             axios.put('/rest/ReadChangeRequestImpact', {
               p_CreationDate:selectedDate
               }).then(response => {
                 this.selectedImpacts=response.data;
                 //ConvertDatetoJSON(this.selectedImpacts);
                 console.log(response.data)
-
               }).catch(error => {
                   console.log(error)
               });
           },//End read GetImpact Method 
           viewRequest:function(event){
+            this.selectedImpacts="";
             index=(event.target.parentElement.rowIndex)-1;
             this.selectedRequest=this.Requests[index];
             this.ReadChangeRequestImpact(this.selectedRequest.p_CreationDate)
@@ -431,7 +430,7 @@ function ProcessRequest(Requests){
     document.getElementById('NoReqts').style.display="none";
     document.getElementById('RequestsTable').style.display="block";
     curdate.setTime(Requests[i].p_CreationDate*1000);
-    Requests[i].p_CreationDate=curdate.toLocaleDateString();
+    Requests[i].p_CreationDateConverted=curdate.toLocaleDateString();
 }
 return;
 }
