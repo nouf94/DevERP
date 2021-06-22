@@ -30,54 +30,6 @@ INSERT INTO GD_MD
 	0,
 	'4.1.17',
 	'ProjectMgmt::pmm::pm');
-INSERT INTO GD_GE
-	VALUES ("90128036-a2a9-4083-8e0d-f0eaa6b0156f",
-	"00000000-0000-0000-0000-000000000000",
-	"d8941aac-fe97-4ede-8994-e08f0fa770a0",
-	108,
-	0,
-	'ProjectMgmt::pmm::pm::Initialization');
-INSERT INTO GD_SHP
-	VALUES ("90128036-a2a9-4083-8e0d-f0eaa6b0156f");
-INSERT INTO GD_NCS
-	VALUES ("90128036-a2a9-4083-8e0d-f0eaa6b0156f");
-INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
-	"90128036-a2a9-4083-8e0d-f0eaa6b0156f");
-INSERT INTO DIM_GE
-	VALUES (0.000000,
-	0.000000,
-	"90128036-a2a9-4083-8e0d-f0eaa6b0156f",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("90128036-a2a9-4083-8e0d-f0eaa6b0156f",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_GE
-	VALUES ("bea8b13d-27ff-4e63-a1fa-464deb912b55",
-	"00000000-0000-0000-0000-000000000000",
-	"6177f291-1d29-415e-bed8-570d8e84b959",
-	108,
-	0,
-	'ProjectMgmt::pmm::pm::main');
-INSERT INTO GD_SHP
-	VALUES ("bea8b13d-27ff-4e63-a1fa-464deb912b55");
-INSERT INTO GD_NCS
-	VALUES ("bea8b13d-27ff-4e63-a1fa-464deb912b55");
-INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
-	"bea8b13d-27ff-4e63-a1fa-464deb912b55");
-INSERT INTO DIM_GE
-	VALUES (220.000000,
-	0.000000,
-	"bea8b13d-27ff-4e63-a1fa-464deb912b55",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("bea8b13d-27ff-4e63-a1fa-464deb912b55",
-	0,
-	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PO
 	VALUES ("6682b901-e90c-4009-8856-6794e02a617d",
 	"6b567f7b-1b30-4818-b8a0-dfca9c0a25d8",
@@ -1447,7 +1399,13 @@ INSERT INTO SPR_PS
 	VALUES ("e93ea122-9fb2-4f19-9f9f-69d35a5875a7",
 	'AddProjectOutcome',
 	'',
-	'',
+	'create object instance outcome of Outcome;
+id = 1234;
+
+outcome.AddOutcome(ID:id, Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, ProjectCode:param.ProjectCode );
+UI::SendProjectOutcome( ID:id, Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );
+
+',
 	1,
 	0,
 	40);
@@ -1465,9 +1423,10 @@ INSERT INTO SPR_PEP
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
 INSERT INTO SPR_PS
 	VALUES ("cb246aab-7ef7-4e33-9c90-c4cb3bb2edc6",
-	'AddProjectDelivrable',
+	'AddOutcomeDelivrable',
 	'',
-	'',
+	'create object instance deliverable of Deliverable;
+deliverable.AddDelivrable( OutcomeID:param.OutcomeID, Title:param.Title );',
 	1,
 	0,
 	41);
@@ -1475,7 +1434,7 @@ INSERT INTO C_EP_PROXY
 	VALUES ("1b3a39ef-5bc7-48a4-901f-a59d186420d3",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
 	-1,
-	'AddProjectDelivrable',
+	'AddOutcomeDelivrable',
 	'',
 	41,
 	'../../Interfaces/Projects/Projects.xtuml');
@@ -1500,26 +1459,6 @@ INSERT INTO C_EP_PROXY
 	'AddProjectPurchase',
 	'',
 	42,
-	'../../Interfaces/Projects/Projects.xtuml');
-INSERT INTO SPR_PEP
-	VALUES ("dd2a75e7-0fa8-47e6-a6a0-ae79bff54f52",
-	"b6e799ba-3017-4b0d-ab7d-0952ebdf30b0",
-	"1ba050a2-d419-4423-b771-96be8886d0a0");
-INSERT INTO SPR_PS
-	VALUES ("dd2a75e7-0fa8-47e6-a6a0-ae79bff54f52",
-	'ReadProjectOutcome',
-	'',
-	'',
-	1,
-	0,
-	43);
-INSERT INTO C_EP_PROXY
-	VALUES ("b6e799ba-3017-4b0d-ab7d-0952ebdf30b0",
-	"b9747524-a416-4a89-a9ef-0062b1f78a12",
-	-1,
-	'ReadProjectOutcome',
-	'',
-	43,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_PEP
 	VALUES ("630153a2-8f49-4b23-b215-823bc96b4258",
@@ -1553,26 +1492,6 @@ INSERT INTO C_EP_PROXY
 	44,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO SPR_PEP
-	VALUES ("a6d2f860-c987-45de-8456-458c7f9f2c6a",
-	"0ee64c57-5817-401b-9450-669fbc4c669b",
-	"1ba050a2-d419-4423-b771-96be8886d0a0");
-INSERT INTO SPR_PS
-	VALUES ("a6d2f860-c987-45de-8456-458c7f9f2c6a",
-	'ReadOutcomeDelivirables',
-	'',
-	'',
-	1,
-	0,
-	45);
-INSERT INTO C_EP_PROXY
-	VALUES ("0ee64c57-5817-401b-9450-669fbc4c669b",
-	"b9747524-a416-4a89-a9ef-0062b1f78a12",
-	-1,
-	'ReadOutcomeDelivirables',
-	'',
-	45,
-	'../../Interfaces/Projects/Projects.xtuml');
-INSERT INTO SPR_PEP
 	VALUES ("7275e59e-9628-4eb7-ac0f-78e5f64e37d2",
 	"eb6067c7-ddb6-4f8f-9bbd-d6529549e364",
 	"1ba050a2-d419-4423-b771-96be8886d0a0");
@@ -1591,6 +1510,103 @@ INSERT INTO C_EP_PROXY
 	'SendProjectPurchase',
 	'',
 	46,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("3ec8560a-955d-46ba-9e2f-e4cd02e214f6",
+	"beccd1a8-1618-4f26-9ed7-fa0caaf781d0",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("3ec8560a-955d-46ba-9e2f-e4cd02e214f6",
+	'SendProjectOutcome',
+	'',
+	'',
+	1,
+	0,
+	47);
+INSERT INTO C_EP_PROXY
+	VALUES ("beccd1a8-1618-4f26-9ed7-fa0caaf781d0",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectOutcome',
+	'',
+	47,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("44a63c03-0ad8-42a8-89c6-5e0309960646",
+	"0a66bce9-e4c4-416d-8595-d4ab07bdd132",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("44a63c03-0ad8-42a8-89c6-5e0309960646",
+	'SendOutcomeDeliverable',
+	'',
+	'',
+	1,
+	0,
+	48);
+INSERT INTO C_EP_PROXY
+	VALUES ("0a66bce9-e4c4-416d-8595-d4ab07bdd132",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendOutcomeDeliverable',
+	'',
+	48,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("d8a7cde6-f92a-44bf-b519-6aa5df75062f",
+	"88f6ad5e-e5cb-41fd-9138-82d8c630f0ea",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("d8a7cde6-f92a-44bf-b519-6aa5df75062f",
+	'ReadProjectOutcome',
+	'',
+	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+   
+if (not_empty project)
+	select many outcomes related by project->Outcome[R85.''Produce''];
+	for each outcome in outcomes
+		UI::SendProjectOutcome( ID:outcome.ID, Title:outcome.Title, Description:outcome.Description, StartDate:outcome.StartartDate, EndDate:outcome.EndDate );
+	end for;
+end if;
+
+',
+	1,
+	0,
+	49);
+INSERT INTO C_EP_PROXY
+	VALUES ("88f6ad5e-e5cb-41fd-9138-82d8c630f0ea",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectOutcome',
+	'',
+	49,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("89b23a05-7413-40ca-9b32-97cfd3f3916f",
+	"d9057a79-739a-4d77-8e9d-e2e4129d3981",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("89b23a05-7413-40ca-9b32-97cfd3f3916f",
+	'ReadOutcomeDeliverable',
+	'',
+	'select any outcome from instances of Outcome where selected.ID == param.OutcomeID ; 
+   
+if (not_empty outcome )
+	select many deliverables related by outcome->Deliverable[R84.''contains''];
+	for each deliverable in deliverables
+		UI::SendOutcomeDeliverable( ID:deliverable.ID, Title:deliverable.Title );
+		//LOG::LogInfo( message:impact.Details );
+	end for;
+end if;',
+	1,
+	0,
+	50);
+INSERT INTO C_EP_PROXY
+	VALUES ("d9057a79-739a-4d77-8e9d-e2e4129d3981",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadOutcomeDeliverable',
+	'',
+	50,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
