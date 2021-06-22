@@ -30,6 +30,54 @@ INSERT INTO GD_MD
 	0,
 	'4.1.17',
 	'ProjectMgmt::pmm::pm');
+INSERT INTO GD_GE
+	VALUES ("90128036-a2a9-4083-8e0d-f0eaa6b0156f",
+	"00000000-0000-0000-0000-000000000000",
+	"d8941aac-fe97-4ede-8994-e08f0fa770a0",
+	108,
+	0,
+	'ProjectMgmt::pmm::pm::Initialization');
+INSERT INTO GD_SHP
+	VALUES ("90128036-a2a9-4083-8e0d-f0eaa6b0156f");
+INSERT INTO GD_NCS
+	VALUES ("90128036-a2a9-4083-8e0d-f0eaa6b0156f");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"90128036-a2a9-4083-8e0d-f0eaa6b0156f");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"90128036-a2a9-4083-8e0d-f0eaa6b0156f",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("90128036-a2a9-4083-8e0d-f0eaa6b0156f",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("bea8b13d-27ff-4e63-a1fa-464deb912b55",
+	"00000000-0000-0000-0000-000000000000",
+	"6177f291-1d29-415e-bed8-570d8e84b959",
+	108,
+	0,
+	'ProjectMgmt::pmm::pm::main');
+INSERT INTO GD_SHP
+	VALUES ("bea8b13d-27ff-4e63-a1fa-464deb912b55");
+INSERT INTO GD_NCS
+	VALUES ("bea8b13d-27ff-4e63-a1fa-464deb912b55");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"bea8b13d-27ff-4e63-a1fa-464deb912b55");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"bea8b13d-27ff-4e63-a1fa-464deb912b55",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("bea8b13d-27ff-4e63-a1fa-464deb912b55",
+	0,
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PO
 	VALUES ("6682b901-e90c-4009-8856-6794e02a617d",
 	"6b567f7b-1b30-4818-b8a0-dfca9c0a25d8",
@@ -1298,19 +1346,17 @@ INSERT INTO SPR_PS
 	VALUES ("1c95de0c-f54d-4a3a-9ff3-5e8fb551fdcb",
 	'ReadProject',
 	'',
-	'select any project from instances of Project where selected.Code == "Project1Code"; 
-select any project1 from instances of Project where selected.Code == "Project2Code"; 
-
-   
+	'select any project from instances of Project where selected.Code == param.ProjectCode;  
+ 
 if (not_empty project)
+
 	
 	UI::SendProjects( Code:project.Code, Name:project.Name, Description:project.Description, StartDate:project.StartDate, EndDate:project.EndDate, Budget:project.Budget, Duration:project.Duration, Sponsor:project.Sponsor );
-	UI::SendProjects( Code:project1.Code, Name:project1.Name, Description:project1.Description, StartDate:project1.StartDate, EndDate:project1.EndDate, Budget:project1.Budget, Duration:project1.Duration, Sponsor:project1.Sponsor );
-	LOG::LogInfo( message:project.Code );
-	LOG::LogInfo( message:project1.Code );
-//	LOG::LogReal( message:"prg.Budget", r:prg.Budget );
+
 	
 end if;
+
+
 ',
 	1,
 	0,
@@ -1359,19 +1405,29 @@ INSERT INTO SPR_PS
 	VALUES ("4bcebb79-ce83-4b50-ba79-a89185feddee",
 	'ReadAllTheProjects',
 	'',
-	'select many projcts from Project;
+	'
+select many projects from Project;
 
-if (not_empty projcts)
-	
-	for each prg in projcts
-		UI::SendProjects(Code:prg.Code, Name:prg.Name, Description:prg.Description, StartDate:prg.StartDate, EndDate:prg.EndDate, Budget:prg.Budget, Duration:prg.Duration,Sponsor:prg.Sponsor);
-//	LOG::LogInfo( message:prg.Code );
-//	LOG::LogReal( message:"prg.Budget", r:prg.Budget );
-	
+if (not_empty projects)
+		for each project in projects
+		UI::SendProjects( Code:project.Code, Name:project.Name, Description:project.Description, StartDate:project.StartDate, EndDate:project.EndDate, Budget:project.Budget, Duration:project.Duration, Sponsor:project.Sponsor );
+//LOG::LogInfo( message:project.Code );
 
 	end for;
 end if;
-',
+
+/*select any project from instances of Project where selected.Code == "Project1Code";  
+select any project2 from instances of Project where selected.Code == "Project2Code";  
+if (not_empty project)
+
+	
+UI::SendProjects( Code:project.Code, Name:project.Name, Description:project.Description, StartDate:project.StartDate, EndDate:project.EndDate, Budget:project.Budget, Duration:project.Duration, Sponsor:project.Sponsor );
+UI::SendProjects( Code:project2.Code, Name:project2.Name, Description:project2.Description, StartDate:project2.StartDate, EndDate:project2.EndDate, Budget:project2.Budget, Duration:project2.Duration, Sponsor:project2.Sponsor );
+
+//LOG::LogInfo( message:project.Code );
+//LOG::LogInfo( message:project2.Code );
+end if;
+*/',
 	1,
 	0,
 	39);
@@ -1382,6 +1438,159 @@ INSERT INTO C_EP_PROXY
 	'ReadAllTheProjects',
 	'',
 	39,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("e93ea122-9fb2-4f19-9f9f-69d35a5875a7",
+	"5531cd48-c559-4e8f-a16f-8964c02142c3",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("e93ea122-9fb2-4f19-9f9f-69d35a5875a7",
+	'AddProjectOutcome',
+	'',
+	'',
+	1,
+	0,
+	40);
+INSERT INTO C_EP_PROXY
+	VALUES ("5531cd48-c559-4e8f-a16f-8964c02142c3",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectOutcome',
+	'',
+	40,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("cb246aab-7ef7-4e33-9c90-c4cb3bb2edc6",
+	"1b3a39ef-5bc7-48a4-901f-a59d186420d3",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("cb246aab-7ef7-4e33-9c90-c4cb3bb2edc6",
+	'AddProjectDelivrable',
+	'',
+	'',
+	1,
+	0,
+	41);
+INSERT INTO C_EP_PROXY
+	VALUES ("1b3a39ef-5bc7-48a4-901f-a59d186420d3",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectDelivrable',
+	'',
+	41,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("e6fd3815-472b-48be-b496-31046b38b5aa",
+	"6844d8eb-ae59-465d-8cb1-d97659cbffc7",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("e6fd3815-472b-48be-b496-31046b38b5aa",
+	'AddProjectPurchase',
+	'',
+	'create object instance purchase of Purchase;
+purchase.AddPurchase( ProjectCode:param.ProjectCode, Scope:param.Scope, ExpectedCost: param.ExpectedCost);
+',
+	1,
+	0,
+	42);
+INSERT INTO C_EP_PROXY
+	VALUES ("6844d8eb-ae59-465d-8cb1-d97659cbffc7",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'AddProjectPurchase',
+	'',
+	42,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("dd2a75e7-0fa8-47e6-a6a0-ae79bff54f52",
+	"b6e799ba-3017-4b0d-ab7d-0952ebdf30b0",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("dd2a75e7-0fa8-47e6-a6a0-ae79bff54f52",
+	'ReadProjectOutcome',
+	'',
+	'',
+	1,
+	0,
+	43);
+INSERT INTO C_EP_PROXY
+	VALUES ("b6e799ba-3017-4b0d-ab7d-0952ebdf30b0",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectOutcome',
+	'',
+	43,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("630153a2-8f49-4b23-b215-823bc96b4258",
+	"f0a66038-b18d-4800-93dd-818c5897b0d5",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("630153a2-8f49-4b23-b215-823bc96b4258",
+	'ReadProjectPurchase',
+	'',
+	'Select any project from instances of Project where selected.Code == param.ProjectCode; 
+   
+if (not_empty project)
+	select many purchases related by project->Purchase[R83.''contains''];
+	for each purchase in purchases
+		
+		UI::SendProjectPurchase(Scope:purchase.Scope, ExpectetCost:purchase.ExpectedCost);
+		//LOG::LogInfo( message: purchase.Scope);
+	end for; 
+	
+end if;
+',
+	1,
+	0,
+	44);
+INSERT INTO C_EP_PROXY
+	VALUES ("f0a66038-b18d-4800-93dd-818c5897b0d5",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadProjectPurchase',
+	'',
+	44,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("a6d2f860-c987-45de-8456-458c7f9f2c6a",
+	"0ee64c57-5817-401b-9450-669fbc4c669b",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("a6d2f860-c987-45de-8456-458c7f9f2c6a",
+	'ReadOutcomeDelivirables',
+	'',
+	'',
+	1,
+	0,
+	45);
+INSERT INTO C_EP_PROXY
+	VALUES ("0ee64c57-5817-401b-9450-669fbc4c669b",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'ReadOutcomeDelivirables',
+	'',
+	45,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("7275e59e-9628-4eb7-ac0f-78e5f64e37d2",
+	"eb6067c7-ddb6-4f8f-9bbd-d6529549e364",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("7275e59e-9628-4eb7-ac0f-78e5f64e37d2",
+	'SendProjectPurchase',
+	'',
+	'',
+	1,
+	0,
+	46);
+INSERT INTO C_EP_PROXY
+	VALUES ("eb6067c7-ddb6-4f8f-9bbd-d6529549e364",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'SendProjectPurchase',
+	'',
+	46,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",

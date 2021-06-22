@@ -15,10 +15,7 @@
 <meta name="author" content="Hau Nguyen">
 <meta name="keywords" content="au theme template">
 
-    <script src="../vue.js"></script>
-    <script src="../webjars/jquery/jquery.min.js"></script>
-    <script src="../webjars/sockjs-client/sockjs.min.js"></script>
-    <script src="../webjars/stomp-websocket/stomp.min.js"></script>
+
    
 <link id="bootstrapcss" href="../bootstrap.css" rel="stylesheet">
     <link id="headercss" href="../header.css" rel="stylesheet">
@@ -123,9 +120,8 @@ color: red;
           <hr>
 <br>
   
-		<form id="signup-form" @submit.prevent="processForm" style="width:100%">
 		<table id="Projects" style="width:100%">
-				<tr >
+				<tr>
     	                 	<th>الاسم</th>
     	                 	<th>الوصف</th>
     	                 	<th>مدير المشروع</th>
@@ -133,11 +129,11 @@ color: red;
     	                 	<th>تاريخ النهاية</th>
     	                 	<th>الميزانية</th>
     	           </tr>
-    	           <tr style="color: #007bff">
+    	           <tr style="color: #007bff" v-for="proj in allProjects" >
 	    	           <td><a href="./projectinfo.html">
                     <div style="height:100%;width:100%">
-                      مشروع تطوير إنترنت الأشياء
-                    </div>
+{{proj.p_Name}} 
+</div>
                   </a>
                    </td>
 	    	           <td>-</td>
@@ -147,17 +143,8 @@ color: red;
 	    	           <td>5,000,000</td>
     	           
     	           </tr>
-    	           <tr style="color: #007bff">
-	    	           <td>مشروع تطوير السيارة الذكية</td>
-	    	           <td>-</td>
-	    	           <td>خالد ين سعد</td>
-	    	           <td>2020-05-01</td>
-	    	           <td>2021-12-29</td>
-	    	           <td>3,000,000</td>
-    	           
-    	           </tr>
+    	          
 		</table>
-		</form>
     </div>
 <br>
 <hr>
@@ -170,9 +157,14 @@ color: red;
     </div>
 </div>
 </body>
+<script src="../vue.js"></script>
+<script src="../webjars/jquery/jquery.min.js"></script>
+<script src="../webjars/sockjs-client/sockjs.min.js"></script>
+<script src="../webjars/stomp-websocket/stomp.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="application/javascript"  class="vue" src="./projects.js"></script> 
+
      <script id="base"></script>
-     <script type="application/javascript"  class="vue" src="./projects.js"></script> 
-    <script class="vue" src="./role.js"></script>
+<script class="vue" src="./role.js"></script>
            
 </html>

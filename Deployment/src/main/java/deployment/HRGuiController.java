@@ -2035,7 +2035,23 @@ private static HRGuiController singleton;
 		return null;
 
 	}
-	
+	@PutMapping(path="/ReadChangeRequests", produces="application/json", consumes="application/json")
+	public List<ChangeRequest> ReadChangeRequests(@RequestBody ChangeRequest chrq) {
+		// TODO Auto-generated method stub
+		try {
+			changes.clear();
+			UI.Singleton().Projects().ReadChangeRequests(chrq.getP_ProjectCode());
+			Thread.sleep(700);
+			return changes;
+		} catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
  	List<ChangeRequest> changes = new ArrayList<ChangeRequest>();
 	@GetMapping(path="/ReadAllChangeRequest", produces="application/json")
 	public List<ChangeRequest> ReadAllChangeRequest() {
@@ -2064,11 +2080,11 @@ private static HRGuiController singleton;
          } 
          } 
 	
-		public void SendProjects( String p_Code, String p_Name, String p_Description, int p_StartDate, int p_EndDate, double p_Budget, int p_Duration, String p_Sponsor){
-        Project proj=null;
+		public void SendProjects( final String p_Code, final String p_Name, final String p_Description, final int p_StartDate, final int p_EndDate, final double p_Budget, final int p_Duration, final String p_Sponsor){
+        Project proj;
           try {
-			proj=new Project(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget, p_Duration, p_Sponsor);
-			System.out.println("project name:" +p_Name+" Project Code: "+ p_Code+ " p_Description: "+p_Description+" p_StartDate: "+p_StartDate+" p_EndDate: "+p_EndDate+" p_Budget: "+p_Budget+" p_Duration: "+p_Duration+" p_Sponsor: "+p_Sponsor);
+			proj=new Project(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget , p_Duration, p_Sponsor);
+			System.out.println(proj.toString());			
 			projects.add(proj);
 
          }catch(Exception e) {
@@ -2084,25 +2100,24 @@ private static HRGuiController singleton;
 			projects.clear();
 			UI.Singleton().Projects().ReadProject(pro.getP_Code());
 			Thread.sleep(700);
-			System.out.println(projects.size());
 			return projects;
 		} catch (XtumlException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace();//
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
-			  
+
 	List<Project> projects=new ArrayList<Project>();
-	@GetMapping(path="/ReadProjects", produces="appliaction/json")
-	public List<Project> ReadAllProjects() {
+	@GetMapping(path="/ReadAllTheProjects", produces="application/json")
+	public List<Project> ReadAllTheProjects() {
 		// TODO Auto-generated method stub
 		try {
 			projects.clear();
-			UI.Singleton().Projects().ReadAllProjects();
+			UI.Singleton().Projects().ReadAllTheProjects();
 			Thread.sleep(700);
 			return projects;
 		} catch (XtumlException e) {
@@ -2112,7 +2127,6 @@ private static HRGuiController singleton;
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(projects.size());
 		return null;
 	}
 		List<Goal> goals=new ArrayList<Goal>();

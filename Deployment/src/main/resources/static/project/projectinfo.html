@@ -32,7 +32,7 @@
           <link href="../vendor/select2/select2.min.css" rel="stylesheet" media="all">
           <link href="../vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
         <style>
-            body {
+        body {
         min-height: 94.5vh;
         position: relative; 
       }
@@ -137,30 +137,27 @@
     <div class="container">
     <br>
     <!--Tree Nav-->
-	<div>
-		<p>
+	<div id="projectInfo">
+		<p >
 			<a href="./initiative.html">إدارة المشاريع</a> / 
 			<a href="./projects.html">المشاريع</a> /  
-            مشروع تطوير إنترنت الأشياء	
-        		</p>
+{{ProjectInfo.p_Name}}    </p>
   </div>
 
       <hr>
          
-        <div id="action-home">
-              		
-          <h3 align="right"> مشروع تطوير إنترنت الأشياء	</h3>
+        <div>
+          <h3 align="right" id="projectName"></h3>
+         </div>
           <hr>
 <br>
 
-<div class="card" id="projectInfo">
+<div class="card"   >
     <div class="card-header">
     <strong class="card-title">وصف المشروع</strong>
     </div>
-    <div class="card-body">
-    <p class="card-text">
-        تطوير مشروع انترنت الأشياء
-    </p>
+    <div class="card-body" >
+    <p class="card-text" id="ProjectDesc"></p>
     </div>
     </div>
   
