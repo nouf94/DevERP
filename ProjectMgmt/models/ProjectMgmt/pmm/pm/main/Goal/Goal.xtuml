@@ -66,6 +66,49 @@ INSERT INTO O_TPARM
 	'',
 	"27be148c-bf92-4607-b930-98e74d1b9a13",
 	'');
+INSERT INTO O_TFR
+	VALUES ("6427deb1-995c-4f60-98fd-bf918c2aa739",
+	"5034c157-17f9-4a09-9208-7521810cdb26",
+	'UpdateGoal',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.Description=param.Description;
+self.Impact = param.Impact;
+self.KPI = param.KPI;
+',
+	1,
+	'',
+	"e1c63bce-79d5-4dec-8d0f-13788a7f29a5",
+	0,
+	2);
+INSERT INTO O_TPARM
+	VALUES ("77c6265f-f7c4-41c9-b6dc-242beb2f32c4",
+	"6427deb1-995c-4f60-98fd-bf918c2aa739",
+	'Description',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("1a329bf1-92dd-487e-a365-ac16b489cf48",
+	"6427deb1-995c-4f60-98fd-bf918c2aa739",
+	'Impact',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"77c6265f-f7c4-41c9-b6dc-242beb2f32c4",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("81e52a52-4418-4f02-8539-45a35f78093a",
+	"6427deb1-995c-4f60-98fd-bf918c2aa739",
+	'KPI',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"1a329bf1-92dd-487e-a365-ac16b489cf48",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("5bc905ce-ea62-4ef4-ae08-d42dc6bf7740",
 	"5034c157-17f9-4a09-9208-7521810cdb26");

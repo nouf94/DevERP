@@ -189,6 +189,7 @@ relate mile3 to project2 across R67.''completed'';
 create object instance goal1 of Goal;
 goal1.Description = "First goal for Project1Name";
 goal1.Impact = "High";
+goal1.KPI="kpI 1";
 relate goal1 to project1 across R75.''Acheived by'';
 
 create object instance goal2 of Goal;

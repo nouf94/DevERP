@@ -851,15 +851,6 @@ INSERT INTO C_PP
 	'',
 	"de79227f-4cc0-464f-a331-c0bc471413b5");
 INSERT INTO C_PP
-	VALUES ("0963ce07-535f-4bed-ae6f-7937f490265f",
-	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'ProjectCode',
-	'',
-	0,
-	'',
-	"7783dd57-2d38-48dc-9819-1e1a2c8fa2e0");
-INSERT INTO C_PP
 	VALUES ("f479547e-ebb5-4413-94f0-6e0522eb3356",
 	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
 	"ba5eda7a-def5-0000-0000-000000000004",
@@ -868,6 +859,15 @@ INSERT INTO C_PP
 	0,
 	'',
 	"0963ce07-535f-4bed-ae6f-7937f490265f");
+INSERT INTO C_PP
+	VALUES ("0963ce07-535f-4bed-ae6f-7937f490265f",
+	"3336af53-16d3-40e8-adfb-b9a3c7435d2c",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"7783dd57-2d38-48dc-9819-1e1a2c8fa2e0");
 INSERT INTO C_EP
 	VALUES ("7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -2415,6 +2415,64 @@ INSERT INTO C_PP
 	"d9057a79-739a-4d77-8e9d-e2e4129d3981",
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'OutcomeID',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("ad6ae3d6-be4a-41ec-8104-5f48b458c136",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'UpdateGoal',
+	'',
+	51);
+INSERT INTO C_AS
+	VALUES ("ad6ae3d6-be4a-41ec-8104-5f48b458c136",
+	'UpdateGoal',
+	'',
+	0,
+	"d9057a79-739a-4d77-8e9d-e2e4129d3981");
+INSERT INTO C_PP
+	VALUES ("ca989100-08aa-4e8a-8a42-50b80082bcb8",
+	"ad6ae3d6-be4a-41ec-8104-5f48b458c136",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Description',
+	'',
+	0,
+	'',
+	"dc94a2e1-81e8-4419-8d67-05f5372421a8");
+INSERT INTO C_PP
+	VALUES ("87534836-c27f-4ce7-8232-481970b177d7",
+	"ad6ae3d6-be4a-41ec-8104-5f48b458c136",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Impact',
+	'',
+	0,
+	'',
+	"ca989100-08aa-4e8a-8a42-50b80082bcb8");
+INSERT INTO C_PP
+	VALUES ("78033404-32a0-4df9-9b3d-c066b639112b",
+	"ad6ae3d6-be4a-41ec-8104-5f48b458c136",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ProjectCode',
+	'',
+	0,
+	'',
+	"87534836-c27f-4ce7-8232-481970b177d7");
+INSERT INTO C_PP
+	VALUES ("11c3b489-5675-49f5-8375-f4e821ef7536",
+	"ad6ae3d6-be4a-41ec-8104-5f48b458c136",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'KPI',
+	'',
+	0,
+	'',
+	"78033404-32a0-4df9-9b3d-c066b639112b");
+INSERT INTO C_PP
+	VALUES ("dc94a2e1-81e8-4419-8d67-05f5372421a8",
+	"ad6ae3d6-be4a-41ec-8104-5f48b458c136",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'OldDescription',
 	'',
 	0,
 	'',
