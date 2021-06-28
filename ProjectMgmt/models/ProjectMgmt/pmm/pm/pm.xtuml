@@ -30,6 +30,54 @@ INSERT INTO GD_MD
 	0,
 	'4.1.17',
 	'ProjectMgmt::pmm::pm');
+INSERT INTO GD_GE
+	VALUES ("e356bd75-c6d9-4769-8f14-8c175c8ae786",
+	"00000000-0000-0000-0000-000000000000",
+	"d8941aac-fe97-4ede-8994-e08f0fa770a0",
+	108,
+	0,
+	'ProjectMgmt::pmm::pm::Initialization');
+INSERT INTO GD_SHP
+	VALUES ("e356bd75-c6d9-4769-8f14-8c175c8ae786");
+INSERT INTO GD_NCS
+	VALUES ("e356bd75-c6d9-4769-8f14-8c175c8ae786");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"e356bd75-c6d9-4769-8f14-8c175c8ae786");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"e356bd75-c6d9-4769-8f14-8c175c8ae786",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("e356bd75-c6d9-4769-8f14-8c175c8ae786",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("687e598b-d6d4-4d8f-8b39-1890b0b32564",
+	"00000000-0000-0000-0000-000000000000",
+	"6177f291-1d29-415e-bed8-570d8e84b959",
+	108,
+	0,
+	'ProjectMgmt::pmm::pm::main');
+INSERT INTO GD_SHP
+	VALUES ("687e598b-d6d4-4d8f-8b39-1890b0b32564");
+INSERT INTO GD_NCS
+	VALUES ("687e598b-d6d4-4d8f-8b39-1890b0b32564");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"687e598b-d6d4-4d8f-8b39-1890b0b32564");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"687e598b-d6d4-4d8f-8b39-1890b0b32564",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("687e598b-d6d4-4d8f-8b39-1890b0b32564",
+	0,
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PO
 	VALUES ("6682b901-e90c-4009-8856-6794e02a617d",
 	"6b567f7b-1b30-4818-b8a0-dfca9c0a25d8",
@@ -1607,6 +1655,41 @@ INSERT INTO C_EP_PROXY
 	'ReadOutcomeDeliverable',
 	'',
 	50,
+	'../../Interfaces/Projects/Projects.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("b73e7182-852d-4b7e-94f3-2f3dbbc7262c",
+	"ad6ae3d6-be4a-41ec-8104-5f48b458c136",
+	"1ba050a2-d419-4423-b771-96be8886d0a0");
+INSERT INTO SPR_PS
+	VALUES ("b73e7182-852d-4b7e-94f3-2f3dbbc7262c",
+	'UpdateGoal',
+	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+//select any project from instances of Project where selected.Code == "Project1Code";
+if (not_empty project)
+	//select any goal  related by project->Goal[R75.''Fulfill''] where selected.Description=="First goal for Project1Name";
+	select any goal  related by project->Goal[R75.''Fulfill''] where selected.Description==param.OldDescription;
+	if (not_empty goal)
+		goal.UpdateGoal( Description:param.Description, Impact:param.Impact, KPI: param.KPI);
+		//goal.UpdateGoal( Description:"param.Description", Impact:"param.Impact", KPI: "param.KPI");
+		
+		
+	end if;
+end if;
+
+',
+	1,
+	0,
+	51);
+INSERT INTO C_EP_PROXY
+	VALUES ("ad6ae3d6-be4a-41ec-8104-5f48b458c136",
+	"b9747524-a416-4a89-a9ef-0062b1f78a12",
+	-1,
+	'UpdateGoal',
+	'',
+	51,
 	'../../Interfaces/Projects/Projects.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("b9747524-a416-4a89-a9ef-0062b1f78a12",
