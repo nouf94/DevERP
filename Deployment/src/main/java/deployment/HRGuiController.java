@@ -2060,6 +2060,7 @@ private static HRGuiController singleton;
       	   
          } 
          } 
+
 	
 		public void SendProjects( final String p_Code, final String p_Name, final String p_Description, final int p_StartDate, final int p_EndDate, final double p_Budget, final int p_Duration, final String p_Sponsor){
         Project proj;
@@ -2109,6 +2110,130 @@ private static HRGuiController singleton;
 		}
 		return null;
 	}
+
+	
+	//المخرجات
+	List<Outcome> outs=new ArrayList<Outcome>();
+    public void SendProjectOutcome(final int p_ID,  final String p_Title,  final String p_Description,  final int p_StartDate,  final int p_EndDate ){
+        Outcome out=null;
+          try {
+			out=new Outcome(p_ID, p_Title,p_Description,p_StartDate,p_EndDate);
+			outs.add(out);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+		@PutMapping(path="/ReadProjectOutcome", consumes="application/json", produces="application/json")	
+		public List<Outcome> ReadProjectOutcome(@RequestBody Outcome out ){
+          
+          try {
+			outs.clear();
+            UI.Singleton().Projects().ReadProjectOutcome(out.getP_ProjectCode());
+			Thread.sleep(700);
+			return outs;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+        } 
+		@PutMapping(path="/AddProjectOutcome", consumes="application/json", produces="application/json")
+		public List<Outcome> AddProjectOutcome(@RequestBody Outcome out ){
+          
+        try {	
+		outs.clear();  
+        UI.Singleton().Projects().AddProjectOutcome(out.getP_Title() , out.getP_ProjectCode(), out.getP_Description(),out.getP_StartDate(),out.getP_EndDate());
+		Thread.sleep(700);
+		return outs;
+	     }catch(Exception e) {
+      	   
+         } 
+		 return null;
+         } 
+		//التسليمات 
+		List<Deliverable> delvs=new ArrayList<Deliverable>();
+		public void SendOutcomeDeliverable( final int p_ID,  final String p_Title ){
+        Deliverable dlev=null;
+          try {
+			dlev=new Deliverable(p_ID,p_Title);
+			delvs.add(dlev);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+
+		@PutMapping(path="/ReadOutcomeDeliverable", consumes="application/json", produces="application/json")	
+		public List<Deliverable> ReadOutcomeDeliverable(@RequestBody Deliverable delv ){
+          
+          try {
+			delvs.clear();
+            UI.Singleton().Projects().ReadOutcomeDeliverable(delv.getP_ID());
+			Thread.sleep(700);
+			return delvs;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+        } 
+
+
+
+	List<Purchase> procurs=new ArrayList<Purchase>();
+    public void SendProjectPurchase( final String p_Scope,  final double p_ExpectetCost ){
+        Purchase prch=null;
+          try {
+			prch=new Purchase(p_Scope,p_ExpectetCost);
+			procurs.add(prch);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+
+		@PostMapping(path="/AddProjectPurchase", consumes="application/json")
+		public void AddProjectPurchase(@RequestBody Purchase purch ){
+          
+          try {
+			  
+        UI.Singleton().Projects().AddProjectPurchase(purch.getP_ProjectCode() , purch.getP_Scope(), purch.getP_ExpectetCost());
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+
+		@PutMapping(path="/ReadProjectPurchase", consumes="application/json", produces="application/json")	
+		public List<Purchase> ReadProjectPurchase(@RequestBody Purchase purch ){
+          
+          try {
+			procurs.clear();
+            UI.Singleton().Projects().ReadProjectPurchase(purch.getP_ProjectCode());
+			Thread.sleep(700);
+			return procurs;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+        } 
+
 		List<Goal> goals=new ArrayList<Goal>();
 		 public void SendProjectGoal( String p_Description,String p_Impact,String p_KPI ){
         Goal goal=null;
@@ -2329,7 +2454,6 @@ private static HRGuiController singleton;
 	}
 
 		List<ChangeRequest> ReadImpacts=new ArrayList<ChangeRequest>();
-
 	   public void SendChangeRequestImpact(  String p_Category,  String p_Details)  {		
         ChangeRequest imp;
 		 try {
@@ -2442,17 +2566,7 @@ private static HRGuiController singleton;
 			e.printStackTrace();
 		}
 	}
-	/*
-	public void SendProjects(String p_Code, String p_Name, String p_Description, int p_StartDate, int p_EndDate, int p_Budget ) {
-		// TODO Auto-generated method stub
-		try {
-			//SendProjects x = new SendProjects(p_Code, p_Name, p_Description, p_StartDate, p_EndDate, p_Budget);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	*/
+
 	List<SendStrategies> strategeList = new ArrayList<SendStrategies>();
 	public void SendStrategies(String p_Number, String p_Name, String p_Description) {
 		

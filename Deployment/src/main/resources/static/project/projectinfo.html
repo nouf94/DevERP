@@ -377,7 +377,7 @@
              </div>
              <div class="form-group col-lg-12">
                <label for="ODesc" > وصف المخرج </label> </br>
-               <textarea class="form-control" id="ODesc"name= 'p_ODesc' placeholder="" v-model='p_ODesc' ></textarea>
+               <textarea class="form-control" id="ODesc"name='p_ODesc' placeholder="" v-model='p_ODesc' ></textarea>
            </div>
          </div>
 
@@ -415,7 +415,7 @@
      </div>
      <div class="modal-footer">
        
-       <button type="submit" class="btn btn-primary " data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
+       <button type="submit" @click="AddProjectOutcome" class="btn btn-primary " data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
        &nbsp;
        <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
 
@@ -428,7 +428,10 @@
 
                <!-- Outputs Table -->
               </br>
-              <div class="table-responsive table-responsive-data2">
+              <div id="NoOutcomes" style="display: none;"  > 
+                <h3 class="text-center title-2">لا يوجد مخرجات مدخلة</h3>
+              </div>
+              <div class="table-responsive table-responsive-data2" id="OutcomesTable" style="display: none;">
                   <table class="table table-data2">
                   <thead>
                   <tr>
@@ -444,15 +447,15 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr class="tr-shadow" data-toggle="modal" data-target="#viewTask" >
+                  <tr class="tr-shadow" data-toggle="modal" data-target="#viewOutcome" v-for="outcome in Outcomes">
                   <td>
                   <label class="au-checkbox">
                   <input type="checkbox">
                   <span class="au-checkmark"></span>
                   </label>
                   </td>
-                  <td> تسليم تقرير المرحلة الأولى</td>
-                  <td>٢٠ يوم</td>
+                  <td>{{outcome.p_Title}}</td>
+                  <td>{{outcome.duration}} يوم</td>
                 
                   <td>
                   <div class="table-data-feature">
@@ -468,33 +471,6 @@
                   </div>
                   </td>
                   </tr>
-      
-                  <tr class="spacer"></tr>
-      
-                  <tr class="tr-shadow">
-                  <td>
-                  <label class="au-checkbox">
-                  <input type="checkbox">
-                  <span class="au-checkmark"></span>
-                  </label>
-                  </td>
-                  <td>تسليم تقرير تدريب الموظفين</td>
-                  <td> ١٥ يوم</td>
-                  <td>
-                  <div class="table-data-feature">
-                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
-                  <i class="zmdi zmdi-edit"></i>
-                  </button>
-                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
-                  <i class="zmdi zmdi-delete"></i>
-                  </button>
-                  <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
-                  <i class="zmdi zmdi-more"></i>
-                  </button>
-                  </div>
-                  </td>
-                  </tr>
-                  <tr class="spacer"></tr>
                   </tbody>
                   </table>
 
@@ -760,12 +736,12 @@
            <div class="form-row">
                <div class="form-group col-lg-12">
                <label for="Pscope"> نطاق الشراء</label>
-               <input type="text"  class="form-control" id="Pscope"name= 'p_Pscope' placeholder="" v-model='p_Pscope' >
+               <input type="text"  class="form-control" id="Pscope"name= 'p_Scope' placeholder="" v-model='p_Scope' >
            </div>
            <div class="form-group col-lg-12">
-             <label for="Pcost" > القيمة المتوقعة </label> </br>
+             <label for="Pcost" > التكلفة المتوقعة </label> </br>
              <div class=" input-group">
-            <input type="text" class="form-control" id="Pcost"name= 'p_Pcost' placeholder="" v-model='p_Pcost' >
+            <input type="text" class="form-control" id="Pcost"name= 'p_ExpectetCost' placeholder="" v-model='p_ExpectetCost' >
             <div class="input-group-addon">   ريال</div>
           </div>
         </div>
@@ -781,7 +757,7 @@
    </div>
    <div class="modal-footer">
      
-     <button type="submit" class="btn btn-primary " data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
+     <button type="submit" class="btn btn-primary " @click="AddProjectPurchase" data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
      &nbsp;
      <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
 
@@ -794,7 +770,10 @@
               <!-- Procurment Table -->
 
             </br>
-            <div class="table-responsive table-responsive-data2">
+            <div id="NoProcs" style="display: none;"  > 
+              <h3 class="text-center title-2">لا يوجد طلبات مدخلة</h3>
+            </div>
+            <div class="table-responsive table-responsive-data2" id="ProcsTable" style="display: none;">
                 <table class="table table-data2">
                 <thead>
                 <tr>
@@ -810,15 +789,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="tr-shadow" data-toggle="modal" data-target="#viewProc" >
+                <tr class="tr-shadow" data-toggle="modal" data-target="#viewProc"  v-for="proc in Purchases">
                 <td>
                 <label class="au-checkbox">
                 <input type="checkbox">
                 <span class="au-checkmark"></span>
                 </label>
                 </td>
-                <td> شراء معدات </td>
-                <td>٣٠،٠٠٠ ريال </td>
+                <td>{{proc.p_Scope}} </td>
+                <td> {{proc.p_ExpectetCost}}ريال </td>
                 <td>
                 <div class="table-data-feature">
                 <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -834,38 +813,53 @@
                 </td>
                 </tr>
     
-                <tr class="spacer"></tr>
-    
-                <tr class="tr-shadow">
-                <td>
-                <label class="au-checkbox">
-                <input type="checkbox">
-                <span class="au-checkmark"></span>
-                </label>
-                </td>
-                <td>  تدريب الموظفين</td>
-                <td> ١٥،٠٠٠ ريال </td>
-                <td>
-                <div class="table-data-feature">
-                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
-                <i class="zmdi zmdi-edit"></i>
-                </button>
-                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
-                <i class="zmdi zmdi-delete"></i>
-                </button>
-                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="More">
-                <i class="zmdi zmdi-more"></i>
-                </button>
-                </div>
-                </td>
-                </tr>
-                <tr class="spacer"></tr>
+
                 </tbody>
                 </table>
+              </div> <!--End Table div-->   
 
              <!-- View procurment -->
-            </div>    
+             <div id="viewProc" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+            
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{selectedPurchase.p_Scope}} </h4>
+                  </div>
+                  <div class="modal-body" style="float: right;">
+                    <div class="form-row">
+                      <div class="form-group col-md-6" >
+                        <label for="rPscope"><strong>نطاق الشراء	</strong></label></br>
+                        <label  id="rPscope" >
+                          {{selectedPurchase.p_Scope}}</label>
+                      </div>
+                      <div class="form-group col-md-6">
+                      <label for="riName"><strong> التكلفة المتوقعة	  </strong></label></br>
+                      <label  id="riName" >
+                      {{selectedPurchase.p_ExpectetCost}}
+                    ريال</label>
+                  </div>
+                  <div class="form-group col-md-6" >
+                    <label for="rRespon"><strong>  طريقة الشراء </strong></label></br>
+                    <label  id="rRespon" >
+                      {{selectedPurchase.p_ExpectetCost}}</label>
+                  </div>
+              </div>                
+          <hr>
+          </div><!-- close body-->
+          <div class="modal-footer">
+          <button type="reset" class="btn btn-info" data-dismiss="modal"><i class="fa fa-arrow-circle-left"></i>العودة</button>
+          </div><!-- close Footer-->
+              </div><!--close Content-->
+          </div><!--Close Dialog-->
+          </div><!--Close viewRisk-->
+
+
+
             </div>
+
             <div class="tab-pane fade" id="nav-risks" role="tabpanel" aria-labelledby="nav-risks-tab">
             </br>
             <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#addRisk">

@@ -387,6 +387,35 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
           }  
         
     }
+    public void SendOutcomeDeliverable( final int p_ID,  final String p_Title ) throws XtumlException {
+      try {
+              HRGuiController.Singleton().SendOutcomeDeliverable(p_ID, p_Title);
+          }catch(Exception e) {
+              
+          }
+
+    }
+
+    public void SendProjectOutcome( final int p_ID,  final String p_Title,  final String p_Description,  final int p_StartDate,  final int p_EndDate ) throws XtumlException {
+    
+       try {
+              HRGuiController.Singleton().SendProjectOutcome(p_ID, p_Title, p_Description, p_StartDate, p_EndDate);
+          }catch(Exception e) {
+              
+          }  
+
+    }
+
+    public void SendProjectPurchase( final String p_Scope,  final double p_ExpectetCost ) throws XtumlException {
+        
+        try {
+              HRGuiController.Singleton().SendProjectPurchase( p_Scope, p_ExpectetCost );
+          }catch(Exception e) {
+              
+          } 
+
+    }
+
 
    public void SendChangeRequest( final int p_CreationDate,final String p_Title, final String p_Description,  final String p_Justification) throws XtumlException {
          try {

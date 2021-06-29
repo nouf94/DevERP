@@ -292,7 +292,113 @@ var RiskApp = new Vue({
       }    
     }//End  Methods
   
-});//End Vue risks 
+});//End Vue risks
+
+
+//Add Outcomes Instance
+var OutsApp = new Vue({
+  el: '#nav-outputs',
+  data:{
+    p_ODesc:'',
+    p_OName:'',
+    p_OStartDate:'',
+    p_OEndDate:'',
+    errors: {
+      name: false,
+      email: false
+    },
+    p_ProjectCode:'Project1Code',
+    Outcomes:'',
+    selectedOutcome:''
+  },
+  mounted: function mounted () {
+   this.readOutcomes()
+  },
+  methods: {
+    readOutcomes:function (){
+      axios.put('/rest/ReadProjectOutcome',{
+        p_ProjectCode: this.p_ProjectCode
+      }).then(response => (this.Outcomes = response.data,
+        showOutcomes(this.Outcomes),
+        console.log(response)
+          )).catch(error => {
+            console.log(error)
+        })},
+        AddProjectOutcome: function (event) {
+        axios.put('/rest/AddProjectOutcome', {
+          p_Title :this.p_OName,
+          p_ProjectCode: this.p_ProjectCode,
+          p_Description:this.p_ODesc,
+          p_StartDate: (new Date(this.p_OStartDate).getTime() / 1000),
+          p_EndDate: (new Date(this.p_OEndDate).getTime() / 1000), 
+          }).then(response => {
+            console.log(response)
+           this.readOutcomes();
+           $("#Alert").show();
+          }).catch(error => {
+            $("#Error").show();
+              console.log(error)
+          });
+      },//End Add Purchase Method   
+      viewOutcome:function(event){
+        this.selectedOutcome='';
+        item=(event.target.parentElement.rowIndex)-1;
+        this.selectedOutcome=this.Outcomes[item];
+      } 
+    }//End  Methods
+  
+});//End Vue Outcomes
+
+//Add Procs Instance
+var ProcsApp = new Vue({
+  el: '#nav-procplan',
+  data:{
+    p_Scope:'',
+    p_ExpectetCost:'',
+    errors: {
+      name: false,
+      email: false
+    },
+    p_ProjectCode:'Project1Code',
+    Purchases:'',
+    p_Pmethod:'',
+    selectedPurchase:''
+  },
+  mounted: function mounted () {
+   this.readPurchase()
+  },
+  methods: {
+    readPurchase:function (){
+      axios.put('/rest/ReadProjectPurchase',{
+        p_ProjectCode: this.p_ProjectCode
+      }).then(response => (this.Purchases = response.data,
+        showPurchase(this.Purchases),
+        console.log(response)
+          )).catch(error => {
+            console.log(error)
+        })},
+    AddProjectPurchase: function (event) {
+        axios.post('/rest/AddProjectPurchase', {
+          p_ProjectCode :this.p_ProjectCode,
+          p_ExpectetCost: this.p_ExpectetCost,
+          p_Scope:  this.p_Scope
+          }).then(response => {
+           this.readPurchase()
+           $("#Alert").show();
+          }).catch(error => {
+            $("#Error").show();
+              console.log(error)
+          });
+      },//End Add Purchase Method   
+      viewPurchase:function(event){
+        this.selectedPurchase='';
+        item=(event.target.parentElement.rowIndex)-1;
+        this.selectedPurchase=this.Purchases[item];
+      } 
+    }//End  Methods
+  
+});//End Vue procu
+
 //Add File Instance
 var FilesApp = new Vue({
   el: '#nav-files',
@@ -385,6 +491,38 @@ function showTasks(Tasks){
 return;
 }
 
+function showPurchase(Purchases){
+  if(Purchases.length==0){
+  $('#NoProcs').show();
+  $('#ProcsTable').hide();
+    return;
+  }else{
+    $('#NoProcs').hide();
+    $('#ProcsTable').show();
+  }
+  }
+  
+  function showOutcomes(Outcomes){
+    if(Outcomes.length==0){
+      $('#NoOutcomes').show();
+      $('#OutcomesTable').hide();
+      return;
+    }
+    //Convert Date For Outcomes
+    //Convert date from Seconds to Date Format
+    str = new Date(null);
+    end = new Date(null);
+    for(i=0;i<Outcomes.length;i++){
+      $("#OutcomesTable").show();
+      $('#NoOutcomes').hide();
+      str.setTime(Outcomes[i].p_StartDate*1000);
+      end.setTime(Outcomes[i].p_EndDate*1000);
+      Outcomes[i].duration=(end-str)/(1000 * 3600 * 24);
+      Outcomes[i].p_StartDate=str.toLocaleDateString();
+      Outcomes[i].p_EndDate=end.toLocaleDateString();
+  }
+  return;
+  }
 function showRisks(Risks){
   if(Risks.length==0){
     $('#NoRisks').show();
