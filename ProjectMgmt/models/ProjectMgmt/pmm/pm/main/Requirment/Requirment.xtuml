@@ -14,18 +14,22 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'self.ID = 124;
-self.Title = param.Title;
+	'self.Title = param.Title;
 self.Cost = param.Cost;
 	
 
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
+	select any temp related by project->Requirment[R77.''Includes''] where selected.Title == param.Title;
+	if (empty temp)
 		relate self to project across R77.''Belongs'';
-end if;
-
-
-',
+		UI::Reply( msg:"Successfully Created", state:true );
+	else
+		UI::Reply( msg:"Already Existed", state:false );
+	end if; 
+else 
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -58,6 +62,37 @@ INSERT INTO O_TPARM
 	'',
 	"c697396f-011b-49c0-8b6d-884f7df39438",
 	'');
+INSERT INTO O_TFR
+	VALUES ("5142e665-56bc-460a-a899-1c28f6373bde",
+	"61c903d5-04d3-4622-b1ba-f76033155e2f",
+	'UpdateProjectRequirement',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	1,
+	'',
+	"2dec745f-2a8b-4a91-b2c4-34b645930de4",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("93f088a4-211c-49f2-a7dd-59a6f4b67253",
+	"5142e665-56bc-460a-a899-1c28f6373bde",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("e7fcb0b8-6158-449d-8c9b-ec24497c8374",
+	"5142e665-56bc-460a-a899-1c28f6373bde",
+	'Cost',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"93f088a4-211c-49f2-a7dd-59a6f4b67253",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("67de8f15-f961-4dd6-8cb8-7064536d3387",
 	"61c903d5-04d3-4622-b1ba-f76033155e2f");
@@ -67,7 +102,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("67de8f15-f961-4dd6-8cb8-7064536d3387",
 	"61c903d5-04d3-4622-b1ba-f76033155e2f",
-	"6e889661-a6ca-4d0e-ba1b-082fa0106132",
+	"00000000-0000-0000-0000-000000000000",
 	'Title',
 	'',
 	'',
@@ -92,24 +127,6 @@ INSERT INTO O_ATTR
 	'Cost',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000003",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("6e889661-a6ca-4d0e-ba1b-082fa0106132",
-	"61c903d5-04d3-4622-b1ba-f76033155e2f");
-INSERT INTO O_BATTR
-	VALUES ("6e889661-a6ca-4d0e-ba1b-082fa0106132",
-	"61c903d5-04d3-4622-b1ba-f76033155e2f");
-INSERT INTO O_ATTR
-	VALUES ("6e889661-a6ca-4d0e-ba1b-082fa0106132",
-	"61c903d5-04d3-4622-b1ba-f76033155e2f",
-	"00000000-0000-0000-0000-000000000000",
-	'ID',
-	'',
-	'',
-	'ID',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
 INSERT INTO O_ID

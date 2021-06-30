@@ -20,7 +20,7 @@ INSERT INTO O_TFR
 
 isExistedFlag = false; 
 // select the project that this milestone belongs to
-select any CR from instances of ChangeRequest where selected.CreationDate == param.ChangeRequestCreationDate;
+select any CR from instances of ChangeRequest where selected.Title == param.ChangeRequestTitle;
 if (not_empty CR)
 	select many impacts related by CR->Impact[R73.''Includes''];
 	for each impact in impacts
@@ -65,11 +65,42 @@ INSERT INTO O_TPARM
 INSERT INTO O_TPARM
 	VALUES ("ae30635c-f538-4fb0-b104-d2dd243dc650",
 	"6b9e78e3-9111-4971-9bb7-6cc549d9e476",
-	'ChangeRequestCreationDate',
-	"ba5eda7a-def5-0000-0000-000000000002",
+	'ChangeRequestTitle',
+	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
 	'',
 	"ad8f7b53-6056-4898-b3e0-2f78bffe14f1",
+	'');
+INSERT INTO O_TFR
+	VALUES ("8f85e5ce-fdc7-4636-abba-f85e13a99b5d",
+	"cd842042-7f24-4cc5-87bf-2201be9697c7",
+	'UpdateImpact',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	1,
+	'',
+	"6b9e78e3-9111-4971-9bb7-6cc549d9e476",
+	0,
+	0);
+INSERT INTO O_TPARM
+	VALUES ("aff1919d-89c3-4309-b45a-c90865c22fab",
+	"8f85e5ce-fdc7-4636-abba-f85e13a99b5d",
+	'Category',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("f5ad3074-4d10-42d4-b930-37f489aa7670",
+	"8f85e5ce-fdc7-4636-abba-f85e13a99b5d",
+	'Details',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"aff1919d-89c3-4309-b45a-c90865c22fab",
 	'');
 INSERT INTO O_NBATTR
 	VALUES ("c1d04a9a-4df2-4acd-90ea-3c241d339412",

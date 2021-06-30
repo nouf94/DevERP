@@ -24,10 +24,16 @@ self.CompleteStatus = false;
 // select the project that this milestone belongs to
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
+	select any temp related by project->Milestone[R67.''completes''] where selected.Name == param.Name;
+	if (empty temp)
 		relate self to project across R67.''completed'';
-end if;
-
-',
+		UI::Reply( msg:"Successfully Created", state:true );
+	else
+		UI::Reply( msg:"Already Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -68,6 +74,46 @@ INSERT INTO O_TPARM
 	0,
 	'',
 	"03a6f096-ab3e-44f9-bc33-24172e3c2a38",
+	'');
+INSERT INTO O_TFR
+	VALUES ("33559e0c-3e42-41f2-83b4-6366929cffac",
+	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
+	'UpdateProjectMilestone',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	1,
+	'',
+	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
+	0,
+	0);
+INSERT INTO O_TPARM
+	VALUES ("3718b0ec-be28-45ce-b113-419f0240cb29",
+	"33559e0c-3e42-41f2-83b4-6366929cffac",
+	'Name',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("e7b7d183-be4a-42ec-8b8e-e171ddb18443",
+	"33559e0c-3e42-41f2-83b4-6366929cffac",
+	'CompletePlannedDate',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"3718b0ec-be28-45ce-b113-419f0240cb29",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("702baaa4-c0a3-46e6-a626-62c37adc34f3",
+	"33559e0c-3e42-41f2-83b4-6366929cffac",
+	'Weight',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"e7b7d183-be4a-42ec-8b8e-e171ddb18443",
 	'');
 INSERT INTO O_NBATTR
 	VALUES ("b30e7b51-248e-4478-b02d-9295c431bdad",

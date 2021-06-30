@@ -18,12 +18,17 @@ INSERT INTO O_TFR
 self.Impact = param.Impact;
 self.KPI = param.KPI;
 
-	
-// select the project that this Goal belongs to
-
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
+	select any temp related by project->Goal[R75.''Fulfill''] where selected.Description == param.Description;
+	if (empty temp)
 		relate self to project across R75.''Acheived by'';
+		UI::Reply( msg:"Successfully Created", state:true );
+	else
+		UI::Reply( msg:"Already Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
 end if;',
 	1,
 	'',
