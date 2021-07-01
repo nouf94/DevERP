@@ -112,7 +112,10 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'',
+	'self.Title=param.Title;
+self.Description = param.Description;
+self.Justification = param.Justification;
+',
 	1,
 	'',
 	"f1ebb4ca-d629-469a-be68-f52787eb5a94",
@@ -135,33 +138,6 @@ INSERT INTO O_TPARM
 	0,
 	'',
 	"3148a869-5abd-440d-8ff6-e095de037753",
-	'');
-INSERT INTO O_TPARM
-	VALUES ("db41957d-b723-4f6b-afed-3d28dbb81dfd",
-	"bb4c4842-ddad-4c90-9b76-e6204e8b39a0",
-	'CreationDate',
-	"ba5eda7a-def5-0000-0000-000000000002",
-	0,
-	'',
-	"5084f18a-9a1a-46c4-9089-3436f2f32e4f",
-	'');
-INSERT INTO O_TPARM
-	VALUES ("50b6674f-b308-44a2-b92f-8c1d04878c65",
-	"bb4c4842-ddad-4c90-9b76-e6204e8b39a0",
-	'ImpactCategory',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"db41957d-b723-4f6b-afed-3d28dbb81dfd",
-	'');
-INSERT INTO O_TPARM
-	VALUES ("3ee95687-3c62-4ab9-9fb2-55cb983cc0c0",
-	"bb4c4842-ddad-4c90-9b76-e6204e8b39a0",
-	'ImpactDetails',
-	"ba5eda7a-def5-0000-0000-000000000004",
-	0,
-	'',
-	"50b6674f-b308-44a2-b92f-8c1d04878c65",
 	'');
 INSERT INTO O_TPARM
 	VALUES ("65540982-7027-45dc-82fb-a2a3545dc972",

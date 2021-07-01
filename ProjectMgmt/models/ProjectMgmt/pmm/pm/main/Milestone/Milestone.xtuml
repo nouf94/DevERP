@@ -82,7 +82,10 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'',
+	'self.Name = param.Name;
+self.Weight = param.Weight;
+self.CompletePlannedDate = param.CompletePlannedDate;
+self.CompleteStatus = false;	',
 	1,
 	'',
 	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",

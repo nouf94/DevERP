@@ -30,6 +30,54 @@ INSERT INTO GD_MD
 	0,
 	'4.1.17',
 	'ProjectMgmt::pmm::pm');
+INSERT INTO GD_GE
+	VALUES ("dddbd2ec-b04a-4402-b62c-9d6cdff57bc4",
+	"00000000-0000-0000-0000-000000000000",
+	"d8941aac-fe97-4ede-8994-e08f0fa770a0",
+	108,
+	0,
+	'ProjectMgmt::pmm::pm::Initialization');
+INSERT INTO GD_SHP
+	VALUES ("dddbd2ec-b04a-4402-b62c-9d6cdff57bc4");
+INSERT INTO GD_NCS
+	VALUES ("dddbd2ec-b04a-4402-b62c-9d6cdff57bc4");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"dddbd2ec-b04a-4402-b62c-9d6cdff57bc4");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"dddbd2ec-b04a-4402-b62c-9d6cdff57bc4",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("dddbd2ec-b04a-4402-b62c-9d6cdff57bc4",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("66843256-8e9c-4b9c-9b1f-b6d41b458ea2",
+	"00000000-0000-0000-0000-000000000000",
+	"6177f291-1d29-415e-bed8-570d8e84b959",
+	108,
+	0,
+	'ProjectMgmt::pmm::pm::main');
+INSERT INTO GD_SHP
+	VALUES ("66843256-8e9c-4b9c-9b1f-b6d41b458ea2");
+INSERT INTO GD_NCS
+	VALUES ("66843256-8e9c-4b9c-9b1f-b6d41b458ea2");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"66843256-8e9c-4b9c-9b1f-b6d41b458ea2");
+INSERT INTO DIM_GE
+	VALUES (220.000000,
+	0.000000,
+	"66843256-8e9c-4b9c-9b1f-b6d41b458ea2",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("66843256-8e9c-4b9c-9b1f-b6d41b458ea2",
+	0,
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PO
 	VALUES ("6682b901-e90c-4009-8856-6794e02a617d",
 	"6b567f7b-1b30-4818-b8a0-dfca9c0a25d8",
@@ -1595,13 +1643,13 @@ if (not_empty project)
 	select any goal  related by project->Goal[R75.''Fulfill''] where selected.Description==param.OldDescription;
 	if (not_empty goal)
 		goal.UpdateGoal( Description:param.Description, Impact:param.Impact, KPI: param.KPI);
-		//goal.UpdateGoal( Description:"param.Description", Impact:"param.Impact", KPI: "param.KPI");
-		
-		
-	end if;
-end if;
-
-',
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	51);
@@ -1621,7 +1669,20 @@ INSERT INTO SPR_PS
 	VALUES ("967ad050-56df-4f52-8b17-891476e8794e",
 	'UpdateAssumption',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any assumption  related by project->Assumption[R79.''Includes''] where selected.Title == param.OldTitle;
+	if (not_empty assumption)
+		assumption.UpdateAssumption( Title:param.Title, Description:param.Description, Impact:param.Impact, ValidUntil:param.ValidUntil);
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	52);
@@ -1641,7 +1702,20 @@ INSERT INTO SPR_PS
 	VALUES ("1f338dfb-a6c2-400c-a5a4-5da951f4dce5",
 	'UpdateChangeRequest',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any cr  related by project->ChangeRequest[R72.''Effected by''] where selected.Title == param.OldTitle;
+	if (not_empty cr)
+		cr.UpdateChangeRequest( Title:param.Title, Description:param.Description, Justification:param.Justification );
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if; ',
 	1,
 	0,
 	53);
@@ -1661,7 +1735,20 @@ INSERT INTO SPR_PS
 	VALUES ("e48b6112-2130-469c-8c1e-702a36be3fc1",
 	'UpdateConstraint',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any constraint  related by project->Constraint[R78.''Includes''] where selected.Title == param.OldTitle;
+	if (not_empty constraint)
+		constraint.UpdateProjectConstraint( Title:param.Title, Note:param.Note );
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	55);
@@ -1681,7 +1768,25 @@ INSERT INTO SPR_PS
 	VALUES ("cb8de7ce-58b7-4299-aca1-17177402333e",
 	'UpdateOutcomeDeliverable',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any outcome  related by project->Outcome[R85.''Produce''] where selected.Title == param.OldTitle;
+	if (not_empty outcome)
+		select any deliverable  related by outcome->Deliverable[R84.''contains''] where selected.Title == param.OldTitle;
+		if (not_empty deliverable)
+			deliverable.UpdateDelivrable( Title:param.Title );	
+			UI::Reply( msg:"Successfully Updated", state:true );
+		else
+			UI::Reply( msg:"Deliverable Not Existed", state:false );
+		end if; 
+	else
+		UI::Reply( msg:"Outcome Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if; ',
 	1,
 	0,
 	56);
@@ -1701,7 +1806,25 @@ INSERT INTO SPR_PS
 	VALUES ("d365efab-40da-4ff4-826f-4672dd969a1f",
 	'UpdateChangeRequestImpact',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any cr  related by project->ChangeRequest[R72.''Effected by''] where selected.Title == param.ChangeRequestTitle;
+	if (not_empty cr)
+		select any impact  related by cr->Impact[R73.''Includes''] where selected.Category == param.OldCategory;
+		if (not_empty impact)
+			impact.UpdateImpact( Category:param.Category, Details:param.Details );
+			UI::Reply( msg:"Successfully Updated", state:true );
+		else
+			UI::Reply( msg:"Impact Not Existed", state:false );
+		end if; 
+	else
+		UI::Reply( msg:"ChangeRequest Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if; ',
 	1,
 	0,
 	57);
@@ -1721,7 +1844,20 @@ INSERT INTO SPR_PS
 	VALUES ("ebc57649-500d-4154-a8ae-551328836029",
 	'UpdateMilestone',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any milestone  related by project->Milestone[R67.''completes''] where selected.Name == param.OldName;
+	if (not_empty milestone)
+		milestone.UpdateProjectMilestone( Name:param.Name, CompletePlannedDate:param.CompletePlannedDate, Weight:param.Weight );
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	58);
@@ -1741,7 +1877,20 @@ INSERT INTO SPR_PS
 	VALUES ("495f34c8-92ca-4d5f-8c26-b3e4de01c576",
 	'UpdateOutcome',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any outcome  related by project->Outcome[R85.''Produce''] where selected.Title == param.OldTitle;
+	if (not_empty outcome)
+		outcome.UpdateOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	59);
@@ -1761,7 +1910,15 @@ INSERT INTO SPR_PS
 	VALUES ("a5b02461-df1c-4e51-b471-dc461c3f02f7",
 	'UpdateProject',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.OldCode;
+if (not_empty project)
+	project.UpdateProject( Code:param.Code, Name:param.Name, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, Budget:param.Budget, Duration:param.Duration, Sponsor:param.Sponsor );
+	UI::Reply( msg:"Successfully Updated", state:true );
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	60);
@@ -1781,7 +1938,20 @@ INSERT INTO SPR_PS
 	VALUES ("4e5a50e9-8310-4933-bd5c-75d7f5974353",
 	'UpdatePurchase',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any purchase  related by project->Purchase[R83.''contains''] where selected.Scope == param.OldScope;
+	if (not_empty purchase)
+		purchase.UpdatePurchase( Scope:param.Scope, ExpectedCost:param.ExpectedCost, PurchaseMethod:param.PurchaseMethod );
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	61);
@@ -1801,7 +1971,20 @@ INSERT INTO SPR_PS
 	VALUES ("34825b8b-78fe-45a1-89b5-79f260cb3a25",
 	'UpdateRequirment',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any requirement  related by project->Requirment[R77.''Includes''] where selected.Title == param.OldTitle;
+	if (not_empty requirement)
+		requirement.UpdateProjectRequirement( Title:param.Title, Cost:param.Cost );
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	62);
@@ -1821,7 +2004,20 @@ INSERT INTO SPR_PS
 	VALUES ("58dacf7e-704f-41df-8a53-b7970705348d",
 	'UpdateRisk',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any risk  related by project->Risks[R68.''exposed''] where selected.Title == param.OldTitle;
+	if (not_empty risk)
+		risk.UpdateProjectRisk( Title:param.Title, Severity:param.Severity, Probability:param.Probability, IsIssue:param.IsIssue, IsOpen:param.IsOpen, MitigationPlan:param.MitigationPlan, ExpectedDeadline:param.ExpectedDeadline );
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	63);
@@ -1841,7 +2037,20 @@ INSERT INTO SPR_PS
 	VALUES ("03a5f850-5ee8-44e9-befb-1cbe96eb67b6",
 	'UpdateScope',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any scope  related by project->Scope[R76.''Includs''] where selected.Title == param.OldTitle;
+	if (not_empty scope)
+		scope.UpdateProjectScope( Title:param.Title, IsInScope:param.IsInScope, Description:param.Description );
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	64);
@@ -1861,7 +2070,20 @@ INSERT INTO SPR_PS
 	VALUES ("257cff78-1fdd-4807-b49d-9fe6a6ff87c6",
 	'UpdateStakeholder',
 	'',
-	'',
+	'
+
+select any project from instances of Project where selected.Code == param.ProjectCode;
+if (not_empty project)
+	select any stakeholder  related by project->Stakeholder[R81.''affected by''] where selected.Name == param.OldName;
+	if (not_empty stakeholder)
+		stakeholder.UpdateProjectStakeholder( Name:param.Name, Influence:param.Influence, Priorty:param.Priorty, Interest:param.Interest );
+		UI::Reply( msg:"Successfully Updated", state:true );
+	else
+		UI::Reply( msg:"Not Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
+end if;',
 	1,
 	0,
 	65);

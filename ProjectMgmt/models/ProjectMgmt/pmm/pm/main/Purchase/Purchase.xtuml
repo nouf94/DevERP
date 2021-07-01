@@ -78,7 +78,9 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'',
+	'self.Scope=param.Scope;
+self.ExpectedCost=param.ExpectedCost;
+self.PurchaseMethod = param.PurchaseMethod; ',
 	1,
 	'',
 	"bb693429-d7b8-4821-8712-afdaff90140a",
@@ -101,6 +103,15 @@ INSERT INTO O_TPARM
 	0,
 	'',
 	"5434328f-5fbc-48e4-bdbd-6cce6543a966",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("3ae1b9ee-507b-4ecc-9e6e-a72ae72d19a7",
+	"8acd8539-af68-4f2c-b55a-3b1294085040",
+	'PurchaseMethod',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"9d5e4f9e-29fe-4a5e-8e03-1803d526c99d",
 	'');
 INSERT INTO O_NBATTR
 	VALUES ("98ddc713-bf41-4e46-afb5-eb4874037284",

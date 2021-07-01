@@ -68,7 +68,8 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'',
+	'self.Title = param.Title;
+self.Note = param.Note;',
 	1,
 	'',
 	"c0dc636c-b0a4-4b28-ba76-0c537cfecc49",

@@ -69,7 +69,8 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'',
+	'self.Title = param.Title;
+self.Cost = param.Cost;',
 	1,
 	'',
 	"2dec745f-2a8b-4a91-b2c4-34b645930de4",

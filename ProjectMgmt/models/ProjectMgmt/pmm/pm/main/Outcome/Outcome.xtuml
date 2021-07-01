@@ -88,7 +88,10 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'',
+	'self.Title = param.Title;
+self.Description = param.Description;
+self.StartartDate = param.StartDate;
+self.EndDate = param.EndDate;',
 	1,
 	'',
 	"53808404-86bb-452b-9486-432e8d688a4f",
