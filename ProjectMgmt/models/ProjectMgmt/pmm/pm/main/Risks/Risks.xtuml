@@ -119,7 +119,13 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'',
+	'self.Title=param.Title;
+self.Severity=param.Severity;
+self.Probability=param.Probability;
+self.IsIssue=param.IsIssue;
+self.IsOpen=param.IsOpen;
+self.MitigationPlan=param.MitigationPlan;
+self.ExpectedDeadline=param.ExpectedDeadline;',
 	1,
 	'',
 	"7abbe5d8-a099-4344-aca1-88cfe73be65e",

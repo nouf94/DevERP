@@ -80,7 +80,9 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'',
+	'self.Influence=param.Influence;
+self.Name=param.Name;
+self.Interest=param.Priorty;',
 	1,
 	'',
 	"73d876c8-fd28-49a5-b5f4-b6c44f30e029",
