@@ -15,18 +15,6 @@ INSERT INTO O_TFR
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'
-/*
-create object instance CR of ChangeRequest;
-CR.Description = param.Description;
-CR.Justification = param.Justification;
-CR.ID=param.ID;
-*/
-
-/*select any CR from instances of ChangeRequest where selected.CreationDate == param.CreationDate;
-CR.Title=param.Title;
-CR.Description = param.Description;
-CR.Justification = param.Justification;
-*/
 self.Title=param.Title;
 self.Description = param.Description;
 self.Justification = param.Justification;
@@ -35,14 +23,20 @@ self.CreationDate=param.CreationDate;
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
 	//	relate CR to project across R72.''Effects'';
+	select any temp related by project->ChangeRequest[R72.''Effected by''] where selected.Title == param.Title;
+	if(empty temp)
 		relate self to project across R72.''Effects'';
-	
+		UI::Reply( msg:"Successfully Created", state:true );
+	else
+		UI::Reply( msg:"Already Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
 end if;
 
 // impact 
 create object instance impact of Impact;
-impact.AddImpact( Category:param.ImpactCategory, Details:param.ImpactDetails, ChangeRequestCreationDate:param.CreationDate);
-',
+impact.AddImpact( Category:param.ImpactCategory, Details:param.ImpactDetails, ChangeRequestTitle: param.Title);',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -105,6 +99,73 @@ INSERT INTO O_TPARM
 INSERT INTO O_TPARM
 	VALUES ("c609bd35-af10-4b6f-83a8-e52fa8448601",
 	"f1ebb4ca-d629-469a-be68-f52787eb5a94",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TFR
+	VALUES ("bb4c4842-ddad-4c90-9b76-e6204e8b39a0",
+	"afe3a14f-1d58-4fa7-8295-6973472caf68",
+	'UpdateChangeRequest',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	1,
+	'',
+	"f1ebb4ca-d629-469a-be68-f52787eb5a94",
+	0,
+	0);
+INSERT INTO O_TPARM
+	VALUES ("3148a869-5abd-440d-8ff6-e095de037753",
+	"bb4c4842-ddad-4c90-9b76-e6204e8b39a0",
+	'Description',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"65540982-7027-45dc-82fb-a2a3545dc972",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("5084f18a-9a1a-46c4-9089-3436f2f32e4f",
+	"bb4c4842-ddad-4c90-9b76-e6204e8b39a0",
+	'Justification',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"3148a869-5abd-440d-8ff6-e095de037753",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("db41957d-b723-4f6b-afed-3d28dbb81dfd",
+	"bb4c4842-ddad-4c90-9b76-e6204e8b39a0",
+	'CreationDate',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"5084f18a-9a1a-46c4-9089-3436f2f32e4f",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("50b6674f-b308-44a2-b92f-8c1d04878c65",
+	"bb4c4842-ddad-4c90-9b76-e6204e8b39a0",
+	'ImpactCategory',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"db41957d-b723-4f6b-afed-3d28dbb81dfd",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("3ee95687-3c62-4ab9-9fb2-55cb983cc0c0",
+	"bb4c4842-ddad-4c90-9b76-e6204e8b39a0",
+	'ImpactDetails',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"50b6674f-b308-44a2-b92f-8c1d04878c65",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("65540982-7027-45dc-82fb-a2a3545dc972",
+	"bb4c4842-ddad-4c90-9b76-e6204e8b39a0",
 	'Title',
 	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
@@ -179,42 +240,6 @@ INSERT INTO O_ATTR
 	'',
 	'',
 	'Title',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("eaaf3123-1958-47f6-8e4c-04de16fefe79",
-	"afe3a14f-1d58-4fa7-8295-6973472caf68");
-INSERT INTO O_BATTR
-	VALUES ("eaaf3123-1958-47f6-8e4c-04de16fefe79",
-	"afe3a14f-1d58-4fa7-8295-6973472caf68");
-INSERT INTO O_ATTR
-	VALUES ("eaaf3123-1958-47f6-8e4c-04de16fefe79",
-	"afe3a14f-1d58-4fa7-8295-6973472caf68",
-	"3d58f65e-d81a-4f9e-b2a6-3546dcaf8ead",
-	'test',
-	'',
-	'',
-	'test',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("9b64f444-a466-4d3e-896e-15e3262d2318",
-	"afe3a14f-1d58-4fa7-8295-6973472caf68");
-INSERT INTO O_BATTR
-	VALUES ("9b64f444-a466-4d3e-896e-15e3262d2318",
-	"afe3a14f-1d58-4fa7-8295-6973472caf68");
-INSERT INTO O_ATTR
-	VALUES ("9b64f444-a466-4d3e-896e-15e3262d2318",
-	"afe3a14f-1d58-4fa7-8295-6973472caf68",
-	"eaaf3123-1958-47f6-8e4c-04de16fefe79",
-	'test2',
-	'',
-	'',
-	'test2',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000004",
 	'',

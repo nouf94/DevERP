@@ -14,15 +14,22 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'self.ID = 123;
-self.Title = param.Title;
+	'self.Title = param.Title;
 self.Description=param.Description;
 self.Impact = param.Impact;
 self.ValidUntil = param.ValidUntil;
 
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
-		relate self to project across R79.''Belongs'';
+		select any temp related by project->Assumption[R79.''Includes''] where selected.Title == param.Title;
+		if (empty temp)
+			relate self to project across R79.''Belongs'';
+			UI::Reply( msg:"Successfully Created", state:true );
+		else
+			UI::Reply( msg:"Already Existed", state:false );
+		end if;
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
 end if;',
 	1,
 	'',
@@ -74,6 +81,55 @@ INSERT INTO O_TPARM
 	'',
 	"060525b0-c5ce-4e5b-baa4-99fd593a6810",
 	'');
+INSERT INTO O_TFR
+	VALUES ("250bb7ea-4c9e-4537-b39e-75d1cb449b9a",
+	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2",
+	'UpdateAssumption',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	1,
+	'',
+	"411df71f-b476-49c9-bb67-cf4f41834566",
+	0,
+	2);
+INSERT INTO O_TPARM
+	VALUES ("c188914e-0f61-4713-88bf-3f82736b344c",
+	"250bb7ea-4c9e-4537-b39e-75d1cb449b9a",
+	'Title',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("15b78f23-c23a-4dca-a1e1-7db82cbcfeee",
+	"250bb7ea-4c9e-4537-b39e-75d1cb449b9a",
+	'Description',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"c188914e-0f61-4713-88bf-3f82736b344c",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("b86de755-01d6-4f6c-9999-b39c55c75f0e",
+	"250bb7ea-4c9e-4537-b39e-75d1cb449b9a",
+	'Impact',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"15b78f23-c23a-4dca-a1e1-7db82cbcfeee",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("be16e343-ba53-4fe5-9308-8a8027ed0e48",
+	"250bb7ea-4c9e-4537-b39e-75d1cb449b9a",
+	'ValidUntil',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"b86de755-01d6-4f6c-9999-b39c55c75f0e",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("5f9229e8-8e8d-44cd-8e1f-9c81ab22668e",
 	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2");
@@ -83,7 +139,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("5f9229e8-8e8d-44cd-8e1f-9c81ab22668e",
 	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2",
-	"d64dba52-35de-470d-baba-f54d0f692e83",
+	"00000000-0000-0000-0000-000000000000",
 	'Title',
 	'',
 	'',
@@ -143,24 +199,6 @@ INSERT INTO O_ATTR
 	'',
 	'',
 	'ValidUntil',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("d64dba52-35de-470d-baba-f54d0f692e83",
-	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2");
-INSERT INTO O_BATTR
-	VALUES ("d64dba52-35de-470d-baba-f54d0f692e83",
-	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2");
-INSERT INTO O_ATTR
-	VALUES ("d64dba52-35de-470d-baba-f54d0f692e83",
-	"6f5711a7-7e4d-4d72-9f34-9c9957d626b2",
-	"00000000-0000-0000-0000-000000000000",
-	'ID',
-	'',
-	'',
-	'ID',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',

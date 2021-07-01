@@ -14,15 +14,21 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'self.ID=0;
-self.Scope=param.Scope;
+	'self.Scope=param.Scope;
 self.ExpectedCost=param.ExpectedCost;
+self.PurchaseMethod = param.PurchaseMethod;
 
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
-	
+	select any temp related by project->Purchase[R83.''contains''] where selected.Scope == param.Scope;
+	if (empty temp)
 		relate self to project across R83.''Belongs'';
-	
+		UI::Reply( msg:"Successfully Created", state:true );
+	else
+		UI::Reply( msg:"Already Existed", state:false );
+	end if; 
+else
+	UI::Reply( msg:"Project Not Existed", state:false );
 end if;',
 	1,
 	'',
@@ -56,23 +62,45 @@ INSERT INTO O_TPARM
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
-INSERT INTO O_NBATTR
-	VALUES ("8707a544-c35c-47f7-9e89-c95903f4d258",
-	"d80105c2-134e-4c3d-bf2a-093825910262");
-INSERT INTO O_BATTR
-	VALUES ("8707a544-c35c-47f7-9e89-c95903f4d258",
-	"d80105c2-134e-4c3d-bf2a-093825910262");
-INSERT INTO O_ATTR
-	VALUES ("8707a544-c35c-47f7-9e89-c95903f4d258",
-	"d80105c2-134e-4c3d-bf2a-093825910262",
-	"00000000-0000-0000-0000-000000000000",
-	'ID',
-	'',
-	'',
-	'ID',
+INSERT INTO O_TPARM
+	VALUES ("22f1923a-1e0c-4c3f-9003-90ddfa3ff653",
+	"bb693429-d7b8-4821-8712-afdaff90140a",
+	'PurchaseMethod',
+	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
+	"93cc43e2-8923-45c0-b3dc-fd780d519fd6",
+	'');
+INSERT INTO O_TFR
+	VALUES ("8acd8539-af68-4f2c-b55a-3b1294085040",
+	"d80105c2-134e-4c3d-bf2a-093825910262",
+	'UpdatePurchase',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	1,
+	'',
+	"bb693429-d7b8-4821-8712-afdaff90140a",
+	0,
+	1);
+INSERT INTO O_TPARM
+	VALUES ("5434328f-5fbc-48e4-bdbd-6cce6543a966",
+	"8acd8539-af68-4f2c-b55a-3b1294085040",
+	'Scope',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("9d5e4f9e-29fe-4a5e-8e03-1803d526c99d",
+	"8acd8539-af68-4f2c-b55a-3b1294085040",
+	'ExpectedCost',
+	"ba5eda7a-def5-0000-0000-000000000003",
+	0,
+	'',
+	"5434328f-5fbc-48e4-bdbd-6cce6543a966",
 	'');
 INSERT INTO O_NBATTR
 	VALUES ("98ddc713-bf41-4e46-afb5-eb4874037284",
@@ -83,7 +111,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("98ddc713-bf41-4e46-afb5-eb4874037284",
 	"d80105c2-134e-4c3d-bf2a-093825910262",
-	"8707a544-c35c-47f7-9e89-c95903f4d258",
+	"00000000-0000-0000-0000-000000000000",
 	'Scope',
 	'',
 	'',
@@ -108,6 +136,24 @@ INSERT INTO O_ATTR
 	'ExpectedCost',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("83e2917a-9218-4e6f-8c47-b0435d695d05",
+	"d80105c2-134e-4c3d-bf2a-093825910262");
+INSERT INTO O_BATTR
+	VALUES ("83e2917a-9218-4e6f-8c47-b0435d695d05",
+	"d80105c2-134e-4c3d-bf2a-093825910262");
+INSERT INTO O_ATTR
+	VALUES ("83e2917a-9218-4e6f-8c47-b0435d695d05",
+	"d80105c2-134e-4c3d-bf2a-093825910262",
+	"c10ba40f-c83e-4a35-88f1-bfcd4325da34",
+	'PurchaseMethod',
+	'',
+	'',
+	'PurchaseMethod',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
 	'',
 	'');
 INSERT INTO O_ID
