@@ -1,7 +1,7 @@
 var Impacts=[];
 var Details=[]; 
 var Project="";
-
+var Dlivrables=[];
 //Add ProjectInfo Instance
 var ProjectInfoApp = new Vue({
   el: '#projectInfo',
@@ -16,6 +16,7 @@ var ProjectInfoApp = new Vue({
   },
   methods: {
     readProjectInfo:function (event){
+      console.log(this.$route)
       axios.put('/rest/ReadProject',{
         p_Code: this.p_Code
       }).then(response => (this.ProjectInfo = response.data[0],
@@ -124,6 +125,7 @@ var GoalApp = new Vue({
     p_GoalEffect:'',
     p_gName:'',
     p_ProjectCode:'Project1Code',
+    p_OldDescription:'',
     Goals:'',
     Strategies:'',
     errors: {
@@ -169,7 +171,24 @@ var GoalApp = new Vue({
               console.log(error)
           });
       },//End Add Goal Method   
+      UpdateGoal: function (event) {
+        axios.post('/rest/UpdateGoal', {
+          p_OldDescription:'',
+          p_Description: this.p_gName,
+          p_Impact: this.p_GoalEffect,
+          p_ProjectCode: this.p_ProjectCode,
+          p_KPI: this.p_GoalEffect,
+          }).then(response => {
+           //console.log(response)
+           $("#Alert").show();
+           this.readGoals()//To Update List of Goals
+          }).catch(error => {
+            $("#Error").show();
+              console.log(error)
+          });
+      },//End Update Goal Method  
       viewGoal:function(event){
+        this.selectedGoal="";
         index=(event.target.parentElement.rowIndex)-1;
         this.selectedGoal=this.Goals[index];
       }  
@@ -309,7 +328,8 @@ var OutsApp = new Vue({
     },
     p_ProjectCode:'Project1Code',
     Outcomes:'',
-    selectedOutcome:''
+    selectedOutcome:'',
+    selectedDlevs:''
   },
   mounted: function mounted () {
    this.readOutcomes()
@@ -319,8 +339,7 @@ var OutsApp = new Vue({
       axios.put('/rest/ReadProjectOutcome',{
         p_ProjectCode: this.p_ProjectCode
       }).then(response => (this.Outcomes = response.data,
-        showOutcomes(this.Outcomes),
-        console.log(response)
+        showOutcomes(this.Outcomes)
           )).catch(error => {
             console.log(error)
         })},
@@ -331,19 +350,47 @@ var OutsApp = new Vue({
           p_Description:this.p_ODesc,
           p_StartDate: (new Date(this.p_OStartDate).getTime() / 1000),
           p_EndDate: (new Date(this.p_OEndDate).getTime() / 1000), 
-          }).then(response => {
-            console.log(response)
+          }).then(response => {   
+            var delvs=$('ul[name^="Delv"]')
+            for(i=0;i<delvs.length;i++){
+              Dlivrables.push(delvs.text().replace('×',''));
+            }       
+          this.AddOutcomeDelivrable(response.data[0]['p_ID'])
            this.readOutcomes();
            $("#Alert").show();
           }).catch(error => {
             $("#Error").show();
               console.log(error)
           });
-      },//End Add Purchase Method   
+      },//End Add Outcome Method
+      AddOutcomeDelivrable: function (OutcomeID) {      
+        axios.post('/rest/AddOutcomeDelivrable', {
+          p_Dlivrables : Dlivrables,
+          p_OutcomeID: OutcomeID,
+          }).then(response => {
+            //console.log(response)
+          }).catch(error => {
+              console.log(error)
+          });
+      },//End Add Delivrable Method   
+      ReadOutcomeDeliverable: function (OutcomeID) {
+        axios.put('/rest/ReadOutcomeDeliverable', {
+          p_ID:OutcomeID
+          }).then(response => {
+            this.selectedDlevs=response.data;
+            //ConvertDatetoJSON(this.selectedImpacts);
+            //console.log(response.data)
+          }).catch(error => {
+              console.log(error)
+          });
+      },//End read GetImpact Method   
       viewOutcome:function(event){
         this.selectedOutcome='';
         item=(event.target.parentElement.rowIndex)-1;
         this.selectedOutcome=this.Outcomes[item];
+        console.log(this.selectedOutcome);
+        this.ReadOutcomeDeliverable(this.selectedOutcome.p_ID)
+
       } 
     }//End  Methods
   
@@ -372,8 +419,7 @@ var ProcsApp = new Vue({
       axios.put('/rest/ReadProjectPurchase',{
         p_ProjectCode: this.p_ProjectCode
       }).then(response => (this.Purchases = response.data,
-        showPurchase(this.Purchases),
-        console.log(response)
+        showPurchase(this.Purchases)
           )).catch(error => {
             console.log(error)
         })},

@@ -172,7 +172,7 @@
           <!-- Alerts Section -->
           <div id="Alert" style="display: none;">
   <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-    تم إرسال الطلب بنجاح     
+تم الإرسال بنجاح
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">×</span>
         </button>
@@ -234,9 +234,10 @@
       <div class="form-row">
         <div class="form-group col-lg-12">
           <label> الهدف الاستراتيجي </label>
-            <select name="select" id="GoalStr"  v-for="stratgy in Strategies" class="form-control">
-            <option value=""> {{stratgy.p_Name}}</option>
-            </select>
+            <select name="select" id="GoalStr"  class="form-control">
+              <option value="0">الهدف الاستراتيجي  ١</option>
+              <option value="1"> الهدف الاستراتيجي  ٢</option>
+             </select>
     </div>
     <div class="form-group col-lg-12">
       <label> مقياس الأداء</label>
@@ -276,7 +277,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="tr-shadow" data-toggle="modal" v-for="(goal, index)  in Goals"  @click="viewGoal" data-target="#viewGoal" >
+                    <tr class="tr-shadow" data-toggle="modal" v-for="(goal, index)  in Goals" @click="viewGoal"  data-target="#viewGoal" >
                     <td>
                     {{index+1}}
                     </td>
@@ -303,7 +304,9 @@
                   </div><!-- Close Table div-->
 
                     <!-- View Goal -->
+                    <div id="Edit-goal" class="modal fade" role="dialog">
 
+                    </div>
                     <div id="viewGoal" class="modal fade" role="dialog">
                       <div class="modal-dialog">
                     
@@ -330,14 +333,14 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label><strong>الأهداف الاستراتيجية المرتبطة</strong></label>
-                      <ul>
+                      <ul style="padding-right: 40px;">
                         <li>هدف ١</li>
                         <li>هدف ٢</li>
                       </ul>
               </div>
               <div class="form-group col-md-6">
                 <label><strong> مقاييس الأداء</strong></label>
-                <ul>
+                <ul style="padding-right: 40px;">
                   <li>مقياس ١</li>
                   <li>مقياس ٢</li>
                 </ul>
@@ -397,16 +400,18 @@
        <div class="form-group col-lg-12">
          <label>المخرجات المرتبطة</label>
            <select name="select" id="ODlivrables" class="form-control">
-           <option value="0">مخرج ١</option>
-           <option value="1"> مخرج ٢</option>
+           <option v-for="outcome in Outcomes" :value="outcome.p_ID"  >{{outcome.p_Title}}</option>
            </select>
    </div>
    <div class="form-group col-lg-12">
     <label> التسليمات </label>
-      <select name="select" id="Outputs" class="form-control">
-      <option value="0">ت ١</option>
-      <option value="1"> ت٢ ٢</option>
-      </select>
+    <div class="input-group">
+      <input type="text" id="DelvIn" class="form-control" placeholder="التسليم" name="Dlivrable"></br>
+  <div class="input-group-btn">
+    <button type="button" id="addDlivrable"class="btn btn btn-primary">إضافة</button>
+  </div>
+  </div></br>
+  <ul class="list-unstyled" id="todo"></ul>
 </div>
 
 </div>
@@ -447,7 +452,7 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr class="tr-shadow" data-toggle="modal" data-target="#viewOutcome" v-for="outcome in Outcomes">
+                  <tr class="tr-shadow" data-toggle="modal" data-target="#viewOutcome" @click="viewOutcome" v-for="outcome in Outcomes">
                   <td>
                   <label class="au-checkbox">
                   <input type="checkbox">
@@ -473,11 +478,63 @@
                   </tr>
                   </tbody>
                   </table>
-
+</div>
                <!-- View Output -->
+                
+               <!-- Modal -->
+               <div id="viewOutcome" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title"> {{selectedOutcome.p_Title}}</h4>
+                    </div>
+                    <div class="modal-body" style="float: right;">
+                            <div class="form-row">
+                                <div class="form-group col-lg-12">
+                                <label for="vOName"><strong> المخرج</strong></label>
+                                <input type="text"  class="form-control" id="vOName"name= 'p_OName' placeholder="" v-bind:value='selectedOutcome.p_Title'  readonly>
+                            </div>
+                            <div class="form-group col-lg-12">
+                              <label for="vODesc" > <strong>وصف المخرج </strong></label> </br>
+                              <textarea class="form-control" id="vODesc"name='p_ODesc' placeholder="" v-bind:value='selectedOutcome.p_Description' readonly ></textarea>
+                          </div>
+                        </div>
+               
+                        <div class="form-row">  
+                            <div class="form-group col-md-6" >
+                                <label for="vOStartDate" ><strong>تاريخ البدء    </strong></label></br>
+                                <label>{{selectedOutcome.p_StartDate}}</label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="vOEndDate"><strong> تاريخ الإنتهاء   </strong></label></br>
+                                <label>{{selectedOutcome.p_EndDate}}</label>
+                            </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-lg-12">
+                        <label><strong>المخرجات المرتبطة</strong></label></br>
+                        <label>لا يوجد </label>
+                  </div>
+                  <div class="form-group col-lg-12">
+                   <label><strong> التسليمات </strong></label></br>
+                 <ul class="list-unstyled" id="todo">
+                   <li v-for="Dlivrable in selectedDlevs">- {{Dlivrable}}</li>
+                 </ul>
+               </div>
+               
+               </div>
+              </div>
+                    <div class="modal-footer">
+                      <button type="reset" class="btn btn-info" data-dismiss="modal"><i class="fa fa-arrow-circle-left"></i>العودة</button>
+                    </div>
+                  </div>
+               
                 </div>
+               </div>
 
-                </div>
+                </div><!--End Outputs Nav-->
                 
             <div class="tab-pane fade " id="nav-tasks" role="tabpanel" aria-labelledby="nav-tasks-tab">
             </br>
@@ -678,14 +735,14 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label><strong>المخرجات المرتبطة</strong></label>
-                  <ul>
+                  <ul style="padding-right: 40px;" >
                     <li>مخرج ١</li>
                     <li>مخرج ٢</li>
                   </ul>
           </div>
           <div class="form-group col-md-6">
             <label><strong>المخاطر المرتبطة</strong></label>
-            <ul>
+            <ul style="padding-right: 40px;">
               <li>خطر ١</li>
               <li>خطر ٢</li>
             </ul>
@@ -789,7 +846,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="tr-shadow" data-toggle="modal" data-target="#viewProc"  v-for="proc in Purchases">
+                <tr class="tr-shadow" data-toggle="modal" data-target="#viewProc" @click="viewPurchase" v-for="proc in Purchases">
                 <td>
                 <label class="au-checkbox">
                 <input type="checkbox">
@@ -847,7 +904,6 @@
                       {{selectedPurchase.p_ExpectetCost}}</label>
                   </div>
               </div>                
-          <hr>
           </div><!-- close body-->
           <div class="modal-footer">
           <button type="reset" class="btn btn-info" data-dismiss="modal"><i class="fa fa-arrow-circle-left"></i>العودة</button>
@@ -1264,26 +1320,24 @@
               <label ><h3>  أثر التغيير </h3></label></br>
             </div>
             <div class="form-group col-md-6" v-for="Impact in selectedImpacts" >
-            <label for="Impact" v-if="Impact.p_ImpactCategory == 'quality' " ><strong>  الجودة </strong></label></br>
-            <label for="Impact" v-if="Impact.p_ImpactCategory == 'scope' " ><strong>   نطاق العمل </strong></label></br>
-            <label for="Impact" v-if="Impact.p_ImpactCategory == 'cost' " ><strong>    التكلفة </strong></label></br>
+            <label for="Impact" v-if="Impact.p_ImpactCategory == 'quality' " ><strong>  الجودة </strong></br></label>
+            <label for="Impact" v-if="Impact.p_ImpactCategory == 'scope' " ><strong>   نطاق العمل </strong></br></label>
+            <label for="Impact" v-if="Impact.p_ImpactCategory == 'cost' " ><strong>    التكلفة </strong></br></label>
             <label  id="Impact" v-if="Impact.p_ImpactCategory != 'time' ">
             {{Impact.p_ImpactDetails}}</label>
             <label for="Impact" v-if="Impact.p_ImpactCategory == 'time' " ><strong>     الجدول الزمني </strong></label></br>
         
             <div class="form-row" v-if="Impact.p_ImpactCategory == 'time' " >
-              <div class="col-6">
+              <div class="col-md-6">
                   <div class="form-group">
                       <label for="CStartDate" class="control-label mb-1">تاريخ البداية </label>
-                      <input id="CStartDate" name="CStartDate" type="date" class="form-control cc-exp" v-bind:value="Impact.p_StartDate" readonly/>
+                      <input id="CStartDate" name="CStartDate" type="date" class="form-control" v-bind:value="Impact.p_StartDate" readonly/>
                       <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
-                  </div>
-              </div>
-              <div class="col-6">
+        
                   <label for="VCEndDate" class="control-label mb-1"> تاريخ الإنتهاء </label>
-                  <div class="input-group">
-                      <input id="VCEndDate" name="VCEndDate" type="date" class="form-control cc-cvc"  v-bind:value="Impact.p_EndDate" readonly/>
-    
+                  <div >
+                      <input id="VCEndDate" name="VCEndDate" type="date" class="form-control"  v-bind:value="Impact.p_EndDate" readonly/>
+                      </div>
                   </div>
               </div>
           </div>  <!--End Date Row-->
@@ -1350,6 +1404,64 @@
 
             </div>
             <div class="tab-pane fade" id="nav-team" role="tabpanel" aria-labelledby="nav-team-tab">
+
+              <div class="col-lg-12">
+                <div class="au-card au-card--no-shadow au-card--no-pad ">
+                    <div class="au-card-title" style="background-image:url('images/bg-title-02.jpg');">
+                        <div class="bg-overlay bg-overlay--blue"></div>
+                        <h3>
+                          <i class="zmdi zmdi-accounts" style="padding: 5px;"></i>أعضاء الفريق  </h3> 
+                        <button class="au-btn-plus">
+                            <i class="zmdi zmdi-plus"></i>
+                        </button>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="au-message">
+                            <div class="au-message__noti">
+                                <p>عدد أعضاء الفريق
+                                    <span>2</span>
+                                </p>
+                            </div>
+                            <div class="au-message-list">
+                                <div class="au-message__item unread">
+                                    <div class="au-message__item-inner">
+                                        <div class="au-message__item-text">
+                                            <div class="avatar-wrap">
+                                                <div class="avatar" style="float: right;">
+                                                    <img src="../images/user.png" alt="John Smith" style="float: right;">
+                                                </div>
+                                            </div>
+                                            <div class="text">
+                                                <h5 class="name">اسم اسم </h5>
+                                                <p>مدير مشروع</p>
+                                            </div>
+                                        </div>
+                                        <div class="au-message__item-time">
+                                            <span>12 Min ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="au-message__item">
+                                    <div class="au-message__item-inner">
+                                        <div class="au-message__item-text">
+                                            <div class="avatar-wrap online">
+                                                <div class="avatar">
+                                                    <img src="../images/user.png" alt="Michelle Sims">
+                                                </div>
+                                            </div>
+                                            <div class="text">
+                                                <h5 class="name">اسم اسم </h5>
+                                                <p>باحث مساعد</p>
+                                            </div>
+                                        </div>
+                                        <div class="au-message__item-time">
+                                            <span>Yesterday</span>
+                                        </div>
+                                    </div>
+                                </div>   
+                        </div>
+                       
+                      
             </div>
             </div>
     </div>
@@ -1452,10 +1564,25 @@ if($('input[name="p_ImpactCategory"]:checked').length > 0){
   document.getElementById('NoImpactError').innerHTML="يجب إختيار أحد الخيارات أعلاه";
 return;
 }
-}/*
-$(function(){  
-    $('#riskcnt').load('addrisk.html');  
-});*/
+}
+
+//Add Dlivrable 
+
+$(document).ready(function () {
+  $("#DelvIn").keyup(function(event) {
+            if (event.keyCode === 13) {
+                $("#addDlivrable").click();
+            }
+        });
+    $('#addDlivrable').click(function () {
+        $('#todo').append("<div><ul name='Delv'>" + $("input[name=Dlivrable]").val() + " <a href='#' class='close' aria-hidden='true'>&times;</a></ul> </div>");
+        $("input[name=Dlivrable]").val("");
+      });
+    $("body").on('click', '#todo a', function () {
+        $(this).closest("ul").remove();
+    });
+});
+
 </script>   
 </body>
 </html>

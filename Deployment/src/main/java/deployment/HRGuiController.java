@@ -2111,7 +2111,6 @@ private static HRGuiController singleton;
 		return null;
 	}
 
-	
 	//المخرجات
 	List<Outcome> outs=new ArrayList<Outcome>();
     public void SendProjectOutcome(final int p_ID,  final String p_Title,  final String p_Description,  final int p_StartDate,  final int p_EndDate ){
@@ -2125,8 +2124,8 @@ private static HRGuiController singleton;
 
          } 
          } 
-		@PutMapping(path="/ReadProjectOutcome", consumes="application/json", produces="application/json")	
-		public List<Outcome> ReadProjectOutcome(@RequestBody Outcome out ){
+	@PutMapping(path="/ReadProjectOutcome", consumes="application/json", produces="application/json")	
+	public List<Outcome> ReadProjectOutcome(@RequestBody Outcome out ){
           
           try {
 			outs.clear();
@@ -2157,12 +2156,12 @@ private static HRGuiController singleton;
 		 return null;
          } 
 		//التسليمات 
-		List<Deliverable> delvs=new ArrayList<Deliverable>();
+		List<String>  delvsTitle=new ArrayList<String>();
 		public void SendOutcomeDeliverable( final int p_ID,  final String p_Title ){
         Deliverable dlev=null;
           try {
-			dlev=new Deliverable(p_ID,p_Title);
-			delvs.add(dlev);
+			//dlev=new Outcome(p_ID,p_Title);
+			delvsTitle.add(p_Title);
 
          }catch(Exception e) {
       	   	e.printStackTrace();
@@ -2171,13 +2170,13 @@ private static HRGuiController singleton;
          } 
 
 		@PutMapping(path="/ReadOutcomeDeliverable", consumes="application/json", produces="application/json")	
-		public List<Deliverable> ReadOutcomeDeliverable(@RequestBody Deliverable delv ){
+		public List<String> ReadOutcomeDeliverable(@RequestBody Deliverable delv ){
           
           try {
-			delvs.clear();
+			delvsTitle.clear();
             UI.Singleton().Projects().ReadOutcomeDeliverable(delv.getP_ID());
 			Thread.sleep(700);
-			return delvs;
+			return delvsTitle;
          }catch (XtumlException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -2188,7 +2187,19 @@ private static HRGuiController singleton;
 
 		return null;
         } 
+		
+		@PostMapping(path="/AddOutcomeDelivrable", consumes="application/json")
+		public void AddOutcomeDelivrable(@RequestBody Deliverable dev ){
+          
+        try {	
+		for(int i = 0; i < dev.getP_Dlivrables().length; i++) {
+        UI.Singleton().Projects().AddOutcomeDelivrable(dev.getP_OutcomeID() , dev.getP_Dlivrables()[i]);
+			}
+	     }catch(Exception e) {
+      	   
+         } 
 
+         } 
 
 
 	List<Purchase> procurs=new ArrayList<Purchase>();
@@ -2257,6 +2268,16 @@ private static HRGuiController singleton;
       	   
          } 
          } 
+		 
+		@PostMapping(path="/UpdateGoal", consumes="application/json")
+		public void UpdateGoal(@RequestBody Goal goal ){
+          
+          try {
+            UI.Singleton().Projects().UpdateGoal(goal.getP_OldDescription(),goal.getP_Description() , goal.getP_Impact(), goal.getP_ProjectCode(), goal.getP_KPI());
+         }catch(Exception e) {
+      	   
+         } 
+         }
 
 		@PutMapping(path="/ReadProjectGoals", consumes="application/json", produces="application/json")	
 		public List<Goal> ReadProjectGoals(@RequestBody Goal goal ){

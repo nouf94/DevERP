@@ -9,7 +9,9 @@ public class Outcome{
     private int p_StartDate;
     private int p_EndDate;
     private int duration;
-
+    //remove these two If not needed after UniqueID update
+    private String dlivrableTitle;
+    private int dlivrable_ID;
 
 	public Outcome(){
 	}
@@ -40,11 +42,23 @@ public class Outcome{
         this.p_EndDate=p_EndDate;
 
 	}
-        public Outcome(int p_ID){
+  public Outcome(int p_ID){
         this.p_ID=p_ID;
 	}
 
-    public String getP_ProjectCode() {
+  public Outcome(int dlivrable_ID,String dlivrableTitle){
+        this.dlivrable_ID=dlivrable_ID;
+        this.dlivrableTitle=dlivrableTitle;
+	}
+ 
+  public int getP_ID() {
+		return p_ID;
+	}
+	public void setP_ID(int p_ID) {
+		this.p_ID = p_ID;
+	}
+  
+  public String getP_ProjectCode() {
 		return p_ProjectCode;
 	}
 	public void setP_ProjectCode(String p_ProjectCode) {
@@ -84,5 +98,19 @@ public class Outcome{
 	}
 	public void setDuration(int duration) {
 		this.duration = duration;
+	}
+
+
+   public int getdlivrable_ID() {
+		return dlivrable_ID;
+	}
+	public void setdlivrable_ID(int dlivrable_ID) {
+		this.dlivrable_ID = dlivrable_ID;
+	}
+  public String getdlivrableTitle() {
+		return dlivrableTitle;
+	}
+	public void setdlivrableTitle(String dlivrableTitle) {
+		this.dlivrableTitle = dlivrableTitle;
 	}
 }

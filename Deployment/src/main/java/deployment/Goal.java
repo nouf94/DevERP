@@ -5,16 +5,19 @@ public class Goal {
 	private String p_KPI;
 	private String p_Impact;
 	private String p_ProjectCode;
+	private String p_OldDescription;
 
 	
 	
 	public Goal() {
 
 	}
-	public Goal(String p_Description, String p_Impact , String p_ProjectCode,String p_KPI) {
+	public Goal(String p_Description, String p_Impact , String p_ProjectCode,String p_KPI,String p_OldDescription) {
 		this.p_Description = p_Description;
 		this.p_KPI = p_KPI;
 		this.p_ProjectCode = p_ProjectCode;
+		this.p_OldDescription = p_OldDescription;
+
 	}
 
 	public Goal(String p_Description,  String p_Impact, String p_KPI) {
@@ -27,6 +30,12 @@ public class Goal {
 		this.p_ProjectCode = p_ProjectCode;
 	}
 
+	public String getP_OldDescription() {
+		return p_OldDescription;
+	}
+	public void setP_OldDescription(String p_OldDescription) {
+		this.p_OldDescription = p_OldDescription;
+	}
 
 	public String getP_Description() {
 		return p_Description;
