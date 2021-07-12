@@ -570,6 +570,15 @@ INSERT INTO C_PP
 	0,
 	'',
 	"2c0d45c3-22b5-4ae2-9ddc-5b7999bd75e7");
+INSERT INTO C_PP
+	VALUES ("dcd17db1-e29f-46e1-9918-3071f1f69462",
+	"823d6250-b774-4665-8272-9dc2cc28eadd",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'CommulativeWeight',
+	'',
+	0,
+	'',
+	"4a3318a1-5f23-4802-9c65-33d8ea58db38");
 INSERT INTO C_EP
 	VALUES ("b9687437-2df6-41c0-bb96-f4dfbe905d8e",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -935,6 +944,15 @@ INSERT INTO C_PP
 	0,
 	'',
 	"1113606c-5a39-4a44-9ec3-c15917c67696");
+INSERT INTO C_PP
+	VALUES ("55c93af7-c786-48e3-bb4d-d2d57635137a",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'CommulativeWieght',
+	'',
+	0,
+	'',
+	"20b9042b-4ee9-4d56-90fa-022ec146c55c");
 INSERT INTO C_EP
 	VALUES ("b7f9abc9-dead-40d5-be1d-11099eee8dad",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -2785,6 +2803,15 @@ INSERT INTO C_PP
 	0,
 	'',
 	"8289dace-225d-490d-8e95-75f36beac8ac");
+INSERT INTO C_PP
+	VALUES ("a40d14e3-9eef-43b2-b2b9-87fc2cb98771",
+	"14a3fee1-2869-431c-83a2-45f51afceff1",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'CommulativeWeight',
+	'',
+	0,
+	'',
+	"d7134d7f-cff3-4d57-85b8-8b102a586c42");
 INSERT INTO C_EP
 	VALUES ("042caa02-5381-4603-916c-357670045ca7",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",

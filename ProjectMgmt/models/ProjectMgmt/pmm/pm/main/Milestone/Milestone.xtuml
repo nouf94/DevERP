@@ -20,7 +20,8 @@ INSERT INTO O_TFR
 self.Name = param.Name;
 self.Weight = param.Weight;
 self.CompletePlannedDate = param.CompletePlannedDate;
-self.CompleteStatus = false;	
+self.CompleteStatus = false;
+self.CommulativeWeight=param.CommulativeWeight;	
 // select the project that this milestone belongs to
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
@@ -75,6 +76,15 @@ INSERT INTO O_TPARM
 	'',
 	"03a6f096-ab3e-44f9-bc33-24172e3c2a38",
 	'');
+INSERT INTO O_TPARM
+	VALUES ("9dabf7cf-7332-4e70-8375-a29f4acd6c6a",
+	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
+	'CommulativeWeight',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"262f8ca4-dfb1-486d-9edb-e039f522b9c7",
+	'');
 INSERT INTO O_TFR
 	VALUES ("33559e0c-3e42-41f2-83b4-6366929cffac",
 	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
@@ -85,7 +95,8 @@ INSERT INTO O_TFR
 	'self.Name = param.Name;
 self.Weight = param.Weight;
 self.CompletePlannedDate = param.CompletePlannedDate;
-self.CompleteStatus = false;	',
+self.CompleteStatus = false;	
+self.CommulativeWeight=param.CommulativeWeight;	',
 	1,
 	'',
 	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
@@ -117,6 +128,15 @@ INSERT INTO O_TPARM
 	0,
 	'',
 	"e7b7d183-be4a-42ec-8b8e-e171ddb18443",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("8e07e626-60f1-43d9-869c-7e4028e1ae2f",
+	"33559e0c-3e42-41f2-83b4-6366929cffac",
+	'CommulativeWeight',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"702baaa4-c0a3-46e6-a626-62c37adc34f3",
 	'');
 INSERT INTO O_NBATTR
 	VALUES ("b30e7b51-248e-4478-b02d-9295c431bdad",
