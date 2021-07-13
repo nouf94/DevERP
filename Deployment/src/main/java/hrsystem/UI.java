@@ -387,29 +387,29 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
           }  
         
     }
-    public void SendOutcomeDeliverable( final int p_ID,  final String p_Title ) throws XtumlException {
+    public void SendOutcomeDeliverable(   final String p_Title ) throws XtumlException {
       try {
-              HRGuiController.Singleton().SendOutcomeDeliverable(p_ID, p_Title);
+              HRGuiController.Singleton().SendOutcomeDeliverable( p_Title);
           }catch(Exception e) {
               
           }
 
     }
 
-    public void SendProjectOutcome( final int p_ID,  final String p_Title,  final String p_Description,  final int p_StartDate,  final int p_EndDate ) throws XtumlException {
+    public void SendProjectOutcome(   final String p_Title,  final String p_Description,  final int p_StartDate,  final int p_EndDate ) throws XtumlException {
     
        try {
-              HRGuiController.Singleton().SendProjectOutcome(p_ID, p_Title, p_Description, p_StartDate, p_EndDate);
+              HRGuiController.Singleton().SendProjectOutcome( p_Title, p_Description, p_StartDate, p_EndDate);
           }catch(Exception e) {
               
           }  
 
     }
 
-    public void SendProjectPurchase( final String p_Scope,  final double p_ExpectetCost ) throws XtumlException {
+    public void SendProjectPurchase( final String p_Scope,  final double p_ExpectetCost,final String p_PurchaseMethod ) throws XtumlException {
         
         try {
-              HRGuiController.Singleton().SendProjectPurchase( p_Scope, p_ExpectetCost );
+              HRGuiController.Singleton().SendProjectPurchase( p_Scope, p_ExpectetCost ,p_PurchaseMethod);
           }catch(Exception e) {
               
           } 
@@ -432,10 +432,10 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
       	   
          } 
          } 
-        public void SendProjectRisk( final int p_ID,  final String p_Title,  final String p_Severity,  final String p_Probability,  final boolean p_IsIssue,  final boolean p_IsOpen,  final String p_MitigationPlan,  final int p_ExpectedDeadline ) throws XtumlException {
+        public void SendProjectRisk(   final String p_Title,  final String p_Severity,  final String p_Probability,  final boolean p_IsIssue,  final boolean p_IsOpen,  final String p_MitigationPlan,  final int p_ExpectedDeadline ) throws XtumlException {
 
          try {
-            HRGuiController.Singleton().SendProjectRisk( p_ID, p_Title, p_Severity, p_Probability, p_IsIssue, p_IsOpen, p_MitigationPlan, p_ExpectedDeadline );
+            HRGuiController.Singleton().SendProjectRisk(p_Title, p_Severity, p_Probability, p_IsIssue, p_IsOpen, p_MitigationPlan, p_ExpectedDeadline );
 
          }catch(Exception e) {
       	   
@@ -459,11 +459,11 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
       	   
          } 
          } 
-         public void SendProjectConstraint( final int p_ID,  final String p_Title,  final String p_Note ) throws XtumlException {
+         public void SendProjectConstraint(  final String p_Title,  final String p_Note ) throws XtumlException {
 
 
          }
-         public void SendProjectAssumption( final int p_ID,  final String p_Title,  final String p_Description,  final String p_Impact,  final int p_ValidUntil ) throws XtumlException {
+         public void SendProjectAssumption(  final String p_Title,  final String p_Description,  final String p_Impact,  final int p_ValidUntil ) throws XtumlException {
 
              
          }
@@ -485,11 +485,11 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
          } 
     
     }
-    public void SendProjectRequirement( final int p_ID,  final String p_Title,  final double p_Cost ) throws XtumlException {
+    public void SendProjectRequirement(  final String p_Title,  final double p_Cost ) throws XtumlException {
     }
     public void SendProjectStakeholder( final String p_Name,  final String p_Influence,  final String p_Priorty,  final String p_Interest ) throws XtumlException {
     }
-    public void SendProjectScope( final int p_ID,  final String p_Title,  final boolean p_IsInScope,  final String p_Description ) throws XtumlException {
+    public void SendProjectScope(  final String p_Title,  final boolean p_IsInScope,  final String p_Description ) throws XtumlException {
     }
 /*
         public void AssignManger( final String p_AccountName,  final String p_ProjectCode ) throws XtumlException {

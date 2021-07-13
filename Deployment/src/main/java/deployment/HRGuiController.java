@@ -1998,24 +1998,7 @@ private static HRGuiController singleton;
 	}
 
 	
-	@PutMapping(path="/TestReadChangeRequestByCreationDte", consumes="application/json", produces="application/json")	
-	public List<ChangeRequest> TestReadChangeRequestByCreationDte(@RequestBody ChangeRequest ch) {
-		// TODO Auto-generated method stub
-	try {
-			changes.clear();
-			UI.Singleton().Projects().TestReadChangeRequestByCreationDte(ch.getP_CreationDate());
-			Thread.sleep(700);
-			return changes;
-		} catch (XtumlException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
 
-	}
 	@PutMapping(path="/ReadChangeRequests", produces="application/json", consumes="application/json")
 	public List<ChangeRequest> ReadChangeRequests(@RequestBody ChangeRequest chrq) {
 		// TODO Auto-generated method stub
@@ -2113,10 +2096,10 @@ private static HRGuiController singleton;
 
 	//المخرجات
 	List<Outcome> outs=new ArrayList<Outcome>();
-    public void SendProjectOutcome(final int p_ID,  final String p_Title,  final String p_Description,  final int p_StartDate,  final int p_EndDate ){
+    public void SendProjectOutcome(final String p_Title,  final String p_Description,  final int p_StartDate,  final int p_EndDate ){
         Outcome out=null;
           try {
-			out=new Outcome(p_ID, p_Title,p_Description,p_StartDate,p_EndDate);
+			out=new Outcome( p_Title,p_Description,p_StartDate,p_EndDate);
 			outs.add(out);
 
          }catch(Exception e) {
@@ -2157,10 +2140,9 @@ private static HRGuiController singleton;
          } 
 		//التسليمات 
 		List<String>  delvsTitle=new ArrayList<String>();
-		public void SendOutcomeDeliverable( final int p_ID,  final String p_Title ){
+		public void SendOutcomeDeliverable( final String p_Title ){
         Deliverable dlev=null;
           try {
-			//dlev=new Outcome(p_ID,p_Title);
 			delvsTitle.add(p_Title);
 
          }catch(Exception e) {
@@ -2174,7 +2156,7 @@ private static HRGuiController singleton;
           
           try {
 			delvsTitle.clear();
-            UI.Singleton().Projects().ReadOutcomeDeliverable(delv.getP_ID());
+            UI.Singleton().Projects().ReadOutcomeDeliverable(delv.getP_ProjectCode(),delv.getP_OutcomeTitle());
 			Thread.sleep(700);
 			return delvsTitle;
          }catch (XtumlException e) {
@@ -2193,7 +2175,7 @@ private static HRGuiController singleton;
           
         try {	
 		for(int i = 0; i < dev.getP_Dlivrables().length; i++) {
-        UI.Singleton().Projects().AddOutcomeDelivrable(dev.getP_OutcomeID() , dev.getP_Dlivrables()[i]);
+        UI.Singleton().Projects().AddOutcomeDelivrable(dev.getP_ProjectCode(),dev.getP_OutcomeTitle() , dev.getP_Dlivrables()[i]);
 			}
 	     }catch(Exception e) {
       	   
@@ -2203,10 +2185,10 @@ private static HRGuiController singleton;
 
 
 	List<Purchase> procurs=new ArrayList<Purchase>();
-    public void SendProjectPurchase( final String p_Scope,  final double p_ExpectetCost ){
+    public void SendProjectPurchase( final String p_Scope,  final double p_ExpectetCost, final String p_PurchaseMethod ){
         Purchase prch=null;
           try {
-			prch=new Purchase(p_Scope,p_ExpectetCost);
+			prch=new Purchase(p_Scope,p_ExpectetCost,p_PurchaseMethod);
 			procurs.add(prch);
 
          }catch(Exception e) {
@@ -2220,7 +2202,7 @@ private static HRGuiController singleton;
           
           try {
 			  
-        UI.Singleton().Projects().AddProjectPurchase(purch.getP_ProjectCode() , purch.getP_Scope(), purch.getP_ExpectetCost());
+        UI.Singleton().Projects().AddProjectPurchase(purch.getP_ProjectCode() , purch.getP_Scope(), purch.getP_ExpectetCost(),purch.getP_PurchaseMethod());
          }catch(Exception e) {
       	   
          } 
@@ -2467,7 +2449,7 @@ private static HRGuiController singleton;
 			//int i=1; // skipped the first impact because it was sent in the CreateChangeRequest
 			for(int i = 1; i < Impacts.getP_Impacts().length; i++) {
 			chreq=new ChangeRequest(Impacts.getP_Impacts()[i], Impacts.getP_Details()[i], Impacts.getP_CreationDate() );
-			UI.Singleton().Projects().AddChangeRequestImpact(chreq.getP_ImpactCategory(),chreq.getP_ImpactDetails(),chreq.getP_CreationDate());
+			UI.Singleton().Projects().AddChangeRequestImpact(chreq.getP_ProjectCode(),chreq.getP_ImpactCategory(),chreq.getP_ImpactDetails(),chreq.getP_Title());
 			}
 		}catch(Exception e){
 			e.printStackTrace();
@@ -2497,7 +2479,7 @@ private static HRGuiController singleton;
           try {
 			//categories.clear();
 			ReadImpacts.clear();
-            UI.Singleton().Projects().ReadChangeRequestImpact(ch.getP_CreationDate());
+            UI.Singleton().Projects().ReadChangeRequestImpact(ch.getP_ProjectCode(),ch.getP_Title());
 			Thread.sleep(700);
 			//pimpacts=new Impact(categories.toArray(new String[0]),details.toArray(new String[0]));
 			return ReadImpacts;
@@ -2512,11 +2494,11 @@ private static HRGuiController singleton;
         } 
 
 		List<Risk> risks=new ArrayList<Risk>();
-        public void SendProjectRisk(int p_ID, String p_Title, String p_Severity, String p_Probability,boolean p_IsIssue, boolean p_IsOpen, String p_MitigationPlan, int p_ExpectedDeadline )  {
+        public void SendProjectRisk( String p_Title, String p_Severity, String p_Probability,boolean p_IsIssue, boolean p_IsOpen, String p_MitigationPlan, int p_ExpectedDeadline )  {
 		Risk risk=null;
 		
          try {
-			risk=new Risk(p_ID, p_Title, p_Severity, p_Probability, p_IsIssue, p_IsOpen, p_MitigationPlan, p_ExpectedDeadline );
+			risk=new Risk(p_Title, p_Severity, p_Probability, p_IsIssue, p_IsOpen, p_MitigationPlan, p_ExpectedDeadline );
 			risks.add(risk);
          }catch(Exception e) {
       	   

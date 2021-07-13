@@ -2,7 +2,6 @@ package deployment;
 
 public class Risk {
 
-	private int p_ID;
     private String p_Title;
     private String p_Severity;
     private String p_Probability;
@@ -29,8 +28,7 @@ public class Risk {
 		this.p_ExpectedDeadline= p_ExpectedDeadline;
 	}
 
-	public Risk(int p_ID, String p_Title, String p_Severity, String p_Probability,boolean p_IsIssue, boolean p_IsOpen, String p_MitigationPlan, int p_ExpectedDeadline) {
-		this.p_ID = p_ID;
+	public Risk(String p_Title, String p_Severity, String p_Probability,boolean p_IsIssue, boolean p_IsOpen, String p_MitigationPlan, int p_ExpectedDeadline) {
 		this.p_Title= p_Title;
 		this.p_Severity=p_Severity;
         this.p_Probability = p_Probability;
@@ -46,14 +44,6 @@ public class Risk {
 	}
 	public void setP_ProjectCode(String p_ProjectCode) {
 		this.p_ProjectCode = p_ProjectCode;
-	}
-
-//set and Get 
-	public int getP_ID() {
-		return p_ID;
-	}
-	public void setP_ID(int p_ID) {
-		this.p_ID = p_ID;
 	}
 
 //set and Get 

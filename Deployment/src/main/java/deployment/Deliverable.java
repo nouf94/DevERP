@@ -2,28 +2,28 @@ package deployment;
 
 public class Deliverable{
     // المخرجات
-    private int p_ID;
+    private String p_ProjectCode;
     private String[] p_Dlivrables;
-	private int p_OutcomeID;
+	private String p_OutcomeTitle;
 
 
 	public Deliverable(){
 	}
 
-    public Deliverable(int p_ID,String[] p_Dlivrables,int p_OutcomeID){
+    public Deliverable(String p_ProjectCode,String[] p_Dlivrables,String p_OutcomeTitle){
         this.p_Dlivrables=p_Dlivrables;
-        this.p_ID=p_ID;
-		this.p_OutcomeID=p_OutcomeID;
+        this.p_ProjectCode=p_ProjectCode;
+		this.p_OutcomeTitle=p_OutcomeTitle;
 
 	}
-	public Deliverable(String[] p_Dlivrables,int p_OutcomeID){
+	public Deliverable(String[] p_Dlivrables,String p_OutcomeTitle){
         this.p_Dlivrables=p_Dlivrables;
-        this.p_OutcomeID=p_OutcomeID;
+        this.p_OutcomeTitle=p_OutcomeTitle;
 
 	}
 	
-    public Deliverable(int p_ID){
-        this.p_ID=p_ID;
+    public Deliverable(String p_ProjectCode){
+        this.p_ProjectCode=p_ProjectCode;
 	}
     public String[] getP_Dlivrables() {
 		return p_Dlivrables;
@@ -32,18 +32,18 @@ public class Deliverable{
 		this.p_Dlivrables = p_Dlivrables;
 	}
 
-    public int getP_ID() {
-		return p_ID;
+    public String getP_ProjectCode() {
+		return p_ProjectCode;
 	}
-	public void setP_ID(int p_ID) {
-		this.p_ID = p_ID;
+	public void setP_ProjectCode(String p_ProjectCode) {
+		this.p_ProjectCode = p_ProjectCode;
 	}
 
-    public int getP_OutcomeID() {
-		return p_OutcomeID;
+    public String getP_OutcomeTitle() {
+		return p_OutcomeTitle;
 	}
-	public void setP_OutcomeID(int p_OutcomeID) {
-		this.p_OutcomeID = p_OutcomeID;
+	public void setP_OutcomeTitle(String p_OutcomeTitle) {
+		this.p_OutcomeTitle = p_OutcomeTitle;
 	}
 
 }

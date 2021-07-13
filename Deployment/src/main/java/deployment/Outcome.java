@@ -3,22 +3,17 @@ package deployment;
 public class Outcome{
     // المخرجات
     private String p_ProjectCode;
-    private int p_ID;
     private String p_Title;
     private String p_Description;
     private int p_StartDate;
     private int p_EndDate;
     private int duration;
-    //remove these two If not needed after UniqueID update
-    private String dlivrableTitle;
-    private int dlivrable_ID;
 
 	public Outcome(){
 	}
-  public Outcome(String p_ProjectCode,int p_ID,String p_Title, String p_Description, int p_StartDate, int p_EndDate, int duration){
+  public Outcome(String p_ProjectCode,String p_Title, String p_Description, int p_StartDate, int p_EndDate, int duration){
 
         this.p_ProjectCode=p_ProjectCode;
-        this.p_ID=p_ID;
         this.p_Title=p_Title;
         this.p_Description=p_Description;
         this.p_StartDate=p_StartDate;
@@ -34,30 +29,14 @@ public class Outcome{
         this.p_StartDate=p_StartDate;
         this.p_EndDate=p_EndDate;
 	}
-    public Outcome(int p_ID,String p_Title, String p_Description, int p_StartDate, int p_EndDate){
-        this.p_ID=p_ID;
+    public Outcome(String p_Title, String p_Description, int p_StartDate, int p_EndDate){
         this.p_Title=p_Title;
         this.p_Description=p_Description;
         this.p_StartDate=p_StartDate;
         this.p_EndDate=p_EndDate;
 
 	}
-  public Outcome(int p_ID){
-        this.p_ID=p_ID;
-	}
 
-  public Outcome(int dlivrable_ID,String dlivrableTitle){
-        this.dlivrable_ID=dlivrable_ID;
-        this.dlivrableTitle=dlivrableTitle;
-	}
- 
-  public int getP_ID() {
-		return p_ID;
-	}
-	public void setP_ID(int p_ID) {
-		this.p_ID = p_ID;
-	}
-  
   public String getP_ProjectCode() {
 		return p_ProjectCode;
 	}
@@ -98,19 +77,5 @@ public class Outcome{
 	}
 	public void setDuration(int duration) {
 		this.duration = duration;
-	}
-
-
-   public int getdlivrable_ID() {
-		return dlivrable_ID;
-	}
-	public void setdlivrable_ID(int dlivrable_ID) {
-		this.dlivrable_ID = dlivrable_ID;
-	}
-  public String getdlivrableTitle() {
-		return dlivrableTitle;
-	}
-	public void setdlivrableTitle(String dlivrableTitle) {
-		this.dlivrableTitle = dlivrableTitle;
 	}
 }

@@ -2,6 +2,9 @@ var Impacts=[];
 var Details=[]; 
 var Project="";
 var Dlivrables=[];
+var ProjOutcomes=[];
+var ProjRisks=[];
+
 //Add ProjectInfo Instance
 var ProjectInfoApp = new Vue({
   el: '#projectInfo',
@@ -16,7 +19,7 @@ var ProjectInfoApp = new Vue({
   },
   methods: {
     readProjectInfo:function (event){
-      console.log(this.$route)
+      //console.log(this.$route)
       axios.put('/rest/ReadProject',{
         p_Code: this.p_Code
       }).then(response => (this.ProjectInfo = response.data[0],
@@ -75,7 +78,7 @@ var app = new Vue({
             }).then(response => {
               //If the Change request has more than one Impact submit the rest Impacts here
             if(Impacts.length>1){
-             this.submitImpact(response.data[0]['p_CreationDate'])
+             this.submitImpact(response.data[0]['p_Title'])
             }
             $('#pchange-form')[0].reset();//Clear Form after Submit Seccssfully
              $("#Alert").show();
@@ -85,20 +88,22 @@ var app = new Vue({
                 console.log(error)
             });
         },//End SubmitValues Method  
-        submitImpact: function (creationDate) {
+        submitImpact: function (ChangeReq) {
             axios.post('/rest/AddChangeRequestImpact', {
+              p_ProjectCode: this.p_ProjectCode,
               p_Impacts: Impacts,
               p_Details: Details,
-              p_CreationDate:creationDate
+              p_ChangeRequestTitle:ChangeReq
               }).then(response => {
                 console.log(response)
               }).catch(error => {
                   console.log(error)
               });
           },//End submitImpact Method  
-          ReadChangeRequestImpact: function (selectedDate) {
+          ReadChangeRequestImpact: function (selectedChange) {
             axios.put('/rest/ReadChangeRequestImpact', {
-              p_CreationDate:selectedDate
+              p_ProjectCode: this.p_ProjectCode,
+              p_ChangeRequestTitle:selectedChange
               }).then(response => {
                 this.selectedImpacts=response.data;
                 //ConvertDatetoJSON(this.selectedImpacts);
@@ -111,7 +116,7 @@ var app = new Vue({
             this.selectedImpacts="";
             index=(event.target.parentElement.rowIndex)-1;
             this.selectedRequest=this.Requests[index];
-            this.ReadChangeRequestImpact(this.selectedRequest.p_CreationDate)
+            this.ReadChangeRequestImpact(this.selectedRequest.p_Title)
 
           } 
       }//End  Methods
@@ -144,7 +149,7 @@ var GoalApp = new Vue({
       axios.put('/rest/ReadProjectGoals',{
         p_ProjectCode: this.p_ProjectCode
       }).then(response2 => (this.Goals = response2.data,
-        //console.log(response2),
+        //this.selectedGoal=this.Goals[0],
         showGoals(this.Goals)
           )).catch(error => {
             console.log(error)
@@ -170,17 +175,24 @@ var GoalApp = new Vue({
             $("#Error").show();
               console.log(error)
           });
-      },//End Add Goal Method   
+      },//End Add Goal Method  
+      viewGoalUpdate: function (event){
+                //Get The selected element to update 
+                this.selectedGoal="";
+                index=(event.target.parentElement.parentElement.parentElement.parentElement.rowIndex)-1;
+                this.selectedGoal=this.Goals[index];
+                this.p_gName=this.selectedGoal.p_Description;
+                this.p_GoalEffect=this.selectedGoal.p_Impact;
+      }, 
       UpdateGoal: function (event) {
-        axios.post('/rest/UpdateGoal', {
-          p_OldDescription:'',
+          axios.post('/rest/UpdateGoal', {
+          p_OldDescription:this.selectedGoal.p_Description,
           p_Description: this.p_gName,
           p_Impact: this.p_GoalEffect,
           p_ProjectCode: this.p_ProjectCode,
           p_KPI: this.p_GoalEffect,
           }).then(response => {
-           //console.log(response)
-           $("#Alert").show();
+           $("#Update").show();
            this.readGoals()//To Update List of Goals
           }).catch(error => {
             $("#Error").show();
@@ -196,63 +208,6 @@ var GoalApp = new Vue({
   
 });//End Vue Goal 
 
-
-//Add Milestone Instance
-var MilestoneApp = new Vue({
-  el: '#nav-tasks',
-  data:{
-    p_tName:'',
-    p_Mstatus:'',
-    p_Mweight:'',
-    p_MCweight:'',
-    p_MExpDate:'',
-    p_MAcutDate:'',
-    Tasks:'',
-    errors: {
-      name: false,
-      email: false
-    },
-    p_ProjectCode:'Project1Code',
-    selectedTask:''
-  },
-  mounted: function mounted () {
-    this.readMilestone()
-    //this.ReadStrategies()
-
-  },
-  methods: {
-    readMilestone:function (){
-      axios.put('/rest/ReadProjectMilestone',{
-        p_ProjectCode: this.p_ProjectCode
-      }).then(response => (this.Tasks = response.data,
-        showTasks(this.Tasks)
-        //console.log(response)
-          )).catch(error => {
-            console.log(error)
-        })},
-     AddProjectMilestone: function (event) {
-        axios.post('/rest/AddProjectMilestone', {
-          p_Name: this.p_tName,
-          p_CompletePlannedDate: (new Date(this.p_MExpDate).getTime() / 1000) ,
-          p_Weight: this.p_Mweight,
-          p_ProjectCode: this.p_ProjectCode
-          }).then(response => {
-           //console.log(response)
-           $("#Alert").show();
-           this.readMilestone()//Update MS
-          }).catch(error => {
-            $("#Error").show();
-              console.log(error)
-          });
-      }//End Add Milestone Method 
-      ,
-      viewTask:function(event){
-        item=(event.target.parentElement.rowIndex)-1;
-        this.selectedTask=this.Tasks[item];
-      }    
-    }//End  Methods
-  
-});//End Vue Milestone 
 //Add Risk Instance
 var RiskApp = new Vue({
   el: '#nav-risks',
@@ -339,6 +294,8 @@ var OutsApp = new Vue({
       axios.put('/rest/ReadProjectOutcome',{
         p_ProjectCode: this.p_ProjectCode
       }).then(response => (this.Outcomes = response.data,
+        ProjOutcomes=this.Outcomes,
+        //console.log("Proj outcomes defined"),
         showOutcomes(this.Outcomes)
           )).catch(error => {
             console.log(error)
@@ -355,7 +312,7 @@ var OutsApp = new Vue({
             for(i=0;i<delvs.length;i++){
               Dlivrables.push(delvs.text().replace('×',''));
             }       
-          this.AddOutcomeDelivrable(response.data[0]['p_ID'])
+          this.AddOutcomeDelivrable(response.data[0]['p_Title'])
            this.readOutcomes();
            $("#Alert").show();
           }).catch(error => {
@@ -363,19 +320,21 @@ var OutsApp = new Vue({
               console.log(error)
           });
       },//End Add Outcome Method
-      AddOutcomeDelivrable: function (OutcomeID) {      
+      AddOutcomeDelivrable: function (OutcomeTitle) {      
         axios.post('/rest/AddOutcomeDelivrable', {
+          p_ProjectCode:this.p_ProjectCode,
           p_Dlivrables : Dlivrables,
-          p_OutcomeID: OutcomeID,
+          p_OutcomeTitle: OutcomeTitle
           }).then(response => {
             //console.log(response)
           }).catch(error => {
               console.log(error)
           });
       },//End Add Delivrable Method   
-      ReadOutcomeDeliverable: function (OutcomeID) {
+      ReadOutcomeDeliverable: function (OutcomeTitle) {
         axios.put('/rest/ReadOutcomeDeliverable', {
-          p_ID:OutcomeID
+          p_ProjectCode:this.p_ProjectCode,
+          p_OutcomeTitle: OutcomeTitle
           }).then(response => {
             this.selectedDlevs=response.data;
             //ConvertDatetoJSON(this.selectedImpacts);
@@ -389,7 +348,7 @@ var OutsApp = new Vue({
         item=(event.target.parentElement.rowIndex)-1;
         this.selectedOutcome=this.Outcomes[item];
         console.log(this.selectedOutcome);
-        this.ReadOutcomeDeliverable(this.selectedOutcome.p_ID)
+        this.ReadOutcomeDeliverable(this.selectedOutcome.p_Title)
 
       } 
     }//End  Methods
@@ -427,7 +386,8 @@ var ProcsApp = new Vue({
         axios.post('/rest/AddProjectPurchase', {
           p_ProjectCode :this.p_ProjectCode,
           p_ExpectetCost: this.p_ExpectetCost,
-          p_Scope:  this.p_Scope
+          p_Scope:  this.p_Scope,
+          p_PurchaseMethod: this.p_Pmethod
           }).then(response => {
            this.readPurchase()
            $("#Alert").show();
@@ -444,6 +404,68 @@ var ProcsApp = new Vue({
     }//End  Methods
   
 });//End Vue procu
+
+//Add Milestone Instance
+var MilestoneApp = new Vue({
+  el: '#nav-tasks',
+  data:{
+    p_tName:'',
+    p_Mstatus:'',
+    p_Mweight:'',
+    p_MCweight:'',
+    p_MExpDate:'',
+    p_MAcutDate:'',
+    Tasks:'',
+    errors: {
+      name: false,
+      email: false
+    },
+    p_ProjectCode:'Project1Code',
+    selectedTask:'',
+    Outcomes:'',
+    Risks:''
+  },
+  mounted: function mounted () {
+    this.readMilestone()
+
+
+  },
+  methods: {
+    readMilestone:function (){
+      axios.put('/rest/ReadProjectMilestone',{
+        p_ProjectCode: this.p_ProjectCode
+      }).then(response => (this.Tasks = response.data,
+        showTasks(this.Tasks),
+        this.Outcomes = OutsApp.Outcomes,
+        this.Risks=RiskApp.Risks
+        //console.log(response)
+          )).catch(error => {
+            console.log(error)
+        })},
+     AddProjectMilestone: function (event) {
+        axios.post('/rest/AddProjectMilestone', {
+          p_Name: this.p_tName,
+          p_CompletePlannedDate: (new Date(this.p_MExpDate).getTime() / 1000) ,
+          p_Weight: this.p_Mweight,
+          p_ProjectCode: this.p_ProjectCode
+          }).then(response => {
+           //console.log(response)
+           $("#Alert").show();
+           this.readMilestone()//Update MS
+          }).catch(error => {
+            $("#Error").show();
+              console.log(error)
+          });
+      }//End Add Milestone Method 
+      ,
+      viewTask:function(event){
+        item=(event.target.parentElement.rowIndex)-1;
+        this.selectedTask=this.Tasks[item];
+
+      }    
+    }//End  Methods
+  
+});//End Vue Milestone 
 
 //Add File Instance
 var FilesApp = new Vue({
@@ -570,7 +592,8 @@ function showPurchase(Purchases){
   return;
   }
 function showRisks(Risks){
-  if(Risks.length==0){
+  ProjRisks=Risks;
+    if(Risks.length==0){
     $('#NoRisks').show();
     $('#RisksTable').hide();
     return;

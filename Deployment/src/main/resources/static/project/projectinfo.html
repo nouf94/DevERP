@@ -178,6 +178,14 @@
         </button>
         </div>
       </div>
+      <div id="Update" style="display: none;">
+        <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
+      تم التحديث بنجاح
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">×</span>
+              </button>
+              </div>
+            </div>
       <div id="Error" style="display: none;">
         <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
 حدث خطأ الرجاء المحاولة في وقت لاحق 
@@ -263,7 +271,7 @@
                
                 </br>
                 <div id="NoGoals" style="display: none;"  > 
-                  <h3 class="text-center title-2">لا يوجد طلبات مدخلة</h3>
+                  <h3 class="text-center title-2">لا يوجد أهداف مدخلة</h3>
                 </div>
 
                 <div class="table-responsive table-responsive-data2" style="display: none;" id="GoalsTable">
@@ -277,14 +285,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="tr-shadow" data-toggle="modal" v-for="(goal, index)  in Goals" @click="viewGoal"  data-target="#viewGoal" >
+                    <tr class="tr-shadow"  v-for="(goal, index)  in Goals" >
                     <td>
                     {{index+1}}
                     </td>
-                    <td> {{goal.p_Description}}    </td>
+                    <td data-toggle="modal" data-target="#viewGoal"  @click="viewGoal" > {{goal.p_Description}}    </td>
                     <td>
                     <div class="table-data-feature">
-                    <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                    <button class="item" data-toggle="modal" data-target="#UpdateGoal" @click="viewGoalUpdate"  data-original-title="Edit">
                     <i class="zmdi zmdi-edit"></i>
                     </button>
                     <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
@@ -302,6 +310,56 @@
                     </tbody>
                     </table>
                   </div><!-- Close Table div-->
+<!-- Update Goal -->
+<div id="UpdateGoal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"> {{selectedGoal.p_Description}} </h4>
+      </div>
+      <div class="modal-body" style="float: right;">
+          <form  id="pugoal-form" >
+              <div class="form-row">
+                  <div class="form-group col-lg-12">
+                  <label for="gName"> الهدف</label>
+                  <input type="text"  class="form-control" id="UgName"name= 'p_gName' placeholder="" v-model='p_gName' >
+              </div>
+              <div class="form-group col-lg-12">
+                <label for="GoalEffect" >مستوى التأثير  </label> </br>
+                <textarea  class="form-control" id="UGoalEffect"name='p_GoalEffect' placeholder="" v-model='p_GoalEffect' ></textarea>
+            </div>
+          </div>
+
+      <div class="form-row">
+        <div class="form-group col-lg-12">
+          <label> الهدف الاستراتيجي </label>
+            <select name="select" id="UGoalStr"  class="form-control">
+              <option value="0">الهدف الاستراتيجي  ١</option>
+              <option value="1"> الهدف الاستراتيجي  ٢</option>
+             </select>
+    </div>
+    <div class="form-group col-lg-12">
+      <label> مقياس الأداء</label>
+      <select name="select" id="UGoalKPI" class="form-control">
+        <option value="0">مقياس ١</option>
+        <option value="1"> مقياس ٢</option>
+        </select> 
+      </div>
+</div>     
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" @click="UpdateGoal" class="btn btn-primary " data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> تحديث</button>
+        &nbsp;
+        <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
                     <!-- View Goal -->
                     <div id="Edit-goal" class="modal fade" role="dialog">
@@ -400,7 +458,8 @@
        <div class="form-group col-lg-12">
          <label>المخرجات المرتبطة</label>
            <select name="select" id="ODlivrables" class="form-control">
-           <option v-for="outcome in Outcomes" :value="outcome.p_ID"  >{{outcome.p_Title}}</option>
+            <option v-if="Outcomes.length == 0" value="0">لا يوجد مخرجات مدخلة</option>
+           <option v-for="outcome in Outcomes" :value="outcome.p_Title"  >{{outcome.p_Title}}</option>
            </select>
    </div>
    <div class="form-group col-lg-12">
@@ -594,15 +653,15 @@
           <div class="form-group col-lg-12">
             <label>المخرجات المرتبطة</label>
               <select name="select" id="MSDlivrables" class="form-control">
-              <option value="0">مخرج ١</option>
-              <option value="1"> مخرج ٢</option>
+                <option v-if="Outcomes.length == 0" value="0">لا يوجد مخرجات مدخلة</option>
+              <option v-for="outcome in Outcomes" :value="outcome.p_Title" >{{outcome.p_Title}}</option>
               </select>
       </div>
       <div class="form-group col-lg-12">
         <label>المخاطر المرتبطة</label>
         <select name="select" id="MSrisks" class="form-control">
-          <option value="0">خطر ١</option>
-          <option value="1"> خطر ٢</option>
+          <option v-if="Risks.length == 0" value="0">لا يوجد مخاطر مدخلة</option>
+          <option v-for="risk in Risks" :value="risk.p_Title" >{{risk.p_Title}}</option>
           </select>  </div>
   </div>
         <div class="form-row">
