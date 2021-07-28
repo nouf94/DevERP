@@ -426,6 +426,24 @@ INSERT INTO S_SPARM
 	'',
 	"637f991a-d51d-488d-a570-81a1f1d1d9f1",
 	'');
+INSERT INTO S_SPARM
+	VALUES ("85e3c5f1-645b-44b8-971a-c2d03b3bdcb3",
+	"6a18a06c-0742-4cca-b90a-2771ec59ed46",
+	'RiskTitle',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"14c2e5db-f5c5-46ac-9bd3-ff29c45c3eae",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("1c77f300-3b71-4d20-904d-d145d3a08206",
+	"6a18a06c-0742-4cca-b90a-2771ec59ed46",
+	'OutcomeTitle',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"85e3c5f1-645b-44b8-971a-c2d03b3bdcb3",
+	'');
 INSERT INTO PE_PE
 	VALUES ("6a18a06c-0742-4cca-b90a-2771ec59ed46",
 	1,

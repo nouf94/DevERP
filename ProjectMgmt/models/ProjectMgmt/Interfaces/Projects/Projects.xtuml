@@ -579,6 +579,24 @@ INSERT INTO C_PP
 	0,
 	'',
 	"4a3318a1-5f23-4802-9c65-33d8ea58db38");
+INSERT INTO C_PP
+	VALUES ("789db12b-576b-4cd3-9b23-f1f24ff6ad0e",
+	"823d6250-b774-4665-8272-9dc2cc28eadd",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'RiskTitle',
+	'',
+	0,
+	'',
+	"dcd17db1-e29f-46e1-9918-3071f1f69462");
+INSERT INTO C_PP
+	VALUES ("9b9a293d-a554-4890-98e1-1886448e2bd7",
+	"823d6250-b774-4665-8272-9dc2cc28eadd",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'OutcomeTitle',
+	'',
+	0,
+	'',
+	"789db12b-576b-4cd3-9b23-f1f24ff6ad0e");
 INSERT INTO C_EP
 	VALUES ("b9687437-2df6-41c0-bb96-f4dfbe905d8e",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -953,6 +971,24 @@ INSERT INTO C_PP
 	0,
 	'',
 	"20b9042b-4ee9-4d56-90fa-022ec146c55c");
+INSERT INTO C_PP
+	VALUES ("4ba7d639-2d2c-4752-841f-44ac0d9eebc8",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'RiskTitle',
+	'',
+	0,
+	'',
+	"55c93af7-c786-48e3-bb4d-d2d57635137a");
+INSERT INTO C_PP
+	VALUES ("52bbc0ed-e205-42d4-93ee-620faa9e7c79",
+	"7bd5c6b0-47f8-4e2c-9253-2f756d7ad4ed",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'OutcomeTitle',
+	'',
+	0,
+	'',
+	"4ba7d639-2d2c-4752-841f-44ac0d9eebc8");
 INSERT INTO C_EP
 	VALUES ("b7f9abc9-dead-40d5-be1d-11099eee8dad",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -2812,6 +2848,24 @@ INSERT INTO C_PP
 	0,
 	'',
 	"d7134d7f-cff3-4d57-85b8-8b102a586c42");
+INSERT INTO C_PP
+	VALUES ("1ed5d23b-5657-4080-82b0-0bb617a36a64",
+	"14a3fee1-2869-431c-83a2-45f51afceff1",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'RiskTitle',
+	'',
+	0,
+	'',
+	"a40d14e3-9eef-43b2-b2b9-87fc2cb98771");
+INSERT INTO C_PP
+	VALUES ("6d9e9c22-c23f-48bd-a1b6-fd71104b087f",
+	"14a3fee1-2869-431c-83a2-45f51afceff1",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'OutcomeTitle',
+	'',
+	0,
+	'',
+	"1ed5d23b-5657-4080-82b0-0bb617a36a64");
 INSERT INTO C_EP
 	VALUES ("042caa02-5381-4603-916c-357670045ca7",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
