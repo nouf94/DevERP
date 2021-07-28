@@ -27,6 +27,7 @@ self.CommulativeWeight=param.CommulativeWeight;
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
 	select any temp related by project->Milestone[R67.''completes''] where selected.Name == param.Name;
+	
 	if (empty temp)
 		relate self to project across R67.''completed'';
 		//connected Risk
