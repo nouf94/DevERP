@@ -1431,8 +1431,8 @@ INSERT INTO SPR_PS
 
 //outcome.AddOutcome(ID:id, Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, ProjectCode:param.ProjectCode );
 //UI::SendProjectOutcome( ID:id, Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );
-outcome.AddOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, ProjectCode:param.ProjectCode );
-UI::SendProjectOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );
+outcome.AddOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, ProjectCode:param.ProjectCode ,ConnectedOutcomeTitle:param.ConnectedOutcomeTitle);
+UI::SendProjectOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate ,ConnectedOutcomeTitle:param.ConnectedOutcomeTitle);
 ',
 	1,
 	0,
@@ -1592,10 +1592,14 @@ INSERT INTO SPR_PS
 if (not_empty project)
 	select many outcomes related by project->Outcome[R85.''Produce''];
 	for each outcome in outcomes
-		UI::SendProjectOutcome( Title:outcome.Title, Description:outcome.Description, StartDate:outcome.StartartDate, EndDate:outcome.EndDate );
+		ConnectedOutcomeTitle="";
+		select one Connectedoutcome related by outcome->Outcome[R86.''connected''];
+	   if (not_empty Connectedoutcome)
+			ConnectedOutcomeTitle=Connectedoutcome.Title;
+			end if;
+		UI::SendProjectOutcome( Title:outcome.Title, Description:outcome.Description, StartDate:outcome.StartartDate, EndDate:outcome.EndDate ,ConnectedOutcomeTitle:ConnectedOutcomeTitle);
 	end for;
 end if;
-
 ',
 	1,
 	0,
@@ -1901,7 +1905,7 @@ select any project from instances of Project where selected.Code == param.Projec
 if (not_empty project)
 	select any outcome  related by project->Outcome[R85.''Produce''] where selected.Title == param.OldTitle;
 	if (not_empty outcome)
-		outcome.UpdateOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );
+		outcome.UpdateOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate ,ConnectedOutcomeTitle:param.ConnectedOutcomeTitle,ProjectCode: param.ProjectCode);
 		UI::Reply( msg:"Successfully Updated", state:true );
 	else
 		UI::Reply( msg:"Not Existed", state:false );

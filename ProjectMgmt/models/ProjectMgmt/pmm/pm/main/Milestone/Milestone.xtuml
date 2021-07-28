@@ -31,11 +31,14 @@ if (not_empty project)
 		relate self to project across R67.''completed'';
 		//connected Risk
 		select any risk  related by project->Risks[R68.''exposed'']  where selected.Title==param.RiskTitle ;
+		if(not_Empty risk)
 		relate self to risk across R87.''Effected by'';
+		end if;
 	   //connected Outcom
 	    select any outcome related by project->Outcome[R85.''Produce''] where selected.Title==param.OutcomeTitle ;
+	    if(not_Empty outcome)
 		relate self to outcome  across R88.''Effect'';
-		
+		end if ;
 		UI::Reply( msg:"Successfully Created", state:true );
 	else
 		UI::Reply( msg:"Already Existed", state:false );

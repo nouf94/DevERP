@@ -880,7 +880,7 @@ INSERT INTO S_SYNC
 	'',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	0,
 	11);
@@ -924,7 +924,7 @@ INSERT INTO S_SYNC
 	'',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	0,
 	12);
@@ -964,6 +964,15 @@ INSERT INTO S_SPARM
 	'',
 	"0e32a873-8abb-4898-b41a-60b535b17272",
 	'');
+INSERT INTO S_SPARM
+	VALUES ("f08ebdfd-bf51-4bfc-a604-e59793493836",
+	"69f48c1d-ca25-4ef9-92b9-e50082136aae",
+	'ConnectedOutcomeTitle',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"0fd77340-d544-4e8c-a0dd-ef44de6e7bd1",
+	'');
 INSERT INTO PE_PE
 	VALUES ("69f48c1d-ca25-4ef9-92b9-e50082136aae",
 	1,
@@ -977,7 +986,7 @@ INSERT INTO S_SYNC
 	'',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
-	3,
+	1,
 	'',
 	0,
 	13);

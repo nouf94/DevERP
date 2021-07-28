@@ -2167,6 +2167,15 @@ INSERT INTO C_PP
 	0,
 	'',
 	"12fab017-6ab3-421e-8a02-08d60b92e9d8");
+INSERT INTO C_PP
+	VALUES ("364825b7-eb66-4e5a-88c8-cc18757323c2",
+	"5531cd48-c559-4e8f-a16f-8964c02142c3",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ConnectedOutcomeTitle',
+	'',
+	0,
+	'',
+	"0ece5d64-4f7a-4ede-957c-96150deb8216");
 INSERT INTO C_EP
 	VALUES ("1b3a39ef-5bc7-48a4-901f-a59d186420d3",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -2367,6 +2376,15 @@ INSERT INTO C_PP
 	0,
 	'',
 	"cb6c4266-5926-468e-9dc5-a6b27392bb18");
+INSERT INTO C_PP
+	VALUES ("6ad1b9ed-6636-403d-9735-42e4baf5a68d",
+	"beccd1a8-1618-4f26-9ed7-fa0caaf781d0",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ConnectedOutcomeTitle',
+	'',
+	0,
+	'',
+	"ab86ea9c-58f7-489b-96d9-96fcfc007855");
 INSERT INTO C_EP
 	VALUES ("0a66bce9-e4c4-416d-8595-d4ab07bdd132",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",
@@ -2933,6 +2951,15 @@ INSERT INTO C_PP
 	0,
 	'',
 	"0db88476-157a-4076-a945-6227916621e3");
+INSERT INTO C_PP
+	VALUES ("c6120461-27a8-4caf-8c39-957a46718109",
+	"042caa02-5381-4603-916c-357670045ca7",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'ConnectedOutcomeTitle',
+	'',
+	0,
+	'',
+	"ac6b900a-41a4-4efe-b362-99abf314dfee");
 INSERT INTO C_EP
 	VALUES ("c3960bf5-e5ba-4018-99a6-2c98e19b69c5",
 	"b9747524-a416-4a89-a9ef-0062b1f78a12",

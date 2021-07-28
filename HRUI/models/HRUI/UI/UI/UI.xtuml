@@ -2748,7 +2748,7 @@ INSERT INTO SPR_RS
 	VALUES ("c98d2bda-54e5-45f7-84f3-ae231d568ce8",
 	'SendProjectOutcome',
 	'',
-	'::SendProjectOutcome(  Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );',
+	'::SendProjectOutcome(  Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, ConnectedOutcomeTitle:param.ConnectedOutcomeTitle);',
 	1,
 	0,
 	47);

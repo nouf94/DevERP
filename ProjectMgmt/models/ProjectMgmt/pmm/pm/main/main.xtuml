@@ -4184,9 +4184,9 @@ INSERT INTO R_PART
 	VALUES ("7c53828a-b43b-4ac6-b2bc-8357ba1b8fce",
 	"3d0211bd-d615-43b9-b945-cd282847f0a2",
 	"5d9be967-3036-4c5d-bd41-fc6c56162b9f",
+	0,
 	1,
-	1,
-	'connected');
+	'connected to');
 INSERT INTO R_RTO
 	VALUES ("7c53828a-b43b-4ac6-b2bc-8357ba1b8fce",
 	"3d0211bd-d615-43b9-b945-cd282847f0a2",
@@ -4201,7 +4201,7 @@ INSERT INTO R_PART
 	VALUES ("7c53828a-b43b-4ac6-b2bc-8357ba1b8fce",
 	"3d0211bd-d615-43b9-b945-cd282847f0a2",
 	"38c5fd86-c77a-437c-9714-2bf067db3c82",
-	1,
+	0,
 	1,
 	'connected');
 INSERT INTO R_RTO
