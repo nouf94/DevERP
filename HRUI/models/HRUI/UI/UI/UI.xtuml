@@ -1981,7 +1981,7 @@ INSERT INTO SPR_RS
 	VALUES ("a7fc5710-3fd4-4654-8e08-b28b6665dc79",
 	'SendProjectMilestone',
 	'',
-	'::SendProjectMilestone( Name:param.Name, CompletedPlannedDate:param.CompletedPlannedDate, CompletedActualDate:param.CompletedActualDate, Weight:param.Weight,CompleteStatus:param.CompleteStatus, CommulativeWeight:param.CommulativeWieght);
+	'::SendProjectMilestone( Name:param.Name, CompletedPlannedDate:param.CompletedPlannedDate, CompletedActualDate:param.CompletedActualDate, Weight:param.Weight,CompleteStatus:param.CompleteStatus, CommulativeWeight:param.CommulativeWieght, RiskTitle:param.RiskTitle, OutcomeTitle:param.OutcomeTitle);
 ',
 	1,
 	0,
@@ -2748,7 +2748,7 @@ INSERT INTO SPR_RS
 	VALUES ("c98d2bda-54e5-45f7-84f3-ae231d568ce8",
 	'SendProjectOutcome',
 	'',
-	'::SendProjectOutcome(  Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );',
+	'::SendProjectOutcome(  Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, ConnectedOutcomeTitle:param.ConnectedOutcomeTitle);',
 	1,
 	0,
 	47);

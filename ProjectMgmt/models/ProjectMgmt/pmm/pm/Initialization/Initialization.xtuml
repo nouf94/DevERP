@@ -250,7 +250,7 @@ purchase.AddPurchase( ProjectCode:"Project1Code", Scope:"scoope", ExpectedCost: 
 // PROJECT OUTCOME
 //--------------------------------------------
 create object instance outcome of Outcome;
-outcome.AddOutcome( Title:"Outcome Title", Description:"Description", StartDate:0, EndDate:0, ProjectCode:"Project1Code");
+outcome.AddOutcome( Title:"Outcome Title", Description:"Description", StartDate:0, EndDate:0, ProjectCode:"Project1Code",ConnectedOutcomeTitle:"");
 
 // ------------------------------------------
 create object instance deliverable of Deliverable;

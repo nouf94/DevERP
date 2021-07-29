@@ -22,19 +22,32 @@ self.Weight = param.Weight;
 self.CompletePlannedDate = param.CompletePlannedDate;
 self.CompleteStatus = false;
 self.CommulativeWeight=param.CommulativeWeight;	
+
 // select the project that this milestone belongs to
 select any project from instances of Project where selected.Code==param.ProjectCode;
 if (not_empty project)
 	select any temp related by project->Milestone[R67.''completes''] where selected.Name == param.Name;
+	
 	if (empty temp)
 		relate self to project across R67.''completed'';
+		//connected Risk
+		select any risk  related by project->Risks[R68.''exposed'']  where selected.Title==param.RiskTitle ;
+		if(not_Empty risk)
+		relate self to risk across R87.''Effected by'';
+		end if;
+	   //connected Outcom
+	    select any outcome related by project->Outcome[R85.''Produce''] where selected.Title==param.OutcomeTitle ;
+	    if(not_Empty outcome)
+		relate self to outcome  across R88.''Effect'';
+		end if ;
 		UI::Reply( msg:"Successfully Created", state:true );
 	else
 		UI::Reply( msg:"Already Existed", state:false );
 	end if; 
 else
 	UI::Reply( msg:"Project Not Existed", state:false );
-end if;',
+end if;
+',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -85,6 +98,24 @@ INSERT INTO O_TPARM
 	'',
 	"262f8ca4-dfb1-486d-9edb-e039f522b9c7",
 	'');
+INSERT INTO O_TPARM
+	VALUES ("a96695f2-518a-410d-bd13-2e2ec374eec4",
+	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
+	'RiskTitle',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"9dabf7cf-7332-4e70-8375-a29f4acd6c6a",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("673d0c74-4ab7-4a69-9cf3-74f1f7bf0ab3",
+	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
+	'OutcomeTitle',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"a96695f2-518a-410d-bd13-2e2ec374eec4",
+	'');
 INSERT INTO O_TFR
 	VALUES ("33559e0c-3e42-41f2-83b4-6366929cffac",
 	"d098fe40-1d52-4ad8-bb50-09369ce9f4d3",
@@ -96,7 +127,29 @@ INSERT INTO O_TFR
 self.Weight = param.Weight;
 self.CompletePlannedDate = param.CompletePlannedDate;
 self.CompleteStatus = false;	
-self.CommulativeWeight=param.CommulativeWeight;	',
+self.CommulativeWeight=param.CommulativeWeight;	
+
+
+select any project from instances of Project where selected.Code==param.ProjectCode;
+
+		//connected Risk
+		select one risk related by self->Risks[R87.''Effected by''];
+		if (not_empty risk)
+			unrelate risk from self across R87;
+			end if;
+		select any risk2  related by project->Risks[R68.''exposed'']  where selected.Title==param.RiskTitle ;
+		relate self to risk2 across R87.''Effected by'';
+		
+	   //connected Outcom
+	   select one outcome related by self->Outcome[R88.''Effect''];
+	   if (not_empty outcome)
+			unrelate outcome from self across R88;
+			end if;
+	    select any outcome2 related by project->Outcome[R85.''Produce''] where selected.Title==param.OutcomeTitle ;
+		relate self to outcome2 across R88.''Effect'';
+		
+
+',
 	1,
 	'',
 	"e3ccc19f-c62f-47f9-9967-17d879e5fb8e",
@@ -137,6 +190,33 @@ INSERT INTO O_TPARM
 	0,
 	'',
 	"702baaa4-c0a3-46e6-a626-62c37adc34f3",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("69220bb0-365c-4322-aa20-f3e7ed6f6b50",
+	"33559e0c-3e42-41f2-83b4-6366929cffac",
+	'ProjectCode',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"8e07e626-60f1-43d9-869c-7e4028e1ae2f",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("71e369bb-2d66-4072-a775-65b4d12d5179",
+	"33559e0c-3e42-41f2-83b4-6366929cffac",
+	'RiskTitle',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"69220bb0-365c-4322-aa20-f3e7ed6f6b50",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("90401769-2342-42f0-9485-00d57b9551fa",
+	"33559e0c-3e42-41f2-83b4-6366929cffac",
+	'OutcomeTitle',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"71e369bb-2d66-4072-a775-65b4d12d5179",
 	'');
 INSERT INTO O_NBATTR
 	VALUES ("b30e7b51-248e-4478-b02d-9295c431bdad",

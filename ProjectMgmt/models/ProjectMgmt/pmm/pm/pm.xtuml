@@ -31,51 +31,51 @@ INSERT INTO GD_MD
 	'4.1.17',
 	'ProjectMgmt::pmm::pm');
 INSERT INTO GD_GE
-	VALUES ("26009096-4a65-4d85-873e-ca6c098b3f8b",
+	VALUES ("943e17af-490a-4d5a-aaa7-52dc972351d5",
 	"00000000-0000-0000-0000-000000000000",
 	"d8941aac-fe97-4ede-8994-e08f0fa770a0",
 	108,
 	0,
 	'ProjectMgmt::pmm::pm::Initialization');
 INSERT INTO GD_SHP
-	VALUES ("26009096-4a65-4d85-873e-ca6c098b3f8b");
+	VALUES ("943e17af-490a-4d5a-aaa7-52dc972351d5");
 INSERT INTO GD_NCS
-	VALUES ("26009096-4a65-4d85-873e-ca6c098b3f8b");
+	VALUES ("943e17af-490a-4d5a-aaa7-52dc972351d5");
 INSERT INTO DIM_ND
 	VALUES (200.000000,
 	150.000000,
-	"26009096-4a65-4d85-873e-ca6c098b3f8b");
+	"943e17af-490a-4d5a-aaa7-52dc972351d5");
 INSERT INTO DIM_GE
 	VALUES (0.000000,
 	0.000000,
-	"26009096-4a65-4d85-873e-ca6c098b3f8b",
+	"943e17af-490a-4d5a-aaa7-52dc972351d5",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
-	VALUES ("26009096-4a65-4d85-873e-ca6c098b3f8b",
+	VALUES ("943e17af-490a-4d5a-aaa7-52dc972351d5",
 	0,
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO GD_GE
-	VALUES ("069d0088-ac59-4528-b62c-07b6fd5b5d29",
+	VALUES ("09352c6f-e795-4a24-8a32-9e475295dc4b",
 	"00000000-0000-0000-0000-000000000000",
 	"6177f291-1d29-415e-bed8-570d8e84b959",
 	108,
 	0,
 	'ProjectMgmt::pmm::pm::main');
 INSERT INTO GD_SHP
-	VALUES ("069d0088-ac59-4528-b62c-07b6fd5b5d29");
+	VALUES ("09352c6f-e795-4a24-8a32-9e475295dc4b");
 INSERT INTO GD_NCS
-	VALUES ("069d0088-ac59-4528-b62c-07b6fd5b5d29");
+	VALUES ("09352c6f-e795-4a24-8a32-9e475295dc4b");
 INSERT INTO DIM_ND
 	VALUES (200.000000,
 	150.000000,
-	"069d0088-ac59-4528-b62c-07b6fd5b5d29");
+	"09352c6f-e795-4a24-8a32-9e475295dc4b");
 INSERT INTO DIM_GE
 	VALUES (220.000000,
 	0.000000,
-	"069d0088-ac59-4528-b62c-07b6fd5b5d29",
+	"09352c6f-e795-4a24-8a32-9e475295dc4b",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
-	VALUES ("069d0088-ac59-4528-b62c-07b6fd5b5d29",
+	VALUES ("09352c6f-e795-4a24-8a32-9e475295dc4b",
 	0,
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PO
@@ -397,7 +397,7 @@ INSERT INTO SPR_PS
 	'AddProjectMilestone',
 	'',
 	'create object instance mile of Milestone;
-mile.AddProjectMilestone( Name:param.Name, CompletePlannedDate: param.CompletePlannedDate, Weight:param.Weight, ProjectCode: param.ProjectCode ,CommulativeWeight:param.CommulativeWeight);',
+mile.AddProjectMilestone( Name:param.Name, CompletePlannedDate: param.CompletePlannedDate, Weight:param.Weight, ProjectCode: param.ProjectCode ,CommulativeWeight:param.CommulativeWeight,RiskTitle:param.RiskTitle,OutcomeTitle:param.OutcomeTitle);',
 	1,
 	0,
 	0);
@@ -602,12 +602,30 @@ INSERT INTO SPR_PS
 	VALUES ("96c7310b-5941-4def-9938-e825babfb03e",
 	'ReadProjectMilestone',
 	'',
-	'select any project from instances of Project where selected.Code == param.ProjectCode ; 
+	'
+
+
+select any project from instances of Project where selected.Code == param.ProjectCode ; 
    
 if (not_empty project)
+	
 	select many milestones related by project->Milestone[R67.''completes''];
 	for each mile in milestones 
-		UI::SendProjectMilestone( Name:mile.Name, CompletedPlannedDate:mile.CompletePlannedDate, CompletedActualDate:mile.CompleteActualDate, Weight:mile.Weight, CompleteStatus:mile.CompleteStatus, CommulativeWieght:mile.CommulativeWeight);
+		riskTitle="";
+		outcomeTitle="";
+		
+		select one risk related by mile->Risks[R87.''Effected by''];
+		if (not_empty risk)
+			riskTitle=risk.Title;
+			end if;
+			
+		select one outcome related by mile->Outcome[R88.''Effect''];
+	   if (not_empty outcome)
+			outcomeTitle=outcome.Title;
+			end if;
+			
+			
+		UI::SendProjectMilestone( Name:mile.Name, CompletedPlannedDate:mile.CompletePlannedDate, CompletedActualDate:mile.CompleteActualDate, Weight:mile.Weight, CompleteStatus:mile.CompleteStatus, CommulativeWieght:mile.CommulativeWeight, RiskTitle:riskTitle, OutcomeTitle:outcomeTitle);
 	end for; 
 end if;
 ',
@@ -1413,8 +1431,8 @@ INSERT INTO SPR_PS
 
 //outcome.AddOutcome(ID:id, Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, ProjectCode:param.ProjectCode );
 //UI::SendProjectOutcome( ID:id, Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );
-outcome.AddOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, ProjectCode:param.ProjectCode );
-UI::SendProjectOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );
+outcome.AddOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate, ProjectCode:param.ProjectCode ,ConnectedOutcomeTitle:param.ConnectedOutcomeTitle);
+UI::SendProjectOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate ,ConnectedOutcomeTitle:param.ConnectedOutcomeTitle);
 ',
 	1,
 	0,
@@ -1574,10 +1592,14 @@ INSERT INTO SPR_PS
 if (not_empty project)
 	select many outcomes related by project->Outcome[R85.''Produce''];
 	for each outcome in outcomes
-		UI::SendProjectOutcome( Title:outcome.Title, Description:outcome.Description, StartDate:outcome.StartartDate, EndDate:outcome.EndDate );
+		ConnectedOutcomeTitle="";
+		select one Connectedoutcome related by outcome->Outcome[R86.''connected''];
+	   if (not_empty Connectedoutcome)
+			ConnectedOutcomeTitle=Connectedoutcome.Title;
+			end if;
+		UI::SendProjectOutcome( Title:outcome.Title, Description:outcome.Description, StartDate:outcome.StartartDate, EndDate:outcome.EndDate ,ConnectedOutcomeTitle:ConnectedOutcomeTitle);
 	end for;
 end if;
-
 ',
 	1,
 	0,
@@ -1849,7 +1871,7 @@ select any project from instances of Project where selected.Code == param.Projec
 if (not_empty project)
 	select any milestone  related by project->Milestone[R67.''completes''] where selected.Name == param.OldName;
 	if (not_empty milestone)
-		milestone.UpdateProjectMilestone( Name:param.Name, CompletePlannedDate:param.CompletePlannedDate, Weight:param.Weight , CommulativeWeight:param.CommulativeWeight);
+		milestone.UpdateProjectMilestone( Name:param.Name, CompletePlannedDate:param.CompletePlannedDate, Weight:param.Weight , CommulativeWeight:param.CommulativeWeight,ProjectCode:param.ProjectCode,RiskTitle:param.RiskTitle, OutcomeTitle:param.OutcomeTitle);
 		
 		UI::Reply( msg:"Successfully Updated", state:true );
 	else
@@ -1883,7 +1905,7 @@ select any project from instances of Project where selected.Code == param.Projec
 if (not_empty project)
 	select any outcome  related by project->Outcome[R85.''Produce''] where selected.Title == param.OldTitle;
 	if (not_empty outcome)
-		outcome.UpdateOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate );
+		outcome.UpdateOutcome( Title:param.Title, Description:param.Description, StartDate:param.StartDate, EndDate:param.EndDate ,ConnectedOutcomeTitle:param.ConnectedOutcomeTitle,ProjectCode: param.ProjectCode);
 		UI::Reply( msg:"Successfully Updated", state:true );
 	else
 		UI::Reply( msg:"Not Existed", state:false );

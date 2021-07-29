@@ -24,6 +24,12 @@ if (not_empty project)
 	select any temp related by project->Outcome[R85.''Produce''] where selected.Title == param.Title;
 	if (empty temp)
 		relate self to project across R85.''Belongs'';
+		//connected ConnectedOutcome 
+		select any ConnectedOutcome  related by project->Outcome[R85.''Produce''] where selected.Title==param.ConnectedOutcomeTitle ;
+		if(not_empty ConnectedOutcome)
+		relate self to ConnectedOutcome  across R86.''connected to'';
+		 end if ;
+		
 		UI::Reply( msg:"Successfully Created", state:true );
 	else
 		UI::Reply( msg:"Already Existed", state:false );
@@ -81,6 +87,15 @@ INSERT INTO O_TPARM
 	'',
 	"13284eb1-ebd3-4d28-98fa-616997e43a08",
 	'');
+INSERT INTO O_TPARM
+	VALUES ("ade810e5-ccfb-4af1-9876-ac6bfce771c8",
+	"53808404-86bb-452b-9486-432e8d688a4f",
+	'ConnectedOutcomeTitle',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"5021b243-5845-4922-bdc4-f1f85386a87b",
+	'');
 INSERT INTO O_TFR
 	VALUES ("981dfb27-fcab-4ce2-b240-d6c59b94aff5",
 	"7c53828a-b43b-4ac6-b2bc-8357ba1b8fce",
@@ -91,7 +106,23 @@ INSERT INTO O_TFR
 	'self.Title = param.Title;
 self.Description = param.Description;
 self.StartartDate = param.StartDate;
-self.EndDate = param.EndDate;',
+self.EndDate = param.EndDate;
+
+select any project from instances of Project where selected.Code==param.ProjectCode;
+
+ select one outcome related by self->Outcome[R86.''connected''];
+	   if (not_empty outcome)
+			unrelate self from outcome across R86.''connected to'';
+			
+			end if;
+			
+			
+	    select any outcome2 related by project->Outcome[R85.''Produce''] where selected.Title==param.ConnectedOutcomeTitle ;
+	    if(not_empty outcome2)
+		relate self to outcome2 across R86.''connected to'';
+		 end if ;
+		
+		',
 	1,
 	'',
 	"53808404-86bb-452b-9486-432e8d688a4f",
@@ -132,6 +163,24 @@ INSERT INTO O_TPARM
 	0,
 	'',
 	"3414e9fe-6a8b-4265-9baa-8fdb189e3648",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("054e30f1-20fc-4e35-8b5a-ea50b053d71a",
+	"981dfb27-fcab-4ce2-b240-d6c59b94aff5",
+	'ConnectedOutcomeTitle',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"00e5efa9-288a-4bb2-957c-c7c98ea55186",
+	'');
+INSERT INTO O_TPARM
+	VALUES ("6fcd8a55-25fa-427a-a22c-279a4fd4f691",
+	"981dfb27-fcab-4ce2-b240-d6c59b94aff5",
+	'ProjectCode',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	0,
+	'',
+	"054e30f1-20fc-4e35-8b5a-ea50b053d71a",
 	'');
 INSERT INTO O_NBATTR
 	VALUES ("ea852282-0534-4407-8db4-91e3cad7edfc",
