@@ -460,17 +460,24 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
          } 
          } 
          public void SendProjectConstraint(  final String p_Title,  final String p_Note ) throws XtumlException {
-
-
+        try {
+            HRGuiController.Singleton().SendProjectConstraint( p_Title, p_Note );
+         }catch(Exception e) {
+      	   
+         } 
          }
          public void SendProjectAssumption(  final String p_Title,  final String p_Description,  final String p_Impact,  final int p_ValidUntil ) throws XtumlException {
-
+             try {
+            HRGuiController.Singleton().SendProjectAssumption( p_Title, p_Description, p_Impact,p_ValidUntil );
+         }catch(Exception e) {
+      	   
+         } 
              
          }
 
-        public void SendProjectMilestone( final String p_Name,  final int p_CompletedPlannedDate,  final int p_CompletedActualDate,  final int p_Weight,  final boolean p_CompleteStatus ) throws XtumlException {
+        public void SendProjectMilestone( final String p_Name,  final int p_CompletedPlannedDate,  final int p_CompletedActualDate,  final int p_Weight,  final boolean p_CompleteStatus,  final int p_CommulativeWieght ) throws XtumlException {
         try {
-            HRGuiController.Singleton().SendProjectMilestone( p_Name, p_CompletedPlannedDate, p_CompletedActualDate, p_Weight, p_CompleteStatus );
+            HRGuiController.Singleton().SendProjectMilestone( p_Name, p_CompletedPlannedDate, p_CompletedActualDate, p_Weight, p_CompleteStatus, p_CommulativeWieght );
          }catch(Exception e) {
       	   
          } 
@@ -486,10 +493,25 @@ public void SendFinanceMessage( final int p_Sender,  final String p_Content,  fi
     
     }
     public void SendProjectRequirement(  final String p_Title,  final double p_Cost ) throws XtumlException {
+     try {
+            HRGuiController.Singleton().SendProjectRequirement( p_Title, p_Cost );
+         }catch(Exception e) {
+      	   
+         } 
     }
     public void SendProjectStakeholder( final String p_Name,  final String p_Influence,  final String p_Priorty,  final String p_Interest ) throws XtumlException {
+    try {
+            HRGuiController.Singleton().SendProjectStakeholder( p_Name, p_Influence, p_Priorty, p_Interest );
+         }catch(Exception e) {
+      	   
+         } 
     }
     public void SendProjectScope(  final String p_Title,  final boolean p_IsInScope,  final String p_Description ) throws XtumlException {
+     try {
+            HRGuiController.Singleton().SendProjectScope( p_Title, p_IsInScope, p_Description );
+         }catch(Exception e) {
+      	   
+         } 
     }
 /*
         public void AssignManger( final String p_AccountName,  final String p_ProjectCode ) throws XtumlException {

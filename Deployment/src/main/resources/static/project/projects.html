@@ -127,7 +127,8 @@ color: red;
     	                 	<th>مدير المشروع</th>
     	                 	<th>تاريخ البداية</th>
     	                 	<th>تاريخ النهاية</th>
-    	                 	<th>الميزانية</th>
+                         <th>الميزانية</th>
+                         <th>ميثاق المشروع</th>
     	           </tr>
     	           <tr style="color: #007bff" v-for="proj in allProjects" >
 	    	           <td><a href="./projectinfo.html">
@@ -140,8 +141,9 @@ color: red;
 	    	           <td>لم يحدد بعد</td>
 	    	           <td>{{proj.p_StartDate}}</td>
 	    	           <td>{{proj.p_EndDate}}</td>
-	    	           <td>{{proj.p_Budget}}</td>
-    	           
+	    	           <td>{{proj.p_Budget}}</td>    	           
+	    	           <td><a href="./projectcharter.html">
+                    <div style="height:100%;width:100%">{{proj.p_Name}} </div></td>
     	           </tr>
     	          
 		</table>

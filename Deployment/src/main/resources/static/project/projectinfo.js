@@ -1,9 +1,7 @@
 var Impacts=[];
 var Details=[]; 
-var Project="";
-var Dlivrables=[];
-var ProjOutcomes=[];
-var ProjRisks=[];
+var totalWeight=0;
+var totalCMWeight=0;
 
 //Add ProjectInfo Instance
 var ProjectInfoApp = new Vue({
@@ -24,7 +22,17 @@ var ProjectInfoApp = new Vue({
         p_Code: this.p_Code
       }).then(response => (this.ProjectInfo = response.data[0],
         $("#projectName").html(this.ProjectInfo.p_Name),
-        $("#ProjectDesc").html(this.ProjectInfo.p_Description)
+        $("#ProjectDesc").html(this.ProjectInfo.p_Description),
+         date1 = new Date(null),
+        console.log(this.ProjectInfo),
+        date1.setTime(this.ProjectInfo.p_StartDate*1000),
+        this.ProjectInfo.p_StartDate=date1.toLocaleDateString(),
+         date2 = new Date(),
+        // To calculate the time difference of two dates
+         Difference_In_Time = date1.getTime() - date2.getTime(),
+        // To calculate the no. of days between two dates
+        ProgressApp.actualDays = Difference_In_Time / (1000 * 3600 * 24),
+        ProgressApp.Delay=ProjectInfoApp.ProjectInfo.p_Duration-ProgressApp.actualDays
         )).catch(error => {
             console.log(error)
         })
@@ -164,7 +172,7 @@ var GoalApp = new Vue({
     AddGoal: function (event) {
         axios.post('/rest/AddGoal', {
           p_Description: this.p_gName,
-          p_Impact: this.p_GoalEffect,
+          p_Impact: $('#GEffect :selected').val(),
           p_ProjectCode: this.p_ProjectCode,
           p_KPI: this.p_GoalEffect,
           }).then(response => {
@@ -182,13 +190,13 @@ var GoalApp = new Vue({
                 index=(event.target.parentElement.parentElement.parentElement.parentElement.rowIndex)-1;
                 this.selectedGoal=this.Goals[index];
                 this.p_gName=this.selectedGoal.p_Description;
-                this.p_GoalEffect=this.selectedGoal.p_Impact;
+                $('#UGEffect').val(this.selectedGoal.p_Impact);
       }, 
       UpdateGoal: function (event) {
           axios.post('/rest/UpdateGoal', {
           p_OldDescription:this.selectedGoal.p_Description,
           p_Description: this.p_gName,
-          p_Impact: this.p_GoalEffect,
+          p_Impact:$('#UGEffect :selected').val(),
           p_ProjectCode: this.p_ProjectCode,
           p_KPI: this.p_GoalEffect,
           }).then(response => {
@@ -203,6 +211,8 @@ var GoalApp = new Vue({
         this.selectedGoal="";
         index=(event.target.parentElement.rowIndex)-1;
         this.selectedGoal=this.Goals[index];
+        $('#VGEffect').val(this.selectedGoal.p_Impact);
+
       }  
     }//End  Methods
   
@@ -258,9 +268,45 @@ var RiskApp = new Vue({
             $("#Error").show();
               console.log(error)
           });
-      }//End Add Risk Method 
-      ,
+      },//End Add Risk Method 
+      viewRiskUpdate: function (event){
+        //Get The selected element to update 
+        this.selectedRisk="";
+        index=(event.target.parentElement.parentElement.parentElement.parentElement.rowIndex)-1;
+        if(isNaN(index)){// Depnding on if the user clicks button or li
+          index=(event.target.parentElement.parentElement.parentElement.parentElement.parentElement.rowIndex)-1;
+        }
+        this.selectedRisk=this.Risks[index];
+        //Fill the View Form
+        this.p_rName=this.selectedRisk.p_Title;
+        this.p_Response=this.selectedRisk.p_MitigationPlan;
+        $('#UReffect').val(this.selectedRisk.p_Severity);
+        $('#UrProb').val(this.selectedRisk.p_Probability);
+        $('#URtype').val(this.selectedRisk.p_IsIssue);
+        $('#UrStatus').val(this.selectedRisk.p_IsOpen);
+        this.p_resolveDate=this.selectedRisk.p_ExpectedDeadline;
+}, 
+UpdateRisk: function (event) {
+  axios.post('/rest/UpdateRisk', {
+    p_OldTitle: this.selectedRisk.p_Title,
+    p_ProjectCode :this.p_ProjectCode,
+    p_Title: this.p_rName,
+    p_Severity: $('#UReffect :selected').val(), 
+    p_Probability : $('#UrProb :selected').val(),
+    p_IsIssue: $('#URtype :selected').val(),
+    p_IsOpen: $('#UrStatus :selected').val(),
+    p_MitigationPlan:this.p_Response,
+    p_ExpectedDeadline:(new Date(this.p_resolveDate).getTime() / 1000),
+  }).then(response => {
+   $("#Update").show();
+   this.readRisks()//To Update List of Goals
+  }).catch(error => {
+    $("#Error").show();
+      console.log(error)
+  });
+},//End Update Goal Method  
       viewRisk:function(event){
+        this.selectedRisk='';
         item=(event.target.parentElement.rowIndex)-1;
         this.selectedRisk=this.Risks[item];
       }    
@@ -284,7 +330,8 @@ var OutsApp = new Vue({
     p_ProjectCode:'Project1Code',
     Outcomes:'',
     selectedOutcome:'',
-    selectedDlevs:''
+    selectedDlevs:'',
+    Dlivrables:''
   },
   mounted: function mounted () {
    this.readOutcomes()
@@ -310,7 +357,7 @@ var OutsApp = new Vue({
           }).then(response => {   
             var delvs=$('ul[name^="Delv"]')
             for(i=0;i<delvs.length;i++){
-              Dlivrables.push(delvs.text().replace('×',''));
+              this.Dlivrables.push(delvs.text().replace('×',''));
             }       
           this.AddOutcomeDelivrable(response.data[0]['p_Title'])
            this.readOutcomes();
@@ -323,7 +370,7 @@ var OutsApp = new Vue({
       AddOutcomeDelivrable: function (OutcomeTitle) {      
         axios.post('/rest/AddOutcomeDelivrable', {
           p_ProjectCode:this.p_ProjectCode,
-          p_Dlivrables : Dlivrables,
+          p_Dlivrables : this.Dlivrables,
           p_OutcomeTitle: OutcomeTitle
           }).then(response => {
             //console.log(response)
@@ -347,7 +394,6 @@ var OutsApp = new Vue({
         this.selectedOutcome='';
         item=(event.target.parentElement.rowIndex)-1;
         this.selectedOutcome=this.Outcomes[item];
-        console.log(this.selectedOutcome);
         this.ReadOutcomeDeliverable(this.selectedOutcome.p_Title)
 
       } 
@@ -435,10 +481,11 @@ var MilestoneApp = new Vue({
       axios.put('/rest/ReadProjectMilestone',{
         p_ProjectCode: this.p_ProjectCode
       }).then(response => (this.Tasks = response.data,
-        showTasks(this.Tasks),
         this.Outcomes = OutsApp.Outcomes,
-        this.Risks=RiskApp.Risks
-        //console.log(response)
+        this.Risks=RiskApp.Risks,
+        showTasks(this.Tasks),
+        ProgressApp.Progress=Math.round(totalWeight/totalCMWeight*100),
+        $(".progress-bar").width(ProgressApp.Progress+'%')
           )).catch(error => {
             console.log(error)
         })},
@@ -447,6 +494,7 @@ var MilestoneApp = new Vue({
           p_Name: this.p_tName,
           p_CompletePlannedDate: (new Date(this.p_MExpDate).getTime() / 1000) ,
           p_Weight: this.p_Mweight,
+          p_CommulativeWeight:0,
           p_ProjectCode: this.p_ProjectCode
           }).then(response => {
            //console.log(response)
@@ -466,6 +514,19 @@ var MilestoneApp = new Vue({
     }//End  Methods
   
 });//End Vue Milestone 
+
+//Add Progress Instance
+var ProgressApp = new Vue({
+  el: '#pProgress',
+  data:{
+    Progress:'',
+    Delay:'',
+    actualDays:''
+
+  }
+  
+});//End Vue Progress 
+
 
 //Add File Instance
 var FilesApp = new Vue({
@@ -540,6 +601,8 @@ $('#NoGoals').hide();
 }
 
 function showTasks(Tasks){
+
+
   if(Tasks.length==0){
     $('#NoTasks').show();
     $('#TasksTable').hide();
@@ -555,7 +618,10 @@ function showTasks(Tasks){
     Tasks[i].p_CompletePlannedDate=curdate.toLocaleDateString();
     curdate.setTime(Tasks[i].p_CompletedActualDate*1000);
     Tasks[i].p_CompletedActualDate=curdate.toLocaleDateString();
+    totalWeight+=Tasks[i].p_Weight;
+    totalCMWeight+=Tasks[i].p_CommulativeWeight;
 }
+
 return;
 }
 

@@ -161,11 +161,13 @@
     </div>
     </div>
   
-            <div class="row">
+            <div class="row" id="pProgress" >
             
-                <div class="progress row">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-               
+                <div class="progress row" >
+                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{Progress}}%</div>{{Delay}}
+                   <!--<div v-if="Progress"class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    <div v-if="Progress"class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                  --> 
                 </div>
             </div>
         </br>
@@ -234,9 +236,13 @@
                   <input type="text"  class="form-control" id="gName"name= 'p_gName' placeholder="" v-model='p_gName' >
               </div>
               <div class="form-group col-lg-12">
-                <label for="GoalEffect" >مستوى التأثير  </label> </br>
-                <textarea  class="form-control" id="GoalEffect"name='p_GoalEffect' placeholder="" v-model='p_GoalEffect' ></textarea>
-            </div>
+                <label for="GEffect"> الأثر</label>
+                <select name='GEffect' id="GEffect" class="form-control" placeholder=""v-model='p_GEffect'>
+                  <option value="High">عالي</option>
+                  <option value="Medium">متوسط</option>
+                  <option value="Low">منخفض</option>
+                </select>
+              </div>
           </div>
 
       <div class="form-row">
@@ -258,7 +264,7 @@
           </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" @click="AddGoal" class="btn btn-primary " data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
+        <button type="submit" @click="AddGoal" class="btn btn-primary" data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
         &nbsp;
         <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
       </div>
@@ -305,7 +311,6 @@
                     </td>
                     </tr>
                     <tr class="spacer"></tr>
-              
                     <tr class="spacer"></tr>
                     </tbody>
                     </table>
@@ -328,9 +333,13 @@
                   <input type="text"  class="form-control" id="UgName"name= 'p_gName' placeholder="" v-model='p_gName' >
               </div>
               <div class="form-group col-lg-12">
-                <label for="GoalEffect" >مستوى التأثير  </label> </br>
-                <textarea  class="form-control" id="UGoalEffect"name='p_GoalEffect' placeholder="" v-model='p_GoalEffect' ></textarea>
-            </div>
+                <label for="UGEffect"> الأثر</label>
+                <select name='GEffect' id="UGEffect" class="form-control" placeholder="">
+                  <option value="High">عالي</option>
+                  <option value="Medium">متوسط</option>
+                  <option value="Low">منخفض</option>
+                </select>
+              </div>
           </div>
 
       <div class="form-row">
@@ -382,9 +391,12 @@
                               {{selectedGoal.p_Description}}</label>
                           </div>
                           <div class="form-group col-md-6" >
-                            <label for="Mweight"><strong>  التأثير </strong></label></br>
-                            <label  id="Mweight" >
-                              {{selectedGoal.p_Impact}}</label>
+                            <label for="VGEffect"><strong>  الأثر </strong></label></br>
+                            <select name='GEffect' id="VGEffect" class="form-control" placeholder="" readonly>
+                              <option value="High">عالي</option>
+                              <option value="Medium">متوسط</option>
+                              <option value="Low">منخفض</option>
+                            </select>
                           </div>
                       </div>                
                 <hr>
@@ -673,11 +685,9 @@
             </form>
         </div>
         <div class="modal-footer">
-          
           <button type="submit" class="btn btn-primary " @click='AddProjectMilestone' data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> حفظ</button>
           &nbsp;
           <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
-
         </div>
       </div>
   
@@ -773,6 +783,7 @@
                   <div class="form-group col-md-6">
                       <label><strong>وزن المعلم التراكمي  </strong></label></br>
                       <label  id="Mweight" >
+                        {{selectedTask.p_CommulativeWeight}}
                          </label>
                       </div>
           </div>
@@ -828,7 +839,7 @@
              </div>
             </div>
        
-            </div>
+            </div><!-- End Milestones Nav-->
             <div class="tab-pane fade" id="nav-procplan" role="tabpanel" aria-labelledby="nav-procplan-tab">
 
               <!-- Add Procurment -->
@@ -969,7 +980,7 @@
           </div><!-- close Footer-->
               </div><!--close Content-->
           </div><!--Close Dialog-->
-          </div><!--Close viewRisk-->
+          </div><!--Close viewPurchase-->
 
 
 
@@ -1087,15 +1098,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr class="tr-shadow" data-toggle="modal" v-for="(risk, index)  in Risks"  @click="viewRisk" data-target="#viewRisk" >
+    <tr class="tr-shadow" data-toggle="modal" v-for="(risk, index)  in Risks" >
     <td>
     {{index+1}}
     </td>
-    <td> <span>{{risk.p_Title}} </span> </td>
-    <td> {{risk.p_ExpectedDeadline}} </td>
+    
+    <td data-toggle="modal" data-target="#viewRisk"  @click="viewRisk" >{{risk.p_Title}} </td>
+    <td data-toggle="modal" data-target="#viewRisk"  @click="viewRisk" > {{risk.p_ExpectedDeadline}} </td>
     <td>
     <div class="table-data-feature">
-    <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+    <button class="item" data-toggle="modal" data-target="#UpdateRisk" @click="viewRiskUpdate"  data-original-title="Edit">
     <i class="zmdi zmdi-edit"></i>
     </button>
     <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
@@ -1114,7 +1126,95 @@
     <tr class="spacer"></tr>
     </tbody>
     </table>
-  </div><!-- Close Table div-->
+  </div><!-- Close Risks Table div-->
+
+    <!-- Modal -->
+    <div id="UpdateRisk" class="modal fade">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content" id="Uriskcnt">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">{{selectedRisk.p_Title}}</h4>
+          </div>
+          <div class="modal-body">
+              <form  id="prisk-form">
+                  <div class="form-row">
+                      <div class="form-group col-lg-12">
+                      <label for="rName"> الخطر/المشكلة</label>
+                      <input type="text"  class="form-control" id="UrName"name= 'p_rName' placeholder="" v-model='p_rName' >
+                    </div>
+                  </div>
+                    <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="rType">  النوع</label>
+                    <select name="select" id="URtype" onchange="showProb(this)"  class="form-control">
+                      <option v-bind:value="false">خطر </option>
+                      <option v-bind:value="true"> مشكلة </option>
+                      </select>             
+                     </div>
+                     <div class="form-group col-md-6" >
+                      <label for="rStatus">  الحالة</label>
+                      <select name="select" id="UrStatus"  class="form-control">
+                        <option value="true"> مفتوح</option>
+                        <option value="false"> مغلق</option>
+                        </select>
+                     </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="rEffect"> التأثير </label>
+                  <select name="select" id="UReffect" class="form-control">
+                    <option value="high">عالي </option>
+                    <option value="medium">  متوسط </option>
+                    <option value="low">  منخفض </option>
+                    </select>             
+                   </div>
+                   <div class="form-group col-md-6"  id="probSec">
+                    <label for="rProb">  الاحتمالية</label>
+                    <select name="select" id="UrProb" class="form-control" >
+                      <option value="frequent"> غالباً</option>
+                      <option value="occasional"> أحياناً</option>
+                      <option value="unlikely"> نادرًا </option>
+                      </select>
+                  </div>
+  
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-lg-12" >
+                      <label>المالك</label>
+                      <div class="input-group">
+                        <input type="text" class="form-control"  name="p_rOwner" v-model="p_rOwner" >
+                        <div class="input-group-addon">
+                          <i class="fa fa-user"></i>
+                      </div>
+                      </div>
+  
+                  </div>
+                  <div class="form-group col-lg-12" >
+                    <label for="Response">  الإجراء</label>
+                    <textarea  class="form-control" id="UResponse"name= 'p_Response' placeholder="" v-model='p_Response' ></textarea>
+                  </div>
+                </div>
+                <div class="form-row">
+              
+                  <div class="form-group col-lg-12" >
+                    <label for="resolveDate">  التاريخ المتوقع لإنهاء الإجراء </label>
+                    <input type="date"  class="form-control" id="UresolveDate"name= 'p_resolveDate' placeholder="" v-model='p_resolveDate' >
+                  </div>
+                </div>
+  
+              </form>
+        
+          </div>
+        <div class="modal-footer">  
+          <button type="submit" class="btn btn-primary " @click="UpdateRisk" data-dismiss="modal"> <i class="fa fa-dot-circle-o"></i> تحديث</button>
+          &nbsp;
+          <button type="reset" class="btn btn-danger " data-dismiss="modal"> <i class="fa fa-ban"></i>إلغاء</button>
+      </div>
+         </div>
+      </div>
+    </div>
 
   <div id="viewRisk" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -1189,8 +1289,6 @@
     </label>
     </div>
     </div>  
-
-
 </div><!-- close body-->
 <div class="modal-footer">
 <button type="reset" class="btn btn-info" data-dismiss="modal"><i class="fa fa-arrow-circle-left"></i>العودة</button>
@@ -1200,7 +1298,7 @@
 </div><!--Close viewRisk-->
 
 
-            </div>
+            </div><!-- End Risks Nav-->
             <div class="tab-pane fade" id="nav-requests" role="tabpanel" aria-labelledby="nav-requests-tab">
             </br>
               <button id="addchange" class="au-btn au-btn-icon au-btn--green au-btn--small li-modal" data-toggle="modal" data-target="#Change" >
@@ -1546,10 +1644,6 @@
     <script type="application/javascript" src="../navbar.js"></script>
     <script type="application/javascript" src="../footer.js"></script>
     <script type="application/javascript" class="vue" src="./projectinfo.js"></script>
-
-
-
-
     <!-- Vendor JS       -->
     <script type="application/javascript" src="../vendor/slick/slick.min.js"></script>
     <script type="application/javascript" src="../vendor/wow/wow.min.js"></script>

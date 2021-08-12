@@ -10,8 +10,7 @@ public class Risk {
     private String p_MitigationPlan;
     private int p_ExpectedDeadline;
     private String p_ProjectCode;
-
-
+	private String p_OldTitle;
 
 	public Risk() {
 		
@@ -54,6 +53,13 @@ public class Risk {
 		this.p_Title = p_Title;
 	}
        
+	public String getP_OldTitle() {
+		return p_OldTitle;
+	}
+	public void setP_OldTitle(String p_OldTitle) {
+		this.p_OldTitle = p_OldTitle;
+	}
+
     //set and Get 
 	public String getP_Severity() {
 		return p_Severity;

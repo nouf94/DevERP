@@ -2199,9 +2199,7 @@ private static HRGuiController singleton;
 
 		@PostMapping(path="/AddProjectPurchase", consumes="application/json")
 		public void AddProjectPurchase(@RequestBody Purchase purch ){
-          
           try {
-			  
         UI.Singleton().Projects().AddProjectPurchase(purch.getP_ProjectCode() , purch.getP_Scope(), purch.getP_ExpectetCost(),purch.getP_PurchaseMethod());
          }catch(Exception e) {
       	   
@@ -2227,6 +2225,204 @@ private static HRGuiController singleton;
 		return null;
         } 
 
+// Project Scope
+List<Scope> scopes=new ArrayList<Scope>();
+    public void SendProjectScope( final String p_Title,  final boolean p_IsInScope,  final String p_Description ){
+        Scope scope=null;
+          try {
+			scope=new Scope(p_Title,p_IsInScope,p_Description);
+			scopes.add(scope);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+
+		@PostMapping(path="/AddProjectScope", consumes="application/json")
+		public void AddProjectScope(@RequestBody Scope scope ){
+          try {
+        UI.Singleton().Projects().AddProjectScope(scope.getP_ProjectCode() , scope.getP_Title(), scope.getP_IsInScope(),scope.getP_Description());
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+
+		@PutMapping(path="/ReadProjectScope", consumes="application/json", produces="application/json")	
+		public List<Scope> ReadProjectScope(@RequestBody Scope scope ){
+          
+          try {
+			scopes.clear();
+            UI.Singleton().Projects().ReadProjectScope(scope.getP_ProjectCode());
+			Thread.sleep(700);
+			return scopes;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+        } 
+// Project Constrains
+List<Constraint> consts=new ArrayList<Constraint>();
+    public void SendProjectConstraint( final String p_Title, final String p_Note ){
+        Constraint constraint=null;
+          try {
+			constraint=new Constraint(p_Title,p_Note);
+			consts.add(constraint);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+
+		@PostMapping(path="/AddProjectConstraint", consumes="application/json")
+		public void AddProjectConstraint(@RequestBody Constraint constraint ){
+          try {
+        UI.Singleton().Projects().AddProjectConstraint(constraint.getP_ProjectCode() , constraint.getP_Title(),constraint.getP_Note());
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+
+		@PutMapping(path="/ReadProjectConstraint", consumes="application/json", produces="application/json")	
+		public List<Constraint> ReadProjectConstraint(@RequestBody Constraint constraint ){
+          
+          try {
+			consts.clear();
+            UI.Singleton().Projects().ReadProjectConstraint(constraint.getP_ProjectCode());
+			Thread.sleep(700);
+			return consts;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+        } 
+		// Project Assumption
+List<Assumption> Assmps=new ArrayList<Assumption>();
+    public void SendProjectAssumption( final String p_Title,  final String p_Description,  final String p_Impact,  final int p_ValidUntil ) {
+        Assumption assump=null;
+          try {
+			assump=new Assumption(p_Title,p_Description,p_Impact,p_ValidUntil);
+			Assmps.add(assump);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+		@PostMapping(path="/AddProjectAssumption", consumes="application/json")
+		public void AddProjectAssumption(@RequestBody Assumption assump ){
+          try {
+        UI.Singleton().Projects().AddProjectAssumption(assump.getP_ProjectCode() , assump.getP_Title(),assump.getP_Description(),assump.getP_Impact(),assump.getP_ValidUntil());
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+
+		@PutMapping(path="/ReadProjectAssumption", consumes="application/json", produces="application/json")	
+		public List<Assumption> ReadProjectAssumption(@RequestBody Assumption assump ){  
+          try {
+			Assmps.clear();
+            UI.Singleton().Projects().ReadProjectAssumption(assump.getP_ProjectCode());
+			Thread.sleep(700);
+			return Assmps;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+        } 
+
+		// Project Stakeholders
+List<Stakeholder> stkholders=new ArrayList<Stakeholder>();
+    public void SendProjectStakeholder(  final String p_Name,  final String p_Influence,  final String p_Priorty,  final String p_Interest ) {
+        Stakeholder holder=null;
+          try {
+			holder=new Stakeholder(p_Name,p_Influence,p_Priorty,p_Interest);
+			stkholders.add(holder);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+		@PostMapping(path="/AddProjectStakeholder", consumes="application/json")
+		public void AddProjectStakeholder(@RequestBody Stakeholder holder ){
+          try {
+        UI.Singleton().Projects().AddProjectStakeholder(holder.getP_ProjectCode() , holder.getP_Name(),holder.getP_Influence(),holder.getP_Priorty(),holder.getP_Interest());
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+
+		@PutMapping(path="/ReadProjectStakeholder", consumes="application/json", produces="application/json")	
+		public List<Stakeholder> ReadProjectStakeholder(@RequestBody Stakeholder holder ){  
+          try {
+			stkholders.clear();
+            UI.Singleton().Projects().ReadProjectStakeholder(holder.getP_ProjectCode());
+			Thread.sleep(700);
+			return stkholders;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+        }
+	// Project Requirements
+List<Requirement> requirments=new ArrayList<Requirement>();
+    public void SendProjectRequirement(  final String p_Title,  final double p_Cost ) {
+        Requirement req=null;
+          try {
+			req=new Requirement(p_Title,p_Cost);
+			requirments.add(req);
+
+         }catch(Exception e) {
+      	   	e.printStackTrace();
+
+         } 
+         } 
+		@PostMapping(path="/AddProjectRequirement", consumes="application/json")
+		public void AddProjectRequirement(@RequestBody Requirement req ){
+          try {
+        UI.Singleton().Projects().AddProjectRequirement(req.getP_ProjectCode() , req.getP_Title(),req.getP_Cost());
+         }catch(Exception e) {
+      	   
+         } 
+         } 
+
+		@PutMapping(path="/ReadProjectRequirement", consumes="application/json", produces="application/json")	
+		public List<Requirement> ReadProjectRequirement(@RequestBody Requirement req ){  
+          try {
+			requirments.clear();
+            UI.Singleton().Projects().ReadProjectRequirement(req.getP_ProjectCode());
+			Thread.sleep(700);
+			return requirments;
+         }catch (XtumlException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+        } 
+		//Project Goal
 		List<Goal> goals=new ArrayList<Goal>();
 		 public void SendProjectGoal( String p_Description,String p_Impact,String p_KPI ){
         Goal goal=null;
@@ -2284,17 +2480,17 @@ private static HRGuiController singleton;
 		public void AddProjectMilestone(@RequestBody Milestone ms ){
           
           try {
-            UI.Singleton().Projects().AddProjectMilestone( ms.getP_Name(), ms.getP_CompletePlannedDate(), ms.getP_Weight() ,ms.getP_ProjectCode());
+            UI.Singleton().Projects().AddProjectMilestone( ms.getP_Name(), ms.getP_CompletePlannedDate(), ms.getP_Weight() ,ms.getP_ProjectCode(),ms.getP_CommulativeWeight());
          }catch(Exception e) {
       	   
          } 
          } 
         List<Milestone> mss=new ArrayList<Milestone>();
-		 public void SendProjectMilestone(  String p_Name,  int p_CompletedPlannedDate,   int p_CompletedActualDate,   int p_Weight,   boolean p_CompleteStatus ){
+		 public void SendProjectMilestone(  String p_Name,  int p_CompletedPlannedDate,   int p_CompletedActualDate,   int p_Weight,   boolean p_CompleteStatus, int p_CommulativeWeight ){
 
         Milestone ms=null;
           try {
-			ms=new Milestone(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompleteStatus);
+			ms=new Milestone(p_Name,p_CompletedPlannedDate,p_CompletedActualDate, p_Weight, p_CompleteStatus, p_CommulativeWeight);
 			mss.add(ms);
          }catch(Exception e) {
       	   
@@ -2527,24 +2723,23 @@ private static HRGuiController singleton;
           
           try {
 			  //risk.getP_IsOpen() risk.getP_IsIssue()
-            UI.Singleton().Projects().AddProjectRisk(risk.getP_ProjectCode(), risk.getP_Title(), risk.getP_Severity() ,risk.getP_Probability(),true,true,risk.getP_MitigationPlan(),risk.getP_ExpectedDeadline());
+            UI.Singleton().Projects().AddProjectRisk(risk.getP_ProjectCode(), risk.getP_Title(), risk.getP_Severity() ,risk.getP_Probability(),risk.getP_IsIssue(),risk.getP_IsOpen(),risk.getP_MitigationPlan(),risk.getP_ExpectedDeadline());
          }catch(Exception e) {
       	   
          } 
          } 
 
-	/*
-	public void AssignManger( final String p_AccountName,  final String p_ProjectCode ) {
+		@PostMapping(path="/UpdateRisk", consumes="application/json")
+		public void UpdateRisk(@RequestBody Risk risk ){
+          
+          try {
 
+            UI.Singleton().Projects().UpdateRisk(risk.getP_OldTitle(),risk.getP_ProjectCode(), risk.getP_Title(), risk.getP_Severity() ,risk.getP_Probability(),risk.getP_IsIssue(),risk.getP_IsOpen(),risk.getP_MitigationPlan(),risk.getP_ExpectedDeadline());
+         }catch(Exception e) {
+      	   
+         } 
+         }
 
-		try{
-			UI.Singleton().Projects().AssignManger( p_AccountName, p_ProjectCode );
-
-		}catch(Exception e){
-
-
-		}
-	}*/
 
 	List<SendInitiatives> initiativesList = new ArrayList<SendInitiatives>();
 	public void SendInitiatives(String p_Name, String p_ShortNumber, String p_LongNumber, String p_Description, int p_StartDate, int p_EndDate ) {
